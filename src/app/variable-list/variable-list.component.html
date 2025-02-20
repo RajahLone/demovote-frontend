@@ -1,0 +1,33 @@
+<br />
+<div class="card-body">
+	<table class="table table-sm">
+		<thead class="thead-dark">
+			<tr>
+				<th> Créé le</th>
+				<th> Modifié le </th>
+				<th> Type</th>
+				<th> Code </th>
+				<th> Valeur </th>
+				<th> </th>
+			</tr>
+		</thead>
+		<tbody>
+			@for (variable of variables; track variable.numeroVariable) {
+			<tr>
+				<td style="white-space: nowrap">{{ variable.dateCreation }}&nbsp;&nbsp;</td>
+				<td style="white-space: nowrap">{{ variable.dateModification }}&nbsp;&nbsp;</td>
+				<td style="white-space: nowrap">{{ variable.type }}&nbsp;&nbsp;</td>
+				<td style="white-space: nowrap">{{ variable.code }}&nbsp;&nbsp;</td>
+				<td>{{ variable.valeur }}&nbsp;&nbsp;</td>
+				<td style="white-space: nowrap">
+					<div class="btn-group btn-group-sm" role="toolbar">
+						<button (click)="formVariable(variable.numeroVariable)" class="btn btn-primary btn-sm">Détails</button>
+						<button (click)="updateVariable(variable.numeroVariable)" class="btn btn-primary btn-sm">Editer</button>
+						<button (click)="deleteVariable(variable.numeroVariable)" class="btn btn-danger btn-sm">Effacer</button>
+					</div>
+				</td>
+			</tr>
+			}
+		</tbody>
+	</table>
+</div>

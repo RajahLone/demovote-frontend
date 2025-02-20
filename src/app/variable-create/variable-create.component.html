@@ -1,0 +1,33 @@
+<br/>
+<div class="row">
+    <div class="card col-md-6 offset-md-3 offset-md-3">
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()">
+
+                    <div class="form-group">
+                        <label>Type</label>
+                        <input type="text" class="form-control" id="type" [(ngModel)]="variable.type" name="type">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Code</label>
+                        <input type="text" class="form-control" id="code" [(ngModel)]="variable.code" name="code">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Valeur</label>
+                        <input type="text" class="form-control" id="valeur" [(ngModel)]="variable.valeur" name="valeur">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Notes</label>
+ 												<textarea class="form-control" id="notes" name="notes">{{variable.notes}}</textarea>
+                    </div>
+
+                    <br />
+                    <button class="btn btn-success" type="submit">Créer</button>
+
+                </form>
+        </div>
+    </div>
+</div>
