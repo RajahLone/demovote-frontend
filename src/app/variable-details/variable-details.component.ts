@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Variable } from '../variable';
 import { VariableService } from '../variable.service';
 import { FormsModule } from '@angular/forms'; 
@@ -13,7 +13,7 @@ export class VariableDetailsComponent implements OnInit
 
   variable: Variable = new Variable();
   
-  constructor(private route: ActivatedRoute, private variableService: VariableService) { }
+  constructor(private variableService: VariableService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void 
   {
@@ -21,5 +21,9 @@ export class VariableDetailsComponent implements OnInit
     this.variable = new Variable();
     this.variableService.getByIdVariable(this.numeroVariable).subscribe( data => { this.variable = data; });
   }
+ 
+  updateVariable(id: number) { this.router.navigate(['/variable-update', id]); }
   
+  goToListVariable(){ this.router.navigate(['/variable-list']); }
+
 }

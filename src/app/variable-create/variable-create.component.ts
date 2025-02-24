@@ -15,7 +15,11 @@ export class VariableCreateComponent implements OnInit
 
   ngOnInit(): void { }
 
-  saveVariable() { this.variableService.createVariable(this.variable).subscribe( data => { console.log(data); this.goToListVariable(); }, error => console.log(error)); }
+  saveVariable() { this.variableService.createVariable(this.variable).subscribe({
+        next: (params) => { console.log('params', params); this.goToListVariable(); },
+        error: (err: any) => { console.log(err); },
+        complete: () => { }
+      }); }
 
   goToListVariable() {this.router.navigate(['/variable-list']); }
   

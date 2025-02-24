@@ -1,43 +1,88 @@
-<br/>
-<div class="row">
-	<div class="card col-md-6 offset-md-3 offset-md-3">
+<br />
+<form id="formVariable">
+	<div class="card">
+		<div class="card-header">
+			<button type="button" (click)="goToListVariable()" class="btn btn-primary btn-sm">Retour</button>
+		</div>
 		<div class="card-body">
-			<form (ngSubmit)="onSubmit()">
 
-				<div class="form-group">
-					<label>Créé le</label>
-					<input type="text" class="form-control" id="dateCreation" [(ngModel)]="variable.dateCreation" name="dateCreation" disabled>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Créé le</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control form-control-sm field-separate" id="dateCreation" [(ngModel)]="variable.dateCreation" name="dateCreation" disabled>
 				</div>
+			</div>
 
-				<div class="form-group">
-					<label>Modifié le</label>
-					<input type="text" class="form-control" id="dateModification" [(ngModel)]="variable.dateModification" name="dateModification" disabled>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Modifié le</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control form-control-sm field-separate" id="dateModification" [(ngModel)]="variable.dateModification" name="dateModification" disabled>
 				</div>
+			</div>
 
-				<div class="form-group">
-					<label>Type</label>
-					<input type="text" class="form-control" id="type" [(ngModel)]="variable.type" name="type">
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Type</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control form-control-sm field-separate" id="type" [(ngModel)]="variable.type" name="type">
 				</div>
+			</div>
 
-				<div class="form-group">
-					<label>Code</label>
-					<input type="text" class="form-control" id="code" [(ngModel)]="variable.code" name="code">
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Code</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control form-control-sm field-separate" id="code" [(ngModel)]="variable.code" name="code">
 				</div>
+			</div>
 
-				<div class="form-group">
-					<label>Valeur</label>
-					<input type="text" class="form-control" id="valeur" [(ngModel)]="variable.valeur" name="valeur">
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Valeur</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control form-control-sm field-separate" id="valeur" [(ngModel)]="variable.valeur" name="valeur">
 				</div>
+			</div>
 
-				<div class="form-group">
-					<label>Notes</label>
-					<textarea class="form-control" id="notes" name="notes">{{variable.notes}}</textarea>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Notes</label>
+				<div class="col-sm-10">
+					<textarea class="form-control form-control-sm field-separate" id="notes" name="notes" [(ngModel)]="variable.notes"></textarea>
 				</div>
+			</div>
 
-				<br />
-				<button class="btn btn-success" type="submit">Actualiser</button>
 
-			</form>
+		</div>
+		<div class="card-footer">
+			<button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalModifier">Modifier</button>
+			<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEffacer" style="float: right;">Effacer</button>
+		</div>
+	</div>
+</form>
+
+<div class="modal fade" #domModalModifier id="modalModifier" tabindex="-1" aria-labelledby="modalModifierTitre" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalModifierTitre">Modification</h5>
+			</div>
+			<div class="modal-body">Actualiser cet enregistrement ?</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
+				<button type="button" class="btn btn-primary btn-sm" (click)="updateConfirmed(variable.numeroVariable)" data-bs-dismiss="modal">Confirmer</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" #domModalEffacer id="modalEffacer" tabindex="-1" aria-labelledby="modalEffacerTitre" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title text-danger" id="modalEffacerTitre">Suppression</h5>
+			</div>
+			<div class="modal-body">Effacer cet enregistrement ?</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
+				<button type="button" class="btn btn-danger btn-sm" (click)="deleteConfirmed(variable.numeroVariable)" data-bs-dismiss="modal">Confirmer</button>
+			</div>
 		</div>
 	</div>
 </div>

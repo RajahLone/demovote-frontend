@@ -21,7 +21,9 @@ export class VariableUpdateComponent implements OnInit
     this.variableService.getByIdVariable(this.numeroVariable).subscribe(data => { this.variable = data; }, error => console.log(error));
   }
 
-  onSubmit() { this.variableService.updateVariable(this.numeroVariable, this.variable).subscribe(data => { this.goToListVariable(); }, error => console.log(error)); }
+  updateConfirmed(id: number) { this.variableService.updateVariable(this.numeroVariable, this.variable).subscribe(data => { this.goToListVariable(); }, error => console.log(error)); }
+
+  deleteConfirmed(id: number) { this.variableService.deleteVariable(id).subscribe(data => { console.log(data); }, error => console.log(error)); this.goToListVariable(); }
 
   goToListVariable(){ this.router.navigate(['/variable-list']); }
 

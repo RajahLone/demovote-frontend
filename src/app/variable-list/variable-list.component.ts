@@ -7,19 +7,28 @@ import { VariableService } from '../variable.service';
 
 export class VariableListComponent implements OnInit
 {
-
+  
+  types = new Set();
+  
   variables: Variable[] = [];
 
   constructor(private variableService: VariableService, private router: Router) { }
 
   ngOnInit(): void { this.retreiveDatas(); }
 
-  private retreiveDatas() { this.variableService.getListVariable().subscribe(data => { this.variables = data; }); }
+  private retreiveDatas() 
+  { 
+    this.variableService.getListVariable().subscribe(data => {
+      this.variables = data; 
+      
+      data.forEach((element: any) => { if (!this.types.has(element.type)) { this.types.add(element.type); } });
+    });
+  }
 
-  formVariable(id: number) { this.router.navigate(['variable-details', id]); }
+  formVariable(id: number) { this.router.navigate(['/variable-details', id]); }
  
-  updateVariable(id: number) { this.router.navigate(['variable-update', id]); }
+  goToListVariable(){ this.router.navigate(['/variable-list']); }
 
-  deleteVariable(id: number) { this.variableService.deleteVariable(id).subscribe( data => { console.log(data); this.retreiveDatas(); }) }
+  goToNewVariable(){ this.router.navigate(['/variable-create']); }
 
 }

@@ -14,7 +14,7 @@ export class VariableService
   
   getListVariable(): Observable<Variable[]>{ return this.httpClient.get<Variable[]>(`${this.baseURL}/list`); }
 
-  createVariable(variable: Variable): Observable<Object>{return this.httpClient.post(`${this.baseURL}/create`, variable); }
+  createVariable(variable: Variable): Observable<Object>{ return this.httpClient.post(`${this.baseURL}/create`, variable); }
 
   getByIdVariable(id: number): Observable<Variable>{ return this.httpClient.get<Variable>(`${this.baseURL}/form/${id}`); }
 

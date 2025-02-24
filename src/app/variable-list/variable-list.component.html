@@ -1,33 +1,40 @@
 <br />
-<div class="card-body">
-	<table class="table table-sm">
-		<thead class="thead-dark">
-			<tr>
-				<th> Créé le</th>
-				<th> Modifié le </th>
-				<th> Type</th>
-				<th> Code </th>
-				<th> Valeur </th>
-				<th> </th>
-			</tr>
-		</thead>
-		<tbody>
-			@for (variable of variables; track variable.numeroVariable) {
-			<tr>
-				<td style="white-space: nowrap">{{ variable.dateCreation }}&nbsp;&nbsp;</td>
-				<td style="white-space: nowrap">{{ variable.dateModification }}&nbsp;&nbsp;</td>
-				<td style="white-space: nowrap">{{ variable.type }}&nbsp;&nbsp;</td>
-				<td style="white-space: nowrap">{{ variable.code }}&nbsp;&nbsp;</td>
-				<td>{{ variable.valeur }}&nbsp;&nbsp;</td>
-				<td style="white-space: nowrap">
-					<div class="btn-group btn-group-sm" role="toolbar">
-						<button (click)="formVariable(variable.numeroVariable)" class="btn btn-primary btn-sm">Détails</button>
-						<button (click)="updateVariable(variable.numeroVariable)" class="btn btn-primary btn-sm">Editer</button>
-						<button (click)="deleteVariable(variable.numeroVariable)" class="btn btn-danger btn-sm">Effacer</button>
-					</div>
-				</td>
-			</tr>
-			}
-		</tbody>
-	</table>
+<div class="card">
+	<div class="card-header">
+		<div class="row">
+			<div class="form-group col-sm-4">
+				<button type="button" (click)="goToListVariable()" class="btn btn-primary btn-sm" style="margin-right: 5px;">Actualiser</button>
+				<button type="button" (click)="goToNewVariable()" class="btn btn-primary btn-sm" style="margin-right: 5px;">Créer</button>
+			</div>
+			<div class="form-group col-sm-8">
+				<select class="form-select form-select-sm">
+					<option selected> </option>
+          @for (type of types; track type) {
+					<option value="{{ type }}">{{ type }}</option>
+				  }
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="card-body">
+		<table class="table table-sm">
+			<thead class="thead-dark">
+				<tr>
+					<th>Type</th>
+					<th>Code</th>
+					<th>Valeur</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				@for (variable of variables; track variable.numeroVariable) {
+				<tr>
+					<td class="label-nobr">{{ variable.type }}&nbsp;&nbsp;</td>
+					<td class="label-nobr"><a (click)="formVariable(variable.numeroVariable)" class="link-primary pointeur-souris">{{ variable.code }}</a>&nbsp;&nbsp;</td>
+					<td>{{ variable.valeur }}&nbsp;&nbsp;</td>
+				</tr>
+				}
+			</tbody>
+		</table>
+	</div>
 </div>
