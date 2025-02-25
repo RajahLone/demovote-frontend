@@ -2,7 +2,7 @@
 <form id="formVariable">
 	<div class="card">
 		<div class="card-header">
-			<button type="button" (click)="goToListVariable()" class="btn btn-primary btn-sm">Retour</button>
+			<button type="button" (click)="goToListVariable()" class="btn btn-primary btn-sm"><i class="bi bi-x-lg"></i>&nbsp;Retour</button>
 		</div>
 		<div class="card-body">
 
@@ -51,13 +51,13 @@
 
 		</div>
 		<div class="card-footer">
-			<button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalModifier">Modifier</button>
-			<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEffacer" style="float: right;">Effacer</button>
+			<button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalModifier"><i class="bi bi-check-lg"></i>&nbsp;Modifier</button>
+			<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEffacer" style="float: right;"><i class="bi bi-trash"></i>&nbsp;Effacer</button>
 		</div>
 	</div>
 </form>
 
-<div class="modal fade" #domModalModifier id="modalModifier" tabindex="-1" aria-labelledby="modalModifierTitre" aria-hidden="true">
+<div class="modal fade" id="modalModifier" tabindex="-1" aria-labelledby="modalModifierTitre" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -66,13 +66,13 @@
 			<div class="modal-body">Actualiser cet enregistrement ?</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
-				<button type="button" class="btn btn-primary btn-sm" (click)="updateConfirmed(variable.numeroVariable)" data-bs-dismiss="modal">Confirmer</button>
+				<button type="button" class="btn btn-warning btn-sm" (click)="updateConfirmed()" data-bs-dismiss="modal">Confirmer</button>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="modal fade" #domModalEffacer id="modalEffacer" tabindex="-1" aria-labelledby="modalEffacerTitre" aria-hidden="true">
+<div class="modal fade" id="modalEffacer" tabindex="-1" aria-labelledby="modalEffacerTitre" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -81,7 +81,7 @@
 			<div class="modal-body">Effacer cet enregistrement ?</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
-				<button type="button" class="btn btn-danger btn-sm" (click)="deleteConfirmed(variable.numeroVariable)" data-bs-dismiss="modal">Confirmer</button>
+				<button type="button" class="btn btn-danger btn-sm" (click)="deleteConfirmed()" data-bs-dismiss="modal">Confirmer</button>
 			</div>
 		</div>
 	</div>

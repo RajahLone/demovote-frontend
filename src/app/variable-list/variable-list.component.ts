@@ -25,10 +25,10 @@ export class VariableListComponent implements OnInit
     });
   }
 
-  formVariable(id: number) { this.router.navigate(['/variable-details', id]); }
- 
-  goToListVariable(){ this.router.navigate(['/variable-list']); }
+  goToRefreshListVariable(){ this.retreiveDatas(); }
 
   goToNewVariable(){ this.router.navigate(['/variable-create']); }
+
+  formVariable(id: number) { this.router.navigate(['/variable-details', id]); }
 
 }

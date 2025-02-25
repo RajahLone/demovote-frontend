@@ -18,13 +18,15 @@ export class VariableUpdateComponent implements OnInit
   ngOnInit(): void 
   {
     this.numeroVariable = this.route.snapshot.params['numeroVariable'];
-    this.variableService.getByIdVariable(this.numeroVariable).subscribe(data => { this.variable = data; }, error => console.log(error));
+    this.variableService.getByIdVariable(this.numeroVariable).subscribe(data => { this.variable = data; });
   }
 
-  updateConfirmed(id: number) { this.variableService.updateVariable(this.numeroVariable, this.variable).subscribe(data => { this.goToListVariable(); }, error => console.log(error)); }
+  updateConfirmed() { this.variableService.updateVariable(this.numeroVariable, this.variable).subscribe(() => { this.goToListVariable(); }); }
 
-  deleteConfirmed(id: number) { this.variableService.deleteVariable(id).subscribe(data => { console.log(data); }, error => console.log(error)); this.goToListVariable(); }
+  deleteConfirmed() { this.variableService.deleteVariable(this.numeroVariable).subscribe(() => { this.goToListVariable(); }); }
 
-  goToListVariable(){ this.router.navigate(['/variable-list']); }
+  goToListVariable(){ this.router.navigate(['/variable-list'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000) } }); }
+
+  private getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
 
 }
