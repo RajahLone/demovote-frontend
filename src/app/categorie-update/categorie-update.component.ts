@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categorie } from '../categorie';
 import { CategorieService } from '../categorie.service';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule, NgForm } from '@angular/forms'; 
 
 @Component({ selector: 'app-categorie-update', imports: [FormsModule], templateUrl: './categorie-update.component.html', styleUrl: './categorie-update.component.css' })
 
 export class CategorieUpdateComponent implements OnInit
 {
-  
+  @ViewChild('formRef') categorieForm!: NgForm;
+
   numeroCategorie: number = 0;
   
   categorie: Categorie = new Categorie();
@@ -21,7 +22,7 @@ export class CategorieUpdateComponent implements OnInit
     this.categorieService.getByIdCategorie(this.numeroCategorie).subscribe(data => { this.categorie = data; });
   }
 
-  updateConfirmed() { this.categorieService.updateCategorie(this.numeroCategorie, this.categorie).subscribe(() => { this.goToListCategorie(); }); }
+  updateConfirmed() { if (this.categorieForm.valid) { this.categorieService.updateCategorie(this.numeroCategorie, this.categorie).subscribe(() => { this.goToListCategorie(); }); } }
 
   deleteConfirmed() { this.categorieService.deleteCategorie(this.numeroCategorie).subscribe(() => { this.goToListCategorie(); }); }
 

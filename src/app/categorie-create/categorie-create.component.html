@@ -1,7 +1,8 @@
 <br />
-<form (ngSubmit)="onSubmit()">
-	<div class="card">
-		<div class="card-header">
+<form  #formRef="ngForm" (ngSubmit)="addCategorie()" class="needs-validation">
+	<div class="card shadow">
+	<div class="card-header">Fiche d'une catégorie</div>
+		<div class="card-header shadow-sm">
 			<button (click)="goToListCategorie()" class="btn btn-primary btn-sm"><i class="bi bi-x-lg"></i>&nbsp;Retour</button>
 		</div>
 		<div class="card-body">
@@ -9,7 +10,7 @@
 			<div class="form-group row">
 				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Libellé</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control form-control-sm field-separate" id="libelle" [(ngModel)]="categorie.libelle" name="libelle">
+					<input type="text" class="form-control form-control-sm field-separate" id="libelle" [(ngModel)]="categorie.libelle" name="libelle" #libelleRef="ngModel" required [class.is-invalid]="libelleRef.invalid && libelleRef.touched">
 				</div>
 			</div>
 
