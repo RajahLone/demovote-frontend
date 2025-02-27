@@ -8,6 +8,10 @@ import { CategorieListComponent } from './categorie-list/categorie-list.componen
 import { CategorieCreateComponent } from './categorie-create/categorie-create.component';
 import { CategorieDetailsComponent } from './categorie-details/categorie-details.component';
 import { CategorieUpdateComponent } from './categorie-update/categorie-update.component';
+import { ParticipantListComponent } from './participant-list/participant-list.component';
+import { ParticipantCreateComponent } from './participant-create/participant-create.component';
+import { ParticipantDetailsComponent } from './participant-details/participant-details.component';
+import { ParticipantUpdateComponent } from './participant-update/participant-update.component';
 
 export const routes: Routes = [  
   {path: '', redirectTo: 'variable-list', pathMatch: 'full'},
@@ -19,6 +23,10 @@ export const routes: Routes = [
   {path: 'categorie-create', component: CategorieCreateComponent},
   {path: 'categorie-details/:numeroCategorie', component: CategorieDetailsComponent},
   {path: 'categorie-update/:numeroCategorie', component: CategorieUpdateComponent},
+  {path: 'participant-list', component: ParticipantListComponent},
+  {path: 'participant-create', component: ParticipantCreateComponent},
+  {path: 'participant-details/:numeroParticipant', component: ParticipantDetailsComponent},
+  {path: 'participant-update/:numeroParticipant', component: ParticipantUpdateComponent},
 ];
 
 @NgModule({

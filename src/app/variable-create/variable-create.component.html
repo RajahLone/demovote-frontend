@@ -3,7 +3,7 @@
 	<div class="card shadow">
 		<div class="card-header">Fiche d'une variable</div>
 		<div class="card-header shadow-sm">
-			<button (click)="goToListVariable()" class="btn btn-primary btn-sm"><i class="bi bi-x-lg"></i>&nbsp;Retour</button>
+			<button (click)="goToListVariable()" class="btn btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;Retour</button>
 		</div>
 		<div class="card-body">
 
@@ -37,7 +37,7 @@
 
 		</div>
 		<div class="card-footer">
-			<button type="button" class="btn btn-success btn-sm text-left" type="submit"><i class="bi bi-plus-lg"></i>&nbsp;Créer</button>
+			<button type="button" class="btn btn-success btn-sm text-left" type="submit" [disabled]="formRef.invalid"><i class="fa-solid fa-plus"></i>&nbsp;Créer</button>
 		</div>
 	</div>
 </form>

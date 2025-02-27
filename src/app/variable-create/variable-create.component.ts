@@ -2,13 +2,16 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Variable } from '../variable';
 import { VariableService } from '../variable.service';
 import { Router } from '@angular/router';
-import { FormsModule, NgForm } from '@angular/forms'; 
+import { FormsModule, NgForm, NgModel } from '@angular/forms'; 
 
 @Component({ selector: 'app-variable-create', imports: [FormsModule], templateUrl: './variable-create.component.html', styleUrl: './variable-create.component.css' })
 
 export class VariableCreateComponent implements OnInit
 {
+
   @ViewChild('formRef') variableForm!: NgForm;
+  @ViewChild('typeRef') typeField!: NgModel;
+  @ViewChild('codeRef') codeField!: NgModel;
   
   variable: Variable = new Variable();
   

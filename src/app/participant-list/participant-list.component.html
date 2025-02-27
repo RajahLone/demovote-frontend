@@ -1,1 +1,32 @@
-<p>participant-list works!</p>
+<br />
+<div class="card shadow">
+	<div class="card-header">Table des participants</div>
+	<div class="card-header shadow-sm">
+		<div class="row">
+			<div class="form-group col-sm-4">
+				<button type="button" (click)="goToRefreshListParticipant()" class="btn btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;Actualiser</button>
+				<button type="button" (click)="goToNewParticipant()" class="btn btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;Créer</button>
+			</div>
+		</div>
+	</div>
+	<div class="card-body">
+		<table class="table table-sm">
+			<thead class="thead-dark">
+				<tr>
+					<th><h6>Nom</h6></th>
+					<th><h6>Pseudonyme</h6></th>
+					<th><h6>Arrivé</h6></th>
+				</tr>
+			</thead>
+			<tbody>
+				@for (participant of participants; track participant.numeroParticipant) {
+				<tr>
+					<td class="label-nobr">{{ participant.nom }}&nbsp;{{ participant.prenom }}&nbsp;&nbsp;</td>
+					<td class="label-nobr"><a (click)="formParticipant(participant.numeroParticipant)" class="link-primary pointeur-souris text-decoration-none">{{ participant.pseudonyme }}</a>&nbsp;&nbsp;</td>
+					<td>@if (participant.arrived) { <i class="fa-solid fa-circle-check text-success"></i> } @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;</td>
+				</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>

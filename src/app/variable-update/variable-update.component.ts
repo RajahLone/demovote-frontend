@@ -8,6 +8,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 
 export class VariableUpdateComponent implements OnInit
 {
+
   @ViewChild('formRef') variableForm!: NgForm;
 
   numeroVariable: number = 0;

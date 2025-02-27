@@ -1,30 +1,21 @@
-
-export class ParticipantModePaiement
+export enum ParticipantStatusEnum
 {
-  constructor(public value:string) { }
-
-  toString() { return this.value; }
-
-  static cheque = new ParticipantModePaiement("Chèque");
-  static virement = new ParticipantModePaiement("Virement");
-  static paypal = new ParticipantModePaiement("Paypal");
-  static especes = new ParticipantModePaiement("Espèces");
-  static autre = new ParticipantModePaiement("Autre");
+  EN_ATTENTE = "En attente", 
+  PAYE_CHEQUE = "Payé chèque", 
+  PAYE_ESPECES = "Payé espèces", 
+  VIREMENT_BANCAIRE = "Virement bancaire", 
+  VIREMENT_PAYPAL = "Virement Paypal", 
+  ORGA = "Orga", 
+  GUEST = "Guest",
 }
 
-export class ParticipantStatus
+export enum ParticipantModePaiementEnum
 {
-  constructor(public value:string) { }
-
-  toString() { return this.value; }
-
-  static en_attente = new ParticipantStatus("En attente");
-  static paye_cheque = new ParticipantStatus("Payé chèque");
-  static paye_especes = new ParticipantStatus("Payé espèces");
-  static virement_bancaire = new ParticipantStatus("Virement bancaire");
-  static virement_paypal = new ParticipantStatus("Virement Paypal");
-  static orga = new ParticipantStatus("Orga");
-  static guest = new ParticipantStatus("Guest");
+  CHEQUE = "Chèque",
+  VIREMENT = "Virement", 
+  PAYPAL = "Paypal", 
+  ESPECES = "Espèces", 
+  AUTRE = "Autre",
 }
 
 export class Participant 
@@ -46,7 +37,7 @@ export class Participant
   pays: string = "";
   numeroTelephone: string = "";
   email: string = "";
-  status: ParticipantStatus = ParticipantStatus.en_attente;
+  status: ParticipantStatusEnum = ParticipantStatusEnum.EN_ATTENTE;
   withMachine: boolean = true;
   commentaire: string = "";
   hereDay1: boolean = false;
@@ -54,7 +45,7 @@ export class Participant
   hereDay3: boolean = false;
   sleepingOnSite: boolean = true;
   useAmigabus: boolean = false;
-  modePaiement: ParticipantModePaiement = ParticipantModePaiement.autre;
+  modePaiement: ParticipantModePaiementEnum = ParticipantModePaiementEnum.CHEQUE;
   dateInscription: string = "";
   sommeRecue: string = "";
   arrived: boolean = false;

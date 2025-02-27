@@ -4,8 +4,8 @@
 	<div class="card-header shadow-sm">
 		<div class="row">
 			<div class="form-group col-sm-4">
-				<button type="button" (click)="goToRefreshListCategorie()" class="btn btn-primary btn-sm" style="margin-right: 5px;"><i class="bi bi-arrow-clockwise"></i>&nbsp;Actualiser</button>
-				<button type="button" (click)="goToNewCategorie()" class="btn btn-primary btn-sm" style="margin-right: 5px;"><i class="bi bi-plus-lg"></i>&nbsp;Créer</button>
+				<button type="button" (click)="goToRefreshListCategorie()" class="btn btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;Actualiser</button>
+				<button type="button" (click)="goToNewCategorie()" class="btn btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;Créer</button>
 			</div>
 		</div>
 	</div>
@@ -13,23 +13,23 @@
 		<table class="table table-sm">
 			<thead class="thead-dark">
 				<tr>
-					<th>Libellé</th>
-					<th class="fs-6 fw-lighter">Disponible</th>
-					<th class="fs-6 fw-lighter">Téléversable</th>
-					<th class="fs-6 fw-lighter">Vote ouvert</th>
-					<th class="fs-6 fw-lighter">Vote terminé</th>
-					<th class="fs-6 fw-lighter">Vote publié</th>
+					<th><h6>Libellé</h6></th>
+					<th><h6>Disponible</h6></th>
+					<th><h6>Téléversable</h6></th>
+					<th><h6>Vote ouvert</h6></th>
+					<th><h6>Vote terminé</h6></th>
+					<th><h6>Vote publié</h6></th>
 				</tr>
 			</thead>
 			<tbody>
 				@for (categorie of categories; track categorie.numeroCategorie) {
 				<tr>
 					<td class="label-nobr"><a (click)="formCategorie(categorie.numeroCategorie)" class="link-primary pointeur-souris text-decoration-none">{{ categorie.libelle }}</a>&nbsp;&nbsp;</td>
-					<td>@if (categorie.available) { <i class="bi bi-check-circle-fill text-success"></i> } @else { <i class="bi bi-x-circle-fill text-danger"></i> }&nbsp;&nbsp;</td>
-					<td>@if (categorie.uploadable) { <i class="bi bi-check-circle-fill text-success"></i> } @else { <i class="bi bi-x-circle-fill text-danger"></i> }&nbsp;&nbsp;</td>
-					<td>@if (categorie.pollable) { <i class="bi bi-check-circle-fill text-success"></i> } @else { <i class="bi bi-x-circle-fill text-danger"></i> }&nbsp;&nbsp;</td>
-					<td>@if (categorie.computed) { <i class="bi bi-check-circle-fill text-success"></i> } @else { <i class="bi bi-x-circle-fill text-danger"></i> }&nbsp;&nbsp;</td>
-					<td>@if (categorie.displayable) { <i class="bi bi-check-circle-fill text-success"></i> } @else { <i class="bi bi-x-circle-fill text-danger"></i> }&nbsp;&nbsp;</td>
+					<td>@if (categorie.available) { <i class="fa-solid fa-circle-check text-success"></i> } @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;</td>
+					<td>@if (categorie.uploadable) { <i class="fa-solid fa-circle-check text-success"></i> } @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;</td>
+					<td>@if (categorie.pollable) { <i class="fa-solid fa-circle-check text-success"></i> } @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;</td>
+					<td>@if (categorie.computed) { <i class="fa-solid fa-circle-check text-success"></i> } @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;</td>
+					<td>@if (categorie.displayable) { <i class="fa-solid fa-circle-check text-success"></i> } @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;</td>
 				</tr>
 				}
 			</tbody>

@@ -1,9 +1,9 @@
 <br />
-<form id="formVariable">
+<form id="formVariable" #formRef="ngForm" class="needs-validation">
 <div class="card shadow">
 	<div class="card-header">Fiche d'une catégorie</div>
 	<div class="card-header shadow-sm">
-		<button (click)="goToListCategorie()" class="btn btn-primary btn-sm"><i class="bi bi-x-lg"></i>&nbsp;Retour</button>
+		<button (click)="goToListCategorie()" class="btn btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;Retour</button>
 	</div>
 	<div class="card-body">
 
@@ -31,7 +31,7 @@
 		<div class="form-group row">
 			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Numéro d'ordre</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control form-control-sm field-separate" id="numeroOrdre" [(ngModel)]="categorie.numeroOrdre" name="numeroOrdre">
+				<input type="number" min="0" class="form-control form-control-sm field-separate" id="numeroOrdre" name="numeroOrdre" [(ngModel)]="categorie.numeroOrdre">
 			</div>
 		</div>
 
@@ -39,7 +39,7 @@
 			<div class="col-sm-2"></div>
 			<div class="col-sm-10">
 				<div class="form-check form-switch">
-					<input class="form-check-input field-separate" type="checkbox" id="available" [(ngModel)]="categorie.available" name="available"> 
+					<input class="form-check-input field-separate" type="checkbox" id="available" name="available" [(ngModel)]="categorie.available"> 
 					<label class="form-check-label" for="available">Disponible</label>
 				</div>
 			</div>
@@ -49,7 +49,7 @@
 			<div class="col-sm-2"></div>
 			<div class="col-sm-10">
 				<div class="form-check form-switch">
-					<input class="form-check-input field-separate" type="checkbox" id="uploadable" [(ngModel)]="categorie.uploadable" name="uploadable"> 
+					<input class="form-check-input field-separate" type="checkbox" id="uploadable" name="uploadable" [(ngModel)]="categorie.uploadable"> 
 					<label class="form-check-label" for="uploadable">Téléversable</label>
 				</div>
 			</div>
@@ -59,7 +59,7 @@
 			<div class="col-sm-2"></div>
 			<div class="col-sm-10">
 				<div class="form-check form-switch">
-					<input class="form-check-input field-separate" type="checkbox" id="pollable" [(ngModel)]="categorie.pollable" name="pollable"> 
+					<input class="form-check-input field-separate" type="checkbox" id="pollable" name="pollable" [(ngModel)]="categorie.pollable"> 
 					<label class="form-check-label" for="pollable">Vote ouvert</label>
 				</div>
 			</div>
@@ -69,7 +69,7 @@
 			<div class="col-sm-2"></div>
 			<div class="col-sm-10">
 				<div class="form-check form-switch">
-					<input class="form-check-input field-separate" type="checkbox" id="computed" [(ngModel)]="categorie.computed" name="computed"> 
+					<input class="form-check-input field-separate" type="checkbox" id="computed" name="computed" [(ngModel)]="categorie.computed"> 
 					<label class="form-check-label" for="computed">Vote calculé</label>
 				</div>
 			</div>
@@ -79,7 +79,7 @@
 			<div class="col-sm-2"></div>
 			<div class="col-sm-10">
 				<div class="form-check form-switch">
-					<input class="form-check-input field-separate" type="checkbox" id="displayable" [(ngModel)]="categorie.displayable" name="displayable"> 
+					<input class="form-check-input field-separate" type="checkbox" id="displayable" name="displayable" [(ngModel)]="categorie.displayable"> 
 					<label class="form-check-label" for="displayable">Vote publié</label>
 				</div>
 			</div>
@@ -87,8 +87,8 @@
 
 	</div>
 	<div class="card-footer">
-			<button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalModifier"><i class="bi bi-check-lg"></i>&nbsp;Modifier</button>
-			<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEffacer" style="float: right;"><i class="bi bi-trash"></i>&nbsp;Effacer</button>
+			<button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalModifier" [disabled]="formRef.invalid"><i class="fa-solid fa-check"></i>&nbsp;Modifier</button>
+			<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEffacer" style="float: right;"><i class="fa-solid fa-trash"></i>&nbsp;Effacer</button>
 	</div>
 </div>
 </form>

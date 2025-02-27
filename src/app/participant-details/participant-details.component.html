@@ -1,1 +1,228 @@
-<p>participant-details works!</p>
+<br />
+<div class="card shadow">
+	<div class="card-header">Fiche d'un participant</div>
+	<div class="card-header shadow-sm">
+		<button (click)="goToListParticipant()" class="btn btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;Retour</button>
+	</div>
+	<div class="card-body">
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Créé le</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control form-control-sm field-separate" id="dateCreation" name="dateCreation" [(ngModel)]="participant.dateCreation" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Modifié le</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control form-control-sm field-separate" id="dateModification" name="dateModification" [(ngModel)]="participant.dateModification" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Nom</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control form-control-sm field-separate" id="nom" name="nom" [(ngModel)]="participant.nom" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Prénom</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control form-control-sm field-separate" id="prenom" name="prenom" [(ngModel)]="participant.prenom" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Pseudonyme</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control form-control-sm field-separate" id="pseudonyme" name="pseudonyme" [(ngModel)]="participant.pseudonyme" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Groupe</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control form-control-sm field-separate" id="groupe" name="groupe" [(ngModel)]="participant.groupe" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Mot de passe</label>
+			<div class="col-sm-10">
+				<input type="password" class="form-control form-control-sm field-separate" id="motDePasse" name="motDePasse" [(ngModel)]="participant.motDePasse" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Délai avant déconnexion</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control form-control-sm field-separate" id="delaiDeconnexion" name="delaiDeconnexion" [(ngModel)]="participant.delaiDeconnexion" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Adresse</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control form-control-sm field-separate" id="adresse" name="adresse" [(ngModel)]="participant.adresse" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Code postal</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control form-control-sm field-separate" id="codePostal" name="codePostal" [(ngModel)]="participant.codePostal" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Ville</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control form-control-sm field-separate" id="ville" name="ville" [(ngModel)]="participant.ville" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Pays</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control form-control-sm field-separate" id="pays" name="pays" [(ngModel)]="participant.pays" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Numéro de téléphone</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control form-control-sm field-separate" id="numeroTelephone" name="numeroTelephone" [(ngModel)]="participant.numeroTelephone" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Adresse email</label>
+			<div class="col-sm-10">
+				<input type="email" class="form-control form-control-sm field-separate" id="email" name="email" [(ngModel)]="participant.email" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Status</label>
+			<div class="col-sm-10">
+				<div class="form-group field-separate">
+					<select class="form-select form-select-sm" id="status" name="status" [(ngModel)]="participant.status" disabled>
+						<option value="EN_ATTENTE" selected>{{ PS.EN_ATTENTE }}</option>
+						<option value="PAYE_CHEQUE">{{ PS.PAYE_CHEQUE }}</option>
+						<option value="PAYE_ESPECES">{{ PS.PAYE_ESPECES }}</option>
+						<option value="VIREMENT_BANCAIRE">{{ PS.VIREMENT_BANCAIRE }}</option>
+						<option value="VIREMENT_PAYPAL">{{ PS.VIREMENT_PAYPAL }}</option>
+						<option value="ORGA">{{ PS.ORGA }}</option>
+						<option value="GUEST">{{ PS.GUEST }}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Inscrit le</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control form-control-sm field-separate" id="dateInscription" name="dateInscription" [(ngModel)]="participant.dateInscription" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-10">
+				<div class="form-check form-switch">
+					<input class="form-check-input field-separate" type="checkbox" id="withMachine" name="withMachine" [(ngModel)]="participant.withMachine" disabled> <label class="form-check-label" for="withMachine">Avec machine</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-10">
+				<div class="form-check form-switch">
+					<input class="form-check-input field-separate" type="checkbox" id="hereDay1" name="hereDay1" [(ngModel)]="participant.hereDay1" disabled> <label class="form-check-label" for="hereDay1">Jour 1</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-10">
+				<div class="form-check form-switch">
+					<input class="form-check-input field-separate" type="checkbox" id="hereDay2" name="hereDay2" [(ngModel)]="participant.hereDay2" disabled> <label class="form-check-label" for="hereDay2">Jour 2</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-10">
+				<div class="form-check form-switch">
+					<input class="form-check-input field-separate" type="checkbox" id="hereDay3" name="hereDay3" [(ngModel)]="participant.hereDay3" disabled> <label class="form-check-label" for="hereDay3">Jour 3</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-10">
+				<div class="form-check form-switch">
+					<input class="form-check-input field-separate" type="checkbox" id="sleepingOnSite" name="sleepingOnSite" [(ngModel)]="participant.sleepingOnSite" disabled> <label class="form-check-label" for="sleepingOnSite">Dort sur place</label>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="form-group row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-10">
+					<div class="form-check form-switch">
+						<input class="form-check-input field-separate" type="checkbox" id="useAmigabus" name="useAmigabus" [(ngModel)]="participant.useAmigabus" disabled> 
+						<label class="form-check-label" for="useAmigabus">Vient en Amigabus</label>
+					</div>
+				</div>
+			</div> -->
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Commentaire</label>
+			<div class="col-sm-10">
+				<textarea class="form-control form-control-sm field-separate" id="commentaire" name="commentaire" [(ngModel)]="participant.commentaire" disabled></textarea>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Mode de paiement</label>
+			<div class="col-sm-10">
+				<div class="form-group field-separate">
+					<select class="form-select form-select-sm" id="modePaiement" name="modePaiement" [(ngModel)]="participant.modePaiement" disabled>
+						<option value="CHEQUE" selected>{{ PMP.CHEQUE }}</option>
+						<option value="VIREMENT">{{ PMP.VIREMENT }}</option>
+						<option value="PAYPAL">{{ PMP.PAYPAL }}</option>
+						<option value="ESPECES">{{ PMP.ESPECES }}</option>
+						<option value="AUTRE">{{ PMP.AUTRE }}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Somme reçue</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control form-control-sm field-separate" id="sommeRecue" name="sommeRecue" [(ngModel)]="participant.sommeRecue" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-10">
+				<div class="form-check form-switch">
+					<input class="form-check-input field-separate" type="checkbox" id="arrived" name="arrived" [(ngModel)]="participant.arrived" disabled> <label class="form-check-label" for="arrived">Arrivé</label>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="card-footer">
+		<button type="button" (click)="updateParticipant(participant.numeroParticipant)" class="btn btn-primary btn-sm"><i class="fa-solid fa-pen"></i>&nbsp;Editer</button>
+	</div>
+</div>
