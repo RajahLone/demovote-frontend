@@ -11,7 +11,7 @@ export class ParticipantDetailsComponent implements OnInit
   
   PS = ParticipantStatusEnum;
   PMP = ParticipantModePaiementEnum;
-
+ 
   numeroParticipant: number = 0;
 
   participant: Participant = new Participant();

@@ -1,1 +1,87 @@
-<p>production-create works!</p>
+<br />
+<form #formRef="ngForm" (ngSubmit)="addProduction()" class="needs-validation">
+	<div class="card shadow">
+		<div class="card-header">Fiche d'une production</div>
+		<div class="card-header shadow-sm">
+			<button (click)="goToListProduction()" class="btn btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;Retour</button>
+		</div>
+		<div class="card-body">
+
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Type</label>
+				<div class="col-sm-10">
+					<div class="form-group field-separate">
+						<select class="form-select form-select-sm" id="type" name="type" [(ngModel)]="production.type">
+							<option [value]="PT.EXECUTABLE" selected>{{ PT.EXECUTABLE }}</option>
+							<option [value]="PT.GRAPHE">{{ PT.GRAPHE }}</option>
+							<option [value]="PT.MUSIQUE">{{ PT.MUSIQUE }}</option>
+							<option [value]="PT.VIDEO">{{ PT.VIDEO }}</option>
+							<option [value]="PT.TOPIC">{{ PT.TOPIC }}</option>
+							<option [value]="PT.AUTRE">{{ PT.AUTRE }}</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Titre&nbsp;<sup><span class="text-danger">*</span></sup></label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control form-control-sm field-separate" id="titre" name="titre" [(ngModel)]="production.titre" #titreRef="ngModel" required [class.is-invalid]="titreRef.invalid && titreRef.touched">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Auteur(s)&nbsp;<sup><span class="text-danger">*</span></sup></label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control form-control-sm field-separate" id="auteurs" name="auteurs" [(ngModel)]="production.auteurs" #auteursRef="ngModel" required [class.is-invalid]="auteursRef.invalid && auteursRef.touched">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Groupe(s)</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control form-control-sm field-separate" id="groupes" name="groupes" [(ngModel)]="production.groupes">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Plateforme</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control form-control-sm field-separate" id="plateforme" name="plateforme" [(ngModel)]="production.plateforme">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Commentaire</label>
+				<div class="col-sm-10">
+					<textarea class="form-control form-control-sm field-separate" id="commentaire" name="commentaire" [(ngModel)]="production.commentaire"></textarea>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Informations privées</label>
+				<div class="col-sm-10">
+					<textarea class="form-control form-control-sm field-separate" id="informationsPrivees" name="informationsPrivees" [(ngModel)]="production.informationsPrivees"></textarea>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Archive&nbsp;<sup><span class="text-danger">*</span></sup></label>
+				<div class="col-sm-10">
+					<input type="file" class="form-control form-control-sm field-separate" id="archive" name="archive" [(ngModel)]="production.archive" #archiveRef="ngModel" required [class.is-invalid]="archiveRef.invalid && archiveRef.touched">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Vignette&nbsp;<sup><span class="text-danger">*</span></sup></label>
+				<div class="col-sm-10">
+					<input type="file" class="form-control form-control-sm field-separate" id="vignette" name="vignette" [(ngModel)]="production.vignette" #vignetteRef="ngModel" required [class.is-invalid]="vignetteRef.invalid && vignetteRef.touched">
+				</div>
+			</div>
+
+		</div>
+		<div class="card-footer">
+			<button type="button" class="btn btn-success btn-sm text-left" type="submit" [disabled]="formRef.invalid"><i class="fa-solid fa-plus"></i>&nbsp;Créer</button>
+		</div>
+	</div>
+</form>

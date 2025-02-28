@@ -12,6 +12,10 @@ import { ParticipantListComponent } from './participant-list/participant-list.co
 import { ParticipantCreateComponent } from './participant-create/participant-create.component';
 import { ParticipantDetailsComponent } from './participant-details/participant-details.component';
 import { ParticipantUpdateComponent } from './participant-update/participant-update.component';
+import { ProductionListComponent } from './production-list/production-list.component';
+import { ProductionCreateComponent } from './production-create/production-create.component';
+import { ProductionDetailsComponent } from './production-details/production-details.component';
+import { ProductionUpdateComponent } from './production-update/production-update.component';
 
 export const routes: Routes = [  
   {path: '', redirectTo: 'variable-list', pathMatch: 'full'},
@@ -27,6 +31,10 @@ export const routes: Routes = [
   {path: 'participant-create', component: ParticipantCreateComponent},
   {path: 'participant-details/:numeroParticipant', component: ParticipantDetailsComponent},
   {path: 'participant-update/:numeroParticipant', component: ParticipantUpdateComponent},
+  {path: 'production-list', component: ProductionListComponent},
+  {path: 'production-create', component: ProductionCreateComponent},
+  {path: 'production-details/:numeroProduction', component: ProductionDetailsComponent},
+  {path: 'production-update/:numeroProduction', component: ProductionUpdateComponent},
 ];
 
 @NgModule({

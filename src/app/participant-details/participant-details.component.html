@@ -109,7 +109,7 @@
 			<div class="col-sm-10">
 				<div class="form-group field-separate">
 					<select class="form-select form-select-sm" id="status" name="status" [(ngModel)]="participant.status" disabled>
-						<option value="EN_ATTENTE" selected>{{ PS.EN_ATTENTE }}</option>
+    				<option value="EN_ATTENTE">{{ PS.EN_ATTENTE }}</option>
 						<option value="PAYE_CHEQUE">{{ PS.PAYE_CHEQUE }}</option>
 						<option value="PAYE_ESPECES">{{ PS.PAYE_ESPECES }}</option>
 						<option value="VIREMENT_BANCAIRE">{{ PS.VIREMENT_BANCAIRE }}</option>
@@ -195,7 +195,7 @@
 			<div class="col-sm-10">
 				<div class="form-group field-separate">
 					<select class="form-select form-select-sm" id="modePaiement" name="modePaiement" [(ngModel)]="participant.modePaiement" disabled>
-						<option value="CHEQUE" selected>{{ PMP.CHEQUE }}</option>
+						<option value="CHEQUE">{{ PMP.CHEQUE }}</option>
 						<option value="VIREMENT">{{ PMP.VIREMENT }}</option>
 						<option value="PAYPAL">{{ PMP.PAYPAL }}</option>
 						<option value="ESPECES">{{ PMP.ESPECES }}</option>

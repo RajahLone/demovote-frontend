@@ -1,1 +1,48 @@
-<p>production-list works!</p>
+<br />
+<div class="card shadow">
+	<div class="card-header">Table des productions</div>
+	<div class="card-header shadow-sm">
+		<div class="row">
+			<div class="form-group col-sm-4">
+				<button type="button" (click)="goToRefreshListProduction()" class="btn btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;Actualiser</button>
+				<button type="button" (click)="goToNewProduction()" class="btn btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;Créer</button>
+			</div>
+		</div>
+	</div>
+	<div class="card-body">
+		<table class="table table-sm">
+			<thead class="thead-dark">
+				<tr>
+					<th><h6>Type</h6></th>
+					<th><h6>Nom</h6></th>
+					<th><h6>Auteur(s) (/ Groupe(s))</h6></th>
+					<th><h6>Plateforme</h6></th>
+				</tr>
+			</thead>
+			<tbody>
+				@for (production of productions; track production.numeroProduction) {
+				<tr>
+					<td class="label-nobr">{{ production.type }}&nbsp;&nbsp;</td>
+					<td class="label-nobr"><a (click)="formProduction(production.numeroProduction)" class="link-primary pointeur-souris text-decoration-none">{{ production.titre }}</a>&nbsp;&nbsp;</td>
+					<td class="label-nobr">{{ production.auteurs }} @if (production.groupes) { @if (production.groupes.length > 0) { &nbsp;/&nbsp;{{ production.groupes }} } }&nbsp;&nbsp;</td>
+					<td class="label-nobr">{{ production.plateforme }}&nbsp;&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="label-nobr">&nbsp;</td>
+					<td class="label-nobr" colspan="3">
+						<div class="card" style="width: 18rem;">
+							<!-- <img src="..." class="card-img-top" alt="..."> -->
+							<div class="card-body">
+								<h5 class="card-title">{{ production.nomArchive }} (version&nbsp;: {{ production.numeroVersion }})</h5>
+								<p class="card-text">{{ production.commentaire }}</p>
+								<p class="card-text text-warning">{{ production.informationsPrivees }}</p>
+							</div>
+							<div class="card-footer text-primary">(lien download archive)</div>
+						</div>
+					</td>
+				</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -22,14 +22,14 @@
 			</div>
 
 			<div class="form-group row">
-				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Type</label>
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Type&nbsp;<sup><span class="text-danger">*</span></sup></label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control form-control-sm field-separate" id="type" name="type" [(ngModel)]="variable.type" #typeRef="ngModel" required [class.is-invalid]="typeRef.invalid && typeRef.touched">
 				</div>
 			</div>
 
 			<div class="form-group row">
-				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Code</label>
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Code&nbsp;<sup><span class="text-danger">*</span></sup></label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control form-control-sm field-separate" id="code" name="code" [(ngModel)]="variable.code" #codeRef="ngModel" required [class.is-invalid]="codeRef.invalid && codeRef.touched">
 				</div>

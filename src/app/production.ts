@@ -1,25 +1,21 @@
 
-export class ProductionType
+export enum ProductionTypeEnum
 {
-  constructor(public value:string) { }
-
-  toString() { return this.value; }
-
-  static executable = new ProductionType("Exécutable");
-  static graphe = new ProductionType("Graphe");
-  static musique = new ProductionType("Musique");
-  static video = new ProductionType("Vidéo");
-  static topic = new ProductionType("Topic");
-  static autre = new ProductionType("Autre");
+  EXECUTABLE = "Exécutable",
+  GRAPHE = "Graphe", 
+  MUSIQUE = "Musique", 
+  VIDEO = "Vidéo", 
+  TOPIC = "Topic",
+  AUTRE = "Autre"
 }
 
 export class Production 
 {
   dateCreation: string = "";
   dateModification: string = "";
-  numeroVariable: number = 0;
+  numeroProduction: number = 0;
   adresseIP: string = "";
-  type: ProductionType = ProductionType.executable;
+  type: ProductionTypeEnum = ProductionTypeEnum.EXECUTABLE;
   titre: string = "";
   auteurs: string = "";
   groupes: string = "";
