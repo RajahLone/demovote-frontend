@@ -8,3 +8,8 @@ export class Variable
   valeur: string = "";
   notes: string = "";
 }
+
+export class VariableType
+{
+  type: string = "";
+}

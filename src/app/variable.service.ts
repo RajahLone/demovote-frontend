@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { Variable } from './variable';
+import { Variable, VariableType } from './variable';
 
 @Injectable({ providedIn: 'root' })
 
@@ -13,6 +13,8 @@ export class VariableService
   constructor(private httpClient: HttpClient) { }
   
   getListVariable(): Observable<Variable[]>{ return this.httpClient.get<Variable[]>(`${this.baseURL}/list`); }
+
+  getOptionListVariableType(): Observable<VariableType[]>{ return this.httpClient.get<VariableType[]>(`${this.baseURL}/option-list`); }
 
   createVariable(variable: Variable): Observable<Object>{ return this.httpClient.post(`${this.baseURL}/create`, variable); }
 

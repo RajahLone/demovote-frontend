@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { Participant } from './participant';
+import { Participant, ParticipantShort } from './participant';
 
 @Injectable({ providedIn: 'root' })
 
@@ -13,6 +13,8 @@ export class ParticipantService
   constructor(private httpClient: HttpClient) { }
   
   getListParticipant(): Observable<Participant[]>{ return this.httpClient.get<Participant[]>(`${this.baseURL}/list`); }
+
+  getOptionListParticipant(): Observable<ParticipantShort[]>{ return this.httpClient.get<ParticipantShort[]>(`${this.baseURL}/option-list`); }
 
   createParticipant(participant: Participant): Observable<Object>{ return this.httpClient.post(`${this.baseURL}/create`, participant); }
 

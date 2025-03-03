@@ -1,1 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+.label-nobr { white-space: nowrap; }
+.pointeur-souris { cursor: pointer; }
+.field-separate { margin-bottom: 2px; }
+.card-header, .card-body, .card-footer { padding: 7px; }

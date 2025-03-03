@@ -22,9 +22,10 @@ export class Production
   plateforme: string = "";
   commentaire: string = "";
   informationsPrivees: string = "";
+  numeroParticipant: number = 0;
   nomArchive: string = "";
-  archive: string = "";
-  vignette: string = "";
+  archive!: string | any;
+  vignette!: string | any;
   numeroVersion: number = 1;
 }
 

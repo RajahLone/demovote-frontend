@@ -50,3 +50,11 @@ export class Participant
   sommeRecue: string = "";
   arrived: boolean = false;
 }
+
+export class ParticipantShort
+{
+  numeroParticipant: number = 0;
+  nom: string = "";
+  prenom: string = "";
+  pseudonyme: string = "";
+}
