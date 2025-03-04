@@ -39,6 +39,7 @@ export class ProductionCreateComponent implements OnInit
       const file = et.files[0];
  
       this.production.nomArchive = file.name;
+      this.production.numeroVersion = 1;
       
       reader.onloadend = async (e: any) => { if (e.target.result) { this.production.archive = e.target.result; } }
 

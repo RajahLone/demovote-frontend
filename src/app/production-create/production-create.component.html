@@ -12,7 +12,7 @@
 				<div class="col-sm-10">
 					<div class="form-group field-separate">
 						<select class="form-select form-select-sm" id="type" name="type" [(ngModel)]="production.type">
-							<option value="EXECUTABLE" selected>{{ PT.EXECUTABLE }}</option>
+							<option [value]="PT.EXECUTABLE">{{ PT.EXECUTABLE }}</option>
 							<option value="GRAPHE">{{ PT.GRAPHE }}</option>
 							<option value="MUSIQUE">{{ PT.MUSIQUE }}</option>
 							<option value="VIDEO">{{ PT.VIDEO }}</option>

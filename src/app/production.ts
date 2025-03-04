@@ -11,10 +11,7 @@ export enum ProductionTypeEnum
 
 export class Production 
 {
-  dateCreation: string = "";
-  dateModification: string = "";
   numeroProduction: number = 0;
-  adresseIP: string = "";
   type: ProductionTypeEnum = ProductionTypeEnum.EXECUTABLE;
   titre: string = "";
   auteurs: string = "";
@@ -26,6 +23,35 @@ export class Production
   nomArchive: string = "";
   archive!: string | any;
   vignette!: string | any;
-  numeroVersion: number = 1;
+  numeroVersion: number = 0;
 }
 
+
+export enum ProductionTypeKeys
+{
+  EXECUTABLE = "EXECUTABLE",
+  GRAPHE = "GRAPHE", 
+  MUSIQUE = "MUSIQUE", 
+  VIDEO = "VIDEO", 
+  TOPIC = "TOPIC",
+  AUTRE = "AUTRE"
+}
+
+export class ProductionShort
+{
+  dateCreation: string = "";
+  dateModification: string = "";
+  numeroProduction: number = 0;
+  adresseIP: string = "";
+  type: ProductionTypeKeys = ProductionTypeKeys.EXECUTABLE;
+  titre: string = "";
+  auteurs: string = "";
+  groupes: string = "";
+  plateforme: string = "";
+  commentaire: string = "";
+  informationsPrivees: string = "";
+  numeroParticipant: number = 0;
+  nomArchive: string = "";
+  vignette!: string | any;
+  numeroVersion: number = 0;
+}

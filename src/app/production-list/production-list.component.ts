@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Production } from '../production';
+import { ProductionShort, ProductionTypeKeys } from '../production';
 import { ProductionService } from '../production.service';
 
 @Component({ selector: 'app-production-list', imports: [], templateUrl: './production-list.component.html', styleUrl: './production-list.component.css' })
@@ -8,7 +8,9 @@ import { ProductionService } from '../production.service';
 export class ProductionListComponent 
 {
   
-  productions: Production[] = [];
+  productions: ProductionShort[] = [];
+
+  PT = ProductionTypeKeys;
 
   constructor(private productionService: ProductionService, private router: Router) { }
 

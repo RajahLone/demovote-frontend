@@ -3,7 +3,7 @@
 	<div class="card-header">Table des participants</div>
 	<div class="card-header shadow-sm">
 		<div class="row">
-			<div class="form-group col-sm-4">
+			<div class="form-group col-sm-4 label-nobr">
 				<button type="button" (click)="goToRefreshListParticipant()" class="btn btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;Actualiser</button>
 				<button type="button" (click)="goToNewParticipant()" class="btn btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;Créer</button>
 			</div>
@@ -13,9 +13,9 @@
 		<table class="table table-sm">
 			<thead class="thead-dark">
 				<tr>
-					<th><h6>Nom</h6></th>
-					<th><h6>Pseudonyme</h6></th>
-					<th><h6>Arrivé</h6></th>
+					<th class="fs-6 label-nobr"><small>Nom</small></th>
+					<th class="fs-6 label-nobr"><small>Pseudonyme</small></th>
+					<th class="fs-6 label-nobr"><small>Arrivé</small></th>
 				</tr>
 			</thead>
 			<tbody>

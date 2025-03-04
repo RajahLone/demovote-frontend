@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { Production } from './production';
+import { Production, ProductionShort } from './production';
 
 @Injectable({ providedIn: 'root' })
 
@@ -12,7 +12,7 @@ export class ProductionService
 
   constructor(private httpClient: HttpClient) { }
   
-  getListProduction(): Observable<Production[]>{ return this.httpClient.get<Production[]>(`${this.baseURL}/list`); }
+  getListProduction(): Observable<ProductionShort[]>{ return this.httpClient.get<ProductionShort[]>(`${this.baseURL}/list`); }
 
   createProduction(production: Production): Observable<Object>{ return this.httpClient.post(`${this.baseURL}/create`, production); }
 

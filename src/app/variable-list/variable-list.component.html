@@ -3,7 +3,7 @@
 	<div class="card-header">Table des variables</div>
 	<div class="card-header shadow-sm">
 		<div class="row">
-			<div class="form-group col-sm-4">
+			<div class="form-group col-sm-4 label-nobr">
 				<button type="button" (click)="goToRefreshListVariable()" class="btn btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;Actualiser</button>
 				<button type="button" (click)="goToNewVariable()" class="btn btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;Créer</button>
 			</div>
@@ -21,16 +21,15 @@
 		<table class="table table-sm">
 			<thead class="thead-dark">
 				<tr>
-					<th><h6>Type</h6></th>
-					<th><h6>Code</h6></th>
-					<th><h6>Valeur</h6></th>
-					<th></th>
+					<th class="fs-6 label-nobr"><small>Type</small></th>
+					<th class="fs-6 label-nobr"><small>Code</small></th>
+					<th class="fs-6 label-nobr"><small>Valeur</small></th>
 				</tr>
 			</thead>
 			<tbody>
 				@for (variable of variables; track variable.numeroVariable) {
 				<tr>
-					<td class="label-nobr">{{ variable.type }}&nbsp;&nbsp;</td>
+					<td class="label-nobr"><small>{{ variable.type }}&nbsp;&nbsp;</small></td>
 					<td class="label-nobr"><a (click)="formVariable(variable.numeroVariable)" class="link-primary pointeur-souris text-decoration-none">{{ variable.code }}</a>&nbsp;&nbsp;</td>
 					<td>{{ variable.valeur }}&nbsp;&nbsp;</td>
 				</tr>

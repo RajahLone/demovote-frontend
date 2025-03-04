@@ -96,7 +96,7 @@
 				<div class="col-sm-10">
 					<div class="form-group field-separate">
 						<select class="form-select form-select-sm" id="status" name="status" [(ngModel)]="participant.status" required #statusRef="ngModel" [class.is-invalid]="statusRef.invalid && statusRef.touched">
-							<option value="EN_ATTENTE" selected>{{ PS.EN_ATTENTE }}</option>
+							<option [value]="PS.EN_ATTENTE">{{ PS.EN_ATTENTE }}</option>
 							<option value="PAYE_CHEQUE">{{ PS.PAYE_CHEQUE }}</option>
 							<option value="PAYE_ESPECES">{{ PS.PAYE_ESPECES }}</option>
 							<option value="VIREMENT_BANCAIRE">{{ PS.VIREMENT_BANCAIRE }}</option>
@@ -184,7 +184,7 @@
 							<option value="VIREMENT">{{ PMP.VIREMENT }}</option>
 							<option value="PAYPAL">{{ PMP.PAYPAL }}</option>
 							<option value="ESPECES">{{ PMP.ESPECES }}</option>
-							<option value="AUTRE">{{ PMP.AUTRE }}</option>
+							<option [value]="PMP.AUTRE">{{ PMP.AUTRE }}</option>
 						</select>
 					</div>
 				</div>
