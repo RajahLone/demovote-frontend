@@ -50,7 +50,8 @@ export class ProductionShort
   plateforme: string = "";
   commentaire: string = "";
   informationsPrivees: string = "";
-  numeroParticipant: number = 0;
+  numeroGestionnaire: number = 0;
+  nomGestionnaire: string = "";
   nomArchive: string = "";
   vignette!: string | any;
   numeroVersion: number = 0;

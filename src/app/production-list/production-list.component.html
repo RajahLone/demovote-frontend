@@ -9,58 +9,26 @@
 			</div>
 		</div>
 	</div>
-	<div class="card-body">
-		<table class="table table-sm">
-			<thead class="thead-dark">
-				<tr>
-					<th class="fs-6 label-nobr"><small>Type</small></th>
-					<th class="fs-6 label-nobr"><small>Titre</small></th>
-					<th class="fs-6 label-nobr"><small>Auteur(s) (/ Groupe(s))</small></th>
-					<th class="fs-6 label-nobr"><small>Plateforme</small></th>
-				</tr>
-			</thead>
-			<tbody>
-				@for (production of productions; track production.numeroProduction) {
-				<tr>
-					<td class="label-nobr fs-4">
-					
-					@if (PT[production.type] === PT.EXECUTABLE) { <i class="fa-solid fa-square-binary"></i> }
-					@else if (PT[production.type] === PT.GRAPHE) { <i class="fa-solid fa-image"></i> }
-					@else if (PT[production.type] === PT.MUSIQUE) { <i class="fa-solid fa-music"></i> }
-					@else if (PT[production.type] === PT.VIDEO) { <i class="fa-solid fa-video"></i> }
-					@else if (PT[production.type] === PT.TOPIC) { <i class="fa-solid fa-comment"></i> }
-					@else { <i class="fa-solid fa-question"></i> }
-					
-					&nbsp;&nbsp;</td>
-					<td class="label-nobr"><a (click)="formProduction(production.numeroProduction)" class="link-primary pointeur-souris text-decoration-none">{{ production.titre }}</a>&nbsp;&nbsp;</td>
-					<td class="label-nobr">{{ production.auteurs }} @if (production.groupes) { @if (production.groupes.length > 0) { &nbsp;/&nbsp;{{ production.groupes }} } }&nbsp;&nbsp;</td>
-					<td class="label-nobr">{{ production.plateforme }}&nbsp;&nbsp;</td>
-				</tr>
-				<tr>
-					<td class="label-nobr">&nbsp;</td>
-					<td class="label-nobr" colspan="3">
+	<div class="card-body"><div class="d-flex flex-wrap">
+		@for (production of productions; track production.numeroProduction) {
 
-						<div class="card mb-3">
-							<div class="row g-0">
-								<div class="col-sm-2">
-									<img src="{{ production.vignette }}" class="img-fluid rounded-start">
-								</div>
-								<div class="col-sm-10">
-									<div class="card-header">
-										<p class="card-text"><span class="text-primary pointeur-souris">{{ production.nomArchive }}</span>  <small>&nbsp;(v{{ production.numeroVersion }})</small></p>
-									</div>
-									<div class="card-body">
-										<p class="card-text"><small>{{ production.commentaire }}</small></p>
-										<p class="card-text text-warning"><small>{{ production.informationsPrivees }}</small></p>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</td>
-				</tr>
-				}
-			</tbody>
-		</table>
-	</div>
+			<div class="card" style="max-width:15rem;">
+				<img src="{{ production.vignette }}" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)">
+				<div class="card-header">
+  				<span class="card-title">@if (PT[production.type] === PT.EXECUTABLE) { <i class="fa-solid fa-square-binary"></i> } @else if (PT[production.type] === PT.GRAPHE) { <i class="fa-solid fa-image"></i> } @else if (PT[production.type] === PT.MUSIQUE) { <i class="fa-solid fa-music"></i> } @else if (PT[production.type] === PT.VIDEO) { <i class="fa-solid fa-video"></i> } @else if (PT[production.type] === PT.TOPIC) { <i class="fa-solid fa-comment"></i> } @else { <i class="fa-solid fa-question"></i> }
+	  			<a (click)="formProduction(production.numeroProduction)" class="text-primary pointeur-souris" style="margin-left:7px;">{{ production.titre }}</a></span><br/>
+				  <small><span class="text-muted">par</span> {{ production.auteurs }} @if (production.groupes) { @if (production.groupes.length > 0) { &nbsp;/&nbsp;{{ production.groupes }} } }</small>
+				</div>
+				<div class="card-body">
+				  <small><span class="text-muted">sur</span> {{ production.plateforme }}</small><br/>
+			  	<small>{{ production.commentaire }}</small><br/>
+				  <small class="text-warning">{{ production.informationsPrivees }}</small>
+        </div>
+				<div class="card-footer">
+				  <i class="fa-solid fa-download text-primary pointeur-souris" title="{{ production.nomArchive }} (v{{ production.numeroVersion }})"></i>
+					<i class="fa-solid fa-user-tie pointeur-souris" title="géré par {{ production.nomGestionnaire }}" style="margin-left:7px;"></i>
+				</div>
+			</div>
+		}
+	</div></div>
 </div>
