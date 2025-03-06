@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Participant, ParticipantStatusEnum, ParticipantModePaiementEnum } from '../participant';
+import { Participant, ParticipantEnum, ParticipantStatusList, ParticipantModePaiementList } from '../participant';
 import { ParticipantService } from '../participant.service';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms'; 
@@ -9,8 +9,8 @@ import { FormsModule, NgForm } from '@angular/forms';
 export class ParticipantCreateComponent implements OnInit
 {
   
-  PS = ParticipantStatusEnum;
-  PMP = ParticipantModePaiementEnum;
+  PS: ParticipantEnum[] = ParticipantStatusList;
+  PMP: ParticipantEnum[] = ParticipantModePaiementList;
 
   @ViewChild('formRef') participantForm!: NgForm;
   
@@ -18,11 +18,7 @@ export class ParticipantCreateComponent implements OnInit
   
   constructor(private participantService: ParticipantService, private router: Router) { }
 
-  ngOnInit(): void 
-  { 
-    this.participant.status = this.PS.EN_ATTENTE;
-    this.participant.modePaiement = this.PMP.AUTRE;
-  }
+  ngOnInit(): void { }
 
   private saveParticipant() { this.participantService.createParticipant(this.participant).subscribe({ next: () => { this.goToListParticipant(); }, error: (err: any) => { console.log(err); }, complete: () => { } }); }
 

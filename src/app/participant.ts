@@ -1,22 +1,24 @@
-export enum ParticipantStatusEnum
-{
-  EN_ATTENTE = "En attente", 
-  PAYE_CHEQUE = "Payé chèque", 
-  PAYE_ESPECES = "Payé espèces", 
-  VIREMENT_BANCAIRE = "Virement bancaire", 
-  VIREMENT_PAYPAL = "Virement Paypal", 
-  ORGA = "Orga", 
-  GUEST = "Guest",
-}
+export class ParticipantEnum { key!: string; value!: string; }
 
-export enum ParticipantModePaiementEnum
-{
-  CHEQUE = "Chèque",
-  VIREMENT = "Virement", 
-  PAYPAL = "Paypal", 
-  ESPECES = "Espèces", 
-  AUTRE = "Autre",
-}
+export const ParticipantStatusList: ParticipantEnum[] = 
+[ 
+  { key: "EN_ATTENTE", value: "En attente"}, 
+  { key: "PAYE_CHEQUE", value: "Payé chèque"}, 
+  { key: "PAYE_ESPECES", value: "Payé espèces"}, 
+  { key: "VIREMENT_BANCAIRE", value: "Virement bancaire"}, 
+  { key: "VIREMENT_PAYPAL", value: "Virement Paypal"}, 
+  { key: "ORGA", value: "Orga"}, 
+  { key: "GUEST", value: "Guest"} 
+];
+
+export const ParticipantModePaiementList: ParticipantEnum[] = 
+[ 
+  { key: "CHEQUE", value: "Chèque"}, 
+  { key: "VIREMENT", value: "Virement"}, 
+  { key: "PAYPAL", value: "Paypal"}, 
+  { key: "ESPECES", value: "Espèces"}, 
+  { key: "AUTRE", value: "Autre"}
+];
 
 export class Participant 
 {
@@ -37,7 +39,7 @@ export class Participant
   pays: string = "";
   numeroTelephone: string = "";
   email: string = "";
-  status: ParticipantStatusEnum = ParticipantStatusEnum.EN_ATTENTE;
+  status: string = "EN_ATTENTE";
   withMachine: boolean = true;
   commentaire: string = "";
   hereDay1: boolean = false;
@@ -45,7 +47,7 @@ export class Participant
   hereDay3: boolean = false;
   sleepingOnSite: boolean = true;
   useAmigabus: boolean = false;
-  modePaiement: ParticipantModePaiementEnum = ParticipantModePaiementEnum.CHEQUE;
+  modePaiement: string = "CHEQUE";
   dateInscription: string = "";
   sommeRecue: string = "";
   arrived: boolean = false;

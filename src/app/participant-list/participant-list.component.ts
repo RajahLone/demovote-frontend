@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Participant } from '../participant';
+import { Participant, ParticipantEnum, ParticipantStatusList } from '../participant';
 import { ParticipantService } from '../participant.service';
 
 @Component({ selector: 'app-participant-list', imports: [], templateUrl: './participant-list.component.html', styleUrl: './participant-list.component.css' })
@@ -8,6 +8,8 @@ import { ParticipantService } from '../participant.service';
 export class ParticipantListComponent implements OnInit  
 {
     
+  PS: ParticipantEnum[] = ParticipantStatusList;
+
   participants: Participant[] = [];
 
   constructor(private participantService: ParticipantService, private router: Router) { }

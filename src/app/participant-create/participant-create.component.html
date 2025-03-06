@@ -96,13 +96,7 @@
 				<div class="col-sm-10">
 					<div class="form-group field-separate">
 						<select class="form-select form-select-sm" id="status" name="status" [(ngModel)]="participant.status" required #statusRef="ngModel" [class.is-invalid]="statusRef.invalid && statusRef.touched">
-							<option [value]="PS.EN_ATTENTE">{{ PS.EN_ATTENTE }}</option>
-							<option value="PAYE_CHEQUE">{{ PS.PAYE_CHEQUE }}</option>
-							<option value="PAYE_ESPECES">{{ PS.PAYE_ESPECES }}</option>
-							<option value="VIREMENT_BANCAIRE">{{ PS.VIREMENT_BANCAIRE }}</option>
-							<option value="VIREMENT_PAYPAL">{{ PS.VIREMENT_PAYPAL }}</option>
-							<option value="ORGA">{{ PS.ORGA }}</option>
-							<option value="GUEST">{{ PS.GUEST }}</option>
+							@for (ps of PS; track ps.key) { <option [value]="ps.key">{{ ps.value }}</option> }
 						</select>
 					</div>
 				</div>
@@ -180,11 +174,7 @@
 				<div class="col-sm-10">
 					<div class="form-group field-separate">
 						<select class="form-select form-select-sm" id="modePaiement" name="modePaiement" [(ngModel)]="participant.modePaiement" required #modePaiementRef="ngModel">
-							<option value="CHEQUE">{{ PMP.CHEQUE }}</option>
-							<option value="VIREMENT">{{ PMP.VIREMENT }}</option>
-							<option value="PAYPAL">{{ PMP.PAYPAL }}</option>
-							<option value="ESPECES">{{ PMP.ESPECES }}</option>
-							<option [value]="PMP.AUTRE">{{ PMP.AUTRE }}</option>
+							@for (pmp of PMP; track pmp.key) { <option [value]="pmp.key">{{ pmp.value }}</option> }
 						</select>
 					</div>
 				</div>

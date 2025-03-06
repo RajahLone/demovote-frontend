@@ -1,18 +1,20 @@
 
-export enum ProductionTypeEnum
-{
-  EXECUTABLE = "Exécutable",
-  GRAPHE = "Graphe", 
-  MUSIQUE = "Musique", 
-  VIDEO = "Vidéo", 
-  TOPIC = "Topic",
-  AUTRE = "Autre"
-}
+export class ProductionEnum { key!: string; value!: string; }
+
+export const ProductionTypeList: ProductionEnum[] = 
+[ 
+  { key: "EXECUTABLE", value: "Exécutable"}, 
+  { key: "GRAPHE", value: "Graphe"}, 
+  { key: "MUSIQUE", value: "Musique"}, 
+  { key: "VIDEO", value: "Vidéo"}, 
+  { key: "TOPIC", value: "Topic"}, 
+  { key: "AUTRE", value: "Autre"} 
+];
 
 export class Production 
 {
   numeroProduction: number = 0;
-  type: ProductionTypeEnum = ProductionTypeEnum.EXECUTABLE;
+  type: string = "AUTRE";
   titre: string = "";
   auteurs: string = "";
   groupes: string = "";
@@ -26,24 +28,13 @@ export class Production
   numeroVersion: number = 0;
 }
 
-
-export enum ProductionTypeKeys
-{
-  EXECUTABLE = "EXECUTABLE",
-  GRAPHE = "GRAPHE", 
-  MUSIQUE = "MUSIQUE", 
-  VIDEO = "VIDEO", 
-  TOPIC = "TOPIC",
-  AUTRE = "AUTRE"
-}
-
 export class ProductionShort
 {
   dateCreation: string = "";
   dateModification: string = "";
   numeroProduction: number = 0;
   adresseIP: string = "";
-  type: ProductionTypeKeys = ProductionTypeKeys.EXECUTABLE;
+  type: string = "AUTRE";
   titre: string = "";
   auteurs: string = "";
   groupes: string = "";
@@ -55,4 +46,12 @@ export class ProductionShort
   nomArchive: string = "";
   vignette!: string | any;
   numeroVersion: number = 0;
+}
+
+export class ProductionFile
+{
+  numeroProduction: number = 0;
+  titre: string = "";
+  nomArchive: string = "";
+  archive!: string | any;
 }

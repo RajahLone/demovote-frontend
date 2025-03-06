@@ -1,0 +1,29 @@
+<br />
+<form #formRef="ngForm" (ngSubmit)="addProductionFile()" class="needs-validation">
+	<div class="card shadow">
+		<div class="card-header">Changement de l'archive d'une production</div>
+		<div class="card-header shadow-sm">
+			<button (click)="goToListProduction()" class="btn btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;Retour</button>
+		</div>
+		<div class="card-body">
+
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Titre</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control form-control-sm field-separate" id="titre" name="titre" [(ngModel)]="production.titre" disabled>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm label-nobr">Archive</label>
+				<div class="col-sm-10">
+					<input type="file" class="form-control form-control-sm field-separate" id="archive" name="archive" accept="application/zip" (change)="onArchiveSelected($event)">
+				</div>
+			</div>
+
+		</div>
+		<div class="card-footer">
+			<button type="button" class="btn btn-success btn-sm text-left" type="submit" [disabled]="formRef.invalid"><i class="fa-solid fa-plus"></i>&nbsp;Téléverser</button>
+		</div>
+	</div>
+</form>

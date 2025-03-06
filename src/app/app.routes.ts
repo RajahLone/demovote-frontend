@@ -16,6 +16,7 @@ import { ProductionListComponent } from './production-list/production-list.compo
 import { ProductionCreateComponent } from './production-create/production-create.component';
 import { ProductionDetailsComponent } from './production-details/production-details.component';
 import { ProductionUpdateComponent } from './production-update/production-update.component';
+import { ProductionUploadComponent } from './production-upload/production-upload.component';
 
 export const routes: Routes = [  
   {path: '', redirectTo: 'variable-list', pathMatch: 'full'},
@@ -35,6 +36,7 @@ export const routes: Routes = [
   {path: 'production-create', component: ProductionCreateComponent},
   {path: 'production-details/:numeroProduction', component: ProductionDetailsComponent},
   {path: 'production-update/:numeroProduction', component: ProductionUpdateComponent},
+  {path: 'production-upload/:numeroProduction', component: ProductionUploadComponent},
 ];
 
 @NgModule({

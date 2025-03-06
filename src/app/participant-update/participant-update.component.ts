@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Participant, ParticipantStatusEnum, ParticipantModePaiementEnum } from '../participant';
+import { Participant, ParticipantEnum, ParticipantStatusList, ParticipantModePaiementList } from '../participant';
 import { ParticipantService } from '../participant.service';
 import { FormsModule, NgForm } from '@angular/forms'; 
 
@@ -9,8 +9,8 @@ import { FormsModule, NgForm } from '@angular/forms';
 export class ParticipantUpdateComponent implements OnInit
 {
   
-  PS = ParticipantStatusEnum;
-  PMP = ParticipantModePaiementEnum;
+  PS: ParticipantEnum[] = ParticipantStatusList;
+  PMP: ParticipantEnum[] = ParticipantModePaiementList;
 
   @ViewChild('formRef') participantForm!: NgForm;
 

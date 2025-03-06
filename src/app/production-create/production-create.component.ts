@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Production, ProductionTypeEnum } from '../production';
+import { Production, ProductionEnum, ProductionTypeList } from '../production';
 import { ProductionService } from '../production.service';
 import { ParticipantShort } from '../participant';
 import { ParticipantService } from '../participant.service';
@@ -13,8 +13,8 @@ export class ProductionCreateComponent implements OnInit
   
   participants: ParticipantShort[] = [];
 
-  PT = ProductionTypeEnum;
-
+  types: ProductionEnum[] = ProductionTypeList;
+  
   @ViewChild('formRef') productionForm!: NgForm;
   
   production: Production = new Production();
@@ -23,7 +23,6 @@ export class ProductionCreateComponent implements OnInit
 
   ngOnInit(): void 
   { 
-    this.production.type = this.PT.EXECUTABLE;
     this.retreiveParticipants();
   }
 
