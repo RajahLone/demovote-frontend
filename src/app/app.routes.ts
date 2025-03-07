@@ -19,7 +19,7 @@ import { ProductionUpdateComponent } from './production-update/production-update
 import { ProductionUploadComponent } from './production-upload/production-upload.component';
 
 export const routes: Routes = [  
-  {path: '', redirectTo: 'variable-list', pathMatch: 'full'},
+  {path: '', redirectTo: 'production-list', pathMatch: 'full'},
   {path: 'variable-list', component: VariableListComponent},
   {path: 'variable-create', component: VariableCreateComponent},
   {path: 'variable-details/:numeroVariable', component: VariableDetailsComponent},

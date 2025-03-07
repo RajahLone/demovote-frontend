@@ -1,3 +1,31 @@
-<div class = "container">
-    <router-outlet></router-outlet>
+<main>
+<div class="row">
+  <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" style="width: 4.5rem;">
+		<ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+			<li class="nav-item"><a href="#" class="nav-link active py-3 border-bottom rounded-0" aria-current="page" title="Accueil" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi pe-none fa-solid fa-home" aria-label="Accueil"></i></a></li>
+		  <li class="dropdown border-top"> 
+			  <a href="#" class="d-flex align-items-center justify-content-center p-3 border-bottom rounded-0 link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi pe-none fa-solid fa-user" aria-label="Compte"></i></a>
+			  <ul class="dropdown-menu text-small shadow">
+				  <li><a class="dropdown-item" href="#">Se connecter...</a></li>
+				  <li><a class="dropdown-item" href="#">Profil</a></li>
+			  	<li><hr class="dropdown-divider"></li>
+	 	  		<li><a class="dropdown-item" href="#">Se déconnecter</a></li>
+	  		</ul>
+  		</li>
+			<li><a href="#" class="nav-link py-3 border-bottom rounded-0" title="Planning" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi pe-none fa-solid fa-clock" aria-label="Planning"></i></a></li>
+			<li><a href="#" class="nav-link py-3 border-bottom rounded-0" title="Caméras" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi pe-none fa-solid fa-eye" aria-label="Caméras"></i></a></li>
+			<li><a href="#" class="nav-link py-3 border-bottom rounded-0" title="Messagerie" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi pe-none fa-solid fa-comments" aria-label="Messagerie"></i></a></li>
+			<li><a href="/participant-list" class="nav-link py-3 border-bottom rounded-0" title="Participants" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi pe-none fa-solid fa-users" aria-label="Participants"></i></a></li>
+			<li><a href="/variable-list" class="nav-link py-3 border-bottom rounded-0" title="Paramétrages" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi pe-none fa-solid fa-sliders-h" aria-label="Paramétrages"></i></a></li>
+			<li><a href="/categorie-list" class="nav-link py-3 border-bottom rounded-0" title="Catégories" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi pe-none fa-solid fa-layer-group" aria-label="Catégories"></i></a></li>
+			<li><a href="/production-list" class="nav-link py-3 border-bottom rounded-0" title="Productions" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi pe-none fa-solid fa-save" aria-label="Productions"></i></a></li>
+			<li><a href="#" class="nav-link py-3 border-bottom rounded-0" title="Présentations" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi pe-none fa-solid fa-eye" aria-label="Présentations"></i></a></li>
+			<li><a href="#" class="nav-link py-3 border-bottom rounded-0" title="Voter" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi pe-none fa-solid fa-vote-yea" aria-label="Voter"></i></a></li>
+			<li><a href="#" class="nav-link py-3 border-bottom rounded-0" title="Résultats" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi pe-none fa-solid fa-trophy" aria-label="Résultats"></i></a></li>
+		</ul>
+	</div>
+	<div class="col">
+		<router-outlet></router-outlet>
+	</div>
 </div>
+</main>
