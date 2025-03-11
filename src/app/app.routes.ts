@@ -1,25 +1,28 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { VariableListComponent } from './variable-list/variable-list.component';
-import { VariableCreateComponent } from './variable-create/variable-create.component';
-import { VariableDetailsComponent } from './variable-details/variable-details.component';
-import { VariableUpdateComponent } from './variable-update/variable-update.component';
-import { CategorieListComponent } from './categorie-list/categorie-list.component';
-import { CategorieCreateComponent } from './categorie-create/categorie-create.component';
-import { CategorieDetailsComponent } from './categorie-details/categorie-details.component';
-import { CategorieUpdateComponent } from './categorie-update/categorie-update.component';
-import { ParticipantListComponent } from './participant-list/participant-list.component';
-import { ParticipantCreateComponent } from './participant-create/participant-create.component';
-import { ParticipantDetailsComponent } from './participant-details/participant-details.component';
-import { ParticipantUpdateComponent } from './participant-update/participant-update.component';
-import { ProductionListComponent } from './production-list/production-list.component';
-import { ProductionCreateComponent } from './production-create/production-create.component';
-import { ProductionDetailsComponent } from './production-details/production-details.component';
-import { ProductionUpdateComponent } from './production-update/production-update.component';
-import { ProductionUploadComponent } from './production-upload/production-upload.component';
+import { LoginComponent } from './composants/login/login.component';    
+import { AuthGuard } from './guards/auth.guard';    
+import { VariableListComponent } from './composants/variable-list/variable-list.component';
+import { VariableCreateComponent } from './composants/variable-create/variable-create.component';
+import { VariableDetailsComponent } from './composants/variable-details/variable-details.component';
+import { VariableUpdateComponent } from './composants/variable-update/variable-update.component';
+import { CategorieListComponent } from './composants/categorie-list/categorie-list.component';
+import { CategorieCreateComponent } from './composants/categorie-create/categorie-create.component';
+import { CategorieDetailsComponent } from './composants/categorie-details/categorie-details.component';
+import { CategorieUpdateComponent } from './composants/categorie-update/categorie-update.component';
+import { ParticipantListComponent } from './composants/participant-list/participant-list.component';
+import { ParticipantCreateComponent } from './composants/participant-create/participant-create.component';
+import { ParticipantDetailsComponent } from './composants/participant-details/participant-details.component';
+import { ParticipantUpdateComponent } from './composants/participant-update/participant-update.component';
+import { ProductionListComponent } from './composants/production-list/production-list.component';
+import { ProductionCreateComponent } from './composants/production-create/production-create.component';
+import { ProductionDetailsComponent } from './composants/production-details/production-details.component';
+import { ProductionUpdateComponent } from './composants/production-update/production-update.component';
+import { ProductionUploadComponent } from './composants/production-upload/production-upload.component';
 
 export const routes: Routes = [  
   {path: '', redirectTo: 'production-list', pathMatch: 'full'},
+  {path: 'login', component: LoginComponent},
   {path: 'variable-list', component: VariableListComponent},
   {path: 'variable-create', component: VariableCreateComponent},
   {path: 'variable-details/:numeroVariable', component: VariableDetailsComponent},
@@ -41,7 +44,8 @@ export const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],                                                                                                                                                                                                                                                                                                          
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 
 export class AppRoutingModule { }
