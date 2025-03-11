@@ -1,8 +1,8 @@
 <form #formRef="ngForm" (ngSubmit)="addProductionFile()" class="needs-validation">
-	<div class="card shadow center" style="min-width:40rem;"col-sm-4>
+	<div class="card shadow center">
 		<div class="card-header">Changement de l'archive d'une production</div>
 		<div class="card-header shadow-sm">
-			<button (click)="goToListProduction()" class="btn btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;Retour</button>
+			<button (click)="goToListProduction()" class="btn bg-gradient btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;Retour</button>
 		</div>
 		<div class="card-body">
 
@@ -22,7 +22,7 @@
 
 		</div>
 		<div class="card-footer">
-			<button type="button" class="btn btn-success btn-sm text-left" type="submit" [disabled]="formRef.invalid"><i class="fa-solid fa-plus"></i>&nbsp;Téléverser</button>
+			<button type="button" class="btn bg-gradient btn-success btn-sm text-left" type="submit" [disabled]="formRef.invalid"><i class="fa-solid fa-plus"></i>&nbsp;Téléverser</button>
 		</div>
 	</div>
 </form>

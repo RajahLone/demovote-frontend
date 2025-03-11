@@ -1,8 +1,8 @@
 <form id="formVariable" #formRef="ngForm" class="needs-validation">
-	<div class="card shadow center" style="min-width:40rem;">
+	<div class="card shadow center">
 		<div class="card-header">Fiche d'une variable</div>
 		<div class="card-header shadow-sm">
-			<button type="button" (click)="goToListVariable()" class="btn btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;Retour</button>
+			<button type="button" (click)="goToListVariable()" class="btn bg-gradient btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;Retour</button>
 		</div>
 		<div class="card-body">
 
@@ -51,8 +51,8 @@
 
 		</div>
 		<div class="card-footer">
-			<button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalModifier" [disabled]="formRef.invalid"><i class="fa-solid fa-check"></i>&nbsp;Modifier</button>
-			<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEffacer" style="float: right;"><i class="fa-solid fa-trash"></i>&nbsp;Effacer</button>
+			<button type="button" class="btn bg-gradient btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalModifier" [disabled]="formRef.invalid"><i class="fa-solid fa-check"></i>&nbsp;Modifier</button>
+			<button type="button" class="btn bg-gradient btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEffacer" style="float: right;"><i class="fa-solid fa-trash"></i>&nbsp;Effacer</button>
 		</div>
 	</div>
 </form>
@@ -65,8 +65,8 @@
 			</div>
 			<div class="modal-body">Actualiser cet enregistrement ?</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
-				<button type="button" class="btn btn-warning btn-sm" (click)="updateConfirmed()" data-bs-dismiss="modal">Confirmer</button>
+				<button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
+				<button type="button" class="btn bg-gradient btn-warning btn-sm" (click)="updateConfirmed()" data-bs-dismiss="modal">Confirmer</button>
 			</div>
 		</div>
 	</div>
@@ -80,8 +80,8 @@
 			</div>
 			<div class="modal-body">Effacer cet enregistrement ?</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
-				<button type="button" class="btn btn-danger btn-sm" (click)="deleteConfirmed()" data-bs-dismiss="modal">Confirmer</button>
+				<button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
+				<button type="button" class="btn bg-gradient btn-danger btn-sm" (click)="deleteConfirmed()" data-bs-dismiss="modal">Confirmer</button>
 			</div>
 		</div>
 	</div>

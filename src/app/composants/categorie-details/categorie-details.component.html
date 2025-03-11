@@ -1,7 +1,7 @@
-<div class="card shadow center" style="min-width:40rem;">
+<div class="card shadow center">
 	<div class="card-header">Fiche d'une catégorie</div>
 	<div class="card-header shadow-sm">
-		<button (click)="goToListCategorie()" class="btn btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;Retour</button>
+		<button (click)="goToListCategorie()" class="btn bg-gradient btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;Retour</button>
 	</div>
 	<div class="card-body">
 
@@ -29,7 +29,7 @@
 
 		<div class="form-group row">
 			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Numéro d'ordre</label>
-			<div class="col-sm-8">
+			<div class="col-sm-2">
 				<input type="text" class="form-control form-control-sm field-separate" id="numeroOrdre" name="numeroOrdre" [(ngModel)]="categorie.numeroOrdre" disabled>
 			</div>
 		</div>
@@ -86,7 +86,7 @@
 
 	</div>
 	<div class="card-footer">
-		<button type="button" (click)="updateCategorie(categorie.numeroCategorie)" class="btn btn-primary btn-sm"><i class="fa-solid fa-pen"></i>&nbsp;Editer</button>
+		<button type="button" (click)="updateCategorie(categorie.numeroCategorie)" class="btn bg-gradient btn-primary btn-sm"><i class="fa-solid fa-pen"></i>&nbsp;Editer</button>
 	</div>
 </div>
 
