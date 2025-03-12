@@ -1,8 +1,8 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppComponent } from '../../app.component';
 import { Categorie } from '../../interfaces/categorie';
 import { CategorieService } from '../../services/categorie.service';
-import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms'; 
 
 @Component({ selector: 'app-categorie-create', imports: [FormsModule], templateUrl: './categorie-create.component.html', styleUrl: './categorie-create.component.css'})

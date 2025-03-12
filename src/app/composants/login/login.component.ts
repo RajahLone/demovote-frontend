@@ -1,8 +1,8 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';  
 import { AppComponent } from '../../app.component';
-import { Login } from '../../interfaces/login';  
-import { AuthService } from '../../services/auth.service' 
+import { User } from '../../interfaces/user';  
+import { AccountService } from '../../services/account.service' 
 import { FormsModule, NgForm, NgModel } from '@angular/forms'; 
 
 @Component({ selector: 'app-login', imports: [FormsModule], templateUrl: './login.component.html', styleUrl: './login.component.css' })
@@ -14,11 +14,11 @@ export class LoginComponent implements OnInit, AfterViewInit
   @ViewChild('userRef') userField!: NgModel;
   @ViewChild('passRef') passField!: NgModel;
 
-  identifiants: Login = { userid: "", userpwd: "" }
+  identifiants: User = new User();
  
-  constructor(private router : Router, private authService : AuthService, private application: AppComponent) { }
+  constructor(private router : Router, private accountService : AccountService, private application: AppComponent) { }
   
-  ngOnInit() { this.authService.deconnexion(); } 
+  ngOnInit() { } 
   
   ngAfterViewInit() { this.application.menuActivateLogin(); }
  
@@ -26,11 +26,7 @@ export class LoginComponent implements OnInit, AfterViewInit
   {  
     if (this.loginForm.valid) 
     {
-      this.authService.connexion(this.identifiants);  
-      
-      localStorage.setItem('isConnecte', "true");  
-      localStorage.setItem('token', "from_API_javaspring");  
-      
+      this.accountService.login(this.identifiants);  
       this.router.navigate(['/']);  
     }
   } 

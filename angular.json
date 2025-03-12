@@ -5,7 +5,7 @@
   "projects": {
     "demovote-frontend": {
       "projectType": "application",
-      "schematics": { "@schematics/angular": { "component": { "spec": false }, "module": { "spec": false }, "service": { "spec": false } } },
+      "schematics": { "@schematics/angular": { "component": { "skipTests": true, "style": "css" }, "module": { "skipTests": true, "style": "css" }, "service": { "skipTests": true, "style": "css" } } },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",

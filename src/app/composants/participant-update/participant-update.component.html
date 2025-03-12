@@ -57,8 +57,8 @@
 
 		<div class="form-group row">
 			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Délai avant déconnexion</label>
-			<div class="col-sm-8">
-				<input type="text" class="form-control form-control-sm field-separate" id="delaiDeconnexion" name="delaiDeconnexion" [(ngModel)]="participant.delaiDeconnexion">
+			<div class="col-sm-2">
+				<input type="number" min="5" max="60" class="form-control form-control-sm field-separate" id="delaiDeconnexion" name="delaiDeconnexion" [(ngModel)]="participant.delaiDeconnexion">
 			</div>
 		</div>
 
@@ -108,7 +108,7 @@
 			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Status</label>
 			<div class="col-sm-8">
 				<div class="form-group field-separate">
-					<select class="form-select form-select-sm" id="status" name="status" [(ngModel)]="participant.status">
+					<select class="form-select form-select-sm" id="statut" name="statut" [(ngModel)]="participant.statut">
 							@for (ps of PS; track ps.key) { <option [value]="ps.key">{{ ps.value }}</option> }
 					</select>
 				</div>

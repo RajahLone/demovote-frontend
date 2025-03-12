@@ -16,9 +16,15 @@ export class ProductionListComponent implements OnInit, AfterViewInit
 
   constructor(private productionService: ProductionService, private router: Router, private application: AppComponent) { }
 
-  ngOnInit(): void { this.retreiveDatas(); }
+  ngOnInit(): void 
+  {
+    this.retreiveDatas(); 
+  }
   
-  ngAfterViewInit() { this.application.menuActivateProds(); }
+  ngAfterViewInit() 
+  {
+    this.application.menuActivateProds(); 
+  }
 
   private retreiveDatas() { this.productionService.getListProduction().subscribe(data => { this.productions = data; }); }
 

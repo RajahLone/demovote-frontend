@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/co
 import { RouterOutlet } from '@angular/router';
 import { FormsModule} from '@angular/forms';
 import { Router } from '@angular/router';  
-import { AuthService } from './services/auth.service';  
+import { AccountService } from './services/account.service';  
 
 declare var $: any;
 
@@ -11,6 +11,8 @@ declare var $: any;
 export class AppComponent implements OnInit
 {
   title = 'demovote';
+
+  logged: boolean = false;
 
   @ViewChild('menu_home', {static: false}) menuItemHome!: ElementRef;
   @ViewChild('menu_login', {static: false}) menuItemLogin!: ElementRef;
@@ -27,20 +29,18 @@ export class AppComponent implements OnInit
   @ViewChild('menu_results', {static: false}) menuItemResults!: ElementRef;
   @ViewChild('menu_params', {static: false}) menuItemParams!: ElementRef;
 
-  tok!: string | null;  
-
-  constructor(private router: Router, private authService: AuthService, private renderer: Renderer2) { }  
+  constructor(private router: Router, private accountService: AccountService, private renderer: Renderer2) { }  
   
   ngOnInit() 
   {
     $(document).ready(function() { $('[data-bs-toggle="tooltip"]').tooltip();});
 
-    this.tok = localStorage.getItem('token');  
+    this.logged = this.accountService.isLogged();
 	}
 
   logout() 
   {  
-    this.authService.deconnexion();  
+    this.accountService.logout();  
     this.router.navigate(['/']);  
   } 
   

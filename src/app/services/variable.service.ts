@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
+import { Environnement } from '../env';
 import { Variable, VariableType } from '../interfaces/variable';
 
 @Injectable({ providedIn: 'root' })
@@ -8,7 +9,7 @@ import { Variable, VariableType } from '../interfaces/variable';
 export class VariableService 
 {
 
-  private baseURL = "http://localhost:8080/demovote-api/v1/variable";
+  private baseURL = Environnement.apiUrl + "variable";
 
   constructor(private httpClient: HttpClient) { }
   

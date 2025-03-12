@@ -1,8 +1,8 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { Variable } from '../../interfaces/variable';
-import { VariableService } from '../../services/variable.service';
 import { AppComponent } from '../../app.component';
 import { Router } from '@angular/router';
+import { Variable } from '../../interfaces/variable';
+import { VariableService } from '../../services/variable.service';
 import { FormsModule, NgForm, NgModel } from '@angular/forms'; 
 
 @Component({ selector: 'app-variable-create', imports: [FormsModule], templateUrl: './variable-create.component.html', styleUrl: './variable-create.component.css' })

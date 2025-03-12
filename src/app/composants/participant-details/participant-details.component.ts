@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppComponent } from '../../app.component';
-import { Participant, ParticipantEnum, ParticipantStatusList, ParticipantModePaiementList } from '../../interfaces/participant';
+import { Participant, ParticipantEnum, ParticipantStatutList, ParticipantModePaiementList } from '../../interfaces/participant';
 import { ParticipantService } from '../../services/participant.service';
 import { FormsModule } from '@angular/forms'; 
 
@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 export class ParticipantDetailsComponent implements OnInit, AfterViewInit 
 {
   
-  PS: ParticipantEnum[] = ParticipantStatusList;
+  PS: ParticipantEnum[] = ParticipantStatutList;
   PMP: ParticipantEnum[] = ParticipantModePaiementList;
  
   numeroParticipant: number = 0;

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
+import { Environnement } from '../env';
 import { Participant, ParticipantShort } from '../interfaces/participant';
 
 @Injectable({ providedIn: 'root' })
@@ -8,7 +9,7 @@ import { Participant, ParticipantShort } from '../interfaces/participant';
 export class ParticipantService 
 {
 
-  private baseURL = "http://localhost:8080/demovote-api/v1/participant";
+  private baseURL = Environnement.apiUrl + "participant";
 
   constructor(private httpClient: HttpClient) { }
   

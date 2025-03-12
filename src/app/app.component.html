@@ -1,25 +1,28 @@
 <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" id="sidenav">
   <ul class="nav nav-pills nav-flush flex-column text-center">
-	 	<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_home title="Accueil" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="fa-solid fa-home" aria-label="Accueil"></i></a></li>
+	 	<li><a href="/home" class="nav-link rounded-0 bg-gradient" #menu_home title="Accueil" data-bs-toggle="tooltip" data-bs-placement="right"><i class="fa-solid fa-home" aria-label="Accueil"></i></a></li>
+@if (!this.logged) {
+		<li><a href="/login" class="nav-link rounded-0 bg-gradient" #menu_login title="Login" data-bs-toggle="tooltip" data-bs-placement="right"><i class="fa-solid fa-right-to-bracket" aria-label="Login"></i></a></li>
+}
+@if (this.logged) {		
+		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_account title="Compte" data-bs-toggle="tooltip" data-bs-placement="right"><i class="fa-solid fa-user" aria-label="Compte"></i></a></li>
+		<li><a href="/logout" class="nav-link rounded-0 bg-gradient" #menu_logout title="Logout" data-bs-toggle="tooltip" data-bs-placement="right"><i class="fa-solid fa-right-from-bracket" aria-label="Logout"></i></a></li>
+}
+		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_agenda title="Planning" data-bs-toggle="tooltip" data-bs-placement="right"><i class="fa-solid fa-clock" aria-label="Planning"></i></a></li>
+		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_webcams title="Caméras" data-bs-toggle="tooltip" data-bs-placement="right"><i class="fa-solid fa-eye" aria-label="Caméras"></i></a></li>
+@if (this.logged) {		
+		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_chat title="Messagerie" data-bs-toggle="tooltip" data-bs-placement="right"><i class="fa-solid fa-comments" aria-label="Messagerie"></i></a></li>
+}
+		<li><a href="/participant-list" class="nav-link rounded-0 bg-gradient" #menu_users title="Participants" data-bs-toggle="tooltip" data-bs-placement="right"><i class="fa-solid fa-users" aria-label="Participants"></i></a></li>
 
-		<li><a href="/login" class="nav-link rounded-0 bg-gradient" #menu_login title="Login" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="fa-solid fa-right-to-bracket" aria-label="Login"></i></a></li>
-		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_account title="Compte" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="fa-solid fa-user" aria-label="Compte"></i></a></li>
-		<li><a href="/logout" class="nav-link rounded-0 bg-gradient" #menu_logout title="Logout" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="fa-solid fa-right-from-bracket" aria-label="Logout"></i></a></li>
+		<li><a href="/categorie-list" class="nav-link rounded-0 bg-gradient" #menu_compos title="Catégories" data-bs-toggle="tooltip" data-bs-placement="right"><i class="fa-solid fa-layer-group" aria-label="Catégories"></i></a></li>
+		<li><a href="/production-list" class="nav-link rounded-0 bg-gradient" #menu_prods title="Productions" data-bs-toggle="tooltip" data-bs-placement="right"><i class="fa-solid fa-save" aria-label="Productions"></i></a></li>
 
-		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_agenda title="Planning" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="fa-solid fa-clock" aria-label="Planning"></i></a></li>
-		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_webcams title="Caméras" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="fa-solid fa-eye" aria-label="Caméras"></i></a></li>
-		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_chat title="Messagerie" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="fa-solid fa-comments" aria-label="Messagerie"></i></a></li>
+		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_shows title="Présentations" data-bs-toggle="tooltip" data-bs-placement="right"><i class="fa-solid fa-display" aria-label="Présentations"></i></a></li>
+		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_votes title="Voter" data-bs-toggle="tooltip" data-bs-placement="right"><i class="fa-solid fa-vote-yea" aria-label="Voter"></i></a></li>
+		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_results title="Résultats" data-bs-toggle="tooltip" data-bs-placement="right"><i class="fa-solid fa-trophy" aria-label="Résultats"></i></a></li>
 
-		<li><a href="/participant-list" class="nav-link rounded-0 bg-gradient" #menu_users title="Participants" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="fa-solid fa-users" aria-label="Participants"></i></a></li>
-
-		<li><a href="/categorie-list" class="nav-link rounded-0 bg-gradient" #menu_compos title="Catégories" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="fa-solid fa-layer-group" aria-label="Catégories"></i></a></li>
-		<li><a href="/production-list" class="nav-link rounded-0 bg-gradient" #menu_prods title="Productions" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="fa-solid fa-save" aria-label="Productions"></i></a></li>
-
-		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_shows title="Présentations" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="fa-solid fa-display" aria-label="Présentations"></i></a></li>
-		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_votes title="Voter" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="fa-solid fa-vote-yea" aria-label="Voter"></i></a></li>
-		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_results title="Résultats" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="fa-solid fa-trophy" aria-label="Résultats"></i></a></li>
-
-		<li><a href="/variable-list" class="nav-link rounded-0 bg-gradient" #menu_params title="Paramétrages" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="fa-solid fa-sliders-h" aria-label="Paramétrages"></i></a></li>
+		<li><a href="/variable-list" class="nav-link rounded-0 bg-gradient" #menu_params title="Paramétrages" data-bs-toggle="tooltip" data-bs-placement="right"><i class="fa-solid fa-sliders-h" aria-label="Paramétrages"></i></a></li>
 	</ul>
 </div>
 <div id="main">

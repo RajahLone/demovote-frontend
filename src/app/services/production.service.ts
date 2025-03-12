@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http'
 import { Observable } from 'rxjs';
+import { Environnement } from '../env';
 import { Production, ProductionShort, ProductionFile } from '../interfaces/production';
 
 @Injectable({ providedIn: 'root' })
@@ -8,7 +9,7 @@ import { Production, ProductionShort, ProductionFile } from '../interfaces/produ
 export class ProductionService 
 {
 
-  private baseURL = "http://localhost:8080/demovote-api/v1/production";
+  private baseURL = Environnement.apiUrl + "production";
 
   constructor(private httpClient: HttpClient) { }
   

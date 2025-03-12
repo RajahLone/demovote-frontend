@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
+import { Environnement } from '../env';
 import { Categorie } from '../interfaces/categorie';
 
 @Injectable({ providedIn: 'root' })
@@ -8,7 +9,7 @@ import { Categorie } from '../interfaces/categorie';
 export class CategorieService 
 {
 
-  private baseURL = "http://localhost:8080/demovote-api/v1/categorie";
+  private baseURL = Environnement.apiUrl + "categorie";
 
   constructor(private httpClient: HttpClient) { }
   

@@ -1,6 +1,6 @@
 export class ParticipantEnum { key!: string; value!: string; }
 
-export const ParticipantStatusList: ParticipantEnum[] = 
+export const ParticipantStatutList: ParticipantEnum[] = 
 [ 
   { key: "EN_ATTENTE", value: "En attente"}, 
   { key: "PAYE_CHEQUE", value: "Payé chèque"}, 
@@ -28,10 +28,8 @@ export class Participant
   nom: string = "";
   prenom: string = "";
   pseudonyme: string = "";
-  groupe: string = "";
   motDePasse: string = "";
-  passwordExpired: boolean = false;
-  dateExpiration: string = "";
+  groupe: string = "";
   delaiDeconnexion: number = 15;
   adresse: string = "";
   codePostal: string = "";
@@ -39,7 +37,7 @@ export class Participant
   pays: string = "";
   numeroTelephone: string = "";
   email: string = "";
-  status: string = "EN_ATTENTE";
+  statut: string = "EN_ATTENTE";
   withMachine: boolean = true;
   commentaire: string = "";
   hereDay1: boolean = false;
@@ -56,7 +54,7 @@ export class Participant
 export class ParticipantShort
 {
   numeroParticipant: number = 0;
+  pseudonyme: string = "";
   nom: string = "";
   prenom: string = "";
-  pseudonyme: string = "";
 }

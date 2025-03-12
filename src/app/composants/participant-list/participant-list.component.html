@@ -14,28 +14,28 @@
 				<tr>
 					<th class="fs-6 label-nobr"><small>Nom</small></th>
 					<th class="fs-6 label-nobr"><small>Pseudonyme</small></th>
-					<th class="fs-6 label-nobr"><small>Arrivé</small></th>
 					<th class="fs-6 label-nobr"><small>Status</small></th>
+					<th class="fs-6 label-nobr"><small>Arrivé</small></th>
 				</tr>
 			</thead>
 			<tbody>
 				@for (participant of participants; track participant.numeroParticipant) {
 				<tr>
-					<td class="label-nobr">{{ participant.nom }}&nbsp;{{ participant.prenom }}&nbsp;&nbsp;</td>
+					<td class="label-nobr"><a (click)="formParticipant(participant.numeroParticipant)" class="link-primary pointeur-souris text-decoration-none">{{ participant.nom }}&nbsp;{{ participant.prenom }}</a>&nbsp;&nbsp;</td>
 					<td class="label-nobr"><a (click)="formParticipant(participant.numeroParticipant)" class="link-primary pointeur-souris text-decoration-none">{{ participant.pseudonyme }}</a>&nbsp;&nbsp;</td>
+					<td>
+					  @if (participant.statut === PS[0].key) { <i class="fa-solid fa-circle-xmark text-danger" title="{{ PS[0].value }}"></i> }
+					  @else if (participant.statut === PS[1].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[1].value }}"></i> }  
+					  @else if (participant.statut === PS[2].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[2].value }}"></i> }  
+					  @else if (participant.statut === PS[3].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[3].value }}"></i> }  
+					  @else if (participant.statut === PS[4].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[4].value }}"></i> }  
+					  @else if (participant.statut === PS[5].key) { <i class="fa-solid fa-circle-check text-primary" title="{{ PS[5].value }}"></i> }  
+					  @else if (participant.statut === PS[6].key) { <i class="fa-solid fa-circle-check text-primary" title="{{ PS[6].value }}"></i> } 
+					 </td>
 					<td>
 					  @if (participant.arrived) { <i class="fa-solid fa-circle-check text-success"></i> } 
 					  @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;
 					</td>
-					<td>
-					  @if (participant.status === PS[0].key) { <i class="fa-solid fa-circle-xmark text-danger" title="{{ PS[0].value }}"></i> }
-					  @else if (participant.status === PS[1].key) { <i class="fa-solid fa-circle-xmark text-success" title="{{ PS[1].value }}"></i> }  
-					  @else if (participant.status === PS[2].key) { <i class="fa-solid fa-circle-xmark text-success" title="{{ PS[2].value }}"></i> }  
-					  @else if (participant.status === PS[3].key) { <i class="fa-solid fa-circle-xmark text-success" title="{{ PS[3].value }}"></i> }  
-					  @else if (participant.status === PS[4].key) { <i class="fa-solid fa-circle-xmark text-success" title="{{ PS[4].value }}"></i> }  
-					  @else if (participant.status === PS[5].key) { <i class="fa-solid fa-circle-xmark text-primary" title="{{ PS[5].value }}"></i> }  
-					  @else if (participant.status === PS[6].key) { <i class="fa-solid fa-circle-xmark text-primary" title="{{ PS[6].value }}"></i> } 
-					 </td>
 				</tr>
 				}
 			</tbody>

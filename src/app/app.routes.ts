@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './composants/home/home.component';    
 import { LoginComponent } from './composants/login/login.component';    
-import { AuthGuard } from './guards/auth.guard';    
+//import { LoggedGuard } from './guards/logged.guard';    
 import { VariableListComponent } from './composants/variable-list/variable-list.component';
 import { VariableCreateComponent } from './composants/variable-create/variable-create.component';
 import { VariableDetailsComponent } from './composants/variable-details/variable-details.component';
@@ -21,12 +22,13 @@ import { ProductionUpdateComponent } from './composants/production-update/produc
 import { ProductionUploadComponent } from './composants/production-upload/production-upload.component';
 
 export const routes: Routes = [  
-  {path: '', redirectTo: 'production-list', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'variable-list', component: VariableListComponent},
-  {path: 'variable-create', component: VariableCreateComponent},
-  {path: 'variable-details/:numeroVariable', component: VariableDetailsComponent},
-  {path: 'variable-update/:numeroVariable', component: VariableUpdateComponent},
+  {path: 'variable-list', component: VariableListComponent/*, canActivate: [LoggedGuard]*/},
+  {path: 'variable-create', component: VariableCreateComponent/*, canActivate: [LoggedGuard]*/},
+  {path: 'variable-details/:numeroVariable', component: VariableDetailsComponent/*, canActivate: [LoggedGuard]*/},
+  {path: 'variable-update/:numeroVariable', component: VariableUpdateComponent/*, canActivate: [LoggedGuard]*/},
   {path: 'categorie-list', component: CategorieListComponent},
   {path: 'categorie-create', component: CategorieCreateComponent},
   {path: 'categorie-details/:numeroCategorie', component: CategorieDetailsComponent},
@@ -44,8 +46,7 @@ export const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],                                                                                                                                                                                                                                                                                                          
-  exports: [RouterModule],
-  providers: [AuthGuard]
+  exports: [RouterModule]
 })
 
 export class AppRoutingModule { }

@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppComponent } from '../../app.component';
-import { Participant, ParticipantEnum, ParticipantStatusList } from '../../interfaces/participant';
+import { Participant, ParticipantEnum, ParticipantStatutList } from '../../interfaces/participant';
 import { ParticipantService } from '../../services/participant.service';
 
 @Component({ selector: 'app-participant-list', imports: [], templateUrl: './participant-list.component.html', styleUrl: './participant-list.component.css' })
@@ -9,7 +9,7 @@ import { ParticipantService } from '../../services/participant.service';
 export class ParticipantListComponent implements OnInit, AfterViewInit
 {
     
-  PS: ParticipantEnum[] = ParticipantStatusList;
+  PS: ParticipantEnum[] = ParticipantStatutList;
 
   participants: Participant[] = [];
 
