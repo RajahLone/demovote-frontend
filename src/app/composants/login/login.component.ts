@@ -26,8 +26,8 @@ export class LoginComponent implements OnInit, AfterViewInit
   {  
     if (this.loginForm.valid) 
     {
-      this.accountService.login(this.identifiants);  
-      this.router.navigate(['/']);  
+      console.log(this.accountService.login(this.identifiants));
+      // if then this.router.navigate(['/']);  
     }
   } 
   

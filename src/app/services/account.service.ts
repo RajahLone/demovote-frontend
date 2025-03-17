@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+//import { map } from 'rxjs/operators';
 import { Environnement } from '../env';
 import { User } from '../interfaces/user';
 
@@ -11,7 +11,7 @@ import { User } from '../interfaces/user';
 export class AccountService 
 {
 
-  private baseURL = Environnement.apiUrl + "account";
+  private baseURL = Environnement.apiUrl + "auth";
 
   private userSubject: BehaviorSubject<User | null>;
   
@@ -24,11 +24,11 @@ export class AccountService
   }
 
   public isLogged() { if (this.userSubject.value) { return true; } return false; }
-  public getUsername() { if (this.userSubject.value) { return this.userSubject.value.usr; } return ""; }
+  public getUsername() { if (this.userSubject.value) { return this.userSubject.value.username; } return ""; }
   
   login(user: User) 
   {
-    return this.httpClient.post<User>(`${this.baseURL}/login`, user).pipe(map(u => { localStorage.setItem('user', JSON.stringify(u)); this.userSubject.next(u); return u; }));
+    return this.httpClient.post<User>(`${this.baseURL}/signin`, user); //.pipe(map(u => { localStorage.setItem('user', JSON.stringify(u)); this.userSubject.next(u); return u; }));
   }
 
   logout() 

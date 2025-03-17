@@ -7,14 +7,14 @@
 			<div class="form-group row">
 				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Pseudonyme&nbsp;<sup><span class="text-danger">*</span></sup></label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control form-control-sm field-separate" id="userid" name="userid" [(ngModel)]="identifiants.usr" #userRef="ngModel" required [class.is-invalid]="userRef.invalid && userRef.touched">
+					<input type="text" class="form-control form-control-sm field-separate" id="userid" name="userid" [(ngModel)]="identifiants.username" #userRef="ngModel" required [class.is-invalid]="userRef.invalid && userRef.touched">
 				</div>
 			</div>
 
 			<div class="form-group row">
 				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Mot de passe&nbsp;<sup><span class="text-danger">*</span></sup></label>
 				<div class="col-sm-8">
-					<input type="password" class="form-control form-control-sm field-separate" id="userpwd" name="userpwd" [(ngModel)]="identifiants.pwd" #passRef="ngModel" required [class.is-invalid]="passRef.invalid && passRef.touched">
+					<input type="password" class="form-control form-control-sm field-separate" id="userpwd" name="userpwd" [(ngModel)]="identifiants.password" #passRef="ngModel" required [class.is-invalid]="passRef.invalid && passRef.touched">
 				</div>
 			</div>
 

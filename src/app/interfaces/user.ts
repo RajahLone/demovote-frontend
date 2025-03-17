@@ -1,11 +1,11 @@
 
 export class User 
 {
-  usr: string = "";
-  pwd: string = "";
+  username: string = "";
+  password: string = "";
   token: string = "";
   id: number = 0;
   nom: string = "";
   prenom: string = "";
-  role: number = 0;
+  role: string = "";
 }
