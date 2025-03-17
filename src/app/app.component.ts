@@ -3,12 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { FormsModule} from '@angular/forms';
 import { Router } from '@angular/router';  
 import { AccountService } from './services/account.service';  
+import { TooltipModule } from 'ngx-bootstrap/tooltip'; 
 
-declare var $: any;
+@Component({ selector: 'app-root', imports: [RouterOutlet, FormsModule, TooltipModule], templateUrl: './app.component.html', styleUrl: './app.component.css' })
 
-@Component({ selector: 'app-root', imports: [RouterOutlet, FormsModule], templateUrl: './app.component.html', styleUrl: './app.component.css' })
-
-export class AppComponent implements OnInit
+export class AppComponent implements OnInit 
 {
   title = 'demovote';
 
@@ -32,12 +31,10 @@ export class AppComponent implements OnInit
   constructor(private router: Router, private accountService: AccountService, private renderer: Renderer2) { }  
   
   ngOnInit() 
-  {
-    $(document).ready(function() { $('[data-bs-toggle="tooltip"]').tooltip();});
-
-    this.logged = this.accountService.isLogged();
-	}
-
+  { 
+    this.logged = this.accountService.isLogged(); 
+  }
+  
   logout() 
   {  
     this.accountService.logout();  

@@ -58,3 +58,19 @@ export class ParticipantShort
   nom: string = "";
   prenom: string = "";
 }
+
+export class ParticipantList 
+{
+  numeroParticipant: number = 0;
+  nom: string = "";
+  prenom: string = "";
+  pseudonyme: string = "";
+  groupe: string = "";
+  email: string = "";
+  statut: string = "EN_ATTENTE";
+  hereDay1: boolean = false;
+  hereDay2: boolean = false;
+  hereDay3: boolean = false;
+  sleepingOnSite: boolean = true;
+  arrived: boolean = false;
+}

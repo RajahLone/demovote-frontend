@@ -24,8 +24,8 @@
 				 <small class="text-warning">{{ production.informationsPrivees }}</small>
        </div>
 			<div class="card-footer d-flex justify-content-between">
-			  <i class="fa-solid fa-download text-primary pointeur-souris" (click)="getFile(production.numeroProduction, production.nomArchive)" title="{{ production.nomArchive }} (v{{ production.numeroVersion }})"></i>
-				<i class="fa-solid fa-user-tie text-dark" style="margin-left:7px;" title="géré par {{ production.nomGestionnaire }}"></i>
+			  <i class="fa-solid fa-download text-primary pointeur-souris" (click)="getFile(production.numeroProduction, production.nomArchive)" tooltip="{{ production.nomArchive }} (v{{ production.numeroVersion }})" placement="top" container="body"></i>
+				<i class="fa-solid fa-user-tie text-muted" style="margin-left:7px;" tooltip="géré par {{ production.nomGestionnaire }}" placement="top" container="body"></i>
 			</div>
 		</div>
 	}

@@ -4,8 +4,9 @@ import { AppComponent } from '../../app.component';
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 import { saveAs } from 'file-saver';
+import { TooltipModule } from 'ngx-bootstrap/tooltip'; 
 
-@Component({ selector: 'app-production-list', imports: [], templateUrl: './production-list.component.html', styleUrl: './production-list.component.css' })
+@Component({ selector: 'app-production-list', imports: [TooltipModule], templateUrl: './production-list.component.html', styleUrl: './production-list.component.css' })
 
 export class ProductionListComponent implements OnInit, AfterViewInit
 {
@@ -16,13 +17,10 @@ export class ProductionListComponent implements OnInit, AfterViewInit
 
   constructor(private productionService: ProductionService, private router: Router, private application: AppComponent) { }
 
-  ngOnInit(): void 
-  {
-    this.retreiveDatas(); 
-  }
+  ngOnInit() { this.retreiveDatas(); }
   
   ngAfterViewInit() 
-  {
+  { 
     this.application.menuActivateProds(); 
   }
 

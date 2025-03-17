@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Environnement } from '../env';
-import { Participant, ParticipantShort } from '../interfaces/participant';
+import { Participant, ParticipantList, ParticipantShort } from '../interfaces/participant';
 
 @Injectable({ providedIn: 'root' })
 
@@ -13,7 +13,7 @@ export class ParticipantService
 
   constructor(private httpClient: HttpClient) { }
   
-  getListParticipant(): Observable<Participant[]>{ return this.httpClient.get<Participant[]>(`${this.baseURL}/list`); }
+  getListParticipant(): Observable<ParticipantList[]>{ return this.httpClient.get<Participant[]>(`${this.baseURL}/list`); }
 
   getOptionListParticipant(): Observable<ParticipantShort[]>{ return this.httpClient.get<ParticipantShort[]>(`${this.baseURL}/option-list`); }
 

@@ -16,13 +16,15 @@
 					<th class="fs-6 label-nobr"><small>Pseudonyme</small></th>
 					<th class="fs-6 label-nobr"><small>Status</small></th>
 					<th class="fs-6 label-nobr"><small>Arrivé</small></th>
+					<th class="fs-6 label-nobr"><small>Journées</small></th>
+					<th class="fs-6 label-nobr"><small>email</small></th>
 				</tr>
 			</thead>
 			<tbody>
 				@for (participant of participants; track participant.numeroParticipant) {
 				<tr>
-					<td class="label-nobr"><a (click)="formParticipant(participant.numeroParticipant)" class="link-primary pointeur-souris text-decoration-none">{{ participant.nom }}&nbsp;{{ participant.prenom }}</a>&nbsp;&nbsp;</td>
-					<td class="label-nobr"><a (click)="formParticipant(participant.numeroParticipant)" class="link-primary pointeur-souris text-decoration-none">{{ participant.pseudonyme }}</a>&nbsp;&nbsp;</td>
+					<td class="label-nobr text-truncate" style="max-width:200px;"><a (click)="formParticipant(participant.numeroParticipant)" class="link-primary pointeur-souris text-decoration-none">{{ participant.nom }}&nbsp;{{ participant.prenom }}</a>&nbsp;&nbsp;</td>
+					<td class="label-nobr text-truncate" style="max-width:200px;"><a (click)="formParticipant(participant.numeroParticipant)" class="link-primary pointeur-souris text-decoration-none">{{ participant.pseudonyme }}</a>@if (participant.groupe) { / {{ participant.groupe }} }&nbsp;&nbsp;</td>
 					<td>
 					  @if (participant.statut === PS[0].key) { <i class="fa-solid fa-circle-xmark text-danger" title="{{ PS[0].value }}"></i> }
 					  @else if (participant.statut === PS[1].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[1].value }}"></i> }  
@@ -31,11 +33,13 @@
 					  @else if (participant.statut === PS[4].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[4].value }}"></i> }  
 					  @else if (participant.statut === PS[5].key) { <i class="fa-solid fa-circle-check text-primary" title="{{ PS[5].value }}"></i> }  
 					  @else if (participant.statut === PS[6].key) { <i class="fa-solid fa-circle-check text-primary" title="{{ PS[6].value }}"></i> } 
-					 </td>
+					</td>
 					<td>
 					  @if (participant.arrived) { <i class="fa-solid fa-circle-check text-success"></i> } 
 					  @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;
 					</td>
+					<td>{{ getNombreJours(participant.hereDay1, participant.hereDay2, participant.hereDay3) }} @if(participant.sleepingOnSite) { + <i class="fa-solid fa-bed"></i> }</td>
+					<td class="label-nobr">{{ participant.email }}&nbsp;&nbsp;</td>
 				</tr>
 				}
 			</tbody>
