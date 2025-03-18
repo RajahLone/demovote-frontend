@@ -6,7 +6,7 @@
 }
 @if (this.logged) {		
 		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_account tooltip="Compte" placement="right" container="body"><i class="fa-solid fa-user"></i></a></li>
-		<li><a href="/logout" class="nav-link rounded-0 bg-gradient" #menu_logout tooltip="Logout" placement="right" container="body"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+		<li><a href="#" (click)="signOut()" class="nav-link rounded-0 bg-gradient" #menu_logout tooltip="Logout" placement="right" container="body"><i class="fa-solid fa-right-from-bracket"></i></a></li>
 }
 		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_agenda tooltip="Planning" placement="right" container="body"><i class="fa-solid fa-clock"></i></a></li>
 		<li><a href="#" class="nav-link rounded-0 bg-gradient" #menu_webcams tooltip="Caméras" placement="right" container="body"><i class="fa-solid fa-eye"></i></a></li>

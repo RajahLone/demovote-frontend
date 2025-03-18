@@ -2,16 +2,19 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-//import { map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Environnement } from '../env';
 import { User } from '../interfaces/user';
+import { Participant } from '../interfaces/participant';
 
 @Injectable({ providedIn: 'root' })
 
 export class AccountService 
 {
 
-  private baseURL = Environnement.apiUrl + "auth";
+  private baseURLsig = Environnement.apiUrl + "sign";
+  
+  private baseURLacc = Environnement.apiUrl + "account";
 
   private userSubject: BehaviorSubject<User | null>;
   
@@ -26,18 +29,25 @@ export class AccountService
   public isLogged() { if (this.userSubject.value) { return true; } return false; }
   public getUsername() { if (this.userSubject.value) { return this.userSubject.value.username; } return ""; }
   
-  login(user: User) 
+  signIn(user: User): Observable<User>
   {
-    return this.httpClient.post<User>(`${this.baseURL}/signin`, user); //.pipe(map(u => { localStorage.setItem('user', JSON.stringify(u)); this.userSubject.next(u); return u; }));
+    return this.httpClient.post<User>(`${this.baseURLsig}/in`, user);
+    
+    //return this.httpClient.post<User>(`${this.baseURLlog}/in`, user).pipe(map(u => { alert(u); localStorage.setItem('user', JSON.stringify(u)); this.userSubject.next(u); return u; }));
   }
 
-  logout() 
+  signOut() 
   {
+    this.httpClient.post<User>(`${this.baseURLsig}/signout`, null);
+    
     localStorage.removeItem('user');
     this.userSubject.next(null);
-    this.router.navigate(['/']);
   }
 
-  getListArrives(): Observable<User[]> { return this.httpClient.get<User[]>(`${this.baseURL}/available`); }
+  getListArrives(): Observable<User[]> { return this.httpClient.get<User[]>(`${this.baseURLsig}/list`); }
+
+  getProfil(): Observable<Participant>{ return this.httpClient.get<Participant>(`${this.baseURLacc}/form}`); }
+
+  updateProfil(participant: Participant): Observable<Object>{ return this.httpClient.put(`${this.baseURLacc}/update`, participant); }
 
 }

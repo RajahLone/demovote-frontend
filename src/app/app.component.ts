@@ -35,9 +35,9 @@ export class AppComponent implements OnInit
     this.logged = this.accountService.isLogged(); 
   }
   
-  logout() 
+  signOut() 
   {  
-    this.accountService.logout();  
+    this.accountService.signOut();  
     this.router.navigate(['/']);  
   } 
   

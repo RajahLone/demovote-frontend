@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';  
 import { AppComponent } from '../../app.component';
 import { User } from '../../interfaces/user';  
@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit, AfterViewInit
 {
 
   @ViewChild('formRef') loginForm!: NgForm;
-  @ViewChild('userRef') userField!: NgModel;
+  @ViewChild('userRef') userField!: NgModel; @ViewChild('userid', {static: false}) userFieldf!: ElementRef;
   @ViewChild('passRef') passField!: NgModel;
 
   identifiants: User = new User();
@@ -26,8 +26,8 @@ export class LoginComponent implements OnInit, AfterViewInit
   {  
     if (this.loginForm.valid) 
     {
-      console.log(this.accountService.login(this.identifiants));
-      // if then this.router.navigate(['/']);  
+      this.accountService.signIn(this.identifiants).subscribe(data => { this.identifiants = data; if (this.identifiants.username === "") { this.userFieldf.nativeElement.focus(); } }); 
+      // if ok then this.router.navigate(['/']);  
     }
   } 
   
