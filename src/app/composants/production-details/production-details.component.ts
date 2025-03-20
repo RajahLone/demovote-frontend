@@ -1,11 +1,11 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AppComponent } from '../../app.component';
+import { MenuComponent } from '../menu/menu.component';
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 import { FormsModule } from '@angular/forms'; 
 
-@Component({ selector: 'app-production-details', imports: [FormsModule], templateUrl: './production-details.component.html', styleUrl: './production-details.component.css' })
+@Component({ selector: 'app-production-details', imports: [FormsModule, MenuComponent], templateUrl: './production-details.component.html', styleUrl: './production-details.component.css' })
 
 export class ProductionDetailsComponent implements OnInit, AfterViewInit
 {
@@ -16,7 +16,7 @@ export class ProductionDetailsComponent implements OnInit, AfterViewInit
   
   production: ProductionShort = new ProductionShort();
   
-  constructor(private productionService: ProductionService, private route: ActivatedRoute, private router: Router, private application: AppComponent) { }
+  constructor(private productionService: ProductionService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void 
   { 
@@ -25,7 +25,7 @@ export class ProductionDetailsComponent implements OnInit, AfterViewInit
     this.productionService.getByIdProduction(this.numeroProduction).subscribe( data => { this.production = data; });
   }
   
-  ngAfterViewInit() { this.application.menuActivateProds(); }
+  ngAfterViewInit() { }
 
   updateArchive(id: number) { this.router.navigate(['/production-upload', id]); }
   

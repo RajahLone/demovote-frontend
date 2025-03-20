@@ -1,13 +1,13 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AppComponent } from '../../app.component';
+import { MenuComponent } from '../menu/menu.component';
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 import { ParticipantShort } from '../../interfaces/participant';
 import { ParticipantService } from '../../services/participant.service';
 import { FormsModule, NgForm } from '@angular/forms'; 
 
-@Component({ selector: 'app-production-update', imports: [FormsModule], templateUrl: './production-update.component.html', styleUrl: './production-update.component.css' })
+@Component({ selector: 'app-production-update', imports: [FormsModule, MenuComponent], templateUrl: './production-update.component.html', styleUrl: './production-update.component.css' })
 
 export class ProductionUpdateComponent implements OnInit, AfterViewInit
 {
@@ -22,7 +22,7 @@ export class ProductionUpdateComponent implements OnInit, AfterViewInit
   
   numeroProduction: number = 0;
 
-  constructor(private productionService: ProductionService, private participantService: ParticipantService, private route: ActivatedRoute, private router: Router, private application: AppComponent) { }
+  constructor(private productionService: ProductionService, private participantService: ParticipantService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void 
   { 
@@ -31,7 +31,7 @@ export class ProductionUpdateComponent implements OnInit, AfterViewInit
     this.productionService.getByIdProduction(this.numeroProduction).subscribe(data => { this.production = data; });
   }
   
-  ngAfterViewInit() { this.application.menuActivateProds(); }
+  ngAfterViewInit() { }
 
   private retreiveParticipants() { this.participantService.getOptionListParticipant().subscribe(data => { this.participants = data; }); }
 

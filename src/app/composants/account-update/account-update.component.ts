@@ -1,27 +1,24 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AppComponent } from '../../app.component';
+import { Router } from '@angular/router';
+import { MenuComponent } from '../menu/menu.component';
 import { Participant } from '../../interfaces/participant';
 import { AccountService } from '../../services/account.service' 
 import { FormsModule, NgForm } from '@angular/forms'; 
 
-@Component({ selector: 'app-account-update', imports: [FormsModule], templateUrl: './account-update.component.html', styleUrl: './account-update.component.css' })
+@Component({ selector: 'app-account-update', imports: [FormsModule, MenuComponent], templateUrl: './account-update.component.html', styleUrl: './account-update.component.css' })
 
-export class ParticipantUpdateComponent implements OnInit, AfterViewInit
+export class AccountUpdateComponent implements OnInit, AfterViewInit
 {
   
   @ViewChild('formRef') participantForm!: NgForm;
  
   participant: Participant = new Participant();
   
-  constructor(private accountService : AccountService, private route: ActivatedRoute, private router: Router, private application: AppComponent) { }
+  constructor(private accountService : AccountService, private router: Router) { }
 
-  ngOnInit(): void 
-  {
-    this.accountService.getProfil().subscribe(data => { this.participant = data; });
-  }
+  ngOnInit() { this.accountService.getProfil().subscribe(data => { this.participant = data; }); }
   
-  ngAfterViewInit() { this.application.menuActivateUsers(); }
+  ngAfterViewInit() { }
 
   updateConfirmed() { if (this.participantForm.valid) { this.accountService.updateProfil(this.participant).subscribe(() => { this.goToHome(); }); } }
 

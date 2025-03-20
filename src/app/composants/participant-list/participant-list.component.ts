@@ -1,10 +1,10 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppComponent } from '../../app.component';
+import { MenuComponent } from '../menu/menu.component';
 import { ParticipantList, ParticipantEnum, ParticipantStatutList } from '../../interfaces/participant';
 import { ParticipantService } from '../../services/participant.service';
 
-@Component({ selector: 'app-participant-list', imports: [], templateUrl: './participant-list.component.html', styleUrl: './participant-list.component.css' })
+@Component({ selector: 'app-participant-list', imports: [MenuComponent], templateUrl: './participant-list.component.html', styleUrl: './participant-list.component.css' })
 
 export class ParticipantListComponent implements OnInit, AfterViewInit
 {
@@ -13,11 +13,11 @@ export class ParticipantListComponent implements OnInit, AfterViewInit
 
   participants: ParticipantList[] = [];
 
-  constructor(private participantService: ParticipantService, private router: Router, private application: AppComponent) { }
+  constructor(private participantService: ParticipantService, private router: Router) { }
 
   ngOnInit(): void { this.retreiveDatas(); }
   
-  ngAfterViewInit() { this.application.menuActivateUsers(); }
+  ngAfterViewInit() { }
 
   private retreiveDatas() { this.participantService.getListParticipant().subscribe(data => { this.participants = data; }); }
 

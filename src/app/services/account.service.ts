@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -20,7 +19,7 @@ export class AccountService
   
   public user: Observable<User | null>;
 
-  constructor(private router: Router, private httpClient: HttpClient)
+  constructor(private httpClient: HttpClient)
   {
     this.userSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('user')!));
     this.user = this.userSubject.asObservable();
@@ -28,12 +27,11 @@ export class AccountService
 
   public isLogged() { if (this.userSubject.value) { return true; } return false; }
   public getUsername() { if (this.userSubject.value) { return this.userSubject.value.username; } return ""; }
+  public getRole() { if (this.userSubject.value) { return this.userSubject.value.role; } return ""; }
   
-  signIn(user: User): Observable<User>
+  signIn(usr: User): Observable<User>
   {
-    return this.httpClient.post<User>(`${this.baseURLsig}/in`, user);
-    
-    //return this.httpClient.post<User>(`${this.baseURLlog}/in`, user).pipe(map(u => { alert(u); localStorage.setItem('user', JSON.stringify(u)); this.userSubject.next(u); return u; }));
+    return this.httpClient.post<User>(`${this.baseURLsig}/in`, usr).pipe(map(u => { localStorage.setItem('user', JSON.stringify(u)); this.userSubject.next(u); return u; }));
   }
 
   signOut() 
@@ -46,7 +44,7 @@ export class AccountService
 
   getListArrives(): Observable<User[]> { return this.httpClient.get<User[]>(`${this.baseURLsig}/list`); }
 
-  getProfil(): Observable<Participant>{ return this.httpClient.get<Participant>(`${this.baseURLacc}/form}`); }
+  getProfil(): Observable<Participant>{ return this.httpClient.get<Participant>(`${this.baseURLacc}/form`); }
 
   updateProfil(participant: Participant): Observable<Object>{ return this.httpClient.put(`${this.baseURLacc}/update`, participant); }
 

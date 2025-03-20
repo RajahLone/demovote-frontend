@@ -1,12 +1,12 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppComponent } from '../../app.component';
+import { MenuComponent } from '../menu/menu.component';
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 import { saveAs } from 'file-saver';
 import { TooltipModule } from 'ngx-bootstrap/tooltip'; 
 
-@Component({ selector: 'app-production-list', imports: [TooltipModule], templateUrl: './production-list.component.html', styleUrl: './production-list.component.css' })
+@Component({ selector: 'app-production-list', imports: [TooltipModule, MenuComponent], templateUrl: './production-list.component.html', styleUrl: './production-list.component.css' })
 
 export class ProductionListComponent implements OnInit, AfterViewInit
 {
@@ -15,14 +15,11 @@ export class ProductionListComponent implements OnInit, AfterViewInit
 
   types: ProductionEnum[] = ProductionTypeList;
 
-  constructor(private productionService: ProductionService, private router: Router, private application: AppComponent) { }
+  constructor(private productionService: ProductionService, private router: Router) { }
 
   ngOnInit() { this.retreiveDatas(); }
   
-  ngAfterViewInit() 
-  { 
-    this.application.menuActivateProds(); 
-  }
+  ngAfterViewInit() { }
 
   private retreiveDatas() { this.productionService.getListProduction().subscribe(data => { this.productions = data; }); }
 

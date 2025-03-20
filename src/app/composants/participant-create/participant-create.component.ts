@@ -1,11 +1,11 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { AppComponent } from '../../app.component';
+import { MenuComponent } from '../menu/menu.component';
 import { Participant, ParticipantEnum, ParticipantStatutList, ParticipantModePaiementList } from '../../interfaces/participant';
 import { ParticipantService } from '../../services/participant.service';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms'; 
 
-@Component({ selector: 'app-participant-create', imports: [FormsModule], templateUrl: './participant-create.component.html', styleUrl: './participant-create.component.css' })
+@Component({ selector: 'app-participant-create', imports: [FormsModule, MenuComponent], templateUrl: './participant-create.component.html', styleUrl: './participant-create.component.css' })
 
 export class ParticipantCreateComponent implements OnInit, AfterViewInit
 {
@@ -17,11 +17,11 @@ export class ParticipantCreateComponent implements OnInit, AfterViewInit
   
   participant: Participant = new Participant();
   
-  constructor(private participantService: ParticipantService, private router: Router, private application: AppComponent) { }
+  constructor(private participantService: ParticipantService, private router: Router) { }
 
   ngOnInit(): void { }
   
-  ngAfterViewInit() { this.application.menuActivateUsers(); }
+  ngAfterViewInit() { }
 
   private saveParticipant() { this.participantService.createParticipant(this.participant).subscribe({ next: () => { this.goToListParticipant(); }, error: (err: any) => { console.log(err); }, complete: () => { } }); }
 

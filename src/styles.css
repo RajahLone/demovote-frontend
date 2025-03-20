@@ -15,3 +15,12 @@
   .center { position: absolute; left: 50%; top: 0; transform: translate(-50%, 0%); min-width: 50rem; }
   .scrollable { overflow-y: unset; overflow-x: unset; max-height: unset; }
 }
+
+#main {
+  margin-left: 60px; 
+  padding: 0px 10px;
+}
+
+@media screen and (max-width: 500px) {
+  #main { margin-left: 0; }
+}

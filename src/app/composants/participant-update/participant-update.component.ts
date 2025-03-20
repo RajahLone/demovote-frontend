@@ -1,11 +1,11 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AppComponent } from '../../app.component';
+import { MenuComponent } from '../menu/menu.component';
 import { Participant, ParticipantEnum, ParticipantStatutList, ParticipantModePaiementList } from '../../interfaces/participant';
 import { ParticipantService } from '../../services/participant.service';
 import { FormsModule, NgForm } from '@angular/forms'; 
 
-@Component({ selector: 'app-participant-update', imports: [FormsModule], templateUrl: './participant-update.component.html', styleUrl: './participant-update.component.css' })
+@Component({ selector: 'app-participant-update', imports: [FormsModule, MenuComponent], templateUrl: './participant-update.component.html', styleUrl: './participant-update.component.css' })
 
 export class ParticipantUpdateComponent implements OnInit, AfterViewInit
 {
@@ -19,7 +19,7 @@ export class ParticipantUpdateComponent implements OnInit, AfterViewInit
   
   participant: Participant = new Participant();
   
-  constructor(private participantService: ParticipantService, private route: ActivatedRoute, private router: Router, private application: AppComponent) { }
+  constructor(private participantService: ParticipantService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void 
   {
@@ -27,7 +27,7 @@ export class ParticipantUpdateComponent implements OnInit, AfterViewInit
     this.participantService.getByIdParticipant(this.numeroParticipant).subscribe(data => { this.participant = data; });
   }
   
-  ngAfterViewInit() { this.application.menuActivateUsers(); }
+  ngAfterViewInit() { }
 
   updateConfirmed() { if (this.participantForm.valid) { this.participantService.updateParticipant(this.numeroParticipant, this.participant).subscribe(() => { this.goToListParticipant(); }); } }
 

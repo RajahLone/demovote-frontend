@@ -1,11 +1,11 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';  
-import { AppComponent } from '../../app.component';
+import { MenuComponent } from '../menu/menu.component';
 import { User } from '../../interfaces/user';  
 import { AccountService } from '../../services/account.service' 
 import { FormsModule, NgForm, NgModel } from '@angular/forms'; 
 
-@Component({ selector: 'app-login', imports: [FormsModule], templateUrl: './login.component.html', styleUrl: './login.component.css' })
+@Component({ selector: 'app-login', imports: [FormsModule, MenuComponent], templateUrl: './login.component.html', styleUrl: './login.component.css' })
 
 export class LoginComponent implements OnInit, AfterViewInit
 {
@@ -16,18 +16,17 @@ export class LoginComponent implements OnInit, AfterViewInit
 
   identifiants: User = new User();
  
-  constructor(private router : Router, private accountService : AccountService, private application: AppComponent) { }
+  constructor(private router : Router, private accountService : AccountService) { }
   
   ngOnInit() { } 
   
-  ngAfterViewInit() { this.application.menuActivateLogin(); }
- 
+  ngAfterViewInit() { }
+
   connexion()
   {  
     if (this.loginForm.valid) 
     {
-      this.accountService.signIn(this.identifiants).subscribe(data => { this.identifiants = data; if (this.identifiants.username === "") { this.userFieldf.nativeElement.focus(); } }); 
-      // if ok then this.router.navigate(['/']);  
+      this.accountService.signIn(this.identifiants).subscribe(data => { this.identifiants = data; if (this.identifiants.username === "") { this.userFieldf.nativeElement.focus(); } else if (this.identifiants.password === "<success@auth>") { this.router.navigate(['/']); } }); 
     }
   } 
   

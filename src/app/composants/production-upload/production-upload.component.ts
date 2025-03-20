@@ -1,11 +1,11 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AppComponent } from '../../app.component';
+import { MenuComponent } from '../menu/menu.component';
 import { ProductionFile } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 import { FormsModule } from '@angular/forms'; 
 
-@Component({ selector: 'app-production-upload', imports: [FormsModule], templateUrl: './production-upload.component.html', styleUrl: './production-upload.component.css' })
+@Component({ selector: 'app-production-upload', imports: [FormsModule, MenuComponent], templateUrl: './production-upload.component.html', styleUrl: './production-upload.component.css' })
 
 export class ProductionUploadComponent implements OnInit, AfterViewInit
 {
@@ -14,7 +14,7 @@ export class ProductionUploadComponent implements OnInit, AfterViewInit
   
   numeroProduction: number = 0;
 
-  constructor(private productionService: ProductionService, private route: ActivatedRoute, private router: Router, private application: AppComponent) { }
+  constructor(private productionService: ProductionService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void 
   { 
@@ -22,7 +22,7 @@ export class ProductionUploadComponent implements OnInit, AfterViewInit
     this.productionService.getByIdProductionFile(this.numeroProduction).subscribe(data => { this.production = data; });
   }
   
-  ngAfterViewInit() { this.application.menuActivateProds(); }
+  ngAfterViewInit() { }
 
   onArchiveSelected(event: any) 
   { 

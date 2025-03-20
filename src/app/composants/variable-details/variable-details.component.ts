@@ -1,11 +1,11 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AppComponent } from '../../app.component';
+import { MenuComponent } from '../menu/menu.component';
 import { Variable } from '../../interfaces/variable';
 import { VariableService } from '../../services/variable.service';
 import { FormsModule } from '@angular/forms'; 
 
-@Component({ selector: 'app-variable-details', imports: [FormsModule], templateUrl: './variable-details.component.html', styleUrl: './variable-details.component.css' })
+@Component({ selector: 'app-variable-details', imports: [FormsModule, MenuComponent], templateUrl: './variable-details.component.html', styleUrl: './variable-details.component.css' })
 
 export class VariableDetailsComponent implements OnInit, AfterViewInit
 {
@@ -14,7 +14,7 @@ export class VariableDetailsComponent implements OnInit, AfterViewInit
 
   variable: Variable = new Variable();
   
-  constructor(private variableService: VariableService, private route: ActivatedRoute, private router: Router, private application: AppComponent) { }
+  constructor(private variableService: VariableService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void 
   {
@@ -23,7 +23,7 @@ export class VariableDetailsComponent implements OnInit, AfterViewInit
     this.variableService.getByIdVariable(this.numeroVariable).subscribe( data => { this.variable = data; });
   }
   
-  ngAfterViewInit() { this.application.menuActivateParams(); }
+  ngAfterViewInit() { }
  
   updateVariable(id: number) { this.router.navigate(['/variable-update', id]); }
   

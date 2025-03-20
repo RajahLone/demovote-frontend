@@ -1,3 +1,5 @@
+<app-menu></app-menu>
+<div id="main">
 <div class="card shadow">
 	<div class="card-header">Table des variables</div>
 	<div class="card-header shadow-sm">
@@ -6,8 +8,8 @@
 				<button type="button" (click)="goToRefreshListVariable()" class="btn bg-gradient btn-primary btn-sm field-separate" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;Actualiser</button>
 				<button type="button" (click)="goToNewVariable()" class="btn bg-gradient btn-primary btn-sm field-separate" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;Créer</button>
 			</div>
-			<div class="form-group col-sm-8">
-        <select class="form-select form-select-sm field-separate" (change)="filtrageParType($event)">
+			<div class="form-group col-sm-2">
+        <select class="form-select form-select-sm field-separate" id="select_type" (change)="filtrageParType($event)">
 					<option selected> </option>
           @for (type of types; track type) {
 					<option [value]="type.type">{{ type.type }}</option>
@@ -36,4 +38,5 @@
 			</tbody>
 		</table>
 	</div>
+</div>
 </div>

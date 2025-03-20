@@ -1,11 +1,11 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AppComponent } from '../../app.component';
+import { MenuComponent } from '../menu/menu.component';
 import { Participant, ParticipantEnum, ParticipantStatutList, ParticipantModePaiementList } from '../../interfaces/participant';
 import { ParticipantService } from '../../services/participant.service';
 import { FormsModule } from '@angular/forms'; 
 
-@Component({ selector: 'app-participant-details', imports: [FormsModule], templateUrl: './participant-details.component.html', styleUrl: './participant-details.component.css' })
+@Component({ selector: 'app-participant-details', imports: [FormsModule, MenuComponent], templateUrl: './participant-details.component.html', styleUrl: './participant-details.component.css' })
 
 export class ParticipantDetailsComponent implements OnInit, AfterViewInit 
 {
@@ -17,7 +17,7 @@ export class ParticipantDetailsComponent implements OnInit, AfterViewInit
 
   participant: Participant = new Participant();
   
-  constructor(private participantService: ParticipantService, private route: ActivatedRoute, private router: Router, private application: AppComponent) { }
+  constructor(private participantService: ParticipantService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void 
   {
@@ -26,7 +26,7 @@ export class ParticipantDetailsComponent implements OnInit, AfterViewInit
     this.participantService.getByIdParticipant(this.numeroParticipant).subscribe( data => { this.participant = data; });
   }
   
-  ngAfterViewInit() { this.application.menuActivateUsers(); }
+  ngAfterViewInit() { }
  
   updateParticipant(id: number) { this.router.navigate(['/participant-update', id]); }
   

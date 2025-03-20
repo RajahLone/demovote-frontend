@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { AppComponent } from '../../app.component';
+import { MenuComponent } from '../menu/menu.component';
 import { Production, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 import { ParticipantShort } from '../../interfaces/participant';
@@ -7,7 +7,7 @@ import { ParticipantService } from '../../services/participant.service';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms'; 
 
-@Component({ selector: 'app-production-create', imports: [FormsModule], templateUrl: './production-create.component.html', styleUrl: './production-create.component.css' })
+@Component({ selector: 'app-production-create', imports: [FormsModule, MenuComponent], templateUrl: './production-create.component.html', styleUrl: './production-create.component.css' })
 
 export class ProductionCreateComponent implements OnInit, AfterViewInit 
 {
@@ -20,11 +20,11 @@ export class ProductionCreateComponent implements OnInit, AfterViewInit
   
   production: Production = new Production();
   
-  constructor(private productionService: ProductionService, private participantService: ParticipantService, private router: Router, private application: AppComponent) { }
+  constructor(private productionService: ProductionService, private participantService: ParticipantService, private router: Router) { }
 
   ngOnInit(): void { this.retreiveParticipants(); }
   
-  ngAfterViewInit() { this.application.menuActivateProds(); }
+  ngAfterViewInit() { }
 
   private retreiveParticipants() { this.participantService.getOptionListParticipant().subscribe(data => { this.participants = data; }); }
 

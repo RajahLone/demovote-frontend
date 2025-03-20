@@ -1,26 +1,26 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AppComponent } from '../../app.component';
+import { Router } from '@angular/router';
+import { MenuComponent } from '../menu/menu.component';
 import { Participant } from '../../interfaces/participant';
 import { AccountService } from '../../services/account.service' 
 import { FormsModule } from '@angular/forms'; 
 
-@Component({ selector: 'app-account-details', imports: [FormsModule], templateUrl: './account-details.component.html', styleUrl: './account-details.component.css' })
+@Component({ selector: 'app-account-details', imports: [FormsModule, MenuComponent], templateUrl: './account-details.component.html', styleUrl: './account-details.component.css' })
 
-export class ParticipantDetailsComponent implements OnInit, AfterViewInit 
+export class AccountDetailsComponent implements OnInit, AfterViewInit 
 {
  
   participant: Participant = new Participant();
   
-  constructor(private accountService : AccountService, private route: ActivatedRoute, private router: Router, private application: AppComponent) { }
+  constructor(private accountService : AccountService, private router: Router) { }
 
-  ngOnInit(): void 
+  ngOnInit() 
   {
     this.participant = new Participant();
     this.accountService.getProfil().subscribe( data => { this.participant = data; });
   }
   
-  ngAfterViewInit() { this.application.menuActivateUsers(); }
+  ngAfterViewInit() { }
  
   updateProfil() { this.router.navigate(['/account-update']); }
   

@@ -1,11 +1,11 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { AppComponent } from '../../app.component';
 import { Router } from '@angular/router';
 import { Variable } from '../../interfaces/variable';
 import { VariableService } from '../../services/variable.service';
+import { MenuComponent } from '../menu/menu.component';
 import { FormsModule, NgForm, NgModel } from '@angular/forms'; 
 
-@Component({ selector: 'app-variable-create', imports: [FormsModule], templateUrl: './variable-create.component.html', styleUrl: './variable-create.component.css' })
+@Component({ selector: 'app-variable-create', imports: [FormsModule, MenuComponent], templateUrl: './variable-create.component.html', styleUrl: './variable-create.component.css' })
 
 export class VariableCreateComponent implements OnInit, AfterViewInit
 {
@@ -16,11 +16,11 @@ export class VariableCreateComponent implements OnInit, AfterViewInit
   
   variable: Variable = new Variable();
   
-  constructor(private variableService: VariableService, private router: Router, private application: AppComponent) { }
+  constructor(private variableService: VariableService, private router: Router) { }
 
   ngOnInit(): void { }
   
-  ngAfterViewInit() { this.application.menuActivateParams(); }
+  ngAfterViewInit() { }
 
   private saveVariable() { this.variableService.createVariable(this.variable).subscribe({ next: () => { this.goToListVariable(); }, error: (err: any) => { console.log(err); }, complete: () => { } }); }
 

@@ -1,10 +1,10 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { AppComponent } from '../../app.component';
+import { MenuComponent } from '../menu/menu.component';
 import { Message } from '../../interfaces/divers';
 import { AccountService } from '../../services/account.service' 
 import { DiversService } from '../../services/divers.service' 
 
-@Component({ selector: 'app-home', imports: [], templateUrl: './home.component.html', styleUrl: './home.component.css' })
+@Component({ selector: 'app-home', imports: [MenuComponent], templateUrl: './home.component.html', styleUrl: './home.component.css' })
 
 export class HomeComponent implements OnInit, AfterViewInit 
 {
@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit, AfterViewInit
   pseudonyme: string = "";
   message: Message = new Message();
   
-  constructor(private diversService: DiversService, private accountService: AccountService, private application: AppComponent) { }
+  constructor(private diversService: DiversService, private accountService: AccountService) { }
   
   ngOnInit() 
   { 
@@ -24,6 +24,6 @@ export class HomeComponent implements OnInit, AfterViewInit
     this.diversService.getMessage().subscribe(data => { this.message = data; });
   } 
   
-  ngAfterViewInit() { this.application.menuActivateHome(); }
+  ngAfterViewInit() { }
 
 }

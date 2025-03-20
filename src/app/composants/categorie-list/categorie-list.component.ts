@@ -1,21 +1,21 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { AppComponent } from '../../app.component';
+import { MenuComponent } from '../menu/menu.component';
 import { Router } from '@angular/router';
 import { Categorie } from '../../interfaces/categorie';
 import { CategorieService } from '../../services/categorie.service';
 
-@Component({ selector: 'app-categorie-list', imports: [], templateUrl: './categorie-list.component.html', styleUrl: './categorie-list.component.css'})
+@Component({ selector: 'app-categorie-list', imports: [MenuComponent], templateUrl: './categorie-list.component.html', styleUrl: './categorie-list.component.css'})
 
 export class CategorieListComponent implements OnInit, AfterViewInit 
 {
 
   categories: Categorie[] = [];
 
-  constructor(private categorieService: CategorieService, private router: Router, private application: AppComponent) { }
+  constructor(private categorieService: CategorieService, private router: Router) { }
 
   ngOnInit(): void { this.retreiveDatas(); }
 
-  ngAfterViewInit() { this.application.menuActivateCompos(); }
+  ngAfterViewInit() { }
 
   private retreiveDatas() { this.categorieService.getListCategorie().subscribe(data => { this.categories = data; }); }
 

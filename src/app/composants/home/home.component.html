@@ -1,3 +1,5 @@
+<app-menu></app-menu>
+<div id="main">
 <div class="center" style="min-width: 30rem;">
 
 <p class="fs-2 text-center">Bienvenue @if (this.logged) { {{ this.pseudonyme }} }</p>
@@ -11,5 +13,5 @@
 
 @if (!this.logged) { <div class="alert alert-info" role="alert">Merci de vous <a href="/login">connecter</a> pour accéder à plus de fonctionnalités.</div> }
 
-
+</div>
 </div>

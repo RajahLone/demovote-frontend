@@ -1,11 +1,11 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AppComponent } from '../../app.component';
+import { MenuComponent } from '../menu/menu.component';
 import { Variable } from '../../interfaces/variable';
 import { VariableService } from '../../services/variable.service';
 import { FormsModule, NgForm } from '@angular/forms'; 
 
-@Component({ selector: 'app-variable-update', imports: [FormsModule], templateUrl: './variable-update.component.html', styleUrl: './variable-update.component.css' })
+@Component({ selector: 'app-variable-update', imports: [FormsModule, MenuComponent], templateUrl: './variable-update.component.html', styleUrl: './variable-update.component.css' })
 
 export class VariableUpdateComponent implements OnInit, AfterViewInit
 {
@@ -16,7 +16,7 @@ export class VariableUpdateComponent implements OnInit, AfterViewInit
   
   variable: Variable = new Variable();
   
-  constructor(private variableService: VariableService, private route: ActivatedRoute, private router: Router, private application: AppComponent) { }
+  constructor(private variableService: VariableService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void 
   {
@@ -24,7 +24,7 @@ export class VariableUpdateComponent implements OnInit, AfterViewInit
     this.variableService.getByIdVariable(this.numeroVariable).subscribe(data => { this.variable = data; });
   }
   
-  ngAfterViewInit() { this.application.menuActivateParams(); }
+  ngAfterViewInit() { }
 
   updateConfirmed() { if (this.variableForm.valid) { this.variableService.updateVariable(this.numeroVariable, this.variable).subscribe(() => { this.goToListVariable(); }); } }
 

@@ -1,11 +1,11 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppComponent } from '../../app.component';
+import { MenuComponent } from '../menu/menu.component';
 import { Categorie } from '../../interfaces/categorie';
 import { CategorieService } from '../../services/categorie.service';
 import { FormsModule, NgForm } from '@angular/forms'; 
 
-@Component({ selector: 'app-categorie-create', imports: [FormsModule], templateUrl: './categorie-create.component.html', styleUrl: './categorie-create.component.css'})
+@Component({ selector: 'app-categorie-create', imports: [FormsModule, MenuComponent], templateUrl: './categorie-create.component.html', styleUrl: './categorie-create.component.css'})
 
 export class CategorieCreateComponent implements OnInit, AfterViewInit
 {
@@ -13,11 +13,11 @@ export class CategorieCreateComponent implements OnInit, AfterViewInit
 
   categorie: Categorie = new Categorie();
   
-  constructor(private categorieService: CategorieService, private router: Router, private application: AppComponent) { }
+  constructor(private categorieService: CategorieService, private router: Router) { }
 
   ngOnInit(): void { }
 
-  ngAfterViewInit() { this.application.menuActivateCompos(); }
+  ngAfterViewInit() { }
 
   private saveCategorie() { this.categorieService.createCategorie(this.categorie).subscribe({ next: () => { this.goToListCategorie(); }, error: (err: any) => { console.log(err); }, complete: () => { } }); }
 
