@@ -17,7 +17,7 @@ export class ParticipantCreateComponent implements OnInit, AfterViewInit
   
   participant: Participant = new Participant();
   
-  constructor(private participantService: ParticipantService, private router: Router) { }
+  constructor(private participantService: ParticipantService, private router: Router, private menu: MenuComponent) { }
 
   ngOnInit(): void { }
   
@@ -27,8 +27,6 @@ export class ParticipantCreateComponent implements OnInit, AfterViewInit
 
   addParticipant() { if (this.participantForm.valid) { this.saveParticipant(); } }
 
-  goToListParticipant() {this.router.navigate(['/participant-list'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000) } }); }
+  goToListParticipant() {this.router.navigate(['/participant-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
   
-  private getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
-
 }

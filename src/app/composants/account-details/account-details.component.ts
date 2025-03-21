@@ -12,7 +12,7 @@ export class AccountDetailsComponent implements OnInit, AfterViewInit
  
   participant: Participant = new Participant();
   
-  constructor(private accountService : AccountService, private router: Router) { }
+  constructor(private accountService : AccountService, private router: Router, private menu: MenuComponent) { }
 
   ngOnInit() 
   {
@@ -24,8 +24,6 @@ export class AccountDetailsComponent implements OnInit, AfterViewInit
  
   updateProfil() { this.router.navigate(['/account-update']); }
   
-  goToHome(){ this.router.navigate(['/'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000) } }); }
-
-  private getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
+  goToHome(){ this.router.navigate(['/'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
 
 }

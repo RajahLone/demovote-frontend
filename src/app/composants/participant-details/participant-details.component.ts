@@ -17,7 +17,7 @@ export class ParticipantDetailsComponent implements OnInit, AfterViewInit
 
   participant: Participant = new Participant();
   
-  constructor(private participantService: ParticipantService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private participantService: ParticipantService, private route: ActivatedRoute, private router: Router, private menu: MenuComponent) { }
 
   ngOnInit(): void 
   {
@@ -30,8 +30,6 @@ export class ParticipantDetailsComponent implements OnInit, AfterViewInit
  
   updateParticipant(id: number) { this.router.navigate(['/participant-update', id]); }
   
-  goToListParticipant(){ this.router.navigate(['/participant-list'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000) } }); }
-
-  private getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
+  goToListParticipant(){ this.router.navigate(['/participant-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
 
 }

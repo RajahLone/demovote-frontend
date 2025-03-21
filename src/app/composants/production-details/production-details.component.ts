@@ -16,7 +16,7 @@ export class ProductionDetailsComponent implements OnInit, AfterViewInit
   
   production: ProductionShort = new ProductionShort();
   
-  constructor(private productionService: ProductionService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private productionService: ProductionService, private route: ActivatedRoute, private router: Router, private menu: MenuComponent) { }
 
   ngOnInit(): void 
   { 
@@ -31,8 +31,6 @@ export class ProductionDetailsComponent implements OnInit, AfterViewInit
   
   updateProduction(id: number) { this.router.navigate(['/production-update', id]); }
 
-  goToListProduction() {this.router.navigate(['/production-list'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000) } }); }
+  goToListProduction() {this.router.navigate(['/production-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
   
-  private getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
-
 }

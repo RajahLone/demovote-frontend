@@ -16,7 +16,7 @@ export class VariableCreateComponent implements OnInit, AfterViewInit
   
   variable: Variable = new Variable();
   
-  constructor(private variableService: VariableService, private router: Router) { }
+  constructor(private variableService: VariableService, private router: Router, private menu: MenuComponent) { }
 
   ngOnInit(): void { }
   
@@ -26,8 +26,6 @@ export class VariableCreateComponent implements OnInit, AfterViewInit
 
   addVariable() { if (this.variableForm.valid) { this.saveVariable(); } }
 
-  goToListVariable() {this.router.navigate(['/variable-list'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000) } }); }
+  goToListVariable() {this.router.navigate(['/variable-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
   
-  private getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
-
 }

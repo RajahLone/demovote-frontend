@@ -15,7 +15,7 @@ export class CategorieUpdateComponent implements OnInit, AfterViewInit
   
   categorie: Categorie = new Categorie();
   
-  constructor(private categorieService: CategorieService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private categorieService: CategorieService, private route: ActivatedRoute, private router: Router, private menu: MenuComponent) { }
 
   ngOnInit(): void 
   {
@@ -29,8 +29,6 @@ export class CategorieUpdateComponent implements OnInit, AfterViewInit
 
   deleteConfirmed() { this.categorieService.deleteCategorie(this.numeroCategorie).subscribe(() => { this.goToListCategorie(); }); }
 
-  goToListCategorie(){ this.router.navigate(['/categorie-list'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000) } }); }
+  goToListCategorie(){ this.router.navigate(['/categorie-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
   
-  private getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
-
 }

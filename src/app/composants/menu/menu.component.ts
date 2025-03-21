@@ -22,6 +22,8 @@ export class MenuComponent implements OnInit
     this.role = this.accountService.getRole();
   }
   
-  signOut() { this.accountService.signOut(); this.router.navigate(['/home']); } 
+  deconnexion() { this.accountService.signOut(); window.location.reload(); } 
   
+  getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
+
 }

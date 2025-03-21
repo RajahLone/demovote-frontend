@@ -15,7 +15,7 @@
   <ul class="nav nav-pills nav-flush flex-column text-center">
 	 	<li><a routerLink="/home" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Accueil" placement="right" container="body"><i class="fa-solid fa-home"></i></a></li>
 		<li><a routerLink="/account-details" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Compte" placement="right" container="body"><i class="fa-solid fa-user"></i></a></li>
-		<li><a (click)="signOut()" class="nav-link rounded-0 bg-gradient" tooltip="Logout" placement="right" container="body"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+		<li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" tooltip="Logout" placement="right" container="body"><i class="fa-solid fa-right-from-bracket"></i></a></li>
 		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Planning" placement="right" container="body"><i class="fa-solid fa-clock"></i></a></li>
 		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Caméras" placement="right" container="body"><i class="fa-solid fa-eye"></i></a></li>
 		
@@ -35,7 +35,7 @@
   <ul class="nav nav-pills nav-flush flex-column text-center">
 	 	<li><a routerLink="/home" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Accueil" placement="right" container="body"><i class="fa-solid fa-home"></i></a></li>
 		<li><a routerLink="/account-details" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Compte" placement="right" container="body"><i class="fa-solid fa-user"></i></a></li>
-		<li><a (click)="signOut()" class="nav-link rounded-0 bg-gradient" tooltip="Logout" placement="right" container="body"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+		<li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" tooltip="Logout" placement="right" container="body"><i class="fa-solid fa-right-from-bracket"></i></a></li>
 		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Planning" placement="right" container="body"><i class="fa-solid fa-clock"></i></a></li>
 		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Caméras" placement="right" container="body"><i class="fa-solid fa-eye"></i></a></li>
 		
@@ -55,7 +55,7 @@
   <ul class="nav nav-pills nav-flush flex-column text-center">
 	 	<li><a routerLink="/home" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Accueil" placement="right" container="body"><i class="fa-solid fa-home"></i></a></li>
 		<li><a routerLink="/account-details" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Compte" placement="right" container="body"><i class="fa-solid fa-user"></i></a></li>
-		<li><a (click)="signOut()" class="nav-link rounded-0 bg-gradient" tooltip="Logout" placement="right" container="body"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+		<li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" tooltip="Logout" placement="right" container="body"><i class="fa-solid fa-right-from-bracket"></i></a></li>
 		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Planning" placement="right" container="body"><i class="fa-solid fa-clock"></i></a></li>
 		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Caméras" placement="right" container="body"><i class="fa-solid fa-eye"></i></a></li>
 		
@@ -73,4 +73,18 @@
 	</ul>
 </div>
 
+}
+@if (this.logged) {
+
+<div class="modal fade" id="modalDeconnecter" tabindex="-1" aria-labelledby="modalDeconnecterTitre" aria-hidden="false">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-body">Voulez-vous vous déconnecter ?</div>
+			<div class="modal-footer">
+				<button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
+				<button type="button" class="btn bg-gradient btn-warning btn-sm" (click)="deconnexion()" data-bs-dismiss="modal">Confirmer</button>
+			</div>
+		</div>
+	</div>
+</div>
 }

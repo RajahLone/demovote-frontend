@@ -13,7 +13,7 @@ export class CategorieCreateComponent implements OnInit, AfterViewInit
 
   categorie: Categorie = new Categorie();
   
-  constructor(private categorieService: CategorieService, private router: Router) { }
+  constructor(private categorieService: CategorieService, private router: Router, private menu: MenuComponent) { }
 
   ngOnInit(): void { }
 
@@ -23,8 +23,6 @@ export class CategorieCreateComponent implements OnInit, AfterViewInit
 
   addCategorie() { if (this.categorieForm.valid) { this.saveCategorie(); } }
 
-  goToListCategorie() {this.router.navigate(['/categorie-list'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000) } }); }
+  goToListCategorie() {this.router.navigate(['/categorie-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
   
-  private getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
-
 }

@@ -27,8 +27,6 @@ export class VariableDetailsComponent implements OnInit, AfterViewInit
  
   updateVariable(id: number) { this.router.navigate(['/variable-update', id]); }
   
-  goToListVariable(){ this.router.navigate(['/variable-list'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000) } }); }
-
-  private getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
+  goToListVariable(){ window.location.reload(); }
 
 }

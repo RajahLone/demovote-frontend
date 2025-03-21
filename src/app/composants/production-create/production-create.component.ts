@@ -20,7 +20,7 @@ export class ProductionCreateComponent implements OnInit, AfterViewInit
   
   production: Production = new Production();
   
-  constructor(private productionService: ProductionService, private participantService: ParticipantService, private router: Router) { }
+  constructor(private productionService: ProductionService, private participantService: ParticipantService, private router: Router, private menu: MenuComponent) { }
 
   ngOnInit(): void { this.retreiveParticipants(); }
   
@@ -65,8 +65,6 @@ export class ProductionCreateComponent implements OnInit, AfterViewInit
 
   addProduction() { if (this.productionForm.valid) { this.saveProduction(); } }
 
-  goToListProduction() {this.router.navigate(['/production-list'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000) } }); }
+  goToListProduction() {this.router.navigate(['/production-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
   
-  private getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
-
 }

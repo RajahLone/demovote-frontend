@@ -16,7 +16,7 @@ export class VariableUpdateComponent implements OnInit, AfterViewInit
   
   variable: Variable = new Variable();
   
-  constructor(private variableService: VariableService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private variableService: VariableService, private route: ActivatedRoute, private router: Router, private menu: MenuComponent) { }
 
   ngOnInit(): void 
   {
@@ -30,8 +30,6 @@ export class VariableUpdateComponent implements OnInit, AfterViewInit
 
   deleteConfirmed() { this.variableService.deleteVariable(this.numeroVariable).subscribe(() => { this.goToListVariable(); }); }
 
-  goToListVariable(){ this.router.navigate(['/variable-list'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000) } }); }
-
-  private getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
+  goToListVariable(){ this.router.navigate(['/variable-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
 
 }

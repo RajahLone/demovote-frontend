@@ -14,7 +14,7 @@ export class AccountUpdateComponent implements OnInit, AfterViewInit
  
   participant: Participant = new Participant();
   
-  constructor(private accountService : AccountService, private router: Router) { }
+  constructor(private accountService : AccountService, private router: Router, private menu: MenuComponent) { }
 
   ngOnInit() { this.accountService.getProfil().subscribe(data => { this.participant = data; }); }
   
@@ -22,8 +22,6 @@ export class AccountUpdateComponent implements OnInit, AfterViewInit
 
   updateConfirmed() { if (this.participantForm.valid) { this.accountService.updateProfil(this.participant).subscribe(() => { this.goToHome(); }); } }
 
-  goToHome(){ this.router.navigate(['/'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000) } }); }
-
-  private getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
+  goToHome(){ this.router.navigate(['/'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
 
 }

@@ -1,5 +1,9 @@
+
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+
 //import { MenuComponent } from './composants/menu/menu.component';    
 import { HomeComponent } from './composants/home/home.component';    
 import { LoginComponent } from './composants/login/login.component';    
@@ -26,31 +30,31 @@ import { ProductionUploadComponent } from './composants/production-upload/produc
 
 export const routes: Routes = [  
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent },
-  {path: 'login', component: LoginComponent },
-  {path: 'account-details', component: AccountDetailsComponent },
-  {path: 'account-update', component: AccountUpdateComponent },
-  {path: 'variable-list', component: VariableListComponent /*, canActivate: [LoggedGuard]*/},
-  {path: 'variable-create', component: VariableCreateComponent /*, canActivate: [LoggedGuard]*/},
-  {path: 'variable-details/:numeroVariable', component: VariableDetailsComponent /*, canActivate: [LoggedGuard]*/},
-  {path: 'variable-update/:numeroVariable', component: VariableUpdateComponent /*, canActivate: [LoggedGuard]*/},
-  {path: 'categorie-list', component: CategorieListComponent },
-  {path: 'categorie-create', component: CategorieCreateComponent },
-  {path: 'categorie-details/:numeroCategorie', component: CategorieDetailsComponent },
-  {path: 'categorie-update/:numeroCategorie', component: CategorieUpdateComponent },
-  {path: 'participant-list', component: ParticipantListComponent },
-  {path: 'participant-create', component: ParticipantCreateComponent },
-  {path: 'participant-details/:numeroParticipant', component: ParticipantDetailsComponent },
-  {path: 'participant-update/:numeroParticipant', component: ParticipantUpdateComponent },
-  {path: 'production-list', component: ProductionListComponent },
-  {path: 'production-create', component: ProductionCreateComponent },
-  {path: 'production-details/:numeroProduction', component: ProductionDetailsComponent },
-  {path: 'production-update/:numeroProduction', component: ProductionUpdateComponent },
-  {path: 'production-upload/:numeroProduction', component: ProductionUploadComponent },
+  {path: 'home', component: HomeComponent, runGuardsAndResolvers: 'always' },
+  {path: 'login', component: LoginComponent, runGuardsAndResolvers: 'always' },
+  {path: 'account-details', component: AccountDetailsComponent, runGuardsAndResolvers: 'always' },
+  {path: 'account-update', component: AccountUpdateComponent, runGuardsAndResolvers: 'always' },
+  {path: 'variable-list', component: VariableListComponent /*, canActivate: [LoggedGuard]*/, runGuardsAndResolvers: 'always'},
+  {path: 'variable-create', component: VariableCreateComponent /*, canActivate: [LoggedGuard]*/, runGuardsAndResolvers: 'always'},
+  {path: 'variable-details/:numeroVariable', component: VariableDetailsComponent /*, canActivate: [LoggedGuard]*/, runGuardsAndResolvers: 'always'},
+  {path: 'variable-update/:numeroVariable', component: VariableUpdateComponent /*, canActivate: [LoggedGuard]*/, runGuardsAndResolvers: 'always'},
+  {path: 'categorie-list', component: CategorieListComponent, runGuardsAndResolvers: 'always' },
+  {path: 'categorie-create', component: CategorieCreateComponent, runGuardsAndResolvers: 'always' },
+  {path: 'categorie-details/:numeroCategorie', component: CategorieDetailsComponent, runGuardsAndResolvers: 'always' },
+  {path: 'categorie-update/:numeroCategorie', component: CategorieUpdateComponent, runGuardsAndResolvers: 'always' },
+  {path: 'participant-list', component: ParticipantListComponent, runGuardsAndResolvers: 'always' },
+  {path: 'participant-create', component: ParticipantCreateComponent, runGuardsAndResolvers: 'always' },
+  {path: 'participant-details/:numeroParticipant', component: ParticipantDetailsComponent, runGuardsAndResolvers: 'always' },
+  {path: 'participant-update/:numeroParticipant', component: ParticipantUpdateComponent, runGuardsAndResolvers: 'always' },
+  {path: 'production-list', component: ProductionListComponent, runGuardsAndResolvers: 'always' },
+  {path: 'production-create', component: ProductionCreateComponent, runGuardsAndResolvers: 'always' },
+  {path: 'production-details/:numeroProduction', component: ProductionDetailsComponent, runGuardsAndResolvers: 'always' },
+  {path: 'production-update/:numeroProduction', component: ProductionUpdateComponent, runGuardsAndResolvers: 'always' },
+  {path: 'production-upload/:numeroProduction', component: ProductionUploadComponent, runGuardsAndResolvers: 'always' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],                                                                                                                                                                                                                                                                                                          
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' }), BrowserModule, FormsModule],                                                                                                                                                                                                                                                                                                          
   exports: [RouterModule]
 })
 

@@ -30,9 +30,7 @@ export class ParticipantListComponent implements OnInit, AfterViewInit
   	return nbjours;
   }
   
-  goToRefreshListParticipant(){ this.router.navigate(['/participant-list'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000) } }); }
-
-  private getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
+  goToRefreshListParticipant(){ window.location.reload(); }
 
   goToNewParticipant(){ this.router.navigate(['/participant-create']); }
 

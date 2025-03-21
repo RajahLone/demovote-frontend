@@ -13,7 +13,7 @@ export class VariableListComponent implements OnInit, AfterViewInit
   
   variables: Variable[] = [];
 
-  constructor(private variableService: VariableService, private router: Router) { }
+  constructor(private variableService: VariableService, private router: Router, private menu: MenuComponent) { }
 
   ngOnInit(): void { this.retreiveDatas(); this.retreiveParticipants(); }
   
@@ -22,11 +22,9 @@ export class VariableListComponent implements OnInit, AfterViewInit
   private retreiveDatas() { this.variableService.getListVariable().subscribe(data => { this.variables = data; }); }
   private retreiveParticipants() { this.variableService.getOptionListVariableType().subscribe(data => { this.types = data; }); }
 
-  filtrageParType(event: any) { this.router.navigate(['/variable-list'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000), 'type': event.target.value } }); }
+  filtrageParType(event: any) { this.router.navigate(['/variable-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000), 'type': event.target.value } }); }
   
-  goToRefreshListVariable(){ this.router.navigate(['/variable-list'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000) } }); }
-
-  private getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
+  goToRefreshListVariable(){ window.location.reload(); }
 
   goToNewVariable(){ this.router.navigate(['/variable-create']); }
 

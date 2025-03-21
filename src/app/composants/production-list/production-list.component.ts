@@ -23,9 +23,7 @@ export class ProductionListComponent implements OnInit, AfterViewInit
 
   private retreiveDatas() { this.productionService.getListProduction().subscribe(data => { this.productions = data; }); }
 
-  goToRefreshListProduction(){ this.router.navigate(['/production-list'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000) } }); }
-
-  private getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
+  goToRefreshListProduction(){ window.location.reload(); }
 
   goToNewProduction(){ this.router.navigate(['/production-create']); }
 

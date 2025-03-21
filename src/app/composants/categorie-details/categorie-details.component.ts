@@ -14,7 +14,7 @@ export class CategorieDetailsComponent implements OnInit, AfterViewInit
 
   categorie: Categorie = new Categorie();
   
-  constructor(private categorieService: CategorieService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private categorieService: CategorieService, private route: ActivatedRoute, private router: Router, private menu: MenuComponent) { }
 
   ngOnInit(): void 
   {
@@ -27,8 +27,6 @@ export class CategorieDetailsComponent implements OnInit, AfterViewInit
  
   updateCategorie(id: number) { this.router.navigate(['/categorie-update', id]); }
   
-  goToListCategorie(){ this.router.navigate(['/categorie-list'], { queryParams: { 'refresh': this.getRandomInteger(1, 100000) } }); }
-
-  private getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
+  goToListCategorie(){ this.router.navigate(['/categorie-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
 
 }
