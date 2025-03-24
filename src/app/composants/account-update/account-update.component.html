@@ -37,9 +37,9 @@
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Pseudonyme&nbsp;<sup><span class="text-danger">*</span></sup></label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Pseudonyme</label>
 			<div class="col-sm-8">
-				<input type="text" class="form-control form-control-sm field-separate" id="pseudonyme" name="pseudonyme" [(ngModel)]="participant.pseudonyme" #pseudonymeRef="ngModel" required [class.is-invalid]="pseudonymeRef.invalid && pseudonymeRef.touched">
+				<input type="text" class="form-control form-control-sm field-separate" id="pseudonyme" name="pseudonyme" [(ngModel)]="participant.pseudonyme" disabled>
 			</div>
 		</div>
 
@@ -155,7 +155,7 @@
 				<div class="col-sm-4"></div>
 				<div class="col-sm-8">
 					<div class="form-check form-switch">
-						<input class="form-check-input field-separate" type="checkbox" id="useAmigabus" name="useAmigabus" [(ngModel)]="participant.useAmigabus" disabled> 
+						<input class="form-check-input field-separate" type="checkbox" id="useAmigabus" name="useAmigabus" [(ngModel)]="participant.useAmigabus" disabled>
 						<label class="form-check-label" for="useAmigabus">Vient en Amigabus</label>
 					</div>
 				</div>

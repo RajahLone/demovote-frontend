@@ -3,12 +3,34 @@
 <div class="card shadow">
 	<div class="card-header">Table des participants</div>
 	<div class="card-header shadow-sm">
-		<div class="row">
+		<div class="row justify-content-between">
 			<div class="form-group col-sm-4 label-nobr">
-				<button type="button" (click)="goToRefreshListParticipant()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;Actualiser</button>
-				<button type="button" (click)="goToNewParticipant()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;Créer</button>
+				<button type="button" (click)="goToRefreshListParticipant()" class="btn bg-gradient btn-primary btn-sm field-separate" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;Actualiser</button>
+				<button type="button" (click)="goToNewParticipant()" class="btn bg-gradient btn-primary btn-sm field-separate" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;Créer</button>
 			</div>
-		</div>
+			<div class="form-group col-sm-2">
+				<div class="input-group input-group-sn">
+					<button type="button" (click)="filtrageParNom()" class="btn bg-gradient btn-primary btn-sm field-separate"><i class="fa-solid fa-filter"></i>&nbsp;Filtrer</button>
+					<input type="text" (keydown.enter)="filtrageParNom()" class="form-control form-control-sm field-separate" id="input_nom" [(ngModel)]="nomFiltre" tooltip="Filtrer par nom, prenom ou pseudonyme" placement="bottom">
+			  </div>
+			</div>
+			<div class="form-group col-sm-2">
+				<select class="form-select form-select-sm field-separate" id="select_statut" [(ngModel)]="statutFiltre" (change)="filtrageParStatut($event)" tooltip="Filtrer selon le status" placement="bottom">
+					<option value="0">Tout statut</option>
+					<option value="1">Non réglé(s)</option>
+				</select>
+			</div>
+			<div class="form-group col-sm-2">
+				<select class="form-select form-select-sm field-separate" id="select_arrive" [(ngModel)]="arriveFiltre" (change)="filtrageParArrive($event)" tooltip="Filtrer selon l'arrivage" placement="bottom">
+					<option value="0">Tous</option>
+					<option value="1">Non arrivé(s)</option>
+					<option value="2">Arrivé(s)</option>
+				</select>
+			</div>
+			<div class="form-group col-sm-2">
+				<button type="button" (click)="filtrageReset()" class="btn bg-gradient btn-secondary btn-sm field-separate"><i class="fa-solid fa-filter-circle-xmark"></i>&nbsp;Retirer les filtres</button>
+			</div>
+   	</div>
 	</div>
 	<div class="card-body">
 		<table class="table table-sm">
@@ -29,15 +51,15 @@
 					<td class="label-nobr text-truncate" style="max-width:200px;"><a (click)="formParticipant(participant.numeroParticipant)" class="link-primary pointeur-souris text-decoration-none">{{ participant.pseudonyme }}</a>@if (participant.groupe) { / {{ participant.groupe }} }&nbsp;&nbsp;</td>
 					<td>
 					  @if (participant.statut === PS[0].key) { <i class="fa-solid fa-circle-xmark text-danger" title="{{ PS[0].value }}"></i> }
-					  @else if (participant.statut === PS[1].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[1].value }}"></i> }  
-					  @else if (participant.statut === PS[2].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[2].value }}"></i> }  
-					  @else if (participant.statut === PS[3].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[3].value }}"></i> }  
-					  @else if (participant.statut === PS[4].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[4].value }}"></i> }  
-					  @else if (participant.statut === PS[5].key) { <i class="fa-solid fa-circle-check text-primary" title="{{ PS[5].value }}"></i> }  
-					  @else if (participant.statut === PS[6].key) { <i class="fa-solid fa-circle-check text-primary" title="{{ PS[6].value }}"></i> } 
+					  @else if (participant.statut === PS[1].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[1].value }}"></i> }
+					  @else if (participant.statut === PS[2].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[2].value }}"></i> }
+					  @else if (participant.statut === PS[3].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[3].value }}"></i> }
+					  @else if (participant.statut === PS[4].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[4].value }}"></i> }
+					  @else if (participant.statut === PS[5].key) { <i class="fa-solid fa-circle-check text-primary" title="{{ PS[5].value }}"></i> }
+					  @else if (participant.statut === PS[6].key) { <i class="fa-solid fa-circle-check text-primary" title="{{ PS[6].value }}"></i> }
 					</td>
 					<td>
-					  @if (participant.arrived) { <i class="fa-solid fa-circle-check text-success"></i> } 
+					  @if (participant.arrived) { <i class="fa-solid fa-circle-check text-success"></i> }
 					  @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;
 					</td>
 					<td>{{ getNombreJours(participant.hereDay1, participant.hereDay2, participant.hereDay3) }} @if(participant.sleepingOnSite) { + <i class="fa-solid fa-bed"></i> }</td>

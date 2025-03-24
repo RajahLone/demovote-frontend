@@ -9,7 +9,7 @@
 	</ul>
 </div>
 
-} @else if (this.logged && (this.role === "USER")) {		
+} @else if (this.logged && (this.role === "USER")) {
 
 <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" id="sidenav">
   <ul class="nav nav-pills nav-flush flex-column text-center">
@@ -18,9 +18,9 @@
 		<li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" tooltip="Logout" placement="right" container="body"><i class="fa-solid fa-right-from-bracket"></i></a></li>
 		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Planning" placement="right" container="body"><i class="fa-solid fa-clock"></i></a></li>
 		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Caméras" placement="right" container="body"><i class="fa-solid fa-eye"></i></a></li>
-		
+
 		<li><a routerLink="/chat" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Messagerie" placement="right" container="body"><i class="fa-solid fa-comments"></i></a></li>
-		
+
 		<li><a routerLink="/production-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Productions" placement="right" container="body"><i class="fa-solid fa-save"></i></a></li>
 
 		<li><a routerLink="/vote-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Voter" placement="right" container="body"><i class="fa-solid fa-vote-yea"></i></a></li>
@@ -29,7 +29,7 @@
 	</ul>
 </div>
 
-} @else if (this.logged && (this.role === "ORGA")) {		
+} @else if (this.logged && (this.role === "ORGA")) {
 
 <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" id="sidenav">
   <ul class="nav nav-pills nav-flush flex-column text-center">
@@ -38,18 +38,18 @@
 		<li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" tooltip="Logout" placement="right" container="body"><i class="fa-solid fa-right-from-bracket"></i></a></li>
 		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Planning" placement="right" container="body"><i class="fa-solid fa-clock"></i></a></li>
 		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Caméras" placement="right" container="body"><i class="fa-solid fa-eye"></i></a></li>
-		
+
 		<li><a routerLink="/chat" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Messagerie" placement="right" container="body"><i class="fa-solid fa-comments"></i></a></li>
-		
+
 		<li><a routerLink="/participant-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Participants" placement="right" container="body"><i class="fa-solid fa-users"></i></a></li>
-		
+
 		<li><a routerLink="/production-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Productions" placement="right" container="body"><i class="fa-solid fa-save"></i></a></li>
 		<li><a routerLink="/vote-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Voter" placement="right" container="body"><i class="fa-solid fa-vote-yea"></i></a></li>
 		<li><a routerLink="/result-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Résultats" placement="right" container="body"><i class="fa-solid fa-trophy"></i></a></li>
 	</ul>
 </div>
 
-} @else if (this.logged && (this.role === "ADMIN")) {		
+} @else if (this.logged && (this.role === "ADMIN")) {
 
 <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" id="sidenav">
   <ul class="nav nav-pills nav-flush flex-column text-center">
@@ -58,17 +58,17 @@
 		<li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" tooltip="Logout" placement="right" container="body"><i class="fa-solid fa-right-from-bracket"></i></a></li>
 		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Planning" placement="right" container="body"><i class="fa-solid fa-clock"></i></a></li>
 		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Caméras" placement="right" container="body"><i class="fa-solid fa-eye"></i></a></li>
-		
+
 		<li><a routerLink="/chat" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Messagerie" placement="right" container="body"><i class="fa-solid fa-comments"></i></a></li>
-		
+
 		<li><a routerLink="/participant-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Participants" placement="right" container="body"><i class="fa-solid fa-users"></i></a></li>
-		
+
 		<li><a routerLink="/categorie-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Catégories" placement="right" container="body"><i class="fa-solid fa-layer-group"></i></a></li>
 		<li><a routerLink="/production-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Productions" placement="right" container="body"><i class="fa-solid fa-save"></i></a></li>
 		<li><a routerLink="/show-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Présentations" placement="right" container="body"><i class="fa-solid fa-display"></i></a></li>
 		<li><a routerLink="/poll-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Voter" placement="right" container="body"><i class="fa-solid fa-vote-yea"></i></a></li>
 		<li><a routerLink="/result-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Résultats" placement="right" container="body"><i class="fa-solid fa-trophy"></i></a></li>
-		
+
 		<li><a routerLink="/variable-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" tooltip="Paramétrages" placement="right" container="body"><i class="fa-solid fa-sliders-h"></i></a></li>
 	</ul>
 </div>

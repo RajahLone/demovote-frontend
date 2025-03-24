@@ -6,7 +6,7 @@ import { CategorieService } from '../../services/categorie.service';
 
 @Component({ selector: 'app-categorie-list', imports: [MenuComponent], templateUrl: './categorie-list.component.html', styleUrl: './categorie-list.component.css'})
 
-export class CategorieListComponent implements OnInit, AfterViewInit 
+export class CategorieListComponent implements OnInit, AfterViewInit
 {
 
   categories: Categorie[] = [];
@@ -19,8 +19,8 @@ export class CategorieListComponent implements OnInit, AfterViewInit
 
   private retreiveDatas() { this.categorieService.getListCategorie().subscribe(data => { this.categories = data; }); }
 
-  goToRefreshListCategorie(){ window.location.reload(); }
-  
+  goToRefreshListCategorie(){ this.retreiveDatas(); }
+
   goToNewCategorie(){ this.router.navigate(['/categorie-create']); }
 
   formCategorie(id: number) { this.router.navigate(['/categorie-details', id]); }

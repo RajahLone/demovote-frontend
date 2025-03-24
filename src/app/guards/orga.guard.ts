@@ -5,16 +5,17 @@ import { AccountService } from '../services/account.service';
 
 @Injectable({ providedIn: 'root' })
 
-export class LoggedGuard implements CanActivate 
-{      
- 
-  constructor(private router: Router, private accountService: AccountService) {}
-  
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean 
-  {      
-    if (this.accountService.isLogged()) { return true; }
+export class OrgaGuard implements CanActivate
+{
 
-    return false;      
+  constructor(private router: Router, private accountService: AccountService) {}
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean
+  {
+    if (this.accountService.getRole() === 'ADMIN') { return true; }
+    if (this.accountService.getRole() === 'ORGA') { return true; }
+
+    return false;
   }
-   
-}    
+
+}
