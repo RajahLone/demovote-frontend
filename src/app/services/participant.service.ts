@@ -13,13 +13,14 @@ export class ParticipantService
 
   constructor(private httpClient: HttpClient) { }
 
-  getListParticipant(filtreNom: string, filtreStatut: number, filtreArrive: number): Observable<ParticipantList[]>
+  getListParticipant(filtreNom: string, filtreStatut: number, filtreArrive: number, tri: number): Observable<ParticipantList[]>
   {
     let params = new HttpParams();
 
     params = params.append('nom', filtreNom);
     params = params.append('statut', filtreStatut);
     params = params.append('arrive', filtreArrive);
+    params = params.append('tri', tri);
 
     return this.httpClient.get<Participant[]>(`${this.baseURL}/list`, { params: params });
   }

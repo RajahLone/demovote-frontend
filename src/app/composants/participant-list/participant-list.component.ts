@@ -11,6 +11,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 export class ParticipantListComponent implements OnInit, AfterViewInit
 {
 
+  listeTri: number = 0;
   nomFiltre: string = "";
   statutFiltre: number = 0;
   arriveFiltre: number = 0;
@@ -25,7 +26,7 @@ export class ParticipantListComponent implements OnInit, AfterViewInit
 
   ngAfterViewInit() { }
 
-  private retreiveDatas() { this.participantService.getListParticipant(this.nomFiltre, this.statutFiltre, this.arriveFiltre).subscribe(data => { this.participants = data; }); }
+  private retreiveDatas() { this.participantService.getListParticipant(this.nomFiltre, this.statutFiltre, this.arriveFiltre, this.listeTri).subscribe(data => { this.participants = data; }); }
 
   getNombreJours(j1: boolean, j2: boolean, j3: boolean)
   {
@@ -40,6 +41,7 @@ export class ParticipantListComponent implements OnInit, AfterViewInit
 
   goToFiltrage() { this.retreiveDatas(); }
 
+  trier(event: any) { this.listeTri = event.target.value; this.retreiveDatas(); }
   filtrageParNom() { this.retreiveDatas(); }
   filtrageParStatut(event: any) { this.statutFiltre = event.target.value; this.retreiveDatas(); }
   filtrageParArrive(event: any) { this.arriveFiltre = event.target.value; this.retreiveDatas(); }
