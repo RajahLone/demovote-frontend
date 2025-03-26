@@ -1,17 +1,17 @@
 
 export class ProductionEnum { key!: string; value!: string; }
 
-export const ProductionTypeList: ProductionEnum[] = 
-[ 
-  { key: "EXECUTABLE", value: "Exécutable"}, 
-  { key: "GRAPHE", value: "Graphe"}, 
-  { key: "MUSIQUE", value: "Musique"}, 
-  { key: "VIDEO", value: "Vidéo"}, 
-  { key: "TOPIC", value: "Topic"}, 
-  { key: "AUTRE", value: "Autre"} 
+export const ProductionTypeList: ProductionEnum[] =
+[
+  { key: "EXECUTABLE", value: $localize`Exécutable`},
+  { key: "GRAPHE", value: $localize`Graphe`},
+  { key: "MUSIQUE", value: $localize`Musique`},
+  { key: "VIDEO", value: $localize`Vidéo`},
+  { key: "TOPIC", value: $localize`Topic`},
+  { key: "AUTRE", value: $localize`Autre`}
 ];
 
-export class Production 
+export class Production
 {
   numeroProduction: number = 0;
   type: string = "AUTRE";

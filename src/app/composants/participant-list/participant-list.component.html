@@ -1,49 +1,49 @@
 <app-menu></app-menu>
 <div id="main">
 <div class="card shadow">
-	<div class="card-header">Table des participants</div>
+	<div class="card-header"><span i18n>Liste des participants</span></div>
 	<div class="card-header shadow-sm">
 		<div class="row justify-content-between">
 			<div class="form-group col-sm-2 label-nobr">
-				<button type="button" (click)="goToRefreshListParticipant()" class="btn bg-gradient btn-primary btn-sm field-separate" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;Actualiser</button>
-				<button type="button" (click)="goToNewParticipant()" class="btn bg-gradient btn-primary btn-sm field-separate" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;Créer</button>
+				<button type="button" (click)="goToRefreshListParticipant()" class="btn bg-gradient btn-primary btn-sm field-separate" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;<span i18n>Actualiser</span></button>
+				<button type="button" (click)="goToNewParticipant()" class="btn bg-gradient btn-primary btn-sm field-separate" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;<span i18n>Créer</span></button>
 			</div>
 			<div class="form-group col-sm-2 label-nobr">
 				<div class="input-group input-group-sn">
-					<button type="button" class="btn bg-gradient btn-secondary btn-sm field-separate" disabled>Tri</button>
+					<button type="button" class="btn bg-gradient btn-secondary btn-sm field-separate" disabled><span i18n>Tri</span></button>
  				  <select class="form-select form-select-sm field-separate" id="select_tri" [(ngModel)]="listeTri" (change)="trier($event)" placement="bottom">
-						<option value="0">par nom</option>
-					  <option value="1">inscription</option>
+						<option value="0"><span i18n>par nom, prénom, pseudo</span></option>
+						<option value="1"><span i18n>par ordre d'inscription</span></option>
 				  </select>
 			  </div>
 			</div>
 			<div class="form-group col-sm-2 label-nobr">
 				<div class="input-group input-group-sn">
-					<button type="button" (click)="filtrageParNom()" class="btn bg-gradient btn-primary btn-sm field-separate"><i class="fa-solid fa-filter"></i>&nbsp;Filtrer</button>
-					<input type="text" (keydown.enter)="filtrageParNom()" class="form-control form-control-sm field-separate" id="input_nom" [(ngModel)]="nomFiltre" tooltip="Filtrer par nom, prenom, pseudonyme ou adresse email" placement="bottom">
+					<button type="button" (click)="filtrageParNom()" class="btn bg-gradient btn-primary btn-sm field-separate"><i class="fa-solid fa-filter"></i>&nbsp;<span i18n>Filtrer</span></button>
+					<input type="text" (keydown.enter)="filtrageParNom()" class="form-control form-control-sm field-separate" id="input_nom" [(ngModel)]="nomFiltre" i18n-tooltip tooltip="Filtrer par nom, prenom, pseudonyme ou adresse email" placement="bottom">
 			  </div>
 			</div>
 			<div class="form-group col-sm-2 label-nobr">
 				<div class="input-group input-group-sn">
-					<button type="button" class="btn bg-gradient btn-secondary btn-sm field-separate" disabled>Réglement</button>
+					<button type="button" class="btn bg-gradient btn-secondary btn-sm field-separate" disabled><span i18n>Réglement</span></button>
 				  <select class="form-select form-select-sm field-separate" id="select_statut" [(ngModel)]="statutFiltre" (change)="filtrageParStatut($event)">
 						<option value="0"></option>
-						<option value="1">En attente</option>
+						<option value="1"><span i18n>En attente</span></option>
 				  </select>
 			  </div>
 			</div>
 			<div class="form-group col-sm-2 label-nobr">
 				<div class="input-group input-group-sn">
-					<button type="button" class="btn bg-gradient btn-secondary btn-sm field-separate" disabled>Arrivé(s)</button>
+					<button type="button" class="btn bg-gradient btn-secondary btn-sm field-separate" disabled><span i18n>Arrivé(s)</span></button>
 				  <select class="form-select form-select-sm field-separate" id="select_arrive" [(ngModel)]="arriveFiltre" (change)="filtrageParArrive($event)">
 					  <option value="0"></option>
-					  <option value="1">Non</option>
-						<option value="2">Oui</option>
+						<option value="1"><span i18n>Non</span></option>
+						<option value="2"><span i18n>Oui</span></option>
 				  </select>
 			  </div>
 			</div>
 			<div class="form-group col-sm-2 label-nobr">
-				<button type="button" (click)="filtrageReset()" class="btn bg-gradient btn-secondary btn-sm field-separate"><i class="fa-solid fa-filter-circle-xmark"></i>&nbsp;Retirer les filtres</button>
+				<button type="button" (click)="filtrageReset()" class="btn bg-gradient btn-secondary btn-sm field-separate"><i class="fa-solid fa-filter-circle-xmark"></i>&nbsp;<span i18n>Retirer les filtres</span></button>
 			</div>
    	</div>
 	</div>
@@ -51,12 +51,12 @@
 		<table class="table table-sm">
 			<thead class="thead-dark">
 				<tr>
-					<th class="fs-6 label-nobr"><small>Nom</small></th>
-					<th class="fs-6 label-nobr"><small>Pseudonyme</small></th>
-					<th class="fs-6 label-nobr"><small>Status</small></th>
-					<th class="fs-6 label-nobr"><small>Arrivé</small></th>
-					<th class="fs-6 label-nobr"><small>Journées</small></th>
-					<th class="fs-6 label-nobr"><small>Adresse email</small></th>
+					<th class="fs-6 label-nobr"><small><span i18n>Nom</span></small></th>
+					<th class="fs-6 label-nobr"><small><span i18n>Pseudonyme</span></small></th>
+					<th class="fs-6 label-nobr"><small><span i18n>Status</span></small></th>
+					<th class="fs-6 label-nobr"><small><span i18n>Arrivé</span></small></th>
+					<th class="fs-6 label-nobr"><small><span i18n>Journées</span></small></th>
+					<th class="fs-6 label-nobr"><small><span i18n>Adresse email</span></small></th>
 				</tr>
 			</thead>
 			<tbody>

@@ -2,30 +2,28 @@
 <div id="main">
 <form id="formProduction" #formRef="ngForm" class="needs-validation">
 	<div class="card shadow center">
-		<div class="card-header">Fiche d'une production</div>
+		<div class="card-header"><span i18n>Fiche d'une production</span></div>
 		<div class="card-header shadow-sm">
-			<button (click)="goToListProduction()" class="btn bg-gradient btn-primary btn-sm">
-				<i class="fa-solid fa-xmark"></i>&nbsp;Retour
-			</button>
+			<button (click)="goToListProduction()" class="btn bg-gradient btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;<span i18n>Retour</span></button>
 		</div>
 		<div class="card-body">
 
 			<div class="form-group row">
-				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Créé le</label>
+				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Créé le</span></label>
 				<div class="col-sm-8">
 					<input type="text" class="form-control form-control-sm field-separate" id="dateCreation" name="dateCreation" [(ngModel)]="production.dateCreation" disabled>
 				</div>
 			</div>
 
 			<div class="form-group row">
-				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Modifié le</label>
+				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Modifié le</span></label>
 				<div class="col-sm-8">
 					<input type="text" class="form-control form-control-sm field-separate" id="dateModification" name="dateModification" [(ngModel)]="production.dateModification" disabled>
 				</div>
 			</div>
 
 			<div class="form-group row">
-				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Type</label>
+				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Type</span></label>
 				<div class="col-sm-8">
 					<div class="form-group field-separate">
 						<select class="form-select form-select-sm" id="type" name="type" [(ngModel)]="production.type"> @for (type of types; track type.key) {
@@ -36,49 +34,49 @@
 			</div>
 
 			<div class="form-group row">
-				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Titre&nbsp;<sup><span class="text-danger">*</span></sup></label>
+				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Titre</span>&nbsp;<sup><span class="text-danger">*</span></sup></label>
 				<div class="col-sm-8">
 					<input type="text" class="form-control form-control-sm field-separate" id="titre" name="titre" [(ngModel)]="production.titre" #titreRef="ngModel" required [class.is-invalid]="titreRef.invalid && titreRef.touched">
 				</div>
 			</div>
 
 			<div class="form-group row">
-				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Auteur(s)&nbsp;<sup><span class="text-danger">*</span></sup></label>
+				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Auteur(s)</span>&nbsp;<sup><span class="text-danger">*</span></sup></label>
 				<div class="col-sm-8">
 					<input type="text" class="form-control form-control-sm field-separate" id="auteurs" name="auteurs" [(ngModel)]="production.auteurs" #auteursRef="ngModel" required [class.is-invalid]="auteursRef.invalid && auteursRef.touched">
 				</div>
 			</div>
 
 			<div class="form-group row">
-				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Groupe(s)</label>
+				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Groupe(s)</span></label>
 				<div class="col-sm-8">
 					<input type="text" class="form-control form-control-sm field-separate" id="groupes" name="groupes" [(ngModel)]="production.groupes">
 				</div>
 			</div>
 
 			<div class="form-group row">
-				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Plateforme</label>
+				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Plateforme</span></label>
 				<div class="col-sm-8">
 					<input type="text" class="form-control form-control-sm field-separate" id="plateforme" name="plateforme" [(ngModel)]="production.plateforme">
 				</div>
 			</div>
 
 			<div class="form-group row">
-				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Commentaire</label>
+				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Commentaire</span></label>
 				<div class="col-sm-8">
 					<textarea class="form-control form-control-sm field-separate" id="commentaire" name="commentaire" [(ngModel)]="production.commentaire"></textarea>
 				</div>
 			</div>
 
 			<div class="form-group row">
-				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Informations privées</label>
+				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Informations privées</span></label>
 				<div class="col-sm-8">
 					<textarea class="form-control form-control-sm field-separate" id="informationsPrivees" name="informationsPrivees" [(ngModel)]="production.informationsPrivees"></textarea>
 				</div>
 			</div>
 
 			<div class="form-group row">
-				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Gestionnaire&nbsp;<sup><span class="text-danger">*</span></sup></label>
+				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Gestionnaire</span>&nbsp;<sup><span class="text-danger">*</span></sup></label>
 				<div class="col-sm-8">
 						<select class="form-select form-select-sm field-separate" id="numeroParticipant" name="numeroParticipant" [(ngModel)]="production.numeroGestionnaire">
 				    @for (participant of participants; track participant.numeroParticipant) {
@@ -89,7 +87,7 @@
 			</div>
 
 			<div class="form-group row">
-				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Vignette</label>
+				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Vignette</span></label>
 				<div class="col-sm-8">
 					<input type="file" class="form-control form-control-sm field-separate" id="vignette" name="vignette" accept="image/png, image/gif, image/jpeg" (change)="onVignetteSelected($event)">
 				</div>
@@ -97,8 +95,8 @@
 
 		</div>
 		<div class="card-footer">
-			<button type="button" class="btn bg-gradient btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalModifier" [disabled]="formRef.invalid"><i class="fa-solid fa-check"></i>&nbsp;Modifier</button>
-			<button type="button" class="btn bg-gradient btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEffacer" style="float: right;"><i class="fa-solid fa-trash"></i>&nbsp;Effacer</button>
+			<button type="button" class="btn bg-gradient btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalModifier" [disabled]="formRef.invalid"><i class="fa-solid fa-check"></i>&nbsp;<span i18n>Modifier</span></button>
+			<button type="button" class="btn bg-gradient btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEffacer" style="float: right;"><i class="fa-solid fa-trash"></i>&nbsp;<span i18n>Effacer</span></button>
 		</div>
 	</div>
 </form>
@@ -107,12 +105,12 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="modalModifierTitre">Modification</h5>
+				<h5 class="modal-title" id="modalModifierTitre"><span i18n>Modification d'une production</span></h5>
 			</div>
-			<div class="modal-body">Actualiser cet enregistrement ?</div>
+			<div class="modal-body"><span i18n>Actualiser cet enregistrement ?</span></div>
 			<div class="modal-footer">
-				<button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
-				<button type="button" class="btn bg-gradient btn-warning btn-sm" (click)="updateConfirmed()" data-bs-dismiss="modal">Confirmer</button>
+				<button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal"><span i18n>Annuler</span></button>
+				<button type="button" class="btn bg-gradient btn-warning btn-sm" (click)="updateConfirmed()" data-bs-dismiss="modal"><span i18n>Confirmer</span></button>
 			</div>
 		</div>
 	</div>
@@ -122,12 +120,12 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title text-danger" id="modalEffacerTitre">Suppression</h5>
+				<h5 class="modal-title text-danger" id="modalEffacerTitre"><span i18n>Suppression d'une production</span></h5>
 			</div>
-			<div class="modal-body">Effacer cet enregistrement ?</div>
+			<div class="modal-body"><span i18n>Effacer cet enregistrement ?</span></div>
 			<div class="modal-footer">
-				<button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
-				<button type="button" class="btn bg-gradient btn-danger btn-sm" (click)="deleteConfirmed()" data-bs-dismiss="modal">Confirmer</button>
+				<button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal"><span i18n>Annuler</span></button>
+				<button type="button" class="btn bg-gradient btn-danger btn-sm" (click)="deleteConfirmed()" data-bs-dismiss="modal"><span i18n>Confirmer</span></button>
 			</div>
 		</div>
 	</div>

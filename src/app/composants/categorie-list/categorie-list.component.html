@@ -1,12 +1,12 @@
 <app-menu></app-menu>
 <div id="main">
 <div class="card shadow">
-	<div class="card-header">Table des catégories</div>
+	<div class="card-header"><span i18n>Table des catégories</span></div>
 	<div class="card-header shadow-sm">
 		<div class="row">
 			<div class="form-group col-sm-4 label-nobr">
-				<button type="button" (click)="goToRefreshListCategorie()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;Actualiser</button>
-				<button type="button" (click)="goToNewCategorie()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;Créer</button>
+				<button type="button" (click)="goToRefreshListCategorie()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;<span i18n>Actualiser</span></button>
+				<button type="button" (click)="goToNewCategorie()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;<span i18n>Créer</span></button>
 			</div>
 		</div>
 	</div>
@@ -14,12 +14,12 @@
 		<table class="table table-sm">
 			<thead class="thead-dark">
 				<tr>
-					<th class="fs-6 label-nobr"><small>Libellé</small></th>
-					<th class="fs-6 label-nobr"><small>Disponible</small></th>
-					<th class="fs-6 label-nobr"><small>Téléversable</small></th>
-					<th class="fs-6 label-nobr"><small>Vote ouvert</small></th>
-					<th class="fs-6 label-nobr"><small>Vote terminé</small></th>
-					<th class="fs-6 label-nobr"><small>Vote publié</small></th>
+					<th class="fs-6 label-nobr"><small><span i18n>Libellé</span></small></th>
+					<th class="fs-6 label-nobr"><small><span i18n>Disponible</span></small></th>
+					<th class="fs-6 label-nobr"><small><span i18n>Téléversable</span></small></th>
+					<th class="fs-6 label-nobr"><small><span i18n>Vote ouvert</span></small></th>
+					<th class="fs-6 label-nobr"><small><span i18n>Vote terminé</span></small></th>
+					<th class="fs-6 label-nobr"><small><span i18n>Vote publié</span></small></th>
 				</tr>
 			</thead>
 			<tbody>

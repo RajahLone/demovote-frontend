@@ -2,35 +2,35 @@
 <div id="main">
 <form id="formVariable" #formRef="ngForm" class="needs-validation">
 <div class="card shadow center">
-	<div class="card-header">Fiche d'une catégorie</div>
+	<div class="card-header"><span i18n>Fiche d'une catégorie</span></div>
 	<div class="card-header shadow-sm">
-		<button (click)="goToListCategorie()" class="btn bg-gradient btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;Retour</button>
+		<button (click)="goToListCategorie()" class="btn bg-gradient btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;<span i18n>Retour</span></button>
 	</div>
 	<div class="card-body">
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Créé le</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Créé le</span></label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control form-control-sm field-separate" id="dateCreation" [(ngModel)]="categorie.dateCreation" name="dateCreation" disabled>
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Modifié le</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Modifié le</span></label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control form-control-sm field-separate" id="dateModification" [(ngModel)]="categorie.dateModification" name="dateModification" disabled>
 			</div>
 		</div>
 
   	<div class="form-group row">
- 	  	<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Libellé&nbsp;<sup><span class="text-danger">*</span></sup></label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Libellé</span>&nbsp;<sup><span class="text-danger">*</span></sup></label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control form-control-sm field-separate" id="libelle" [(ngModel)]="categorie.libelle" name="libelle" #libelleRef="ngModel" required [class.is-invalid]="libelleRef.invalid && libelleRef.touched">
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Numéro d'ordre</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Numéro d'ordre</span></label>
 			<div class="col-sm-2">
 				<input type="number" min="0" class="form-control form-control-sm field-separate" id="numeroOrdre" name="numeroOrdre" [(ngModel)]="categorie.numeroOrdre">
 			</div>
@@ -40,8 +40,8 @@
 			<div class="col-sm-4"></div>
 			<div class="col-sm-8">
 				<div class="form-check form-switch">
-					<input class="form-check-input field-separate" type="checkbox" id="available" name="available" [(ngModel)]="categorie.available"> 
-					<label class="form-check-label" for="available">Disponible</label>
+					<input class="form-check-input field-separate" type="checkbox" id="available" name="available" [(ngModel)]="categorie.available">
+					<label class="form-check-label" for="available"><small><span i18n>Disponible</span></small></label>
 				</div>
 			</div>
 		</div>
@@ -50,8 +50,8 @@
 			<div class="col-sm-4"></div>
 			<div class="col-sm-8">
 				<div class="form-check form-switch">
-					<input class="form-check-input field-separate" type="checkbox" id="uploadable" name="uploadable" [(ngModel)]="categorie.uploadable"> 
-					<label class="form-check-label" for="uploadable">Téléversable</label>
+					<input class="form-check-input field-separate" type="checkbox" id="uploadable" name="uploadable" [(ngModel)]="categorie.uploadable">
+					<label class="form-check-label" for="uploadable"><small><span i18n>Téléversable</span></small></label>
 				</div>
 			</div>
 		</div>
@@ -60,8 +60,8 @@
 			<div class="col-sm-4"></div>
 			<div class="col-sm-8">
 				<div class="form-check form-switch">
-					<input class="form-check-input field-separate" type="checkbox" id="pollable" name="pollable" [(ngModel)]="categorie.pollable"> 
-					<label class="form-check-label" for="pollable">Vote ouvert</label>
+					<input class="form-check-input field-separate" type="checkbox" id="pollable" name="pollable" [(ngModel)]="categorie.pollable">
+					<label class="form-check-label" for="pollable"><small><span i18n>Vote ouvert</span></small></label>
 				</div>
 			</div>
 		</div>
@@ -70,8 +70,8 @@
 			<div class="col-sm-4"></div>
 			<div class="col-sm-8">
 				<div class="form-check form-switch">
-					<input class="form-check-input field-separate" type="checkbox" id="computed" name="computed" [(ngModel)]="categorie.computed"> 
-					<label class="form-check-label" for="computed">Vote calculé</label>
+					<input class="form-check-input field-separate" type="checkbox" id="computed" name="computed" [(ngModel)]="categorie.computed">
+					<label class="form-check-label" for="computed"><small><span i18n>Vote calculé</span></small></label>
 				</div>
 			</div>
 		</div>
@@ -80,16 +80,16 @@
 			<div class="col-sm-4"></div>
 			<div class="col-sm-8">
 				<div class="form-check form-switch">
-					<input class="form-check-input field-separate" type="checkbox" id="displayable" name="displayable" [(ngModel)]="categorie.displayable"> 
-					<label class="form-check-label" for="displayable">Vote publié</label>
+					<input class="form-check-input field-separate" type="checkbox" id="displayable" name="displayable" [(ngModel)]="categorie.displayable">
+					<label class="form-check-label" for="displayable"><small><span i18n>Vote publié</span></small></label>
 				</div>
 			</div>
 		</div>
 
 	</div>
 	<div class="card-footer">
-			<button type="button" class="btn bg-gradient btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalModifier" [disabled]="formRef.invalid"><i class="fa-solid fa-check"></i>&nbsp;Modifier</button>
-			<button type="button" class="btn bg-gradient btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEffacer" style="float: right;"><i class="fa-solid fa-trash"></i>&nbsp;Effacer</button>
+			<button type="button" class="btn bg-gradient btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalModifier" [disabled]="formRef.invalid"><i class="fa-solid fa-check"></i>&nbsp;<span i18n>Modifier</span></button>
+			<button type="button" class="btn bg-gradient btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEffacer" style="float: right;"><i class="fa-solid fa-trash"></i>&nbsp;<span i18n>Effacer</span></button>
 	</div>
 </div>
 </form>
@@ -98,12 +98,12 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="modalModifierTitre">Modification</h5>
+				<h5 class="modal-title" id="modalModifierTitre"><span i18n>Modification d'une catégorie</span></h5>
 			</div>
-			<div class="modal-body">Actualiser cet enregistrement ?</div>
+			<div class="modal-body"><span i18n>Actualiser cet enregistrement ?</span></div>
 			<div class="modal-footer">
-				<button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
-				<button type="button" class="btn bg-gradient btn-warning btn-sm" (click)="updateConfirmed()" data-bs-dismiss="modal">Confirmer</button>
+				<button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal"><span i18n>Annuler</span></button>
+				<button type="button" class="btn bg-gradient btn-warning btn-sm" (click)="updateConfirmed()" data-bs-dismiss="modal"><span i18n>Confirmer</span></button>
 			</div>
 		</div>
 	</div>
@@ -113,12 +113,12 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title text-danger" id="modalEffacerTitre">Suppression</h5>
+				<h5 class="modal-title text-danger" id="modalEffacerTitre"><span i18n>Suppression d'une catégorie</span></h5>
 			</div>
-			<div class="modal-body">Effacer cet enregistrement ?</div>
+			<div class="modal-body"><span i18n>Effacer cet enregistrement ?</span></div>
 			<div class="modal-footer">
-				<button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
-				<button type="button" class="btn bg-gradient btn-danger btn-sm" (click)="deleteConfirmed()" data-bs-dismiss="modal">Confirmer</button>
+				<button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal"><span i18n>Annuler</span></button>
+				<button type="button" class="btn bg-gradient btn-danger btn-sm" (click)="deleteConfirmed()" data-bs-dismiss="modal"><span i18n>Confirmer</span></button>
 			</div>
 		</div>
 	</div>

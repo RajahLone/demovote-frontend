@@ -1,15 +1,20 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule, NgForm } from '@angular/forms';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+
 import { MenuComponent } from '../menu/menu.component';
 import { ParticipantList, ParticipantEnum, ParticipantStatutList } from '../../interfaces/participant';
 import { ParticipantService } from '../../services/participant.service';
-import { FormsModule, NgForm } from '@angular/forms';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { Journees } from '../../interfaces/divers';
+import { DiversService } from '../../services/divers.service'
 
 @Component({ selector: 'app-participant-list', imports: [TooltipModule, FormsModule, MenuComponent], templateUrl: './participant-list.component.html', styleUrl: './participant-list.component.css' })
 
 export class ParticipantListComponent implements OnInit, AfterViewInit
 {
+
+  journees: Journees = new Journees();
 
   listeTri: number = 0;
   nomFiltre: string = "";
@@ -20,9 +25,15 @@ export class ParticipantListComponent implements OnInit, AfterViewInit
 
   participants: ParticipantList[] = [];
 
-  constructor(private participantService: ParticipantService, private router: Router) { }
+  constructor(private diversService: DiversService, private participantService: ParticipantService, private router: Router) { }
 
-  ngOnInit(): void { this.retreiveDatas(); }
+  ngOnInit()
+  {
+    this.journees = new Journees();
+    this.diversService.getJournees().subscribe(data => { this.journees = data; });
+
+    this.retreiveDatas();
+  }
 
   ngAfterViewInit() { }
 

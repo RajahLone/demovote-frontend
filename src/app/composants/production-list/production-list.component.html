@@ -1,12 +1,12 @@
 <app-menu></app-menu>
 <div id="main">
 <div class="card shadow rounded-bottom-0">
-	<div class="card-header">Liste des productions</div>
+	<div class="card-header"><span i18n>Liste des productions</span></div>
 	<div class="card-header">
 		<div class="row">
 			<div class="form-group col-sm-4 label-nobr">
-				<button type="button" (click)="goToRefreshListProduction()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;Actualiser</button>
-				<button type="button" (click)="goToNewProduction()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;Créer</button>
+				<button type="button" (click)="goToRefreshListProduction()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;<span i18n>Actualiser</span></button>
+				<button type="button" (click)="goToNewProduction()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;<span i18n>Créer</span></button>
 			</div>
 		</div>
 	</div>
@@ -27,7 +27,7 @@
        </div>
 			<div class="card-footer d-flex justify-content-between">
 			  <i class="fa-solid fa-download text-primary pointeur-souris" (click)="getFile(production.numeroProduction, production.nomArchive)" tooltip="{{ production.nomArchive }} (v{{ production.numeroVersion }})" placement="top" container="body"></i>
-				<i class="fa-solid fa-user-tie text-muted" style="margin-left:7px;" tooltip="géré par {{ production.nomGestionnaire }}" placement="top" container="body"></i>
+				<i class="fa-solid fa-user-tie text-muted" style="margin-left:7px;" i18n-tootip tooltip="géré par {{ production.nomGestionnaire }}" placement="top" container="body"></i>
 			</div>
 		</div>
 	}

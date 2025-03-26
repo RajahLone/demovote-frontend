@@ -1,26 +1,26 @@
 export class ParticipantEnum { key!: string; value!: string; }
 
-export const ParticipantStatutList: ParticipantEnum[] = 
-[ 
-  { key: "EN_ATTENTE", value: "En attente"}, 
-  { key: "PAYE_CHEQUE", value: "Payé chèque"}, 
-  { key: "PAYE_ESPECES", value: "Payé espèces"}, 
-  { key: "VIREMENT_BANCAIRE", value: "Virement bancaire"}, 
-  { key: "VIREMENT_PAYPAL", value: "Virement Paypal"}, 
-  { key: "ORGA", value: "Orga"}, 
-  { key: "GUEST", value: "Guest"} 
+export const ParticipantStatutList: ParticipantEnum[] =
+[
+  { key: "EN_ATTENTE", value: $localize`En attente`},
+  { key: "PAYE_CHEQUE", value: $localize`Payé chèque`},
+  { key: "PAYE_ESPECES", value: $localize`Payé espèces`},
+  { key: "VIREMENT_BANCAIRE", value: $localize`Virement bancaire`},
+  { key: "VIREMENT_PAYPAL", value: $localize`Virement Paypal`},
+  { key: "ORGA", value: $localize`Orga`},
+  { key: "GUEST", value: $localize`Guest`}
 ];
 
-export const ParticipantModePaiementList: ParticipantEnum[] = 
-[ 
-  { key: "CHEQUE", value: "Chèque"}, 
-  { key: "VIREMENT", value: "Virement"}, 
-  { key: "PAYPAL", value: "Paypal"}, 
-  { key: "ESPECES", value: "Espèces"}, 
-  { key: "AUTRE", value: "Autre"}
+export const ParticipantModePaiementList: ParticipantEnum[] =
+[
+  { key: "CHEQUE", value: $localize`Chèque`},
+  { key: "VIREMENT", value: $localize`Virement`},
+  { key: "PAYPAL", value: $localize`Paypal`},
+  { key: "ESPECES", value: $localize`Espèces`},
+  { key: "AUTRE", value: $localize`Autre`}
 ];
 
-export class Participant 
+export class Participant
 {
   dateCreation: string = "";
   dateModification: string = "";
@@ -59,7 +59,7 @@ export class ParticipantShort
   prenom: string = "";
 }
 
-export class ParticipantList 
+export class ParticipantList
 {
   numeroParticipant: number = 0;
   nom: string = "";

@@ -2,7 +2,7 @@
 <div id="main">
 <form #formRef="ngForm" (ngSubmit)="connexion()" class="needs-validation">
 	<div class="card shadow center" style="min-width: 30rem;">
-		<div class="card-header">S'identifier</div>
+		<div class="card-header"><span i18n>S'identifier</span></div>
 		<div class="card-body">
 
 			@if (this.identifiants.erreur !== "") {
@@ -14,23 +14,23 @@
 			}
 
 			<div class="form-group row">
-				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Pseudonyme&nbsp;<sup><span class="text-danger">*</span></sup></label>
+				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Pseudonyme</span>&nbsp;<sup><span class="text-danger">*</span></sup></label>
 				<div class="col-sm-8">
 					<input type="text" class="form-control form-control-sm field-separate" #userid id="userid" name="userid" [(ngModel)]="identifiants.username" #userRef="ngModel" required [class.is-invalid]="userRef.invalid && userRef.touched" autofocus>
 				</div>
 			</div>
 
 			<div class="form-group row">
-				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Mot de passe&nbsp;<sup><span class="text-danger">*</span></sup></label>
+				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Mot de passe</span>&nbsp;<sup><span class="text-danger">*</span></sup></label>
 				<div class="col-sm-8">
 					<input type="password" class="form-control form-control-sm field-separate" id="userpwd" name="userpwd" [(ngModel)]="identifiants.password" #passRef="ngModel" required [class.is-invalid]="passRef.invalid && passRef.touched">
-					<div class="form-text field-separate">Merci de contacter l'administrateur si vous l'avez oublié ou ne le connaissez pas.</div>
+					<div class="form-text field-separate"><span i18n>Merci de contacter l'administrateur si vous l'avez oublié ou ne le connaissez pas.</span></div>
 				</div>
 			</div>
 
 		</div>
 		<div class="card-footer" #menu_login>
-			<button type="button" class="btn bg-gradient btn-success btn-sm text-left" type="submit" [disabled]="formRef.invalid"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;Login</button>
+			<button type="button" class="btn bg-gradient btn-success btn-sm text-left" type="submit" [disabled]="formRef.invalid"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;<span i18n>Login</span></button>
 		</div>
 	</div>
 </form>

@@ -2,105 +2,105 @@
 <div id="main">
 <form id="formParticipant" #formRef="ngForm" class="needs-validation">
 <div class="card shadow center">
-	<div class="card-header">Fiche d'un participant</div>
+	<div class="card-header"><span i18n>Fiche d'un participant</span></div>
 	<div class="card-header shadow-sm">
-		<button (click)="goToHome()" class="btn bg-gradient btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;Retour</button>
+		<button (click)="goToHome()" class="btn bg-gradient btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;<span i18n>Retour</span></button>
 	</div>
 	<div class="card-body scrollable">
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Créé le</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Créé le</span></label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control form-control-sm field-separate" id="dateCreation" name="dateCreation" [(ngModel)]="participant.dateCreation" disabled>
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Modifié le</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Modifié le</span></label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control form-control-sm field-separate" id="dateModification" name="dateModification" [(ngModel)]="participant.dateModification" disabled>
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Nom&nbsp;<sup><span class="text-danger">*</span></sup></label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Nom</span>&nbsp;<sup><span class="text-danger">*</span></sup></label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control form-control-sm field-separate" id="nom" name="nom" [(ngModel)]="participant.nom" #nomRef="ngModel" required [class.is-invalid]="nomRef.invalid && nomRef.touched">
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Prénom</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Prénom</span></label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control form-control-sm field-separate" id="prenom" name="prenom" [(ngModel)]="participant.prenom">
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Pseudonyme</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Pseudonyme</span></label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control form-control-sm field-separate" id="pseudonyme" name="pseudonyme" [(ngModel)]="participant.pseudonyme" disabled>
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Groupe</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Groupe</span></label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control form-control-sm field-separate" id="groupe" name="groupe" [(ngModel)]="participant.groupe">
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Mot de passe</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Mot de passe</span></label>
 			<div class="col-sm-8">
 				<input type="password" class="form-control form-control-sm field-separate" id="motDePasse" name="motDePasse" [(ngModel)]="participant.motDePasse">
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Adresse</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Adresse</span></label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control form-control-sm field-separate" id="adresse" name="adresse" [(ngModel)]="participant.adresse">
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Code postal</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Code postal</span></label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control form-control-sm field-separate" id="codePostal" name="codePostal" [(ngModel)]="participant.codePostal">
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Ville</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Ville</span></label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control form-control-sm field-separate" id="ville" name="ville" [(ngModel)]="participant.ville">
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Pays</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Pays</span></label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control form-control-sm field-separate" id="pays" name="pays" [(ngModel)]="participant.pays">
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Numéro de téléphone</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Numéro de téléphone</span></label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control form-control-sm field-separate" id="numeroTelephone" name="numeroTelephone" [(ngModel)]="participant.numeroTelephone">
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Adresse email</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Adresse email</span></label>
 			<div class="col-sm-8">
 				<input type="email" class="form-control form-control-sm field-separate" id="email" name="email" [(ngModel)]="participant.email">
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Inscrit le</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Inscrit le</span></label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control form-control-sm field-separate" id="dateInscription" name="dateInscription" [(ngModel)]="participant.dateInscription" disabled>
 			</div>
@@ -110,43 +110,49 @@
 			<div class="col-sm-4"></div>
 			<div class="col-sm-8">
 				<div class="form-check form-switch">
-					<input class="form-check-input field-separate" type="checkbox" id="withMachine" name="withMachine" [(ngModel)]="participant.withMachine" disabled> <label class="form-check-label" for="withMachine">Avec machine</label>
+					<input class="form-check-input field-separate" type="checkbox" id="withMachine" name="withMachine" [(ngModel)]="participant.withMachine" disabled> <label class="form-check-label" for="withMachine"><small><span i18n>Avec machine</span></small></label>
 				</div>
 			</div>
 		</div>
+
+@if (this.journees.jour1Court) {
+		<div class="form-group row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-8">
+				<div class="form-check form-switch">
+					<input class="form-check-input field-separate" type="checkbox" id="hereDay1" name="hereDay1" [(ngModel)]="participant.hereDay1" disabled> <label class="form-check-label" for="hereDay1"><small>{{ journees.jour1Long }}</small></label>
+				</div>
+			</div>
+		</div>
+}
+
+@if (this.journees.jour2Court) {
+		<div class="form-group row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-8">
+				<div class="form-check form-switch">
+					<input class="form-check-input field-separate" type="checkbox" id="hereDay2" name="hereDay2" [(ngModel)]="participant.hereDay2" disabled> <label class="form-check-label" for="hereDay2"><small>{{ journees.jour2Long }}</small></label>
+				</div>
+			</div>
+		</div>
+}
+
+@if (this.journees.jour3Court) {
+		<div class="form-group row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-8">
+				<div class="form-check form-switch">
+					<input class="form-check-input field-separate" type="checkbox" id="hereDay3" name="hereDay3" [(ngModel)]="participant.hereDay3" disabled> <label class="form-check-label" for="hereDay3"><small>{{ journees.jour3Long }}</small></label>
+				</div>
+			</div>
+		</div>
+}
 
 		<div class="form-group row">
 			<div class="col-sm-4"></div>
 			<div class="col-sm-8">
 				<div class="form-check form-switch">
-					<input class="form-check-input field-separate" type="checkbox" id="hereDay1" name="hereDay1" [(ngModel)]="participant.hereDay1" disabled> <label class="form-check-label" for="hereDay1">Jour 1</label>
-				</div>
-			</div>
-		</div>
-
-		<div class="form-group row">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-8">
-				<div class="form-check form-switch">
-					<input class="form-check-input field-separate" type="checkbox" id="hereDay2" name="hereDay2" [(ngModel)]="participant.hereDay2" disabled> <label class="form-check-label" for="hereDay2">Jour 2</label>
-				</div>
-			</div>
-		</div>
-
-		<div class="form-group row">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-8">
-				<div class="form-check form-switch">
-					<input class="form-check-input field-separate" type="checkbox" id="hereDay3" name="hereDay3" [(ngModel)]="participant.hereDay3" disabled> <label class="form-check-label" for="hereDay3">Jour 3</label>
-				</div>
-			</div>
-		</div>
-
-		<div class="form-group row">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-8">
-				<div class="form-check form-switch">
-					<input class="form-check-input field-separate" type="checkbox" id="sleepingOnSite" name="sleepingOnSite" [(ngModel)]="participant.sleepingOnSite" disabled> <label class="form-check-label" for="sleepingOnSite">Dort sur place</label>
+					<input class="form-check-input field-separate" type="checkbox" id="sleepingOnSite" name="sleepingOnSite" [(ngModel)]="participant.sleepingOnSite" disabled> <label class="form-check-label" for="sleepingOnSite"><small><span i18n>Dort sur place</span></small></label>
 				</div>
 			</div>
 		</div>
@@ -156,13 +162,13 @@
 				<div class="col-sm-8">
 					<div class="form-check form-switch">
 						<input class="form-check-input field-separate" type="checkbox" id="useAmigabus" name="useAmigabus" [(ngModel)]="participant.useAmigabus" disabled>
-						<label class="form-check-label" for="useAmigabus">Vient en Amigabus</label>
+						<label class="form-check-label" for="useAmigabus"><small><span i18n>Vient en Amigabus</span></small></label>
 					</div>
 				</div>
 			</div> -->
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr">Commentaire</label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Commentaire</span></label>
 			<div class="col-sm-8">
 				<textarea class="form-control form-control-sm field-separate" id="commentaire" name="commentaire" [(ngModel)]="participant.commentaire"></textarea>
 			</div>
@@ -172,14 +178,14 @@
 			<div class="col-sm-4"></div>
 			<div class="col-sm-8">
 				<div class="form-check form-switch">
-					<input class="form-check-input field-separate" type="checkbox" id="arrived" name="arrived" [(ngModel)]="participant.arrived" disabled> <label class="form-check-label" for="arrived">Arrivé</label>
+					<input class="form-check-input field-separate" type="checkbox" id="arrived" name="arrived" [(ngModel)]="participant.arrived" disabled> <label class="form-check-label" for="arrived"><small><span i18n>Arrivé</span></small></label>
 				</div>
 			</div>
 		</div>
 
 		</div>
 		<div class="card-footer">
-			<button type="button" class="btn bg-gradient btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalModifier" [disabled]="formRef.invalid"><i class="fa-solid fa-check"></i>&nbsp;Modifier</button>
+			<button type="button" class="btn bg-gradient btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalModifier" [disabled]="formRef.invalid"><i class="fa-solid fa-check"></i>&nbsp;<span i18n>Modifier</span></button>
 		</div>
 	</div>
 </form>
@@ -188,12 +194,12 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="modalModifierTitre">Modification</h5>
+				<h5 class="modal-title" id="modalModifierTitre"><span i18n>Modification</span></h5>
 			</div>
-			<div class="modal-body">Actualiser cet enregistrement ?</div>
+			<div class="modal-body"><span i18n>Actualiser cet enregistrement ?</span></div>
 			<div class="modal-footer">
-				<button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
-				<button type="button" class="btn bg-gradient btn-warning btn-sm" (click)="updateConfirmed()" data-bs-dismiss="modal">Confirmer</button>
+				<button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal"><span i18n>Annuler</span></button>
+				<button type="button" class="btn bg-gradient btn-warning btn-sm" (click)="updateConfirmed()" data-bs-dismiss="modal"><span i18n>Confirmer</span></button>
 			</div>
 		</div>
 	</div>
