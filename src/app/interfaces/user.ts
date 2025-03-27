@@ -6,6 +6,13 @@ export class User
   nom: string = "";
   prenom: string = "";
   role: string = "";
-  token: string = "";
+  accessToken: string = "";
+  refreshToken: string = "";
   erreur: string = "";
+}
+
+export class RefreshToken
+{
+  accessToken: string = "";
+  refreshToken: string = "";
 }

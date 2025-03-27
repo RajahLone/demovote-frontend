@@ -64,6 +64,12 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "src/proxy.conf.json"
+            "ssl": true,
+            "sslKey": "src/assets/ssl/key.pem",
+            "sslCert": "src/assets/ssl/cert.pem"
+          },
           "configurations": {
             "production": {
               "buildTarget": "demovote-frontend:build:production"
