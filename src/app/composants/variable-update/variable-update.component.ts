@@ -28,7 +28,7 @@ export class VariableUpdateComponent implements OnInit, AfterViewInit
 
   updateConfirmed() { if (this.variableForm.valid) { this.variableService.updateVariable(this.numeroVariable, this.variable).subscribe(); this.goToListVariable(); } }
 
-  deleteConfirmed() { this.variableService.deleteVariable(this.numeroVariable).subscribe(; this.goToListVariable(); }
+  deleteConfirmed() { this.variableService.deleteVariable(this.numeroVariable).subscribe(); this.goToListVariable(); }
 
   goToListVariable(){ this.router.navigate(['/variable-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
 
