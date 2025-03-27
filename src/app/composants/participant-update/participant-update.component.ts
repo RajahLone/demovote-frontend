@@ -36,9 +36,9 @@ export class ParticipantUpdateComponent implements OnInit, AfterViewInit
 
   ngAfterViewInit() { }
 
-  updateConfirmed() { if (this.participantForm.valid) { this.participantService.updateParticipant(this.numeroParticipant, this.participant).subscribe(() => { this.goToListParticipant(); }); } }
+  updateConfirmed() { if (this.participantForm.valid) { this.participantService.updateParticipant(this.numeroParticipant, this.participant).subscribe(); this.goToListParticipant(); } }
 
-  deleteConfirmed() { this.participantService.deleteParticipant(this.numeroParticipant).subscribe(() => { this.goToListParticipant(); }); }
+  deleteConfirmed() { this.participantService.deleteParticipant(this.numeroParticipant).subscribe(); this.goToListParticipant(); }
 
   goToListParticipant(){ this.router.navigate(['/participant-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
 

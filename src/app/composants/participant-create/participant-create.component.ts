@@ -32,7 +32,7 @@ export class ParticipantCreateComponent implements OnInit, AfterViewInit
 
   ngAfterViewInit() { }
 
-  private saveParticipant() { this.participantService.createParticipant(this.participant).subscribe({ next: () => { this.goToListParticipant(); }, error: (err: any) => { console.log(err); }, complete: () => { } }); }
+  private saveParticipant() { this.participantService.createParticipant(this.participant).subscribe(); this.goToListParticipant(); }
 
   addParticipant() { if (this.participantForm.valid) { this.saveParticipant(); } }
 
