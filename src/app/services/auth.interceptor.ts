@@ -19,7 +19,7 @@ export class AuthInterceptor implements HttpInterceptor
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>>
   {
-    const modified = request.clone({ headers: this.addExtraHeaders(request.headers, (request.method == "POST" || request.method == "PUT" || request.method == "DELETE")) });
+    const modified = request.clone({ headers: this.addExtraHeaders(request.headers, (request.method == "POST" || request.method == "PUT" || request.method == "DELETE")), withCredentials: true });
 
     return next.handle(modified).pipe(
       catchError((error) => { if (error instanceof HttpErrorResponse && !request.url.includes('/sign/in') && error.status === 403) { return this.handle401Error(request, next); } return throwError(() => error); })
@@ -37,7 +37,7 @@ export class AuthInterceptor implements HttpInterceptor
         return this.accountService.updateToken().pipe(
           switchMap(() => {
             this.isRefreshing = false;
-            const modified = request.clone({ headers: this.addExtraHeaders(request.headers, (request.method == "POST" || request.method == "PUT" || request.method == "DELETE")) });
+            const modified = request.clone({ headers: this.addExtraHeaders(request.headers, (request.method == "POST" || request.method == "PUT" || request.method == "DELETE")), withCredentials: true });
             return next.handle(modified);
             }),
           catchError((error) => {
@@ -59,8 +59,6 @@ export class AuthInterceptor implements HttpInterceptor
     headers = headers.append('Authorization', "Bearer " + authToken);
 
     const csrfToken = this.csrfTokenExtrator.getToken() as string;
-
-    console.log("csrfToken = " + csrfToken); // TODO
 
     if (postput && (csrfToken != null))
     {
