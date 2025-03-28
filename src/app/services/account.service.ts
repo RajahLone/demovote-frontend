@@ -3,9 +3,11 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
 import { Environnement } from '../env';
 import { User, RefreshToken } from '../interfaces/user';
 import { Participant } from '../interfaces/participant';
+import { Journees } from '../interfaces/divers';
 
 @Injectable({ providedIn: 'root' })
 
@@ -34,6 +36,10 @@ export class AccountService
   public getAccessToken() { if (this.userSubject.value) { return this.userSubject.value.accessToken; } return ""; }
   private getRefreshToken() { if (this.userSubject.value) { return this.userSubject.value.refreshToken; } return ""; }
 
+  salute(): Observable<Journees>
+  {
+    return this.httpClient.get<Journees>(`${this.baseURLsig}/hello`);
+  }
   signIn(usr: User): Observable<User>
   {
     return this.httpClient.post<User>(`${this.baseURLsig}/in`, usr).pipe(map(u => { sessionStorage.setItem('user', JSON.stringify(u)); this.userSubject.next(u); return u; }));
