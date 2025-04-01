@@ -1,5 +1,12 @@
 export class ParticipantEnum { key!: string; value!: string; }
 
+export const ProfilList: ParticipantEnum[] =
+[
+  { key: "ADMIN", value: $localize`Administrateur`},
+  { key: "ORGA", value: $localize`Organisateur`},
+  { key: "USER", value: $localize`Participant`},
+];
+
 export const ParticipantStatutList: ParticipantEnum[] =
 [
   { key: "EN_ATTENTE", value: $localize`En attente`},
@@ -25,6 +32,7 @@ export class Participant
   dateCreation: string = "";
   dateModification: string = "";
   numeroParticipant: number = 0;
+  role: string = "USER";
   nom: string = "";
   prenom: string = "";
   pseudonyme: string = "";

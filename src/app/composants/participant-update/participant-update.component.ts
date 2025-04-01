@@ -3,15 +3,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 
 import { MenuComponent } from '../menu/menu.component';
-import { Participant, ParticipantEnum, ParticipantStatutList, ParticipantModePaiementList } from '../../interfaces/participant';
-import { ParticipantService } from '../../services/participant.service';
+import { Participant, ParticipantEnum, ProfilList, ParticipantStatutList, ParticipantModePaiementList } from '../../interfaces/participant';
 import { Journees } from '../../interfaces/divers';
+import { ParticipantService } from '../../services/participant.service';
 import { DiversService } from '../../services/divers.service'
+import { AccountService } from '../../services/account.service';
 
 @Component({ selector: 'app-participant-update', imports: [FormsModule, MenuComponent], templateUrl: './participant-update.component.html', styleUrl: './participant-update.component.css' })
 
 export class ParticipantUpdateComponent implements OnInit, AfterViewInit
 {
+
+  private profil: string = "";
+  profils: ParticipantEnum[] = ProfilList;
 
   journees: Journees = new Journees();
 
@@ -23,10 +27,19 @@ export class ParticipantUpdateComponent implements OnInit, AfterViewInit
   numeroParticipant: number = 0;
   participant: Participant = new Participant();
 
-  constructor(private diversService: DiversService, private participantService: ParticipantService, private route: ActivatedRoute, private router: Router, private menu: MenuComponent) { }
+  constructor(
+    private diversService: DiversService,
+    private participantService: ParticipantService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private menu: MenuComponent,
+    private accountService: AccountService
+  ) { }
 
   ngOnInit()
   {
+    this.profil = this.accountService.getRole();
+
     this.journees = new Journees();
     this.diversService.getJournees().subscribe(data => { this.journees = data; });
 

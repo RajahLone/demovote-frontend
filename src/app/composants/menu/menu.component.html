@@ -7,7 +7,7 @@
 		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Planning" placement="right" container="body"><i class="fa-solid fa-clock"></i></a></li>
 		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Caméras" placement="right" container="body"><i class="fa-solid fa-eye"></i></a></li>
 	</ul>
-</div>
+</div><div #signouticon class="d-none"></div>
 
 } @else if (this.logged && (this.role === "USER")) {
 
@@ -15,7 +15,7 @@
   <ul class="nav nav-pills nav-flush flex-column text-center">
 	 	<li><a routerLink="/home" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Accueil" placement="right" container="body"><i class="fa-solid fa-home"></i></a></li>
 		<li><a routerLink="/account-details" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Compte" placement="right" container="body"><i class="fa-solid fa-user"></i></a></li>
-		<li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Logout" placement="right" container="body"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+    <li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Logout" placement="right" container="body"><i #signouticon class="fa-solid fa-right-from-bracket"></i></a></li>
 		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Planning" placement="right" container="body"><i class="fa-solid fa-clock"></i></a></li>
 		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Caméras" placement="right" container="body"><i class="fa-solid fa-eye"></i></a></li>
 
@@ -35,7 +35,7 @@
   <ul class="nav nav-pills nav-flush flex-column text-center">
 	 	<li><a routerLink="/home" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Accueil" placement="right" container="body"><i class="fa-solid fa-home"></i></a></li>
 		<li><a routerLink="/account-details" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Compte" placement="right" container="body"><i class="fa-solid fa-user"></i></a></li>
-		<li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Logout" placement="right" container="body"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+		<li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Logout" placement="right" container="body"><i #signouticon class="fa-solid fa-right-from-bracket"></i></a></li>
 		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Planning" placement="right" container="body"><i class="fa-solid fa-clock"></i></a></li>
 		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Caméras" placement="right" container="body"><i class="fa-solid fa-eye"></i></a></li>
 
@@ -55,7 +55,7 @@
   <ul class="nav nav-pills nav-flush flex-column text-center">
 	 	<li><a routerLink="/home" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Accueil" placement="right" container="body"><i class="fa-solid fa-home"></i></a></li>
 		<li><a routerLink="/account-details" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Compte" placement="right" container="body"><i class="fa-solid fa-user"></i></a></li>
-		<li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Logout" placement="right" container="body"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+		<li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Logout" placement="right" container="body"><i #signouticon class="fa-solid fa-right-from-bracket"></i></a></li>
 		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Planning" placement="right" container="body"><i class="fa-solid fa-clock"></i></a></li>
 		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Caméras" placement="right" container="body"><i class="fa-solid fa-eye"></i></a></li>
 

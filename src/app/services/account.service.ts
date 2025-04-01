@@ -33,6 +33,7 @@ export class AccountService
   public isLogged() { if (this.userSubject.value) { return true; } return false; }
   public getUsername() { if (this.userSubject.value) { return this.userSubject.value.username; } return ""; }
   public getRole() { if (this.userSubject.value) { return this.userSubject.value.role; } return ""; }
+  public getDelaiAvantDeconnexion() { if (this.userSubject.value) { return this.userSubject.value.delaiAvantDeconnexion; } return 15; }
   public getAccessToken() { if (this.userSubject.value) { return this.userSubject.value.accessToken; } return ""; }
   private getRefreshToken() { if (this.userSubject.value) { return this.userSubject.value.refreshToken; } return ""; }
 
