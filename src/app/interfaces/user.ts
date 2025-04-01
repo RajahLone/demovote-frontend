@@ -6,6 +6,7 @@ export class User
   nom: string = "";
   prenom: string = "";
   role: string = "";
+  delaiAvantDeconnexion: number = 15;
   accessToken: string = "";
   refreshToken: string = "";
   erreur: string = "";
