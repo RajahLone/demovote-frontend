@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { MenuComponent } from '../menu/menu.component';
-import { Participant } from '../../interfaces/participant';
+import { Participant, ParticipantEnum, ProfilList } from '../../interfaces/participant';
 import { AccountService } from '../../services/account.service'
 import { Journees } from '../../interfaces/divers';
 import { DiversService } from '../../services/divers.service'
@@ -13,14 +13,24 @@ import { DiversService } from '../../services/divers.service'
 export class AccountDetailsComponent implements OnInit, AfterViewInit
 {
 
+  profil: string = "";
+  profils: ParticipantEnum[] = ProfilList;
+
   journees: Journees = new Journees();
 
   participant: Participant = new Participant();
 
-  constructor(private diversService: DiversService, private accountService : AccountService, private router: Router, private menu: MenuComponent) { }
+  constructor(
+    private diversService: DiversService,
+    private accountService : AccountService,
+    private router: Router,
+    private menu: MenuComponent
+  ) { }
 
   ngOnInit()
   {
+    this.profil = this.accountService.getRole();
+
     this.journees = new Journees();
     this.diversService.getJournees().subscribe(data => { this.journees = data; });
 
@@ -32,6 +42,8 @@ export class AccountDetailsComponent implements OnInit, AfterViewInit
 
   updateProfil() { this.router.navigate(['/account-update']); }
 
-  goToHome(){ this.router.navigate(['/'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
+  updateMotDePasse() { this.router.navigate(['/account-password']); }
+
+  goToHome() { this.router.navigate(['/'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
 
 }

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 
 import { MenuComponent } from '../menu/menu.component';
-import { Participant } from '../../interfaces/participant';
+import { Participant, ParticipantEnum, ProfilList } from '../../interfaces/participant';
 import { AccountService } from '../../services/account.service'
 import { Journees } from '../../interfaces/divers';
 import { DiversService } from '../../services/divers.service'
@@ -13,16 +13,26 @@ import { DiversService } from '../../services/divers.service'
 export class AccountUpdateComponent implements OnInit, AfterViewInit
 {
 
+  profil: string = "";
+  profils: ParticipantEnum[] = ProfilList;
+
   @ViewChild('formRef') participantForm!: NgForm;
 
   journees: Journees = new Journees();
 
   participant: Participant = new Participant();
 
-  constructor(private diversService: DiversService, private accountService : AccountService, private router: Router, private menu: MenuComponent) { }
+  constructor(
+    private diversService: DiversService,
+    private accountService : AccountService,
+    private router: Router,
+    private menu: MenuComponent
+  ) { }
 
   ngOnInit()
   {
+    this.profil = this.accountService.getRole();
+
     this.journees = new Journees();
     this.diversService.getJournees().subscribe(data => { this.journees = data; });
 
@@ -34,6 +44,6 @@ export class AccountUpdateComponent implements OnInit, AfterViewInit
 
   updateConfirmed() { if (this.participantForm.valid) { this.accountService.updateProfil(this.participant).subscribe(); this.goToHome(); } }
 
-  goToHome(){ this.router.navigate(['/'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
+  goToHome() { this.router.navigate(['/'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
 
 }

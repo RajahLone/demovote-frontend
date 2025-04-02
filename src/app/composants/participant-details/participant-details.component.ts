@@ -3,15 +3,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { MenuComponent } from '../menu/menu.component';
-import { Participant, ParticipantEnum, ParticipantStatutList, ParticipantModePaiementList } from '../../interfaces/participant';
+import { Participant, ParticipantEnum, ProfilList, ParticipantStatutList, ParticipantModePaiementList } from '../../interfaces/participant';
 import { ParticipantService } from '../../services/participant.service';
 import { Journees } from '../../interfaces/divers';
 import { DiversService } from '../../services/divers.service'
+import { AccountService } from '../../services/account.service';
 
 @Component({ selector: 'app-participant-details', imports: [FormsModule, MenuComponent], templateUrl: './participant-details.component.html', styleUrl: './participant-details.component.css' })
 
 export class ParticipantDetailsComponent implements OnInit, AfterViewInit
 {
+
+  profil: string = "";
+  profils: ParticipantEnum[] = ProfilList;
 
   journees: Journees = new Journees();
 
@@ -21,10 +25,19 @@ export class ParticipantDetailsComponent implements OnInit, AfterViewInit
   numeroParticipant: number = 0;
   participant: Participant = new Participant();
 
-  constructor(private diversService: DiversService, private participantService: ParticipantService, private route: ActivatedRoute, private router: Router, private menu: MenuComponent) { }
+  constructor(
+    private diversService: DiversService,
+    private participantService: ParticipantService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private menu: MenuComponent,
+    private accountService: AccountService
+  ) { }
 
   ngOnInit()
   {
+    this.profil = this.accountService.getRole();
+
     this.journees = new Journees();
     this.diversService.getJournees().subscribe(data => { this.journees = data; });
 
@@ -37,6 +50,6 @@ export class ParticipantDetailsComponent implements OnInit, AfterViewInit
 
   updateParticipant(id: number) { this.router.navigate(['/participant-update', id]); }
 
-  goToListParticipant(){ this.router.navigate(['/participant-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
+  goToListParticipant() { this.router.navigate(['/participant-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
 
 }

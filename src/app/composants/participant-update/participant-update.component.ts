@@ -14,7 +14,7 @@ import { AccountService } from '../../services/account.service';
 export class ParticipantUpdateComponent implements OnInit, AfterViewInit
 {
 
-  private profil: string = "";
+  profil: string = "";
   profils: ParticipantEnum[] = ProfilList;
 
   journees: Journees = new Journees();
@@ -53,6 +53,6 @@ export class ParticipantUpdateComponent implements OnInit, AfterViewInit
 
   deleteConfirmed() { this.participantService.deleteParticipant(this.numeroParticipant).subscribe(); this.goToListParticipant(); }
 
-  goToListParticipant(){ this.router.navigate(['/participant-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
+  goToListParticipant() { this.router.navigate(['/participant-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
 
 }
