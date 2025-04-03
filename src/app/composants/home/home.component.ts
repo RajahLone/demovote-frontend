@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MenuComponent } from '../menu/menu.component';
 import { Message } from '../../interfaces/divers';
 import { AccountService } from '../../services/account.service'
@@ -6,7 +6,7 @@ import { DiversService } from '../../services/divers.service'
 
 @Component({ selector: 'app-home', imports: [MenuComponent], templateUrl: './home.component.html', styleUrl: './home.component.css' })
 
-export class HomeComponent implements OnInit, AfterViewInit
+export class HomeComponent implements OnInit
 {
 
   logged: boolean = false;
@@ -23,7 +23,5 @@ export class HomeComponent implements OnInit, AfterViewInit
 
     this.diversService.getMessage().subscribe(data => { this.message = data; });
   }
-
-  ngAfterViewInit() { }
 
 }

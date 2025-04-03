@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Environnement } from '../env';
-import { User, RefreshToken } from '../interfaces/user';
+import { User, RefreshToken, NewPassword } from '../interfaces/user';
 import { Participant } from '../interfaces/participant';
 import { Journees } from '../interfaces/divers';
 
@@ -73,5 +73,7 @@ export class AccountService
   getProfil(): Observable<Participant>{ return this.httpClient.get<Participant>(`${this.baseURLacc}/form`); }
 
   updateProfil(participant: Participant): Observable<Object>{ return this.httpClient.put(`${this.baseURLacc}/update`, participant); }
+
+  updatePassword(newpass: NewPassword) { return this.httpClient.post<NewPassword>(`${this.baseURLacc}/newmdp`, newpass); }
 
 }

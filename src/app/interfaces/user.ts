@@ -17,3 +17,11 @@ export class RefreshToken
   accessToken: string = "";
   refreshToken: string = "";
 }
+
+export class NewPassword
+{
+  username: string = "";
+  ancien: string = "";
+  nouveau: string = "";
+  erreur: string = "";
+}

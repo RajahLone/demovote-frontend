@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
@@ -10,7 +10,7 @@ import { DiversService } from '../../services/divers.service'
 
 @Component({ selector: 'app-account-details', imports: [FormsModule, MenuComponent], templateUrl: './account-details.component.html', styleUrl: './account-details.component.css' })
 
-export class AccountDetailsComponent implements OnInit, AfterViewInit
+export class AccountDetailsComponent implements OnInit
 {
 
   profil: string = "";
@@ -37,8 +37,6 @@ export class AccountDetailsComponent implements OnInit, AfterViewInit
     this.participant = new Participant();
     this.accountService.getProfil().subscribe( data => { this.participant = data; });
   }
-
-  ngAfterViewInit() { }
 
   updateProfil() { this.router.navigate(['/account-update']); }
 

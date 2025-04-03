@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -11,7 +11,7 @@ import { DiversService } from '../../services/divers.service'
 
 @Component({ selector: 'app-participant-list', imports: [TooltipModule, FormsModule, MenuComponent], templateUrl: './participant-list.component.html', styleUrl: './participant-list.component.css' })
 
-export class ParticipantListComponent implements OnInit, AfterViewInit
+export class ParticipantListComponent implements OnInit
 {
 
   journees: Journees = new Journees();
@@ -34,8 +34,6 @@ export class ParticipantListComponent implements OnInit, AfterViewInit
 
     this.retreiveDatas();
   }
-
-  ngAfterViewInit() { }
 
   private retreiveDatas() { this.participantService.getListParticipant(this.nomFiltre, this.statutFiltre, this.arriveFiltre, this.listeTri).subscribe(data => { this.participants = data; }); }
 

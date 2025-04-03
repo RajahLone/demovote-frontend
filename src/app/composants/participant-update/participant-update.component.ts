@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 
@@ -11,7 +11,7 @@ import { AccountService } from '../../services/account.service';
 
 @Component({ selector: 'app-participant-update', imports: [FormsModule, MenuComponent], templateUrl: './participant-update.component.html', styleUrl: './participant-update.component.css' })
 
-export class ParticipantUpdateComponent implements OnInit, AfterViewInit
+export class ParticipantUpdateComponent implements OnInit
 {
 
   profil: string = "";
@@ -46,8 +46,6 @@ export class ParticipantUpdateComponent implements OnInit, AfterViewInit
     this.numeroParticipant = this.route.snapshot.params['numeroParticipant'];
     this.participantService.getByIdParticipant(this.numeroParticipant).subscribe(data => { this.participant = data; });
   }
-
-  ngAfterViewInit() { }
 
   updateConfirmed() { if (this.participantForm.valid) { this.participantService.updateParticipant(this.numeroParticipant, this.participant).subscribe(); this.goToListParticipant(); } }
 

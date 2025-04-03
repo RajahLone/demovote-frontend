@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuComponent } from '../menu/menu.component';
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
@@ -8,7 +8,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @Component({ selector: 'app-production-list', imports: [TooltipModule, MenuComponent], templateUrl: './production-list.component.html', styleUrl: './production-list.component.css' })
 
-export class ProductionListComponent implements OnInit, AfterViewInit
+export class ProductionListComponent implements OnInit
 {
   productions: ProductionShort[] = [];
 
@@ -17,8 +17,6 @@ export class ProductionListComponent implements OnInit, AfterViewInit
   constructor(private productionService: ProductionService, private router: Router) { }
 
   ngOnInit() { this.retreiveDatas(); }
-
-  ngAfterViewInit() { }
 
   private retreiveDatas() { this.productionService.getListProduction().subscribe(data => { this.productions = data; }); }
 

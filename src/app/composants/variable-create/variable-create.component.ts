@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Variable } from '../../interfaces/variable';
 import { VariableService } from '../../services/variable.service';
@@ -7,7 +7,7 @@ import { FormsModule, NgForm, NgModel } from '@angular/forms';
 
 @Component({ selector: 'app-variable-create', imports: [FormsModule, MenuComponent], templateUrl: './variable-create.component.html', styleUrl: './variable-create.component.css' })
 
-export class VariableCreateComponent implements OnInit, AfterViewInit
+export class VariableCreateComponent implements OnInit
 {
 
   @ViewChild('formRef') variableForm!: NgForm;
@@ -18,9 +18,7 @@ export class VariableCreateComponent implements OnInit, AfterViewInit
 
   constructor(private variableService: VariableService, private router: Router, private menu: MenuComponent) { }
 
-  ngOnInit(): void { }
-
-  ngAfterViewInit() { }
+  ngOnInit() { }
 
   private saveVariable() { this.variableService.createVariable(this.variable).subscribe(); this.goToListVariable(); }
 

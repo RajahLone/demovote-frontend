@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 
@@ -9,7 +9,7 @@ import { Journees } from '../../interfaces/divers';
 
 @Component({ selector: 'app-login', imports: [FormsModule, MenuComponent], templateUrl: './login.component.html', styleUrl: './login.component.css' })
 
-export class LoginComponent implements OnInit, AfterViewInit
+export class LoginComponent implements OnInit
 {
 
   hello: Journees = new Journees();
@@ -27,8 +27,6 @@ export class LoginComponent implements OnInit, AfterViewInit
     this.hello = new Journees();
     this.accountService.salute().subscribe(data => { this.hello = data; });
   }
-
-  ngAfterViewInit() { }
 
   connexion()
   {

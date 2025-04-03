@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuComponent } from '../menu/menu.component';
 import { ProductionFile } from '../../interfaces/production';
@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({ selector: 'app-production-upload', imports: [FormsModule, MenuComponent], templateUrl: './production-upload.component.html', styleUrl: './production-upload.component.css' })
 
-export class ProductionUploadComponent implements OnInit, AfterViewInit
+export class ProductionUploadComponent implements OnInit
 {
 
   production: ProductionFile = new ProductionFile();
@@ -16,13 +16,11 @@ export class ProductionUploadComponent implements OnInit, AfterViewInit
 
   constructor(private productionService: ProductionService, private route: ActivatedRoute, private router: Router, private menu: MenuComponent) { }
 
-  ngOnInit(): void
+  ngOnInit()
   {
     this.numeroProduction = this.route.snapshot.params['numeroProduction'];
     this.productionService.getByIdProductionFile(this.numeroProduction).subscribe(data => { this.production = data; });
   }
-
-  ngAfterViewInit() { }
 
   onArchiveSelected(event: any)
   {

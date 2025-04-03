@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 
@@ -10,7 +10,7 @@ import { DiversService } from '../../services/divers.service'
 
 @Component({ selector: 'app-account-update', imports: [FormsModule, MenuComponent], templateUrl: './account-update.component.html', styleUrl: './account-update.component.css' })
 
-export class AccountUpdateComponent implements OnInit, AfterViewInit
+export class AccountUpdateComponent implements OnInit
 {
 
   profil: string = "";
@@ -39,8 +39,6 @@ export class AccountUpdateComponent implements OnInit, AfterViewInit
     this.participant = new Participant();
     this.accountService.getProfil().subscribe(data => { this.participant = data; });
   }
-
-  ngAfterViewInit() { }
 
   updateConfirmed() { if (this.participantForm.valid) { this.accountService.updateProfil(this.participant).subscribe(); this.goToHome(); } }
 

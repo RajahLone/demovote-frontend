@@ -1,4 +1,4 @@
-import { Injectable, Component, OnInit, AfterViewInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Injectable, Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { DEFAULT_INTERRUPTSOURCES, Idle } from '@ng-idle/core';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -9,16 +9,21 @@ import { AccountService } from '../../services/account.service';
 
 @Injectable({ providedIn: 'root' })
 
-export class MenuComponent implements OnInit, AfterViewInit
+export class MenuComponent implements OnInit
 {
 
   logged: boolean = false;
   role: string = "";
 
-  private idleState: String = 'NOT_STARTED';
+  private idleState: string = 'NOT_STARTED';
   private countdown: number = 0;
   private timedOut: boolean = false;
   @ViewChild('signouticon', {static: false}) signOutIcon!: ElementRef;
+
+  @ViewChild('usersicon', {static: false}) usersIcon!: ElementRef;
+  @ViewChild('compoicon', {static: false}) compoIcon!: ElementRef;
+  @ViewChild('prodsicon', {static: false}) prodsIcon!: ElementRef;
+  @ViewChild('variaicon', {static: false}) variaIcon!: ElementRef;
 
   constructor(private idle: Idle, private router: Router, private accountService: AccountService, private el: ElementRef, private renderer: Renderer2)
   {
@@ -42,8 +47,6 @@ export class MenuComponent implements OnInit, AfterViewInit
     this.idle.watch();
   }
 
-  ngAfterViewInit() { }
-
   deconnexion() { this.accountService.signOut(); this.logged = false; if ((this.router.url === '/') || (this.router.url === '/home')) { window.location.reload(); } else { this.router.navigate(['/']); }  }
 
   getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
@@ -52,5 +55,10 @@ export class MenuComponent implements OnInit, AfterViewInit
 
   showPendingLogout() { if (this.logged) { if (this.signOutIcon) { this.renderer.addClass(this.signOutIcon.nativeElement, 'fa-beat-fade'); this.renderer.addClass(this.signOutIcon.nativeElement, 'text-danger'); } } }
   hidePendingLogout() { if (this.logged) { if (this.signOutIcon) { this.renderer.removeClass(this.signOutIcon.nativeElement, 'fa-beat-fade'); this.renderer.removeClass(this.signOutIcon.nativeElement, 'text-danger'); } } }
+
+  activeUsersIcon() { if (this.usersIcon) { this.renderer.addClass(this.usersIcon.nativeElement, 'active'); } }
+  activeCompoIcon() { if (this.compoIcon) { this.renderer.addClass(this.compoIcon.nativeElement, 'active'); } }
+  activeProdsIcon() { if (this.prodsIcon) { this.renderer.addClass(this.prodsIcon.nativeElement, 'active'); } }
+  activeVariaIcon() { if (this.variaIcon) { this.renderer.addClass(this.variaIcon.nativeElement, 'active'); } }
 
 }

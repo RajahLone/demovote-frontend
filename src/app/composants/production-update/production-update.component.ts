@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuComponent } from '../menu/menu.component';
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
@@ -9,7 +9,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({ selector: 'app-production-update', imports: [FormsModule, MenuComponent], templateUrl: './production-update.component.html', styleUrl: './production-update.component.css' })
 
-export class ProductionUpdateComponent implements OnInit, AfterViewInit
+export class ProductionUpdateComponent implements OnInit
 {
 
   participants: ParticipantShort[] = [];
@@ -24,14 +24,12 @@ export class ProductionUpdateComponent implements OnInit, AfterViewInit
 
   constructor(private productionService: ProductionService, private participantService: ParticipantService, private route: ActivatedRoute, private router: Router, private menu: MenuComponent) { }
 
-  ngOnInit(): void
+  ngOnInit()
   {
     this.retreiveParticipants();
     this.numeroProduction = this.route.snapshot.params['numeroProduction'];
     this.productionService.getByIdProduction(this.numeroProduction).subscribe(data => { this.production = data; });
   }
-
-  ngAfterViewInit() { }
 
   private retreiveParticipants() { this.participantService.getOptionListParticipant().subscribe(data => { this.participants = data; }); }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuComponent } from '../menu/menu.component';
 import { Categorie } from '../../interfaces/categorie';
@@ -7,7 +7,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({ selector: 'app-categorie-create', imports: [FormsModule, MenuComponent], templateUrl: './categorie-create.component.html', styleUrl: './categorie-create.component.css'})
 
-export class CategorieCreateComponent implements OnInit, AfterViewInit
+export class CategorieCreateComponent implements OnInit
 {
   @ViewChild('formRef') categorieForm!: NgForm;
 
@@ -15,9 +15,7 @@ export class CategorieCreateComponent implements OnInit, AfterViewInit
 
   constructor(private categorieService: CategorieService, private router: Router, private menu: MenuComponent) { }
 
-  ngOnInit(): void { }
-
-  ngAfterViewInit() { }
+  ngOnInit() { }
 
   private saveCategorie() { this.categorieService.createCategorie(this.categorie).subscribe(); this.goToListCategorie(); }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 
@@ -11,7 +11,7 @@ import { AccountService } from '../../services/account.service';
 
 @Component({ selector: 'app-participant-create', imports: [FormsModule, MenuComponent], templateUrl: './participant-create.component.html', styleUrl: './participant-create.component.css' })
 
-export class ParticipantCreateComponent implements OnInit, AfterViewInit
+export class ParticipantCreateComponent implements OnInit
 {
 
   profil: string = "";
@@ -41,8 +41,6 @@ export class ParticipantCreateComponent implements OnInit, AfterViewInit
     this.journees = new Journees();
     this.diversService.getJournees().subscribe(data => { this.journees = data; });
   }
-
-  ngAfterViewInit() { }
 
   private saveParticipant() { this.participantService.createParticipant(this.participant).subscribe(); this.goToListParticipant(); }
 

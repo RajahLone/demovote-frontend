@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
@@ -11,7 +11,7 @@ import { AccountService } from '../../services/account.service';
 
 @Component({ selector: 'app-participant-details', imports: [FormsModule, MenuComponent], templateUrl: './participant-details.component.html', styleUrl: './participant-details.component.css' })
 
-export class ParticipantDetailsComponent implements OnInit, AfterViewInit
+export class ParticipantDetailsComponent implements OnInit
 {
 
   profil: string = "";
@@ -45,8 +45,6 @@ export class ParticipantDetailsComponent implements OnInit, AfterViewInit
     this.participant = new Participant();
     this.participantService.getByIdParticipant(this.numeroParticipant).subscribe( data => { this.participant = data; });
   }
-
-  ngAfterViewInit() { }
 
   updateParticipant(id: number) { this.router.navigate(['/participant-update', id]); }
 

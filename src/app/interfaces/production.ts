@@ -51,6 +51,7 @@ export class ProductionShort
 export class ProductionFile
 {
   numeroProduction: number = 0;
+  numeroParticipant: number = 0;
   titre: string = "";
   nomArchive: string = "";
   archive!: string | any;

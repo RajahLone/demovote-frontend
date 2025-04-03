@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuComponent } from '../menu/menu.component';
 import { Categorie } from '../../interfaces/categorie';
@@ -7,7 +7,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({ selector: 'app-categorie-update', imports: [FormsModule, MenuComponent], templateUrl: './categorie-update.component.html', styleUrl: './categorie-update.component.css' })
 
-export class CategorieUpdateComponent implements OnInit, AfterViewInit
+export class CategorieUpdateComponent implements OnInit
 {
   @ViewChild('formRef') categorieForm!: NgForm;
 
@@ -17,13 +17,11 @@ export class CategorieUpdateComponent implements OnInit, AfterViewInit
 
   constructor(private categorieService: CategorieService, private route: ActivatedRoute, private router: Router, private menu: MenuComponent) { }
 
-  ngOnInit(): void
+  ngOnInit()
   {
     this.numeroCategorie = this.route.snapshot.params['numeroCategorie'];
     this.categorieService.getByIdCategorie(this.numeroCategorie).subscribe(data => { this.categorie = data; });
   }
-
-  ngAfterViewInit() { }
 
   updateConfirmed() { if (this.categorieForm.valid) { this.categorieService.updateCategorie(this.numeroCategorie, this.categorie).subscribe(); this.goToListCategorie(); } }
 
