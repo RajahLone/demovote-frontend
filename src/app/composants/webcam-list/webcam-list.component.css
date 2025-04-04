@@ -1,0 +1,9 @@
+.carousel-item { background-color: black; }
+.fixed-height { height: 768px; }
+
+#webcamscarousel { width:90%; }
+
+@media screen and (max-width: 500px) {
+  #webcamscarousel { width: 100%; }
+  .fixed-height { height: unset; } 
+}

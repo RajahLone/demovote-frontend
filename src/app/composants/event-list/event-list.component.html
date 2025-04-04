@@ -1,0 +1,200 @@
+<app-menu></app-menu>
+<div id="main">
+<div class="card shadow rounded-bottom-0">
+
+  <p class="fs-4 text-center" style="margin-top:12px;"><span i18n>Planning des conférences et événements</span></p>
+
+  <div class="alert alert-warning text-center" role="alert" style="margin:7px;"><span i18n>Soumis à modifications, merci de consulter cette page régulièrement.</span></div>
+
+  <div class="d-flex flex-wrap justify-content-around">
+
+@if (this.journees.jour1Court) {
+
+   <div class="card shadow" style="width:33rem;">
+    <div class="card-header text-center">
+      <span class="fs-5 card-title"><strong>{{ this.journees.jour1Long }}</strong></span>
+    </div>
+    <div class="card-body">
+
+      <div class="alert alert-dark" role="alert">
+        <p i18n><strong>08h00&nbsp;: Ouverture officielle</strong></p>
+      </div>
+
+      <div class="alert alert-info" role="alert">
+        <p i18n><strong>11h00&nbsp;-&nbsp;11h45&nbsp;: Haiku, enfin majeur ?</strong></p>
+        <p>1ère conférence, proposée par François REVOL (mmu_man).</p>
+      </div>
+
+      <div class="alert alert-secondary" role="alert">
+        <p i18n><strong>12h00&nbsp;: Déjeuner</strong></p>
+        <p>Premier service, puis éventuellement un second service.</p>
+      </div>
+
+      <div class="alert alert-warning" role="alert">
+        <p i18n><strong>14h00&nbsp;: Annonce Fast Compo</strong></p>
+        <p>Deadline avec les autres compos samedi à 18h<br>Sujet : "NEVER FORGET"</p>
+      </div>
+
+      <div class="alert alert-info" role="alert">
+        <p i18n><strong>14h30&nbsp;-&nbsp;15h15&nbsp;: Présentation du jeu Wind Edge sur ColecoVision</strong></p>
+        <p>2ème conférence, proposée par Nicolas CAMPION (Nicam)</p>
+      </div>
+
+      <div class="alert alert-info" role="alert">
+        <p i18n><strong>15h45&nbsp;-&nbsp;16h30&nbsp;: La voix avec Common Voice</strong></p>
+        <p>3ème conférence, proposée par Christophe VILLENEUVE (Hello)</p>
+      </div>
+
+      <div class="alert alert-info" role="alert">
+        <p i18n><strong>17h00&nbsp;-&nbsp;17h45&nbsp;: Conversion d'images en couleurs étendues sur Amstrad Plus</strong></p>
+        <p>4ème conférence, proposée par Edouard BERGE (Roudoudou)</p>
+      </div>
+
+      <div class="alert alert-info" role="alert">
+        <p i18n><strong>18h00&nbsp;-&nbsp;18h45&nbsp;: Nom de Zeus ! Le Web a 30 ans !</strong></p>
+        <p>5ème conférence, proposée par Fabien WERNLI (faxmodem)</p>
+      </div>
+
+      <div class="alert alert-secondary" role="alert">
+        <p i18n><strong>19h30&nbsp;: Souper</strong></p>
+        <p>Premier service, puis second service.</p>
+      </div>
+
+      <div class="alert alert-info" role="alert">
+        <p i18n><strong>22h00&nbsp;: Rétro Quizz Game</strong></p>
+        <p>Animé par cicile.</p>
+      </div>
+
+    </div>
+   </div>
+}
+@if (this.journees.jour2Court) {
+
+   <div class="card shadow" style="width:33rem;">
+    <div class="card-header text-center">
+      <span class="fs-5 card-title"><strong>{{ this.journees.jour2Long }}</strong></span>
+    </div>
+    <div class="card-body">
+
+      <div class="alert alert-secondary" role="alert">
+        <p i18n><strong>03h00&nbsp;-&nbsp;09h00&nbsp;: Pause régie</strong></p>
+        <p>Merci d'éteindre votre sono également.</p>
+      </div>
+
+      <div class="alert alert-secondary" role="alert">
+        <p i18n><strong>06h30&nbsp;-&nbsp;10h30&nbsp;: Petit-déjeuner</strong></p>
+        <p>Service continu.</p>
+      </div>
+
+      <div class="alert alert-info" role="alert">
+        <p i18n><strong>09h30&nbsp;-&nbsp;10h15&nbsp;: Projet d'épreuve Hacking CTF</strong></p>
+        <p>6ème conférence, proposée par Ölrick LEFEBVRE (Ölrick)</p>
+      </div>
+
+      <div class="alert alert-info" role="alert">
+        <p i18n><strong>10h45&nbsp;-&nbsp;11h30&nbsp;: MorphOS 3.12</strong></p>
+        <p>7ème conférence, proposée par Mickael PERNOT (Batteman)</p>
+      </div>
+
+      <div class="alert alert-success" role="alert">
+        <p i18n><strong>11h00&nbsp;-&nbsp;12h00&nbsp;: Assemblée Générale de l'association <a href="http://www.afle.org/" target="_blank">AFLE</a></strong></p>
+        <p>Editrice du bulletin associatif aMiGa=PoWeR.</p>
+      </div>
+
+      <div class="alert alert-secondary" role="alert">
+        <p i18n><strong>12h00&nbsp;: Déjeuner</strong></p>
+        <p>Premier service, puis second service.</p>
+      </div>
+
+      <div class="alert alert-success" role="alert">
+        <p i18n><strong>14h00&nbsp;-&nbsp;17h00&nbsp;: Ouverture au public</strong></p>
+      </div>
+
+      <div class="alert alert-info" role="alert">
+        <p i18n><strong>14h30&nbsp;-&nbsp;15h15&nbsp;: Gamedev d'un jeu sur Amstrad+/GX4000</strong></p>
+        <p>8ème conférence, proposée par Richard GATINEAU (TotO).</p>
+      </div>
+
+      <div class="alert alert-success" role="alert">
+        <p i18n><strong>15h30&nbsp;-&nbsp;16h30&nbsp;: Assemblée Générale de l'association <a href="http://www.warmup-asso.fr/" target="_blank">WArMUp</a></strong></p>
+      </div>
+
+      <div class="alert alert-info" role="alert">
+        <p i18n><strong>15h45&nbsp;-&nbsp;16h30&nbsp;: La Vampire</strong></p>
+        <p>9ème conférence, proposée par Stéphane PITTELOUD (Guibrush).</p>
+      </div>
+
+      <div class="alert alert-info" role="alert">
+        <p i18n><strong>17h00&nbsp;-&nbsp;17h45&nbsp;: AmigaOS 4.1</strong></p>
+        <p>10ème conférence, proposée par Mehdi BOULAHIA (K-L).</p>
+      </div>
+
+      <div class="alert alert-info" role="alert">
+        <p i18n><strong>17h00&nbsp;-&nbsp;17h45&nbsp;: AmigaOS 4.1</strong></p>
+        <p>10ème conférence, proposée par Mehdi BOULAHIA (K-L).</p>
+      </div>
+
+      <div class="alert alert-warning" role="alert">
+        <p i18n><strong>18h00&nbsp;: Deadline générale</strong></p>
+        <p>Pour toutes les compos, Fast incluse.</p>
+      </div>
+
+      <div class="alert alert-secondary" role="alert">
+        <p i18n><strong>19h30&nbsp;: Souper</strong></p>
+        <p>Premier service, puis second service.</p>
+      </div>
+
+      <div class="alert alert-warning" role="alert">
+        <p i18n><strong>23h00&nbsp;: Demo Show</strong></p>
+        <p>Début des présentations/projections des compos.</p>
+      </div>
+
+    </div>
+   </div>
+
+}
+@if (this.journees.jour3Court) {
+
+   <div class="card shadow" style="width:33rem;">
+    <div class="card-header text-center">
+      <span class="fs-5 card-title"><strong>{{ this.journees.jour3Long }}</strong></span>
+    </div>
+    <div class="card-body">
+
+      <div class="alert alert-secondary" role="alert">
+        <p i18n><strong>03h00&nbsp;-&nbsp;09h00&nbsp;: Pause régie</strong></p>
+        <p>Merci d'éteindre votre sono également.</p>
+      </div>
+
+      <div class="alert alert-secondary" role="alert">
+        <p i18n><strong>06h30&nbsp;-&nbsp;10h30&nbsp;: Petit-déjeuner</strong></p>
+        <p>Service continu.</p>
+      </div>
+
+      <div class="alert alert-warning" role="alert">
+        <p i18n><strong>10h00&nbsp;: Fin des votes</strong></p>
+        <p>Pour toutes les compos.</p>
+      </div>
+
+      <div class="alert alert-warning" role="alert">
+        <p i18n><strong>11h00&nbsp;: Remise des lots, puis remerciements</strong></p>
+      </div>
+
+      <div class="alert alert-secondary" role="alert">
+        <p i18n><strong>12h00&nbsp;: Déjeuner</strong></p>
+        <p>Premier service, puis éventuellement second service.</p>
+      </div>
+
+      <div class="alert alert-danger" role="alert">
+        <p i18n><strong>16h00&nbsp;: Fermeture officielle</strong></p>
+      </div>
+
+    </div>
+   </div>
+
+}
+
+  </div>
+
+</div>
+</div>
