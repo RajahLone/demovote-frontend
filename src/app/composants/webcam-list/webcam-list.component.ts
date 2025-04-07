@@ -1,16 +1,47 @@
 import { Component, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
 
 import { MenuComponent } from '../menu/menu.component';
+import { Webcam } from '../../interfaces/webcam';
+import { WebcamService } from '../../services/webcam.service';
 
 @Component({ selector: 'app-webcam-list', imports: [MenuComponent], templateUrl: './webcam-list.component.html', styleUrl: './webcam-list.component.css' })
 
 export class WebcamListComponent implements OnInit
 {
 
-  // TODO : téléchargement depuis l'API et non pas directement
+  webcams: Webcam[] = [];
 
-  constructor() { }
+  webcamu: Webcam = new Webcam();
 
-  ngOnInit() { }
+  constructor(private webcamService: WebcamService) { }
+
+  ngOnInit()
+  {
+    this.recupererToutesVues();
+
+    timer(0, 15000).subscribe(() => { this.updaterVues(); });
+  }
+
+  recupererToutesVues() { this.webcamService.getList().subscribe(data => { this.webcams = data; }); }
+
+  updaterVues()
+  {
+    for (var i = 0; i < this.webcams.length; i++)
+    {
+      this.webcamu = new Webcam();
+      this.webcamu.id = this.webcams[i].id;
+      this.webcamu.crc32 = this.webcams[i].crc32;
+      this.webcamu.vue = "";
+
+      this.webcamService.updateVue(this.webcamu).subscribe(data => { this.webcamu = data; });
+
+      if (this.webcamu.vue !== "")
+      {
+        this.webcams[i].crc32 = this.webcamu.crc32;
+        this.webcams[i].vue = this.webcamu.vue;
+      }
+    }
+  }
 
 }

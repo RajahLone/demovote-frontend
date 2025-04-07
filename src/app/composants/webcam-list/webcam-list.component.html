@@ -3,15 +3,11 @@
 
   <div id="webcamscarousel" class="carousel slide carousel-fade center" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="d-flex justify-content-center fixed-height"><img src="https://www.triplea.fr/alchimie/images/webcams/hirezcam.jpg" data-bs-interval="10000"></div>
+@for (scene of webcams; track scene.id) {
+      <div class="carousel-item" [class.active]="scene.id === 1">
+        <div class="d-flex justify-content-center fixed-height"><img [src]="scene.vue" [alt]="scene.id" data-bs-interval="10000"></div>
       </div>
-      <div class="carousel-item">
-        <div class="d-flex justify-content-center fixed-height"><img src="https://www.triplea.fr/alchimie/images/webcams/mobilecam.jpg" data-bs-interval="10000"></div>
-      </div>
-      <div class="carousel-item">
-        <div class="d-flex justify-content-center fixed-height"><img src="https://www.triplea.fr/alchimie/images/webcams/mobilecam2.jpg" data-bs-interval="10000"></div>
-      </div>
+}
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#webcamscarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
