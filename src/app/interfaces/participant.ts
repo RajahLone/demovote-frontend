@@ -29,8 +29,8 @@ export const ParticipantModePaiementList: ParticipantEnum[] =
 
 export class Participant
 {
-  dateCreation: string = "";
-  dateModification: string = "";
+  dateCreation?: string;
+  dateModification?: string;
   numeroParticipant: number = 0;
   role: string = "USER";
   nom: string = "";

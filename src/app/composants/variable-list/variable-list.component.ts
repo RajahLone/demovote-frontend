@@ -24,7 +24,7 @@ export class VariableListComponent implements OnInit
 
   filtrageParType(event: any) { this.typeFiltre = event.target.value; this.goToRefreshListVariable(); }
 
-  goToRefreshListVariable() { this.retreiveDatas(); this.retreiveTypes(); }
+  goToRefreshListVariable() { this.retreiveTypes(); this.retreiveDatas();  }
 
   goToNewVariable() { this.router.navigate(['/variable-create']); }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { timer } from 'rxjs';
 
 import { MenuComponent } from '../menu/menu.component';
@@ -14,7 +15,7 @@ export class WebcamListComponent implements OnInit
 
   webcamu: Webcam = new Webcam();
 
-  constructor(private webcamService: WebcamService) { }
+  constructor(private webcamService: WebcamService, private router: Router) { }
 
   ngOnInit()
   {
@@ -27,6 +28,8 @@ export class WebcamListComponent implements OnInit
 
   updaterVues()
   {
+    if ((this.router.url !== '/webcam-list')) { return; }
+
     for (var i = 0; i < this.webcams.length; i++)
     {
       this.webcamu = new Webcam();

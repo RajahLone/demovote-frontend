@@ -30,8 +30,8 @@ export class Production
 
 export class ProductionShort
 {
-  dateCreation: string = "";
-  dateModification: string = "";
+  dateCreation?: string;
+  dateModification?: string;
   numeroProduction: number = 0;
   adresseIP: string = "";
   type: string = "AUTRE";

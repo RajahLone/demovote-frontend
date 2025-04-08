@@ -5,20 +5,24 @@ import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../inter
 import { ProductionService } from '../../services/production.service';
 import { saveAs } from 'file-saver';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { FormsModule, NgForm } from '@angular/forms';
 
-@Component({ selector: 'app-production-list', imports: [TooltipModule, MenuComponent], templateUrl: './production-list.component.html', styleUrl: './production-list.component.css' })
+@Component({ selector: 'app-production-list', imports: [FormsModule, TooltipModule, MenuComponent], templateUrl: './production-list.component.html', styleUrl: './production-list.component.css' })
 
 export class ProductionListComponent implements OnInit
 {
   productions: ProductionShort[] = [];
 
   types: ProductionEnum[] = ProductionTypeList;
+  typeFiltre: string = "";
 
   constructor(private productionService: ProductionService, private router: Router) { }
 
   ngOnInit() { this.retreiveDatas(); }
 
-  private retreiveDatas() { this.productionService.getListProduction().subscribe(data => { this.productions = data; }); }
+  private retreiveDatas() { this.productionService.getListProduction(this.typeFiltre).subscribe(data => { this.productions = data; }); }
+
+  filtrageParType(event: any) { this.typeFiltre = event.target.value; this.goToRefreshListProduction(); }
 
   goToRefreshListProduction(){ this.retreiveDatas(); }
 

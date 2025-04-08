@@ -1,7 +1,7 @@
-export class Categorie 
+export class Categorie
 {
-  dateCreation: string = "";
-  dateModification: string = "";
+  dateCreation?: string;
+  dateModification?: string;
   numeroCategorie: number = 0;
   libelle: string = "";
   numeroOrdre: number = 1;

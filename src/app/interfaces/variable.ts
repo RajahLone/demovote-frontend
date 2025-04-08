@@ -1,7 +1,7 @@
-export class Variable 
+export class Variable
 {
-  dateCreation: string = "";
-  dateModification: string = "";
+  dateCreation?: string;
+  dateModification?: string;
   numeroVariable: number = 0;
   type: string = "";
   code: string = "";

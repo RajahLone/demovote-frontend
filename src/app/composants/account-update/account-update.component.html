@@ -154,6 +154,7 @@
 		</div>
 }
 
+@if (this.journees.dodosurplace) {
 		<div class="form-group row">
 			<div class="col-sm-4"></div>
 			<div class="col-sm-8">
@@ -162,16 +163,18 @@
 				</div>
 			</div>
 		</div>
+}
 
-		<!-- <div class="form-group row">
-				<div class="col-sm-4"></div>
-				<div class="col-sm-8">
-					<div class="form-check form-switch">
-						<input class="form-check-input field-separate" type="checkbox" id="useAmigabus" name="useAmigabus" [(ngModel)]="participant.useAmigabus" disabled>
-						<label class="form-check-label" for="useAmigabus"><small><span i18n>Vient en Amigabus</span></small></label>
-					</div>
+@if (this.journees.amigabus) {
+		<div class="form-group row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-8">
+				<div class="form-check form-switch">
+					<input class="form-check-input field-separate" type="checkbox" id="useAmigabus" name="useAmigabus" [(ngModel)]="participant.useAmigabus" disabled><label class="form-check-label" for="useAmigabus"><small><span i18n>Vient en Amigabus</span></small></label>
 				</div>
-			</div> -->
+			</div>
+		</div>
+}
 
 		<div class="form-group row">
 			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Commentaire</span></label>

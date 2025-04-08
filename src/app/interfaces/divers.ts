@@ -15,4 +15,6 @@ export class Journees
   jour2Long: string = "";
   jour3Court: string = "";
   jour3Long: string = "";
+  amigabus: boolean = false;
+  dodosurplace: boolean = false;
 }
