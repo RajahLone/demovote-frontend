@@ -1,6 +1,40 @@
 <app-menu></app-menu>
 <div id="main">
-
-Chat !
-
+  <div class="card shadow">
+    <div class="card-header"><span i18n>Boudoir conversationnel</span></div>
+  	<div class="card-header shadow-sm">
+  		<div class="row justify-content-between">
+        <div class="form-group col-sm-9 label-nobr">
+  				<div class="input-group input-group-sn">
+            <input type="text" (keydown.enter)="envoiNouvelleLigne()" class="form-control form-control-sm field-separate" id="input_message" [(ngModel)]="ajoute.ligne" autofocus>
+            <button type="button" (click)="envoiNouvelleLigne()" class="btn bg-gradient btn-primary btn-sm field-separate"><i class="fa-solid fa-comment"></i>&nbsp;<span i18n>Envoyer</span></button>
+  			  </div>
+  			</div>
+        <div class="form-group col-sm-3 label-nobr">
+  				<div class="input-group input-group-sn">
+            <button type="button" class="btn bg-gradient btn-secondary btn-sm field-separate" disabled><span i18n>Destinataire(s)</span></button>
+            <select class="form-select form-select-sm field-separate" id="select_destinataire" [(ngModel)]="ajoute.numeroDestinataire">
+              <option value="0">Tous</option>
+              @for (p of pseudonymes; track p.numeroParticipant) {
+              <option [value]="p.numeroParticipant">{{ p.pseudonyme }}</option>
+              }
+  				  </select>
+  			  </div>
+  			</div>
+  		</div>
+  	</div>
+    <div class="card-body chatdiv">
+      <table class="table table-sm">
+  			<tbody>
+          @for (l of lignes; track l.numeroMessage) {
+  				<tr>
+            <td class="chatusr col-sm-1 label-nobr">{{ l.pseudonyme }}</td>
+            <td class="chatmsg col-sm-10" [class.text-danger]="l.numeroDestinataire > 0" [class.text-primary]="l.ligne.includes(ajoute.pseudonyme)">@if (l.numeroDestinataire > 0) { <span i18n>en privé, pour</span> {{ l.pseudoDestinataire }}&nbsp;: } {{ l.ligne }}</td>
+            <td class="chatdat col-sm-1 label-nobr">{{ l.dateCreation }}</td>
+  				</tr>
+  				}
+  			</tbody>
+  		</table>
+  	</div>
+  </div>
 </div>

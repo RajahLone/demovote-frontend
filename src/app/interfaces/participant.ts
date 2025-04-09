@@ -67,6 +67,12 @@ export class ParticipantShort
   prenom: string = "";
 }
 
+export class PseudonymeList
+{
+  numeroParticipant: number = 0;
+  pseudonyme: string = "";
+}
+
 export class ParticipantList
 {
   numeroParticipant: number = 0;
