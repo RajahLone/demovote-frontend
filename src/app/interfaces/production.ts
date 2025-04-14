@@ -46,6 +46,7 @@ export class ProductionShort
   nomArchive: string = "";
   vignette!: string | any;
   numeroVersion: number = 0;
+  numeroCategorie: number = 0;
 }
 
 export class ProductionFile
@@ -55,4 +56,15 @@ export class ProductionFile
   titre: string = "";
   nomArchive: string = "";
   archive!: string | any;
+}
+
+export class ProductionItem
+{
+  numeroProduction: number = 0;
+  type: string = "AUTRE";
+  titre: string = "";
+  auteurs: string = "";
+  groupes: string = "";
+  plateforme: string = "";
+  numeroOrdre: number = 0;
 }

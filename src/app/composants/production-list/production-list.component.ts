@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule, NgForm } from '@angular/forms';
+import { saveAs } from 'file-saver';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+
 import { MenuComponent } from '../menu/menu.component';
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
-import { saveAs } from 'file-saver';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
-import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({ selector: 'app-production-list', imports: [FormsModule, TooltipModule, MenuComponent], templateUrl: './production-list.component.html', styleUrl: './production-list.component.css' })
 

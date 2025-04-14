@@ -32,6 +32,8 @@ import { ProductionCreateComponent } from './composants/production-create/produc
 import { ProductionDetailsComponent } from './composants/production-details/production-details.component';
 import { ProductionUpdateComponent } from './composants/production-update/production-update.component';
 import { ProductionUploadComponent } from './composants/production-upload/production-upload.component';
+import { ShowListComponent } from './composants/show-list/show-list.component';
+import { ShowLinksComponent } from './composants/show-links/show-links.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -60,6 +62,8 @@ export const routes: Routes = [
   {path: 'production-details/:numeroProduction', component: ProductionDetailsComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
   {path: 'production-update/:numeroProduction', component: ProductionUpdateComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
   {path: 'production-upload/:numeroProduction', component: ProductionUploadComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
+  {path: 'show-list', component: ShowListComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always' },
+  {path: 'show-links/:numeroCategorie', component: ShowLinksComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always' },
 ];
 
 @NgModule({

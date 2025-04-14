@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuComponent } from '../menu/menu.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+import { MenuComponent } from '../menu/menu.component';
 import { Categorie } from '../../interfaces/categorie';
 import { CategorieService } from '../../services/categorie.service';
-import { FormsModule } from '@angular/forms';
 
 @Component({ selector: 'app-categorie-details', imports: [FormsModule, MenuComponent], templateUrl: './categorie-details.component.html', styleUrl: './categorie-details.component.css' })
 

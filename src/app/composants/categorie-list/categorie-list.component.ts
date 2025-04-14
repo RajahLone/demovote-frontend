@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuComponent } from '../menu/menu.component';
 import { Router } from '@angular/router';
+
+import { MenuComponent } from '../menu/menu.component';
 import { Categorie } from '../../interfaces/categorie';
 import { CategorieService } from '../../services/categorie.service';
 

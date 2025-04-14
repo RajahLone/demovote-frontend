@@ -1,0 +1,41 @@
+<app-menu></app-menu>
+<div id="main">
+<div class="card shadow center">
+
+  <div class="card-header"><span i18n>Productions liées à la catégorie {{ categorie.libelle }}</span></div>
+	<div class="card-header shadow-sm">
+		<button (click)="goToListPresentations()" class="btn bg-gradient btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;<span i18n>Retour</span></button>
+	</div>
+	<div class="card-body"><div class="row align-items-start">
+
+    <div class="col">
+      <select class="form-select-sm" multiple id="selectionLinked" (change)="changeEtatBoutonsLinked($event)">
+      @for (prod of linkedProductions; track prod.numeroProduction) {
+        <option [value]="prod.numeroProduction"> {{ prod.titre }}</option>
+      }
+      </select>
+    </div>
+
+    <div class="col mx-auto">
+      <br/><br/>
+      <button (click)="lierProduction()" #boutonLier class="btn bg-gradient btn-primary btn-sm boutons disabled"><i class="fa-solid fa-arrow-left"></i>&nbsp;<span i18n>Lier</span></button>
+      <hr/>
+      <button (click)="retirerProduction()" #boutonRetirer class="btn bg-gradient btn-primary btn-sm boutons disabled"><i class="fa-solid fa-arrow-right"></i>&nbsp;<span i18n>Retirer</span></button>
+      <br/><br/>
+      <button (click)="avancerProduction()" #boutonAvancer class="btn bg-gradient btn-primary btn-sm boutons disabled"><i class="fa-solid fa-arrow-up"></i>&nbsp;<span i18n>Avancer</span></button>
+      <br/><br/>
+      <button (click)="reculerProduction()" #boutonReculer class="btn bg-gradient btn-primary btn-sm boutons disabled"><i class="fa-solid fa-arrow-down"></i>&nbsp;<span i18n>Reculer</span></button>
+    </div>
+
+    <div class="col">
+      <select class="form-select-sm" multiple id="selectionUnlinked" (change)="changeEtatBoutonsUnlinked($event)">
+      @for (prod of unlinkedProductions; track prod.numeroProduction) {
+        <option [value]="prod.numeroProduction"> {{ prod.titre }}</option>
+      }
+      </select>
+    </div>
+
+  </div></div>
+
+</div>
+</div>
