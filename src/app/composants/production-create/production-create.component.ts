@@ -1,11 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormsModule, NgForm } from '@angular/forms';
+
 import { MenuComponent } from '../menu/menu.component';
 import { Production, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 import { ParticipantShort } from '../../interfaces/participant';
 import { ParticipantService } from '../../services/participant.service';
-import { Router } from '@angular/router';
-import { FormsModule, NgForm } from '@angular/forms';
+import { AccountService } from '../../services/account.service'
 
 @Component({ selector: 'app-production-create', imports: [FormsModule, MenuComponent], templateUrl: './production-create.component.html', styleUrl: './production-create.component.css' })
 
@@ -20,9 +22,15 @@ export class ProductionCreateComponent implements OnInit
 
   production: Production = new Production();
 
-  constructor(private productionService: ProductionService, private participantService: ParticipantService, private router: Router, private menu: MenuComponent) { }
+  constructor(
+    private accountService : AccountService,
+    private productionService: ProductionService,
+    private participantService: ParticipantService,
+    private router: Router,
+    private menu: MenuComponent
+  ) { }
 
-  ngOnInit() { this.retreiveParticipants(); }
+  ngOnInit() { this.retreiveParticipants(); this.production.numeroParticipant = this.accountService.getNumeroParticipant(); }
 
   private retreiveParticipants() { this.participantService.getOptionListParticipant().subscribe(data => { this.participants = data; }); }
 

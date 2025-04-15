@@ -13,11 +13,12 @@ export class ProductionService
 
   constructor(private httpClient: HttpClient) { }
 
-  getListProduction(filtreType: string): Observable<ProductionShort[]>
+  getListProduction(filtreType: string, filtreSolo: number): Observable<ProductionShort[]>
   {
     let params = new HttpParams();
 
     if (filtreType !== null) { params = params.append('type', filtreType); }
+    if (filtreSolo == 1) { params = params.append('solo', filtreSolo); }
 
     return this.httpClient.get<ProductionShort[]>(`${this.baseURL}/list`, { params: params });
   }

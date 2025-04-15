@@ -9,6 +9,7 @@ import { Categorie } from '../../interfaces/categorie';
 import { CategorieService } from '../../services/categorie.service';
 
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
+import { PresentationService } from '../../services/presentation.service';
 import { ProductionService } from '../../services/production.service';
 
 @Component({ selector: 'app-show-list', imports: [FormsModule, TooltipModule, MenuComponent], templateUrl: './show-list.component.html', styleUrl: './show-list.component.css' })
@@ -21,15 +22,26 @@ export class ShowListComponent implements OnInit
   types: ProductionEnum[] = ProductionTypeList;
   productions: ProductionShort[] = [];
 
-  constructor(private categorieService: CategorieService, private productionService: ProductionService, private router: Router) { }
+  constructor(
+    private categorieService: CategorieService,
+    private presentationService: PresentationService,
+    private productionService: ProductionService,
+    private router: Router
+  ) { }
 
   ngOnInit() { this.retreiveDatas(); }
 
   private retreiveDatas()
   {
     this.categorieService.getListCategorie().subscribe(data => { this.categories = data; });
-    this.productionService.getListProduction('').subscribe(data => { this.productions = data; });
+    this.presentationService.getListProduction().subscribe(data => { this.productions = data; });
   }
+
+  lettresOrdre: string[] = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+  indexLettre: number = 0;
+
+  resetLettre() { this.indexLettre = 0; }
+  nextLettre(): string { if ((this.indexLettre >= 0) && (this.indexLettre < 26)) { this.indexLettre++; return "#" + this.lettresOrdre[this.indexLettre - 1];  } return ""; }
 
   goToRefreshListCategorie(){ this.retreiveDatas(); }
 

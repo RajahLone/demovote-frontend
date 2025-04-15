@@ -16,14 +16,16 @@ export class ProductionListComponent implements OnInit
 
   types: ProductionEnum[] = ProductionTypeList;
   typeFiltre: string = "";
+  soloFiltre: number = 0;
 
   constructor(private productionService: ProductionService, private router: Router) { }
 
   ngOnInit() { this.retreiveDatas(); }
 
-  private retreiveDatas() { this.productionService.getListProduction(this.typeFiltre).subscribe(data => { this.productions = data; }); }
+  private retreiveDatas() { this.productionService.getListProduction(this.typeFiltre, this.soloFiltre).subscribe(data => { this.productions = data; }); }
 
   filtrageParType(event: any) { this.typeFiltre = event.target.value; this.goToRefreshListProduction(); }
+  filtrageParSolo(event: any) { this.soloFiltre = event.target.value; this.goToRefreshListProduction(); }
 
   goToRefreshListProduction(){ this.retreiveDatas(); }
 

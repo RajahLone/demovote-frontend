@@ -1,6 +1,7 @@
 
 export class User
 {
+  numeroParticipant: number = 0;
   username: string = "";
   password: string = "";
   nom: string = "";

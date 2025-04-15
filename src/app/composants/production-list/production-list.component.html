@@ -8,6 +8,15 @@
 				<button type="button" (click)="goToRefreshListProduction()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;<span i18n>Actualiser</span></button>
 				<button type="button" (click)="goToNewProduction()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;<span i18n>Créer</span></button>
 			</div>
+			<div class="form-group col-sm-2 label-nobr ms-auto">
+				<div class="input-group input-group-sn">
+					<button type="button" class="btn bg-gradient btn-secondary btn-sm field-separate" disabled><span i18n>Afficher</span></button>
+					<select class="form-select form-select-sm field-separate" id="select_solo" [(ngModel)]="soloFiltre" (change)="filtrageParSolo($event)">
+						<option value="0">Toutes</option>
+						<option value="1">Celles non rattachées aux catégories</option>
+					</select>
+				</div>
+			</div>
 			<div class="form-group col-sm-2 label-nobr">
 				<div class="input-group input-group-sn">
 					<button type="button" class="btn bg-gradient btn-secondary btn-sm field-separate" disabled><span i18n>Filtrer par type</span></button>
@@ -30,7 +39,7 @@
   			<span class="card-title">@if (production.type === types[0].key) { <i class="fa-solid fa-square-binary"></i> } @else if (production.type === types[1].key) { <i class="fa-solid fa-image"></i> } @else if (production.type === types[2].key) { <i class="fa-solid fa-music"></i> } @else if (production.type === types[3].key) { <i class="fa-solid fa-video"></i> } @else if (production.type === types[4].key) { <i class="fa-solid fa-comment"></i> } @else { <i class="fa-solid fa-question"></i> }
 	  		<a (click)="formProduction(production.numeroProduction)" class="text-primary pointeur-souris" style="margin-left:7px;">{{ production.titre }}</a></span><br/>
 				<small><span class="text-muted">par</span> {{ production.auteurs }} @if (production.groupes) { @if (production.groupes.length > 0) { &nbsp;/&nbsp;{{ production.groupes }} } }</small>
-			</div>
+		  </div>
 			<div class="card-body">
 			  <small><span class="text-muted">sur</span> {{ production.plateforme }}</small><br/>
 			 	<small>{{ production.commentaire }}</small><br/>

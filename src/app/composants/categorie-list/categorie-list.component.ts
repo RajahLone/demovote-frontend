@@ -18,9 +18,9 @@ export class CategorieListComponent implements OnInit
 
   private retreiveDatas() { this.categorieService.getListCategorie().subscribe(data => { this.categories = data; }); }
 
-  goToRefreshListCategorie(){ this.retreiveDatas(); }
+  goToRefreshListCategorie() { this.retreiveDatas(); }
 
-  goToNewCategorie(){ this.router.navigate(['/categorie-create']); }
+  goToNewCategorie() { this.router.navigate(['/categorie-create']); }
 
   formCategorie(id: number) { this.router.navigate(['/categorie-details', id]); }
 

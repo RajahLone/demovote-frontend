@@ -65,7 +65,7 @@
 				<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Gestionnaire</span>&nbsp;<sup><span class="text-danger">*</span></sup></label>
 				<div class="col-sm-8">
 					<div class="form-group">
-						<select class="form-select form-select-sm field-separate" id="numeroParticipant" name="numeroParticipant" [(ngModel)]="production.numeroParticipant">
+						<select class="form-select form-select-sm field-separate" id="numeroParticipant" name="numeroParticipant" [(ngModel)]="production.numeroParticipant" required>
 				    @for (participant of participants; track participant.numeroParticipant) {
 							<option [ngValue]="participant.numeroParticipant">{{ participant.pseudonyme }} = {{ participant.nom }}&nbsp;{{ participant.prenom }}</option>
 				    }

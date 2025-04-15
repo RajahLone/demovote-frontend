@@ -30,12 +30,13 @@ export class AccountService
     this.user = this.userSubject.asObservable();
   }
 
-  public isLogged() { if (this.userSubject.value) { return true; } return false; }
-  public getUsername() { if (this.userSubject.value) { return this.userSubject.value.username; } return ""; }
-  public getRole() { if (this.userSubject.value) { return this.userSubject.value.role; } return ""; }
-  public getDelaiAvantDeconnexion() { if (this.userSubject.value) { return this.userSubject.value.delaiAvantDeconnexion; } return 15; }
-  public getAccessToken() { if (this.userSubject.value) { return this.userSubject.value.accessToken; } return ""; }
-  private getRefreshToken() { if (this.userSubject.value) { return this.userSubject.value.refreshToken; } return ""; }
+  public isLogged():boolean { if (this.userSubject.value) { return true; } return false; }
+  public getNumeroParticipant():number { if (this.userSubject.value) { return this.userSubject.value.numeroParticipant; } return 0; }
+  public getUsername():string { if (this.userSubject.value) { return this.userSubject.value.username; } return ""; }
+  public getRole():string { if (this.userSubject.value) { return this.userSubject.value.role; } return ""; }
+  public getDelaiAvantDeconnexion():number { if (this.userSubject.value) { return this.userSubject.value.delaiAvantDeconnexion; } return 15; }
+  public getAccessToken():string { if (this.userSubject.value) { return this.userSubject.value.accessToken; } return ""; }
+  private getRefreshToken():string { if (this.userSubject.value) { return this.userSubject.value.refreshToken; } return ""; }
 
   salute(): Observable<Journees>
   {
