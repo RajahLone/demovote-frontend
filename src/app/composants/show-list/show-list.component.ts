@@ -45,6 +45,8 @@ export class ShowListComponent implements OnInit
 
   goToRefreshListCategorie(){ this.retreiveDatas(); }
 
+  getVersionPDF() { this.presentationService.getPresentationPDF().subscribe(response => { this.savePDF(response.body, 'presentations.pdf'); }); }
+
   formProduction(id: number) { this.router.navigate(['/production-details', id]); }
 
   lierProductions(id: number) { this.router.navigate(['/show-links', id]); }
@@ -52,5 +54,7 @@ export class ShowListComponent implements OnInit
   getFile(id: number, nom: string) { this.productionService.getProductionFile(id).subscribe(response => { this.saveFile(response.body, nom); }); }
 
   saveFile(data: any, filename?: string) { const blob = new Blob([data], {type: 'application/zip'}); saveAs(blob, filename); }
+
+  savePDF(data: any, filename?: string) { const blob = new Blob([data], {type: 'application/pdf'}); saveAs(blob, filename); }
 
 }

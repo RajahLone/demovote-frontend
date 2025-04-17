@@ -6,6 +6,7 @@
 		<div class="row">
 			<div class="form-group col-sm-4 label-nobr">
 				<button type="button" (click)="goToRefreshListCategorie()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;<span i18n>Actualiser</span></button>
+        <button type="button" (click)="getVersionPDF()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Télécharger la version PDF de cette page pour impression" placement="right" container="body"><i class="fa-solid fa-file-text"></i>&nbsp;<span i18n>Imprimer</span></button>
 			</div>
 		</div>
 	</div>
@@ -15,7 +16,7 @@
 <div class="card shadow">
   <div class="card-header">
     {{ categorie.libelle }}&nbsp;&nbsp;&nbsp;&nbsp;
-    <button type="button" (click)="lierProductions(categorie.numeroCategorie)" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Rattacher des productions à cette catégorie et les ordonner" placement="right" container="body"><i class="fa-solid fa-link"></i>&nbsp;<span i18n>Rattacher</span></button>
+    @if (!categorie.pollable) { <button type="button" (click)="lierProductions(categorie.numeroCategorie)" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Rattacher des productions à cette catégorie et les ordonner" placement="right" container="body"><i class="fa-solid fa-link"></i>&nbsp;<span i18n>Rattacher</span></button>  }
     @if (categorie.uploadable) { }
     @if (categorie.pollable) { }
     @if (categorie.computed) { }

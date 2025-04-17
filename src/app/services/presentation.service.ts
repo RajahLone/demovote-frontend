@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http'
+import { HttpClient, HttpParams, HttpHeaders, HttpResponse } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Environnement } from '../env';
 import { ProductionShort, ProductionItem } from '../interfaces/production';
@@ -16,6 +16,15 @@ export class PresentationService
   getListProduction(): Observable<ProductionShort[]>
   {
     return this.httpClient.get<ProductionShort[]>(`${this.baseURL}/list-all`);
+  }
+
+  getPresentationPDF(): Observable<HttpResponse<Blob>>
+  {
+    let headers = new HttpHeaders();
+
+    headers = headers.append('Accept', 'application/pdf');
+
+    return this.httpClient.get(`${this.baseURL}/file`, { headers: headers, observe: 'response', responseType: 'blob' });
   }
 
   getLinkedProductions(id: number): Observable<ProductionItem[]> { return this.httpClient.get<ProductionItem[]>(`${this.baseURL}/list-linked/${id}`); }

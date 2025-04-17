@@ -47,6 +47,7 @@ export class ProductionShort
   vignette!: string | any;
   numeroVersion: number = 0;
   numeroCategorie: number = 0;
+  ordrePresentation: number = 0;
 }
 
 export class ProductionFile
