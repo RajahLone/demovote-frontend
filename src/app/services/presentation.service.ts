@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders, HttpResponse } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Environnement } from '../env';
-import { ProductionShort, ProductionItem } from '../interfaces/production';
+import { ProductionShort, ProductionItem, PresentationFile } from '../interfaces/production';
 
 @Injectable({ providedIn: 'root' })
 
@@ -70,5 +70,7 @@ export class PresentationService
 
     return this.httpClient.get(`${this.baseURL}/down`, { params: params });
   }
+
+  uploadMediaFile(id: number, media: PresentationFile): Observable<Object>{ return this.httpClient.put(`${this.baseURL}/upload/${id}`, media); }
 
 }

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 import { MenuComponent } from '../menu/menu.component';
 import { ProductionFile } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
-import { FormsModule } from '@angular/forms';
 
 @Component({ selector: 'app-production-upload', imports: [FormsModule, MenuComponent], templateUrl: './production-upload.component.html', styleUrl: './production-upload.component.css' })
 

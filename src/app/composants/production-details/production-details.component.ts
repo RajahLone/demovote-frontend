@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 import { MenuComponent } from '../menu/menu.component';
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
-import { FormsModule } from '@angular/forms';
 
 @Component({ selector: 'app-production-details', imports: [FormsModule, MenuComponent], templateUrl: './production-details.component.html', styleUrl: './production-details.component.css' })
 

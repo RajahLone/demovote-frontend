@@ -47,7 +47,7 @@ export class ShowListComponent implements OnInit
 
   getVersionPDF() { this.presentationService.getPresentationPDF().subscribe(response => { this.savePDF(response.body, 'presentations.pdf'); }); }
 
-  formProduction(id: number) { this.router.navigate(['/production-details', id]); }
+  formPresentation(id: number) { this.router.navigate(['/show-upload', id]); }
 
   lierProductions(id: number) { this.router.navigate(['/show-links', id]); }
 

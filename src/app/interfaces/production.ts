@@ -48,6 +48,7 @@ export class ProductionShort
   numeroVersion: number = 0;
   numeroCategorie: number = 0;
   ordrePresentation: number = 0;
+  etatMedia: number = 0;
 }
 
 export class ProductionFile
@@ -68,4 +69,12 @@ export class ProductionItem
   groupes: string = "";
   plateforme: string = "";
   numeroOrdre: number = 0;
+}
+
+export class PresentationFile
+{
+  numeroProduction: number = 0;
+  etatMedia: number = 0;
+  mediaMime: string = "application/octet-stream";
+  mediaData!: string | any;
 }

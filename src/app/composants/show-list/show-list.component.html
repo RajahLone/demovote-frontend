@@ -22,12 +22,12 @@
     @if (categorie.computed) { }
     @if (categorie.displayable) { }
   </div>
-  <div class="card-body hstack align-items-baseline" style="height:30rem;overflow-x:auto;">
+  <div class="card-body hstack align-items-baseline show_row">
 {{ resetLettre() }} @for (production of productions; track production.numeroProduction) { @if (categorie.numeroCategorie == production.numeroCategorie) {
-    <div class="card shadow" style="min-width:10rem;max-width:17rem;">
-      <img src="{{ production.vignette }}" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)">
+    <div class="card shadow show_item" [class.show_red]="production.etatMedia === 0">
+      <img src="{{ production.vignette }}" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)">
       <div class="card-header">
-        <span class="card-title">{{ nextLettre() }} -<a (click)="formProduction(production.numeroProduction)" class="text-primary pointeur-souris" style="margin-left:7px;">{{ production.titre }}</a></span><br/>
+        <span class="card-title">{{ nextLettre() }} -<a (click)="formPresentation(production.numeroProduction)" class="text-primary pointeur-souris" style="margin-left:7px;">{{ production.titre }}</a></span><br/>
         <small><span class="text-muted">par</span> {{ production.auteurs }} @if (production.groupes) { @if (production.groupes.length > 0) { &nbsp;/&nbsp;{{ production.groupes }} } }</small>
       </div>
       <div class="card-body">
@@ -38,6 +38,9 @@
       <div class="card-footer d-flex justify-content-between">
         <i class="fa-solid fa-download text-primary pointeur-souris" (click)="getFile(production.numeroProduction, production.nomArchive)" tooltip="{{ production.nomArchive }} (v{{ production.numeroVersion }})" placement="top" container="body"></i>
         <i class="fa-solid fa-user-tie text-muted" style="margin-left:7px;" i18n-tootip tooltip="géré par {{ production.nomGestionnaire }}" placement="top" container="body"></i>
+        @if (production.etatMedia === 0) { <i class="fa-solid fa-circle-xmark text-danger ms-auto" style="margin-left:7px;" (click)="formPresentation(production.numeroProduction)" i18n-tootip tooltip="nécessite le média pour présentation" placement="top" container="body"></i> }
+        @else if (production.etatMedia === 1) { <i class="fa-solid fa-circle-check text-success ms-auto" style="margin-left:7px;" (click)="formPresentation(production.numeroProduction)" i18n-tootip tooltip="média présent" placement="top" container="body"></i> }
+        @else if (production.etatMedia === 2) { <i class="fa-solid fa-square-arrow-up-right text-success ms-auto" style="margin-left:7px;" (click)="formPresentation(production.numeroProduction)" i18n-tootip tooltip="média hors fichier de présentation" placement="top" container="body"></i> }
       </div>
     </div>
 } }

@@ -1,0 +1,105 @@
+<app-menu></app-menu>
+<div id="main">
+<form #formRef="ngForm" (ngSubmit)="addPresentationFile()" class="needs-validation">
+
+  <div class="card shadow center">
+    <div class="card-header"><span i18n>Choix du média pour la présentation d'une production</span></div>
+  	<div class="card-header shadow-sm">
+  		<button (click)="goToListPresentation()" class="btn bg-gradient btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;<span i18n>Retour</span></button>
+  	</div>
+  	<div class="card-body scrollable">
+
+  		<div class="form-group row">
+  			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Type</span></label>
+  			<div class="col-sm-8">
+  				<div class="form-group field-separate">
+  					<select class="form-select form-select-sm" id="type" name="type" [(ngModel)]="production.type" disabled>
+  					  @for (type of types; track type.key) { <option [value]="type.key">{{ type.value }}</option> }
+  					</select>
+  				</div>
+  			</div>
+  		</div>
+
+  		<div class="form-group row">
+  			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Titre</span></label>
+  			<div class="col-sm-8">
+  				<input type="text" class="form-control form-control-sm field-separate" id="titre" name="titre" [(ngModel)]="production.titre" disabled>
+  			</div>
+  		</div>
+
+  		<div class="form-group row">
+  			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Auteur(s)</span></label>
+  			<div class="col-sm-8">
+  				<input type="text" class="form-control form-control-sm field-separate" id="auteurs" name="auteurs" [(ngModel)]="production.auteurs" disabled>
+  			</div>
+  		</div>
+
+  		<div class="form-group row">
+  			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Groupe(s)</span></label>
+  			<div class="col-sm-8">
+  				<input type="text" class="form-control form-control-sm field-separate" id="groupes" name="groupes" [(ngModel)]="production.groupes" disabled>
+  			</div>
+  		</div>
+
+  		<div class="form-group row">
+  			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Plateforme</span></label>
+  			<div class="col-sm-8">
+  				<input type="text" class="form-control form-control-sm field-separate" id="plateforme" name="plateforme" [(ngModel)]="production.plateforme" disabled>
+  			</div>
+  		</div>
+
+  		<div class="form-group row">
+  			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Commentaire</span></label>
+  			<div class="col-sm-8">
+  				<textarea class="form-control form-control-sm field-separate" id="commentaire" name="commentaire" [(ngModel)]="production.commentaire" disabled></textarea>
+  			</div>
+  		</div>
+
+  		<div class="form-group row">
+  			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Informations privées</span></label>
+  			<div class="col-sm-8">
+  				<textarea class="form-control form-control-sm field-separate" id="informationsPrivees" name="informationsPrivees" [(ngModel)]="production.informationsPrivees" disabled></textarea>
+  			</div>
+  		</div>
+
+  		<div class="form-group row">
+  			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Gestionnaire</span></label>
+  			<div class="col-sm-8">
+  				<input type="text" class="form-control form-control-sm field-separate" id="gestionnaire" name="gestionnaire" [(ngModel)]="production.nomGestionnaire" disabled>
+  			</div>
+  		</div>
+
+      <div class="form-group row">
+        <label class="col-sm-4 col-form-label col-form-label-sm label-nobr"></label>
+  			<div class="col-sm-8">
+          <div class="form-check form-control-sm field-separate">
+            <input class="form-check-input" type="radio" name="radioEtatMedia" id="radioEtatMedia0">
+            <label class="form-check-label" for="radioEtatMedia0"><span i18n class="text-danger">Aucun média à présenter</span></label>
+          </div>
+          <div class="form-check form-control-sm field-separate">
+            <input class="form-check-input" type="radio" name="radioEtatMedia" id="radioEtatMedia2">
+            <label class="form-check-label" for="radioEtatMedia2"><span i18n>Le média est externe (exécutable à lancer sur machine spécifique, fichier trop gros, etc)</span></label>
+          </div>
+          <div class="form-check form-control-sm field-separate">
+            <input class="form-check-input" type="radio" name="radioEtatMedia" id="radioEtatMedia1">
+            <label class="form-check-label" for="radioEtatMedia1"><span i18n>Le média est interne à la présentation, à téléverser</span></label>
+          </div>
+        </div>
+      </div>
+
+			<div class="form-group row">
+        <label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Média</span></label>
+				<div class="col-sm-8">
+          <input type="file" class="form-control form-control-sm field-separate" id="media" name="media" accept="audio/*,video/*,image/*" (change)="onMediaSelected($event)">
+          <div class="form-text field-separate"><span i18n>La taille du média est limitée à 2 Go.</span></div>
+				</div>
+			</div>
+
+  	</div>
+  	<div class="card-footer">
+      <button type="button" class="btn bg-gradient btn-success btn-sm text-left" type="submit" [disabled]="formRef.invalid"><i class="fa-solid fa-plus"></i>&nbsp;<span i18n>Valider</span></button>
+  	</div>
+  </div>
+
+</form>
+</div>
