@@ -17,10 +17,10 @@ export class CategorieCreateComponent implements OnInit
 
   ngOnInit() { }
 
-  private saveCategorie() { this.categorieService.createCategorie(this.categorie).subscribe(); this.goToListCategorie(); }
+  private saveCategorie() { this.categorieService.createCategorie(this.categorie).subscribe(() => { this.goToListCategorie(); }); }
 
   addCategorie() { if (this.categorieForm.valid) { this.saveCategorie(); } }
 
-  goToListCategorie() {this.router.navigate(['/categorie-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
+  goToListCategorie() { this.router.navigate(['/categorie-list', this.menu.getRandomInteger(1, 100000)]); }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
@@ -13,6 +13,7 @@ import { DiversService } from '../../services/divers.service'
 
 export class ParticipantListComponent implements OnInit
 {
+  refresh: number = 0;
 
   journees: Journees = new Journees();
 
@@ -25,14 +26,25 @@ export class ParticipantListComponent implements OnInit
 
   participants: ParticipantList[] = [];
 
-  constructor(private diversService: DiversService, private participantService: ParticipantService, private router: Router) { }
+  constructor(
+    private diversService: DiversService,
+    private participantService: ParticipantService,
+    private router: Router,
+    private route: ActivatedRoute
+  )
+  {
+    this.router.routeReuseStrategy.shouldReuseRoute = function() { return false; }
+    this.router.events.subscribe((evt) => { if (evt instanceof NavigationEnd) { this.router.navigated = false; window.scrollTo(0, 0); } });
+  }
 
   ngOnInit()
   {
+    this.refresh = this.route.snapshot.params['refresh'];
+
     this.journees = new Journees();
     this.diversService.getJournees().subscribe(data => { this.journees = data; });
 
-    this.retreiveDatas();
+    this.goToRefreshListParticipant();
   }
 
   private retreiveDatas() { this.participantService.getListParticipant(this.nomFiltre, this.statutFiltre, this.arriveFiltre, this.listeTri).subscribe(data => { this.participants = data; }); }

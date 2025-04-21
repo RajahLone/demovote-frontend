@@ -75,6 +75,7 @@ export class PresentationFile
 {
   numeroProduction: number = 0;
   etatMedia: number = 0;
-  mediaMime: string = "application/octet-stream";
+  mediaMime: string = "";
   mediaData!: string | any;
+  mediaName!: string | any;
 }

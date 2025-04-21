@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { saveAs } from 'file-saver';
@@ -16,6 +16,7 @@ import { ProductionService } from '../../services/production.service';
 
 export class ShowListComponent implements OnInit
 {
+  refresh: number = 0;
 
   categories: Categorie[] = [];
 
@@ -26,10 +27,19 @@ export class ShowListComponent implements OnInit
     private categorieService: CategorieService,
     private presentationService: PresentationService,
     private productionService: ProductionService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private route: ActivatedRoute
+  )
+  {
+    this.router.routeReuseStrategy.shouldReuseRoute = function() { return false; }
+    this.router.events.subscribe((evt) => { if (evt instanceof NavigationEnd) { this.router.navigated = false; window.scrollTo(0, 0); } });
+  }
 
-  ngOnInit() { this.retreiveDatas(); }
+  ngOnInit()
+  {
+    this.refresh = this.route.snapshot.params['refresh'];
+    this.goToRefreshListCategorie();
+  }
 
   private retreiveDatas()
   {
@@ -43,7 +53,7 @@ export class ShowListComponent implements OnInit
   resetLettre() { this.indexLettre = 0; }
   nextLettre(): string { if ((this.indexLettre >= 0) && (this.indexLettre < 26)) { this.indexLettre++; return "#" + this.lettresOrdre[this.indexLettre - 1];  } return ""; }
 
-  goToRefreshListCategorie(){ this.retreiveDatas(); }
+  goToRefreshListCategorie() { this.retreiveDatas(); }
 
   getVersionPDF() { this.presentationService.getPresentationPDF().subscribe(response => { this.savePDF(response.body, 'presentations.pdf'); }); }
 

@@ -65,7 +65,7 @@
   		<div class="form-group row">
   			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Gestionnaire</span></label>
   			<div class="col-sm-8">
-  				<input type="text" class="form-control form-control-sm field-separate" id="gestionnaire" name="gestionnaire" [(ngModel)]="production.nomGestionnaire" disabled>
+  				<input type="text" class="form-control form-control-sm field-separate" id="gestionnaire" name="gestionnaire" [(ngModel)]="production.nomGestionnaire" disabled><hr/>
   			</div>
   		</div>
 
@@ -73,15 +73,15 @@
         <label class="col-sm-4 col-form-label col-form-label-sm label-nobr"></label>
   			<div class="col-sm-8">
           <div class="form-check form-control-sm field-separate">
-            <input class="form-check-input" type="radio" name="radioEtatMedia" id="radioEtatMedia0">
+            <input class="form-check-input" type="radio" name="radioEtatMedia" id="radioEtatMedia0" value="0" [checked]="media.etatMedia == 0" (change)="setEtatMedia(0)">
             <label class="form-check-label" for="radioEtatMedia0"><span i18n class="text-danger">Aucun média à présenter</span></label>
           </div>
           <div class="form-check form-control-sm field-separate">
-            <input class="form-check-input" type="radio" name="radioEtatMedia" id="radioEtatMedia2">
+            <input class="form-check-input" type="radio" name="radioEtatMedia" id="radioEtatMedia2" value="2" [checked]="media.etatMedia=== 2" (change)="setEtatMedia(2)">
             <label class="form-check-label" for="radioEtatMedia2"><span i18n>Le média est externe (exécutable à lancer sur machine spécifique, fichier trop gros, etc)</span></label>
           </div>
           <div class="form-check form-control-sm field-separate">
-            <input class="form-check-input" type="radio" name="radioEtatMedia" id="radioEtatMedia1">
+            <input class="form-check-input" type="radio" name="radioEtatMedia" id="radioEtatMedia1" value="1" [checked]="media.etatMedia == 1" (change)="setEtatMedia(1)">
             <label class="form-check-label" for="radioEtatMedia1"><span i18n>Le média est interne à la présentation, à téléverser</span></label>
           </div>
         </div>
@@ -91,13 +91,34 @@
         <label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Média</span></label>
 				<div class="col-sm-8">
           <input type="file" class="form-control form-control-sm field-separate" id="media" name="media" accept="audio/*,video/*,image/*" (change)="onMediaSelected($event)">
-          <div class="form-text field-separate"><span i18n>La taille du média est limitée à 2 Go.</span></div>
+          <div class="form-text field-separate"><span i18n>La taille du média est limitée à 2 Go.</span><hr/></div>
 				</div>
 			</div>
 
+@if (etatInitial === 1) {
+
+     <div class="form-group row">
+       <label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Média actuellement chargé</span></label>
+       <div class="col-sm-8">
+         @if (media.mediaMime.startsWith("image/")) { <img [src]="media.mediaData" alt="" class="img-fluid rounded-2" width="100%"> }
+         @else if (media.mediaMime.startsWith("audio/")) {  <audio controls><source [src]="media.mediaData" [type]="media.mediaMime" i18n/>Le tag HTML audio n'est pas supporté par ce navigateur.</audio>  }
+         @else if (media.mediaMime.startsWith("video/")) {  <video controls width="480" height="240"><source [src]="media.mediaData" [type]="media.mediaMime" i18n/>Le tag HTML video n'est pas supporté par ce navigateur.</video>  }
+       </div>
+     </div>
+
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Type</span></label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control form-control-sm field-separate" id="mediaMime" name="mediaMime" [(ngModel)]="media.mediaMime" disabled>
+      </div>
+    </div>
+
+}
+
   	</div>
   	<div class="card-footer">
-      <button type="button" class="btn bg-gradient btn-success btn-sm text-left" type="submit" [disabled]="formRef.invalid"><i class="fa-solid fa-plus"></i>&nbsp;<span i18n>Valider</span></button>
+      @if (etatInitial === 0) { <button type="button" class="btn bg-gradient btn-success btn-sm text-left" type="submit" [disabled]="formRef.invalid"><i class="fa-solid fa-plus"></i>&nbsp;<span i18n>Valider</span></button> }
+      @else { <button type="button" class="btn bg-gradient btn-warning btn-sm text-left" type="submit" [disabled]="formRef.invalid"><i class="fa-solid fa-check"></i>&nbsp;<span i18n>Valider</span></button> }
   	</div>
   </div>
 

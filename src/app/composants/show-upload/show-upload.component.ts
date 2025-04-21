@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 import { MenuComponent } from '../menu/menu.component';
 import { PresentationFile } from '../../interfaces/production';
@@ -14,6 +14,8 @@ import { ProductionService } from '../../services/production.service';
 export class ShowUploadComponent implements OnInit
 {
 
+  @ViewChild('formRef') productionForm!: NgForm;
+
   numeroProduction: number = 0;
 
   types: ProductionEnum[] = ProductionTypeList;
@@ -21,16 +23,25 @@ export class ShowUploadComponent implements OnInit
   production: ProductionShort = new ProductionShort();
 
   media: PresentationFile = new PresentationFile();
+  etatInitial: number = 0;
 
-  constructor(private productionService: ProductionService, private presentationService: PresentationService, private route: ActivatedRoute, private router: Router, private menu: MenuComponent) { }
+  constructor(
+    private productionService: ProductionService,
+    private presentationService: PresentationService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private menu: MenuComponent
+  ) { }
 
   ngOnInit()
   {
     this.numeroProduction = this.route.snapshot.params['numeroProduction'];
     this.production = new ProductionShort();
     this.productionService.getByIdProduction(this.numeroProduction).subscribe( data => { this.production = data; });
+    this.presentationService.getByIdPresentationFile(this.numeroProduction).subscribe( data => { this.media = data; this.etatInitial = this.media.etatMedia; });
   }
 
+  setEtatMedia(e: number) { this.media.etatMedia = e; }
 
   onMediaSelected(event: any)
   {
@@ -41,16 +52,16 @@ export class ShowUploadComponent implements OnInit
     {
       const file = et.files[0];
 
-      reader.onloadend = async (e: any) => { if (e.target.result) { this.media.mediaData = e.target.result; } }
+      reader.onloadend = async (e: any) => { if (e.target.result) { this.media.mediaData = e.target.result; this.media.mediaName = file.name; this.media.etatMedia = 1; } }
 
       reader.readAsDataURL(file);
 		}
   }
 
-  private saveMedia() { this.presentationService.uploadMediaFile(this.numeroProduction, this.media).subscribe(); this.goToListPresentation(); }
+  private saveMedia() { this.presentationService.uploadMediaFile(this.numeroProduction, this.media).subscribe(() => { this.goToListPresentation(); }); }
 
   addPresentationFile() { this.saveMedia(); }
 
-  goToListPresentation() {this.router.navigate(['/show-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
+  goToListPresentation() { this.router.navigate(['/show-list', this.menu.getRandomInteger(1, 100000)]); }
 
 }

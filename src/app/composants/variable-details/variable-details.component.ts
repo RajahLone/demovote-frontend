@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MenuComponent } from '../menu/menu.component';
 import { Variable } from '../../interfaces/variable';
 import { VariableService } from '../../services/variable.service';
@@ -14,7 +14,7 @@ export class VariableDetailsComponent implements OnInit
 
   variable: Variable = new Variable();
 
-  constructor(private variableService: VariableService, private route: ActivatedRoute, private router: Router, private menu: MenuComponent) { }
+  constructor(private variableService: VariableService, private router: Router, private route: ActivatedRoute, private menu: MenuComponent) { }
 
   ngOnInit(): void
   {
@@ -25,6 +25,6 @@ export class VariableDetailsComponent implements OnInit
 
   updateVariable(id: number) { this.router.navigate(['/variable-update', id]); }
 
-  goToListVariable() { this.router.navigate(['/variable-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
+  goToListVariable() { this.router.navigate(['/variable-list', this.menu.getRandomInteger(1, 100000)]); }
 
 }

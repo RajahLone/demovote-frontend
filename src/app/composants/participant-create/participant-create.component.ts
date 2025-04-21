@@ -42,10 +42,10 @@ export class ParticipantCreateComponent implements OnInit
     this.diversService.getJournees().subscribe(data => { this.journees = data; });
   }
 
-  private saveParticipant() { this.participantService.createParticipant(this.participant).subscribe(); this.goToListParticipant(); }
+  private saveParticipant() { this.participantService.createParticipant(this.participant).subscribe(() => { this.goToListParticipant(); }); }
 
   addParticipant() { if (this.participantForm.valid) { this.saveParticipant(); } }
 
-  goToListParticipant() { this.router.navigate(['/participant-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
+  goToListParticipant() { this.router.navigate(['/participant-list', this.menu.getRandomInteger(1, 100000)]); }
 
 }

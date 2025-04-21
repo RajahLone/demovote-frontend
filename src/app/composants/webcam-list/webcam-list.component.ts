@@ -37,7 +37,7 @@ export class WebcamListComponent implements OnInit
       this.webcamu.crc32 = this.webcams[i].crc32;
       this.webcamu.vue = "";
 
-      this.webcamService.updateVue(this.webcamu).subscribe(data => { this.webcamu = data; });
+      this.webcamService.updateVue(this.webcamu).subscribe((data) => { this.webcamu = data; });
 
       if (this.webcamu.vue !== "")
       {

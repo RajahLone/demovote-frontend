@@ -23,10 +23,10 @@ export class CategorieUpdateComponent implements OnInit
     this.categorieService.getByIdCategorie(this.numeroCategorie).subscribe(data => { this.categorie = data; });
   }
 
-  updateConfirmed() { if (this.categorieForm.valid) { this.categorieService.updateCategorie(this.numeroCategorie, this.categorie).subscribe(); this.goToListCategorie(); } }
+  updateConfirmed() { if (this.categorieForm.valid) { this.categorieService.updateCategorie(this.numeroCategorie, this.categorie).subscribe(() => { this.goToListCategorie(); }); } }
 
-  deleteConfirmed() { this.categorieService.deleteCategorie(this.numeroCategorie).subscribe(); this.goToListCategorie(); }
+  deleteConfirmed() { this.categorieService.deleteCategorie(this.numeroCategorie).subscribe(() => { this.goToListCategorie(); }); }
 
-  goToListCategorie(){ this.router.navigate(['/categorie-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
+  goToListCategorie() { this.router.navigate(['/categorie-list', this.menu.getRandomInteger(1, 100000)]); }
 
 }

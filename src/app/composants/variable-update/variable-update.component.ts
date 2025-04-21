@@ -24,10 +24,10 @@ export class VariableUpdateComponent implements OnInit
     this.variableService.getByIdVariable(this.numeroVariable).subscribe(data => { this.variable = data; });
   }
 
-  updateConfirmed() { if (this.variableForm.valid) { this.variableService.updateVariable(this.numeroVariable, this.variable).subscribe(); this.goToListVariable(); } }
+  updateConfirmed() { if (this.variableForm.valid) { this.variableService.updateVariable(this.numeroVariable, this.variable).subscribe(() => { this.goToListVariable(); }); } }
 
-  deleteConfirmed() { this.variableService.deleteVariable(this.numeroVariable).subscribe(); this.goToListVariable(); }
+  deleteConfirmed() { this.variableService.deleteVariable(this.numeroVariable).subscribe(() => { this.goToListVariable(); });  }
 
-  goToListVariable(){ this.router.navigate(['/variable-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
+  goToListVariable() { this.router.navigate(['/variable-list', this.menu.getRandomInteger(1, 100000)]); }
 
 }

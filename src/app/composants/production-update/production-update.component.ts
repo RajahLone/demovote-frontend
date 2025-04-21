@@ -48,12 +48,12 @@ export class ProductionUpdateComponent implements OnInit
 		}
   }
 
-  private saveProduction() { this.productionService.updateProduction(this.numeroProduction, this.production).subscribe(); this.goToListProduction(); }
+  private saveProduction() { this.productionService.updateProduction(this.numeroProduction, this.production).subscribe(() => { this.goToListProduction(); }); }
 
   updateConfirmed() { if (this.productionForm.valid) { this.saveProduction(); } }
 
-  deleteConfirmed() { this.productionService.deleteProduction(this.numeroProduction).subscribe(); this.goToListProduction(); }
+  deleteConfirmed() { this.productionService.deleteProduction(this.numeroProduction).subscribe(() => { this.goToListProduction(); }); }
 
-  goToListProduction() {this.router.navigate(['/production-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
+  goToListProduction() { this.router.navigate(['/production-list', this.menu.getRandomInteger(1, 100000)]); }
 
 }

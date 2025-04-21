@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 import { MenuComponent } from '../menu/menu.component';
 import { Categorie } from '../../interfaces/categorie';
@@ -9,12 +9,25 @@ import { CategorieService } from '../../services/categorie.service';
 
 export class CategorieListComponent implements OnInit
 {
+  refresh: number = 0;
 
   categories: Categorie[] = [];
 
-  constructor(private categorieService: CategorieService, private router: Router) { }
+  constructor(
+    private categorieService: CategorieService,
+    private router: Router,
+    private route: ActivatedRoute
+  )
+  {
+    this.router.routeReuseStrategy.shouldReuseRoute = function() { return false; }
+    this.router.events.subscribe((evt) => { if (evt instanceof NavigationEnd) { this.router.navigated = false; window.scrollTo(0, 0); } });
+  }
 
-  ngOnInit() { this.retreiveDatas(); }
+  ngOnInit()
+  {
+    this.refresh = this.route.snapshot.params['refresh'];
+    this.goToRefreshListCategorie();
+  }
 
   private retreiveDatas() { this.categorieService.getListCategorie().subscribe(data => { this.categories = data; }); }
 

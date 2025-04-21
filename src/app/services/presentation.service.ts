@@ -71,6 +71,8 @@ export class PresentationService
     return this.httpClient.get(`${this.baseURL}/down`, { params: params });
   }
 
+  getByIdPresentationFile(id: number): Observable<PresentationFile>{ return this.httpClient.get<PresentationFile>(`${this.baseURL}/formfile/${id}`); }
+
   uploadMediaFile(id: number, media: PresentationFile): Observable<Object>{ return this.httpClient.put(`${this.baseURL}/upload/${id}`, media); }
 
 }

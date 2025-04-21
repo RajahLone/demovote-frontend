@@ -34,7 +34,7 @@
 <div class="d-flex flex-wrap">
 	@for (production of productions; track production.numeroProduction) {
   	<div class="card shadow" style="max-width:17rem;">
-			<img src="{{ production.vignette }}" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)">
+			<img [src]="production.vignette" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)">
 			<div class="card-header">
   			<span class="card-title">@if (production.type === types[0].key) { <i class="fa-solid fa-square-binary"></i> } @else if (production.type === types[1].key) { <i class="fa-solid fa-image"></i> } @else if (production.type === types[2].key) { <i class="fa-solid fa-music"></i> } @else if (production.type === types[3].key) { <i class="fa-solid fa-video"></i> } @else if (production.type === types[4].key) { <i class="fa-solid fa-comment"></i> } @else { <i class="fa-solid fa-question"></i> }
 	  		<a (click)="formProduction(production.numeroProduction)" class="text-primary pointeur-souris" style="margin-left:7px;">{{ production.titre }}</a></span><br/>

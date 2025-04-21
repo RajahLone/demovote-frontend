@@ -47,10 +47,10 @@ export class ParticipantUpdateComponent implements OnInit
     this.participantService.getByIdParticipant(this.numeroParticipant).subscribe(data => { this.participant = data; });
   }
 
-  updateConfirmed() { if (this.participantForm.valid) { this.participantService.updateParticipant(this.numeroParticipant, this.participant).subscribe(); this.goToListParticipant(); } }
+  updateConfirmed() { if (this.participantForm.valid) { this.participantService.updateParticipant(this.numeroParticipant, this.participant).subscribe(() => { this.goToListParticipant(); }); } }
 
-  deleteConfirmed() { this.participantService.deleteParticipant(this.numeroParticipant).subscribe(); this.goToListParticipant(); }
+  deleteConfirmed() { this.participantService.deleteParticipant(this.numeroParticipant).subscribe(() => { this.goToListParticipant(); }); }
 
-  goToListParticipant() { this.router.navigate(['/participant-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
+  goToListParticipant() { this.router.navigate(['/participant-list', this.menu.getRandomInteger(1, 100000)]); }
 
 }

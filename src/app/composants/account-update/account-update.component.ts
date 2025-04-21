@@ -40,7 +40,7 @@ export class AccountUpdateComponent implements OnInit
     this.accountService.getProfil().subscribe(data => { this.participant = data; });
   }
 
-  updateConfirmed() { if (this.participantForm.valid) { this.accountService.updateProfil(this.participant).subscribe(); this.goToHome(); } }
+  updateConfirmed() { if (this.participantForm.valid) { this.accountService.updateProfil(this.participant).subscribe(() => { this.goToHome(); });  } }
 
   goToHome() { this.router.navigate(['/'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
 

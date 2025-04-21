@@ -20,10 +20,10 @@ export class VariableCreateComponent implements OnInit
 
   ngOnInit() { }
 
-  private saveVariable() { this.variableService.createVariable(this.variable).subscribe(); this.goToListVariable(); }
+  private saveVariable() { this.variableService.createVariable(this.variable).subscribe(() => { this.goToListVariable(); }); }
 
   addVariable() { if (this.variableForm.valid) { this.saveVariable(); } }
 
-  goToListVariable() {this.router.navigate(['/variable-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
+  goToListVariable() { this.router.navigate(['/variable-list', this.menu.getRandomInteger(1, 100000)]); }
 
 }

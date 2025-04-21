@@ -67,10 +67,10 @@ export class ProductionCreateComponent implements OnInit
 		}
   }
 
-  private saveProduction() { this.productionService.createProduction(this.production).subscribe(); this.goToListProduction(); }
+  private saveProduction() { this.productionService.createProduction(this.production).subscribe(() => { this.goToListProduction(); }); }
 
   addProduction() { if (this.productionForm.valid) { this.saveProduction(); } }
 
-  goToListProduction() {this.router.navigate(['/production-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
+  goToListProduction() { this.router.navigate(['/production-list', this.menu.getRandomInteger(1, 100000)]); }
 
 }

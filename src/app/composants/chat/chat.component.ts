@@ -25,7 +25,11 @@ export class ChatComponent implements OnInit
 
   pseudonymes: PseudonymeList[] = [];
 
-  constructor(private chatService: ChatService, private accountService: AccountService, private router: Router) { }
+  constructor(
+    private chatService: ChatService,
+    private accountService: AccountService,
+    private router: Router
+  ) { }
 
   ngOnInit()
   {

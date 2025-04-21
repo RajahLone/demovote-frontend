@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 import { MenuComponent } from '../menu/menu.component';
 import { ProductionFile } from '../../interfaces/production';
@@ -10,6 +10,8 @@ import { ProductionService } from '../../services/production.service';
 
 export class ProductionUploadComponent implements OnInit
 {
+
+  @ViewChild('formRef') productionForm!: NgForm;
 
   production: ProductionFile = new ProductionFile();
 
@@ -40,10 +42,10 @@ export class ProductionUploadComponent implements OnInit
 		}
   }
 
-  private saveProduction() { this.productionService.uploadProductionFile(this.numeroProduction, this.production).subscribe(); this.goToListProduction(); }
+  private saveProduction() { this.productionService.uploadProductionFile(this.numeroProduction, this.production).subscribe(() => { this.goToListProduction(); });  }
 
   addProductionFile() { this.saveProduction(); }
 
-  goToListProduction() {this.router.navigate(['/production-list'], { queryParams: { 'refresh': this.menu.getRandomInteger(1, 100000) } }); }
+  goToListProduction() { this.router.navigate(['/production-list', this.menu.getRandomInteger(1, 100000)]); }
 
 }
