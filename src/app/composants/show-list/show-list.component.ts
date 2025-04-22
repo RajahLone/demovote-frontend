@@ -55,16 +55,16 @@ export class ShowListComponent implements OnInit
 
   goToRefreshListCategorie() { this.retreiveDatas(); }
 
-  getVersionPDF() { this.presentationService.getPresentationPDF().subscribe(response => { this.savePDF(response.body, 'presentations.pdf'); }); }
-
+  lierProductions(id: number) { this.router.navigate(['/show-links', id]); }
   formPresentation(id: number) { this.router.navigate(['/show-upload', id]); }
 
-  lierProductions(id: number) { this.router.navigate(['/show-links', id]); }
+  getVersionPDF() { this.presentationService.getPresentationPDF().subscribe(response => { this.savePDF(response.body, 'presentations.pdf'); }); }
+  savePDF(data: any, filename?: string) { const blob = new Blob([data], {type: 'application/pdf'}); saveAs(blob, filename); }
+
+  getDiaporama(id: number, nom: string) { this.presentationService.getPresentationHTML(id).subscribe(response => { this.saveHTML(response.body, nom + '.html'); }); }
+  saveHTML(data: any, filename?: string) { const blob = new Blob([data], {type: 'text/html'}); saveAs(blob, filename); }
 
   getFile(id: number, nom: string) { this.productionService.getProductionFile(id).subscribe(response => { this.saveFile(response.body, nom); }); }
-
   saveFile(data: any, filename?: string) { const blob = new Blob([data], {type: 'application/zip'}); saveAs(blob, filename); }
-
-  savePDF(data: any, filename?: string) { const blob = new Blob([data], {type: 'application/pdf'}); saveAs(blob, filename); }
 
 }

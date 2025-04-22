@@ -27,6 +27,15 @@ export class PresentationService
     return this.httpClient.get(`${this.baseURL}/file`, { headers: headers, observe: 'response', responseType: 'blob' });
   }
 
+  getPresentationHTML(id: number): Observable<HttpResponse<Blob>>
+  {
+    let headers = new HttpHeaders();
+
+    headers = headers.append('Accept', 'text/html');
+
+    return this.httpClient.get(`${this.baseURL}/diapos/${id}`, { headers: headers, observe: 'response', responseType: 'blob' });
+  }
+
   getLinkedProductions(id: number): Observable<ProductionItem[]> { return this.httpClient.get<ProductionItem[]>(`${this.baseURL}/list-linked/${id}`); }
 
   getUnlinkedProductions(): Observable<ProductionItem[]> { return this.httpClient.get<ProductionItem[]>(`${this.baseURL}/list-unlinked`); }

@@ -16,7 +16,10 @@
 <div class="card shadow">
   <div class="card-header shadow-sm">
     {{ categorie.libelle }}&nbsp;&nbsp;&nbsp;&nbsp;
-    @if (!categorie.pollable) { <button type="button" (click)="lierProductions(categorie.numeroCategorie)" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Rattacher des productions à cette catégorie et les ordonner" placement="right" container="body"><i class="fa-solid fa-link"></i>&nbsp;<span i18n>Rattacher</span></button>  }
+    @if (!categorie.pollable) {
+      <button type="button" (click)="lierProductions(categorie.numeroCategorie)" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Rattacher des productions à cette catégorie et les ordonner" placement="right" container="body"><i class="fa-solid fa-link"></i>&nbsp;<span i18n>Rattacher</span></button>
+      <button type="button" (click)="getDiaporama(categorie.numeroCategorie, categorie.libelle)" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Télécharger le fichier de présentations de cette catégorie" placement="right" container="body"><i class="fa-solid fa-file-code"></i>&nbsp;<span i18n>Diaporama</span></button>  
+    }
     @if (categorie.uploadable) { }
     @if (categorie.pollable) { }
     @if (categorie.computed) { }
@@ -24,7 +27,7 @@
   </div>
   <div class="card-body hstack align-items-baseline show_row">
 {{ resetLettre() }} @for (production of productions; track production.numeroProduction) { @if (categorie.numeroCategorie == production.numeroCategorie) {
-    <div class="card shadow show_item" [class.show_red]="production.etatMedia === 0">
+    <div class="card shadow show_item" [class.border-danger]="production.etatMedia === 0">
       @if (production.vignette) { <img [src]="production.vignette" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)"> }
 			@else if (production.type === types[0].key) { <img src="default/executable.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)"> }
 			@else if (production.type === types[1].key) { <img src="default/graphe.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)"> }
@@ -32,19 +35,19 @@
 			@else if (production.type === types[3].key) { <img src="default/video.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)"> }
 			@else if (production.type === types[4].key) { <img src="default/topic.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)"> }
 			@else if (production.type === types[5].key) { <img src="default/autre.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)"> }
-      <div class="card-header">
+      <div class="card-header border-top" [class.border-danger]="production.etatMedia === 0">
         <span class="card-title">{{ nextLettre() }} -<a (click)="formPresentation(production.numeroProduction)" class="text-primary pointeur-souris" style="margin-left:7px;">{{ production.titre }}</a></span><br/>
         <small><span class="text-muted">par</span> {{ production.auteurs }} @if (production.groupes) { @if (production.groupes.length > 0) { / {{ production.groupes }} } }</small>
       </div>
-      <div class="card-body">
+      <div class="card-body" [class.border-danger]="production.etatMedia === 0">
         <small><span class="text-muted">sur</span> {{ production.plateforme }}</small><br/>
         <small>{{ production.commentaire }}</small><br/>
         <small class="text-warning">{{ production.informationsPrivees }}</small>
       </div>
-      <div class="card-footer d-flex justify-content-between">
+      <div class="card-footer d-flex justify-content-between" [class.border-danger]="production.etatMedia === 0">
         <i class="fa-solid fa-download text-primary pointeur-souris" (click)="getFile(production.numeroProduction, production.nomArchive)" tooltip="{{ production.nomArchive }} (v{{ production.numeroVersion }})" placement="top" container="body"></i>
         <i class="fa-solid fa-user-tie text-muted" style="margin-left:7px;" i18n-tootip tooltip="géré par {{ production.nomGestionnaire }}" placement="top" container="body"></i>
-        @if (production.etatMedia === 0) { <i class="fa-solid fa-circle-xmark text-danger ms-auto pointeur-souris" style="margin-left:7px;" (click)="formPresentation(production.numeroProduction)" i18n-tootip tooltip="nécessite le média pour présentation" placement="top" container="body"></i> }
+        @if (production.etatMedia === 0) { <i class="fa-solid fa-square-xmark text-danger ms-auto pointeur-souris" style="margin-left:7px;" (click)="formPresentation(production.numeroProduction)" i18n-tootip tooltip="nécessite le média pour présentation" placement="top" container="body"></i> }
         @else if (production.etatMedia === 1) { <i class="fa-solid fa-square-check text-success ms-auto pointeur-souris" style="margin-left:7px;" (click)="formPresentation(production.numeroProduction)" i18n-tootip tooltip="média présent" placement="top" container="body"></i> }
         @else if (production.etatMedia === 2) { <i class="fa-solid fa-square-arrow-up-right text-success ms-auto pointeur-souris" style="margin-left:7px;" (click)="formPresentation(production.numeroProduction)" i18n-tootip tooltip="média hors fichier de présentation" placement="top" container="body"></i> }
       </div>

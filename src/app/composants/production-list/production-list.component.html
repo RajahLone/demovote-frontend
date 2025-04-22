@@ -41,7 +41,7 @@
 			@else if (production.type === types[3].key) { <img src="default/video.png" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
 			@else if (production.type === types[4].key) { <img src="default/topic.png" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
 			@else if (production.type === types[5].key) { <img src="default/autre.png" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
-			<div class="card-header">
+			<div class="card-header border-top border-dark-subtle">
   			<span class="card-title">@if (production.type === types[0].key) { <i class="fa-solid fa-square-binary"></i> } @else if (production.type === types[1].key) { <i class="fa-solid fa-image"></i> } @else if (production.type === types[2].key) { <i class="fa-solid fa-music"></i> } @else if (production.type === types[3].key) { <i class="fa-solid fa-video"></i> } @else if (production.type === types[4].key) { <i class="fa-solid fa-comment"></i> } @else { <i class="fa-solid fa-question"></i> }
 	  		<a (click)="formProduction(production.numeroProduction)" class="text-primary pointeur-souris" style="margin-left:7px;">{{ production.titre }}</a></span><br/>
 				<small><span class="text-muted">par</span> {{ production.auteurs }} @if (production.groupes) { @if (production.groupes.length > 0) { / {{ production.groupes }} } }</small>
