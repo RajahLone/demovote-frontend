@@ -2,7 +2,7 @@
 <div id="main">
 <div class="card shadow rounded-bottom-0">
 	<div class="card-header"><span i18n>Liste des productions</span></div>
-	<div class="card-header">
+	<div class="card-header shadow">
 		<div class="row justify-content-between">
 			<div class="form-group col-sm-4 label-nobr">
 				<button type="button" (click)="goToRefreshListProduction()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;<span i18n>Actualiser</span></button>
@@ -30,32 +30,32 @@
 			</div>
 		</div>
 	</div>
-</div>
-<div class="d-flex flex-wrap">
-	@for (production of productions; track production.numeroProduction) {
-  	<div class="card shadow" style="max-width:17rem;">
-			@if (production.vignette) { <img [src]="production.vignette" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
-			@else if (production.type === types[0].key) { <img src="default/executable.png" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
-			@else if (production.type === types[1].key) { <img src="default/graphe.png" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
-			@else if (production.type === types[2].key) { <img src="default/musique.png" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
-			@else if (production.type === types[3].key) { <img src="default/video.png" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
-			@else if (production.type === types[4].key) { <img src="default/topic.png" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
-			@else if (production.type === types[5].key) { <img src="default/autre.png" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
-			<div class="card-header border-top border-dark-subtle">
-  			<span class="card-title">@if (production.type === types[0].key) { <i class="fa-solid fa-square-binary"></i> } @else if (production.type === types[1].key) { <i class="fa-solid fa-image"></i> } @else if (production.type === types[2].key) { <i class="fa-solid fa-music"></i> } @else if (production.type === types[3].key) { <i class="fa-solid fa-video"></i> } @else if (production.type === types[4].key) { <i class="fa-solid fa-comment"></i> } @else { <i class="fa-solid fa-question"></i> }
-	  		<a (click)="formProduction(production.numeroProduction)" class="text-primary pointeur-souris" style="margin-left:7px;">{{ production.titre }}</a></span><br/>
-				<small><span class="text-muted">par</span> {{ production.auteurs }} @if (production.groupes) { @if (production.groupes.length > 0) { / {{ production.groupes }} } }</small>
-		  </div>
-			<div class="card-body">
-			  <small><span class="text-muted">sur</span> {{ production.plateforme }}</small><br/>
-			 	<small>{{ production.commentaire }}</small><br/>
-				 <small class="text-warning">{{ production.informationsPrivees }}</small>
-       </div>
-			<div class="card-footer d-flex justify-content-between">
-			  <i class="fa-solid fa-download text-primary pointeur-souris" (click)="getFile(production.numeroProduction, production.nomArchive)" tooltip="{{ production.nomArchive }} (v{{ production.numeroVersion }})" placement="top" container="body"></i>
-				<i class="fa-solid fa-user-tie text-muted" style="margin-left:7px;" i18n-tootip tooltip="géré par {{ production.nomGestionnaire }}" placement="top" container="body"></i>
+	<div class="hstack align-items-baseline prod_row">
+		@for (production of productions; track production.numeroProduction) {
+			<div class="card shadow prod_item" style="max-width:17rem;">
+				@if (production.vignette) { <img [src]="production.vignette" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
+				@else if (production.type === types[0].key) { <img src="default/executable.png" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
+				@else if (production.type === types[1].key) { <img src="default/graphe.png" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
+				@else if (production.type === types[2].key) { <img src="default/musique.png" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
+				@else if (production.type === types[3].key) { <img src="default/video.png" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
+				@else if (production.type === types[4].key) { <img src="default/topic.png" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
+				@else if (production.type === types[5].key) { <img src="default/autre.png" class="img-fluid card-img-top pointeur-souris" (click)="formProduction(production.numeroProduction)"> }
+				<div class="card-header border-top border-dark-subtle" style="max-height:10rem;overflow:auto;">
+					<span class="card-title">@if (production.type === types[0].key) { <i class="fa-solid fa-square-binary"></i> } @else if (production.type === types[1].key) { <i class="fa-solid fa-image"></i> } @else if (production.type === types[2].key) { <i class="fa-solid fa-music"></i> } @else if (production.type === types[3].key) { <i class="fa-solid fa-video"></i> } @else if (production.type === types[4].key) { <i class="fa-solid fa-comment"></i> } @else { <i class="fa-solid fa-question"></i> }
+					<a (click)="formProduction(production.numeroProduction)" class="text-primary pointeur-souris" style="margin-left:7px;">{{ production.titre }}</a></span><br/>
+					<small><span class="text-muted">par</span> {{ production.auteurs }} @if (production.groupes) { @if (production.groupes.length > 0) { / {{ production.groupes }} } }</small>
+				</div>
+				<div class="card-body" style="max-height:10rem;overflow:auto;">
+					<small><span class="text-muted">sur</span> {{ production.plateforme }}</small><br/>
+					<small>{{ production.commentaire }}</small><br/>
+					 <small class="text-warning">{{ production.informationsPrivees }}</small>
+				 </div>
+				<div class="card-footer d-flex justify-content-between">
+					<i class="fa-solid fa-download text-primary pointeur-souris" (click)="getFile(production.numeroProduction, production.nomArchive)" tooltip="{{ production.nomArchive }} (v{{ production.numeroVersion }})" placement="top" container="body"></i>
+					<i class="fa-solid fa-user-tie text-muted" style="margin-left:7px;" i18n-tootip tooltip="géré par {{ production.nomGestionnaire }}" placement="top" container="body"></i>
+				</div>
 			</div>
-		</div>
-	}
+		}
+	</div>
 </div>
 </div>

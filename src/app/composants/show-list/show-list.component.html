@@ -18,7 +18,7 @@
     {{ categorie.libelle }}&nbsp;&nbsp;&nbsp;&nbsp;
     @if (!categorie.pollable) {
       <button type="button" (click)="lierProductions(categorie.numeroCategorie)" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Rattacher des productions à cette catégorie et les ordonner" placement="right" container="body"><i class="fa-solid fa-link"></i>&nbsp;<span i18n>Rattacher</span></button>
-      <button type="button" (click)="getDiaporama(categorie.numeroCategorie, categorie.libelle)" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Télécharger le fichier de présentations de cette catégorie" placement="right" container="body"><i class="fa-solid fa-file-code"></i>&nbsp;<span i18n>Diaporama</span></button>  
+      <button type="button" (click)="getDiaporama(categorie.numeroCategorie, categorie.libelle)" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Télécharger le fichier de présentations de cette catégorie" placement="right" container="body"><i class="fa-solid fa-file-code"></i>&nbsp;<span i18n>Diaporama</span></button>
     }
     @if (categorie.uploadable) { }
     @if (categorie.pollable) { }
@@ -28,18 +28,18 @@
   <div class="card-body hstack align-items-baseline show_row">
 {{ resetLettre() }} @for (production of productions; track production.numeroProduction) { @if (categorie.numeroCategorie == production.numeroCategorie) {
     <div class="card shadow show_item" [class.border-danger]="production.etatMedia === 0">
-      @if (production.vignette) { <img [src]="production.vignette" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)"> }
-			@else if (production.type === types[0].key) { <img src="default/executable.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)"> }
-			@else if (production.type === types[1].key) { <img src="default/graphe.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)"> }
-			@else if (production.type === types[2].key) { <img src="default/musique.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)"> }
-			@else if (production.type === types[3].key) { <img src="default/video.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)"> }
-			@else if (production.type === types[4].key) { <img src="default/topic.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)"> }
-			@else if (production.type === types[5].key) { <img src="default/autre.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)"> }
-      <div class="card-header border-top" [class.border-danger]="production.etatMedia === 0">
+      @if (production.vignette) { <img [src]="production.vignette" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)" [class.opacity-25]="production.etatMedia === 0"> }
+			@else if (production.type === types[0].key) { <img src="default/executable.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)" [class.opacity-25]="production.etatMedia === 0"> }
+			@else if (production.type === types[1].key) { <img src="default/graphe.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)" [class.opacity-25]="production.etatMedia === 0"> }
+			@else if (production.type === types[2].key) { <img src="default/musique.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)" [class.opacity-25]="production.etatMedia === 0"> }
+			@else if (production.type === types[3].key) { <img src="default/video.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)" [class.opacity-25]="production.etatMedia === 0"> }
+			@else if (production.type === types[4].key) { <img src="default/topic.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)" [class.opacity-25]="production.etatMedia === 0"> }
+			@else if (production.type === types[5].key) { <img src="default/autre.png" class="img-fluid card-img-top pointeur-souris" (click)="formPresentation(production.numeroProduction)" [class.opacity-25]="production.etatMedia === 0"> }
+      <div class="card-header border-top" [class.border-danger]="production.etatMedia === 0" style="max-height:10rem;overflow:auto;">
         <span class="card-title">{{ nextLettre() }} -<a (click)="formPresentation(production.numeroProduction)" class="text-primary pointeur-souris" style="margin-left:7px;">{{ production.titre }}</a></span><br/>
         <small><span class="text-muted">par</span> {{ production.auteurs }} @if (production.groupes) { @if (production.groupes.length > 0) { / {{ production.groupes }} } }</small>
       </div>
-      <div class="card-body" [class.border-danger]="production.etatMedia === 0">
+      <div class="card-body" [class.border-danger]="production.etatMedia === 0" style="max-height:10rem;overflow:auto;">
         <small><span class="text-muted">sur</span> {{ production.plateforme }}</small><br/>
         <small>{{ production.commentaire }}</small><br/>
         <small class="text-warning">{{ production.informationsPrivees }}</small>
