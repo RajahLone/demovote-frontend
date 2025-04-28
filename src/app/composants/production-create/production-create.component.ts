@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http'
 
 import { MenuComponent } from '../menu/menu.component';
 import { Production, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
@@ -19,15 +20,19 @@ export class ProductionCreateComponent implements OnInit
   types: ProductionEnum[] = ProductionTypeList;
 
   @ViewChild('formRef') productionForm!: NgForm;
+  @ViewChild('boutonUploader', {static: false}) boutonUploader!: ElementRef;
+  @ViewChild('messageErreur', {static: false}) messageErreur!: ElementRef;
 
   production: Production = new Production();
+  uploaderFichier: boolean = false;
 
   constructor(
     private accountService : AccountService,
     private productionService: ProductionService,
     private participantService: ParticipantService,
     private router: Router,
-    private menu: MenuComponent
+    private menu: MenuComponent,
+    private renderer: Renderer2
   ) { }
 
   ngOnInit() { this.retreiveParticipants(); this.production.numeroParticipant = this.accountService.getNumeroParticipant(); }
@@ -46,7 +51,7 @@ export class ProductionCreateComponent implements OnInit
       this.production.nomArchive = file.name;
       this.production.numeroVersion = 1;
 
-      reader.onloadend = async (e: any) => { if (e.target.result) { this.production.archive = e.target.result; } }
+      reader.onloadend = async (e: any) => { if (e.target.result) { this.production.archive = e.target.result; this.uploaderFichier = true; } }
 
       reader.readAsDataURL(file);
 		}
@@ -67,7 +72,17 @@ export class ProductionCreateComponent implements OnInit
 		}
   }
 
-  private saveProduction() { this.productionService.createProduction(this.production).subscribe(() => { this.goToListProduction(); }); }
+  private saveProduction()
+  {
+    this.uploadStart();
+    this.productionService.createProduction(this.production).subscribe({
+      next: () => {},
+      error: (e:HttpErrorResponse) => { this.uploadEnd(); if (this.messageErreur) { this.renderer.setProperty(this.messageErreur.nativeElement, 'innerHTML', e.error.message); } else { alert(e.error.message); } },
+      complete: () => { this.uploadEnd(); this.goToListProduction(); }
+    });
+  }
+  private uploadStart() { if (this.boutonUploader &&this.uploaderFichier) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-upload fa-fade"></i>&nbsp;' + $localize`Téléversement en cours`); } }
+  private uploadEnd() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-plus"></i>&nbsp;' + $localize`Créer`); }  }
 
   addProduction() { if (this.productionForm.valid) { this.saveProduction(); } }
 

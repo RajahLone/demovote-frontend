@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders, HttpResponse } from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { Observable, firstValueFrom } from 'rxjs';
+
 import { Environnement } from '../env';
 import { Production, ProductionShort, ProductionFile } from '../interfaces/production';
+import { Message } from '../interfaces/divers';
 
 @Injectable({ providedIn: 'root' })
 
@@ -41,6 +43,26 @@ export class ProductionService
   getByIdProductionFile(id: number): Observable<ProductionFile>{ return this.httpClient.get<ProductionFile>(`${this.baseURL}/formfile/${id}`); }
 
   uploadProductionFile(id: number, production: ProductionFile): Observable<Object>{ return this.httpClient.put(`${this.baseURL}/upload/${id}`, production); }
+
+  async uploadChunk(id: number, chunk: any, chunkIndex: number, fileName: string): Promise<Message>
+  {
+    const formData = new FormData();
+
+    formData.append('chunkData', chunk);
+    formData.append('chunkIndex', '' + chunkIndex);
+    formData.append('fileName', fileName);
+
+    return await firstValueFrom(this.httpClient.post<Message>(`${this.baseURL}/upload-chunk/${id}`, formData));
+  }
+  mergeChunks(id: number, fileName: string, chunkIndex: number): Observable<Message>
+  {
+    const formData = new FormData();
+
+    formData.append('fileName', fileName);
+    formData.append('lastChunkIndex', '' + chunkIndex);
+
+    return this.httpClient.post<Message>(`${this.baseURL}/merge-chunks/${id}`, formData);
+  }
 
   deleteProduction(id: number): Observable<Object>{ return this.httpClient.delete(`${this.baseURL}/delete/${id}`); }
 

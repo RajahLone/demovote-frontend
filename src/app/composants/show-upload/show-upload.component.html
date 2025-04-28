@@ -1,6 +1,6 @@
 <app-menu></app-menu>
 <div id="main">
-<form #formRef="ngForm" (ngSubmit)="addPresentationFile()" class="needs-validation">
+<form #formRef="ngForm" class="needs-validation">
 
   <div class="card shadow center">
     <div class="card-header"><span i18n>Choix du média pour la présentation d'une production</span></div>
@@ -91,7 +91,7 @@
         <label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Média</span></label>
 				<div class="col-sm-8">
           <input type="file" class="form-control form-control-sm field-separate" id="media" name="media" accept="audio/*,video/*,image/*" (change)="onMediaSelected($event)">
-          <div class="form-text field-separate"><span i18n>La taille du média est limitée à 2 Go.</span><hr/></div>
+          <div class="form-text field-separate"><span i18n>La taille du média est limitée à 15 Mo.</span><hr/></div>
 				</div>
 			</div>
 
@@ -116,11 +116,28 @@
 }
 
   	</div>
-  	<div class="card-footer">
-      @if (etatInitial === 0) { <button type="button" class="btn bg-gradient btn-success btn-sm text-left" type="submit" [disabled]="formRef.invalid"><i class="fa-solid fa-plus"></i>&nbsp;<span i18n>Valider</span></button> }
-      @else { <button type="button" class="btn bg-gradient btn-warning btn-sm text-left" type="submit" [disabled]="formRef.invalid"><i class="fa-solid fa-check"></i>&nbsp;<span i18n>Valider</span></button> }
+  	<div class="card-footer hstack">
+      @if (etatInitial === 0) { <button type="button" #boutonUploader class="btn bg-gradient btn-success btn-sm text-left" data-bs-toggle="modal" data-bs-target="#modalModifier" [disabled]="formRef.invalid"><i class="fa-solid fa-plus"></i>&nbsp;<span i18n>Valider</span></button> }
+      @else { <button type="button" #boutonUploader class="btn bg-gradient btn-warning btn-sm text-left" data-bs-toggle="modal" data-bs-target="#modalModifier" [disabled]="formRef.invalid"><i class="fa-solid fa-check"></i>&nbsp;<span i18n>Valider</span></button> }
+      <div #messageErreur class="form-text ms-auto text-danger" style="padding-right:7px;"></div>
   	</div>
   </div>
 
 </form>
+
+<div class="modal fade" id="modalModifier" tabindex="-1" aria-labelledby="modalModifierTitre" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+        <h5 class="modal-title" id="modalModifierTitre"><span i18n>Choix du média</span></h5>
+			</div>
+      <div class="modal-body"><span i18n>Le choix est-il correct ?</span></div>
+			<div class="modal-footer">
+				<button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal"><span i18n>Annuler</span></button>
+        <button type="button" class="btn bg-gradient btn-warning btn-sm" (click)="addPresentationFile()" data-bs-dismiss="modal"><span i18n>Confirmer</span></button>
+			</div>
+		</div>
+	</div>
+</div>
+
 </div>

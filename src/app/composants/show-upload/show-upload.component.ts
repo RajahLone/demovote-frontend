@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http'
 
 import { MenuComponent } from '../menu/menu.component';
 import { PresentationFile } from '../../interfaces/production';
@@ -15,6 +16,8 @@ export class ShowUploadComponent implements OnInit
 {
 
   @ViewChild('formRef') productionForm!: NgForm;
+  @ViewChild('boutonUploader', {static: false}) boutonUploader!: ElementRef;
+  @ViewChild('messageErreur', {static: false}) messageErreur!: ElementRef;
 
   numeroProduction: number = 0;
 
@@ -24,13 +27,15 @@ export class ShowUploadComponent implements OnInit
 
   media: PresentationFile = new PresentationFile();
   etatInitial: number = 0;
+  uploaderFichier: boolean = false;
 
   constructor(
     private productionService: ProductionService,
     private presentationService: PresentationService,
     private route: ActivatedRoute,
     private router: Router,
-    private menu: MenuComponent
+    private menu: MenuComponent,
+    private renderer: Renderer2
   ) { }
 
   ngOnInit()
@@ -52,13 +57,23 @@ export class ShowUploadComponent implements OnInit
     {
       const file = et.files[0];
 
-      reader.onloadend = async (e: any) => { if (e.target.result) { this.media.mediaData = e.target.result; this.media.mediaName = file.name; this.media.etatMedia = 1; } }
+      reader.onloadend = async (e: any) => { if (e.target.result) { this.media.mediaData = e.target.result; this.media.mediaName = file.name; this.media.etatMedia = 1; this.uploaderFichier = true; } }
 
       reader.readAsDataURL(file);
 		}
   }
 
-  private saveMedia() { this.presentationService.uploadMediaFile(this.numeroProduction, this.media).subscribe(() => { this.goToListPresentation(); }); }
+  private saveMedia()
+  {
+    this.uploadStart();
+    this.presentationService.uploadMediaFile(this.numeroProduction, this.media).subscribe({
+      next: () => {},
+      error: (e:HttpErrorResponse) => { this.uploadEnd(); if (this.messageErreur) { this.renderer.setProperty(this.messageErreur.nativeElement, 'innerHTML', e.error.message); } else { alert(e.error.message); } },
+      complete: () => { this.uploadEnd(); this.goToListPresentation(); }
+    });
+  }
+  private uploadStart() { if (this.boutonUploader && this.uploaderFichier) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-upload fa-fade"></i>&nbsp;' + $localize`Téléversement en cours`); } }
+  private uploadEnd() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-check"></i>&nbsp;' + $localize`Valider`); }  }
 
   addPresentationFile() { this.saveMedia(); }
 
