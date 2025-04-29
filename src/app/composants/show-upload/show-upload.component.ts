@@ -17,7 +17,7 @@ export class ShowUploadComponent implements OnInit
 
   @ViewChild('formRef') productionForm!: NgForm;
   @ViewChild('boutonUploader', {static: false}) boutonUploader!: ElementRef;
-  @ViewChild('messageErreur', {static: false}) messageErreur!: ElementRef;
+  @ViewChild('labelMessage', {static: false}) labelMessage!: ElementRef;
 
   numeroProduction: number = 0;
 
@@ -65,14 +65,15 @@ export class ShowUploadComponent implements OnInit
 
   private saveMedia()
   {
+    this.setMessage('');
     this.setBoutonUploadStart();
     this.presentationService.uploadMediaFile(this.numeroProduction, this.media).subscribe({
       next: () => {},
-      error: (e:HttpErrorResponse) => { this.setBoutonUploadEnd(); this.setMessageErreur(e.error.message); },
+      error: (e:HttpErrorResponse) => { this.setBoutonUploadEnd(); this.setMessage(e.error.message); },
       complete: () => { this.setBoutonUploadEnd(); this.goToListPresentation(); }
     });
   }
-  private setMessageErreur(m: string) { if (this.messageErreur) { this.renderer.setProperty(this.messageErreur.nativeElement, 'innerHTML', m); } }
+  private setMessage(m: string) { if (this.labelMessage) { this.renderer.setProperty(this.labelMessage.nativeElement, 'innerHTML', m); } }
   private setBoutonUploadStart() { if (this.boutonUploader && this.uploaderFichier) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-upload fa-fade"></i>&nbsp;' + $localize`Téléversement en cours`); } }
   private setBoutonUploadEnd() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-check"></i>&nbsp;' + $localize`Valider`); }  }
 

@@ -119,7 +119,7 @@
   	<div class="card-footer hstack">
       @if (etatInitial === 0) { <button type="button" #boutonUploader class="btn bg-gradient btn-success btn-sm text-left" data-bs-toggle="modal" data-bs-target="#modalModifier" [disabled]="formRef.invalid"><i class="fa-solid fa-plus"></i>&nbsp;<span i18n>Valider</span></button> }
       @else { <button type="button" #boutonUploader class="btn bg-gradient btn-warning btn-sm text-left" data-bs-toggle="modal" data-bs-target="#modalModifier" [disabled]="formRef.invalid"><i class="fa-solid fa-check"></i>&nbsp;<span i18n>Valider</span></button> }
-      <div #messageErreur class="form-text ms-auto text-danger" style="padding-right:7px;"></div>
+      <div #labelMessage class="form-text text-danger" style="padding-left:10px;min-width:300px;"></div>
   	</div>
   </div>
 

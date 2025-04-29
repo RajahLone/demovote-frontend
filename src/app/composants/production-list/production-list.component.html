@@ -51,7 +51,7 @@
 					<small>{{ production.commentaire }}</small><br/>
 					 <small class="text-warning">{{ production.informationsPrivees }}</small>
 				 </div>
-				<div class="card-footer d-flex justify-content-between">
+				<div class="card-footer mt-auto d-flex justify-content-between">
 					<i class="fa-solid fa-download text-primary pointeur-souris" (click)="getFile(production.numeroProduction, production.nomArchive)" tooltip="{{ production.nomArchive }} (v{{ production.numeroVersion }})" placement="top" container="body"></i>
 					<i class="fa-solid fa-user-tie text-muted" style="margin-left:7px;" i18n-tootip tooltip="géré par {{ production.nomGestionnaire }}" placement="top" container="body"></i>
 				</div>

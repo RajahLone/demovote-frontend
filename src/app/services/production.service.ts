@@ -54,12 +54,13 @@ export class ProductionService
 
     return await firstValueFrom(this.httpClient.post<Message>(`${this.baseURL}/upload-chunk/${id}`, formData));
   }
-  mergeChunks(id: number, fileName: string, chunkIndex: number): Observable<Message>
+  mergeChunks(id: number, fileName: string, chunkIndex: number, checksum: string): Observable<Message>
   {
     const formData = new FormData();
 
     formData.append('fileName', fileName);
     formData.append('lastChunkIndex', '' + chunkIndex);
+    formData.append('checksum', checksum);
 
     return this.httpClient.post<Message>(`${this.baseURL}/merge-chunks/${id}`, formData);
   }
