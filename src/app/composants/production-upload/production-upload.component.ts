@@ -44,7 +44,6 @@ export class ProductionUploadComponent implements OnInit
   onArchiveSelected(event: any)
   {
     const et = event.target;
-    const reader = new FileReader();
 
     if (et.files && et.files.length > 0)
     {
@@ -55,13 +54,13 @@ export class ProductionUploadComponent implements OnInit
 
   async saveProduction()
   {
-    this.uploadStart();
+    this.setBoutonUploadStart();
 
     const chunkSize = 1024 * 1024;
     let start = 0;
     let chunkIndex = 0;
 
-    this.reliquat = this.fichier.size;
+    this.reliquat = 0;
 
     try
     {
@@ -71,8 +70,8 @@ export class ProductionUploadComponent implements OnInit
 
         await this.productionService.uploadChunk(this.numeroProduction, chunk, chunkIndex, this.fichier.name);
 
-        this.reliquat -= chunk.size;
-        if (this.messageUpload) { this.renderer.setProperty(this.messageUpload.nativeElement, 'innerHTML', '' +  this.reliquat); }
+        this.reliquat += chunk.size;
+        this.setMessageUpload('&nbsp;' + Math.floor((this.reliquat*100)/this.fichier.size) + '%');
 
         start += chunkSize;
         chunkIndex++;
@@ -82,14 +81,16 @@ export class ProductionUploadComponent implements OnInit
     finally
     {
       this.productionService.mergeChunks(this.numeroProduction, this.fichier.name, chunkIndex).subscribe({
-        next: (msg) => { this.uploadEnd(); if (msg.erreur) { if (this.messageErreur) { this.renderer.setProperty(this.messageErreur.nativeElement, 'innerHTML', msg.erreur); } } else { this.goToListProduction(); } },
-        error: (e:HttpErrorResponse) => { this.uploadEnd(); if (this.messageErreur) { this.renderer.setProperty(this.messageErreur.nativeElement, 'innerHTML', e.error.message); } else { alert(e.error.message); } },
+        next: (msg) => { this.setBoutonUploadEnd(); if (msg.erreur) { this.setMessageErreur(msg.erreur); } else { this.goToListProduction(); } },
+        error: (e:HttpErrorResponse) => { this.setBoutonUploadEnd(); this.setMessageErreur(e.error.message); },
         complete: () => { }
       });
     }
   }
-  private uploadStart() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-upload fa-fade"></i>&nbsp;' + $localize`Téléversement en cours`); } }
-  private uploadEnd() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-upload"></i>&nbsp;' + $localize`Téléverser`); }  }
+  private setMessageUpload(m: string) { if (this.messageUpload) { this.renderer.setProperty(this.messageUpload.nativeElement, 'innerHTML', m); } }
+  private setMessageErreur(m: string) { if (this.messageErreur) { this.renderer.setProperty(this.messageErreur.nativeElement, 'innerHTML', m); } }
+  private setBoutonUploadStart() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-upload fa-fade"></i>&nbsp;' + $localize`Téléversement en cours`); } }
+  private setBoutonUploadEnd() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-upload"></i>&nbsp;' + $localize`Téléverser`); }  }
 
   addProductionFile() { this.saveProduction(); }
 

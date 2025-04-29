@@ -65,15 +65,16 @@ export class ShowUploadComponent implements OnInit
 
   private saveMedia()
   {
-    this.uploadStart();
+    this.setBoutonUploadStart();
     this.presentationService.uploadMediaFile(this.numeroProduction, this.media).subscribe({
       next: () => {},
-      error: (e:HttpErrorResponse) => { this.uploadEnd(); if (this.messageErreur) { this.renderer.setProperty(this.messageErreur.nativeElement, 'innerHTML', e.error.message); } else { alert(e.error.message); } },
-      complete: () => { this.uploadEnd(); this.goToListPresentation(); }
+      error: (e:HttpErrorResponse) => { this.setBoutonUploadEnd(); this.setMessageErreur(e.error.message); },
+      complete: () => { this.setBoutonUploadEnd(); this.goToListPresentation(); }
     });
   }
-  private uploadStart() { if (this.boutonUploader && this.uploaderFichier) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-upload fa-fade"></i>&nbsp;' + $localize`Téléversement en cours`); } }
-  private uploadEnd() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-check"></i>&nbsp;' + $localize`Valider`); }  }
+  private setMessageErreur(m: string) { if (this.messageErreur) { this.renderer.setProperty(this.messageErreur.nativeElement, 'innerHTML', m); } }
+  private setBoutonUploadStart() { if (this.boutonUploader && this.uploaderFichier) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-upload fa-fade"></i>&nbsp;' + $localize`Téléversement en cours`); } }
+  private setBoutonUploadEnd() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-check"></i>&nbsp;' + $localize`Valider`); }  }
 
   addPresentationFile() { this.saveMedia(); }
 

@@ -21,10 +21,14 @@ export class ProductionCreateComponent implements OnInit
 
   @ViewChild('formRef') productionForm!: NgForm;
   @ViewChild('boutonUploader', {static: false}) boutonUploader!: ElementRef;
+  @ViewChild('messageUpload', {static: false}) messageUpload!: ElementRef;
   @ViewChild('messageErreur', {static: false}) messageErreur!: ElementRef;
 
   production: Production = new Production();
   uploaderFichier: boolean = false;
+  fichier!: any;
+  reliquat: number = 0;
+  chunkIndex = 0;
 
   constructor(
     private accountService : AccountService,
@@ -48,12 +52,11 @@ export class ProductionCreateComponent implements OnInit
     {
       const file = et.files[0];
 
-      this.production.nomArchive = file.name;
-      this.production.numeroVersion = 1;
+      this.production.nomArchive = "";
+      this.production.numeroVersion = 0;
 
-      reader.onloadend = async (e: any) => { if (e.target.result) { this.production.archive = e.target.result; this.uploaderFichier = true; } }
-
-      reader.readAsDataURL(file);
+      this.fichier = et.files[0];
+      this.uploaderFichier = true;
 		}
   }
 
@@ -72,17 +75,53 @@ export class ProductionCreateComponent implements OnInit
 		}
   }
 
+  async saveArchive(id: number)
+  {
+    const chunkSize = 1024 * 1024;
+    let start = 0;
+
+    this.chunkIndex = 0;
+    this.reliquat = 0;
+
+    try
+    {
+      while (start < this.fichier.size)
+      {
+        const chunk = this.fichier.slice(start, start + chunkSize);
+
+        await this.productionService.uploadChunk(id, chunk, this.chunkIndex, this.fichier.name);
+
+        this.reliquat += chunk.size;
+        this.setMessageUpload('&nbsp;' + Math.floor((this.reliquat*100)/this.fichier.size) + '%');
+
+        start += chunkSize;
+        this.chunkIndex++;
+      }
+    }
+    catch (err:any) { console.error(err); }
+    finally
+    {
+      this.productionService.mergeChunks(id, this.fichier.name, this.chunkIndex).subscribe({
+        next: (msg) => { this.setBoutonUploadEnd(); if (msg.erreur) { this.setMessageErreur(msg.erreur); } else { this.goToListProduction(); } },
+        error: (e:HttpErrorResponse) => { this.setBoutonUploadEnd(); this.setMessageErreur(e.error.message); },
+        complete: () => { }
+      });
+    }
+  }
   private saveProduction()
   {
-    this.uploadStart();
+    this.setBoutonUploadStart();
+
     this.productionService.createProduction(this.production).subscribe({
-      next: () => {},
-      error: (e:HttpErrorResponse) => { this.uploadEnd(); if (this.messageErreur) { this.renderer.setProperty(this.messageErreur.nativeElement, 'innerHTML', e.error.message); } else { alert(e.error.message); } },
-      complete: () => { this.uploadEnd(); this.goToListProduction(); }
+      next: async (ret) => { await this.saveArchive(Number('' + ret)); this.setBoutonUploadEnd(); this.goToListProduction(); },
+      error: (e:HttpErrorResponse) => { this.setBoutonUploadEnd(); this.setMessageErreur(e.error.message); },
+      complete: () => { }
     });
   }
-  private uploadStart() { if (this.boutonUploader &&this.uploaderFichier) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-upload fa-fade"></i>&nbsp;' + $localize`Téléversement en cours`); } }
-  private uploadEnd() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-plus"></i>&nbsp;' + $localize`Créer`); }  }
+  private setMessageUpload(m: string) { if (this.messageUpload) { this.renderer.setProperty(this.messageUpload.nativeElement, 'innerHTML', m); } }
+  private setMessageErreur(m: string) { if (this.messageErreur) { this.renderer.setProperty(this.messageErreur.nativeElement, 'innerHTML', m); } }
+  private setBoutonUploadStart() { if (this.boutonUploader && this.uploaderFichier) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-upload fa-fade"></i>&nbsp;' + $localize`Téléversement en cours`); } }
+  private setBoutonUploadEnd() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-plus"></i>&nbsp;' + $localize`Créer`); }  }
 
   addProduction() { if (this.productionForm.valid) { this.saveProduction(); } }
 
