@@ -21,6 +21,6 @@ export class CategorieCreateComponent implements OnInit
 
   addCategorie() { if (this.categorieForm.valid) { this.saveCategorie(); } }
 
-  goToListCategorie() { this.router.navigate(['/categorie-list', this.menu.getRandomInteger(1, 100000)]); }
+  goToListCategorie() { this.router.navigate(['/categorie-list']); }
 
 }

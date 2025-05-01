@@ -27,6 +27,6 @@ export class CategorieUpdateComponent implements OnInit
 
   deleteConfirmed() { this.categorieService.deleteCategorie(this.numeroCategorie).subscribe(() => { this.goToListCategorie(); }); }
 
-  goToListCategorie() { this.router.navigate(['/categorie-list', this.menu.getRandomInteger(1, 100000)]); }
+  goToListCategorie() { this.router.navigate(['/categorie-list']); }
 
 }

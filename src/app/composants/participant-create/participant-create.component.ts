@@ -46,6 +46,6 @@ export class ParticipantCreateComponent implements OnInit
 
   addParticipant() { if (this.participantForm.valid) { this.saveParticipant(); } }
 
-  goToListParticipant() { this.router.navigate(['/participant-list', this.menu.getRandomInteger(1, 100000)]); }
+  goToListParticipant() { this.router.navigate(['/participant-list']); }
 
 }

@@ -24,6 +24,6 @@ export class VariableCreateComponent implements OnInit
 
   addVariable() { if (this.variableForm.valid) { this.saveVariable(); } }
 
-  goToListVariable() { this.router.navigate(['/variable-list', this.menu.getRandomInteger(1, 100000)]); }
+  goToListVariable() { this.router.navigate(['/variable-list']); }
 
 }

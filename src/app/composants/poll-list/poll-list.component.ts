@@ -5,9 +5,9 @@ import { MenuComponent } from '../menu/menu.component';
 import { Categorie } from '../../interfaces/categorie';
 import { CategorieService } from '../../services/categorie.service';
 
-@Component({ selector: 'app-categorie-list', imports: [MenuComponent], templateUrl: './categorie-list.component.html', styleUrl: './categorie-list.component.css'})
+@Component({ selector: 'app-poll-list', imports: [MenuComponent], templateUrl: './poll-list.component.html', styleUrl: './poll-list.component.css' })
 
-export class CategorieListComponent implements OnInit
+export class PollListComponent implements OnInit
 {
 
   categories: Categorie[] = [];
@@ -20,12 +20,10 @@ export class CategorieListComponent implements OnInit
 
   ngOnInit() { this.goToRefreshListCategorie(); }
 
-  private retreiveDatas() { this.categorieService.getListCategorie(true).subscribe(data => { this.categories = data; }); }
+  private retreiveDatas() { this.categorieService.getListCategorie(false).subscribe(data => { this.categories = data; }); }
 
   goToRefreshListCategorie() { this.retreiveDatas(); }
 
-  goToNewCategorie() { this.router.navigate(['/categorie-create']); }
-
-  formCategorie(id: number) { this.router.navigate(['/categorie-details', id]); }
+  voteCategorie(id: number) { this.router.navigate(['/poll-details', id]); }
 
 }

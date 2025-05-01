@@ -61,7 +61,7 @@
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Commentaire</span></label>
+			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Commentaire affiché</span></label>
 			<div class="col-sm-8">
 				<textarea class="form-control form-control-sm field-separate" id="commentaire" name="commentaire" [(ngModel)]="production.commentaire" disabled></textarea>
 			</div>
@@ -93,6 +93,7 @@
 			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Vignette</span></label>
 			<div class="col-sm-8">
 				<img [src]="production.vignette" alt="" class="img-fluid rounded-2">
+				<div class="form-text field-separate"><span i18n>Les participants ne peuvent voir ce visuel qu'à partir des votes. Sa présence facilite les répérages pour les administrateurs avant les présentations, et à tous pour répérer ses choix au moment des votes.</span></div>
 			</div>
 		</div>
 

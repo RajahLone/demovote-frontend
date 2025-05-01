@@ -30,6 +30,6 @@ export class ProductionDetailsComponent implements OnInit
 
   updateProduction(id: number) { this.router.navigate(['/production-update', id]); }
 
-  goToListProduction() { this.router.navigate(['/production-list', this.menu.getRandomInteger(1, 100000)]); }
+  goToListProduction() { this.router.navigate(['/production-list']); }
 
 }

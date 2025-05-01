@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { saveAs } from 'file-saver';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -12,7 +12,6 @@ import { ProductionService } from '../../services/production.service';
 
 export class ProductionListComponent implements OnInit
 {
-  refresh: number = 0;
 
   productions: ProductionShort[] = [];
 
@@ -24,17 +23,9 @@ export class ProductionListComponent implements OnInit
     private productionService: ProductionService,
     private router: Router,
     private route: ActivatedRoute
-  )
-  {
-    this.router.routeReuseStrategy.shouldReuseRoute = function() { return false; }
-    this.router.events.subscribe((evt) => { if (evt instanceof NavigationEnd) { this.router.navigated = false; window.scrollTo(0, 0); } });
-  }
+  ) { }
 
-  ngOnInit()
-  {
-    this.refresh = this.route.snapshot.params['refresh'];
-    this.goToRefreshListProduction();
-  }
+  ngOnInit() { this.goToRefreshListProduction(); }
 
   private retreiveDatas() { this.productionService.getListProduction(this.typeFiltre, this.soloFiltre).subscribe(data => { this.productions = data; }); }
 

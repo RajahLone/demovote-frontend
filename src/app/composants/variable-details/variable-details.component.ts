@@ -25,6 +25,6 @@ export class VariableDetailsComponent implements OnInit
 
   updateVariable(id: number) { this.router.navigate(['/variable-update', id]); }
 
-  goToListVariable() { this.router.navigate(['/variable-list', this.menu.getRandomInteger(1, 100000)]); }
+  goToListVariable() { this.router.navigate(['/variable-list']); }
 
 }

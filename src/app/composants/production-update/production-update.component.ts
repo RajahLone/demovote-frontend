@@ -54,6 +54,6 @@ export class ProductionUpdateComponent implements OnInit
 
   deleteConfirmed() { this.productionService.deleteProduction(this.numeroProduction).subscribe(() => { this.goToListProduction(); }); }
 
-  goToListProduction() { this.router.navigate(['/production-list', this.menu.getRandomInteger(1, 100000)]); }
+  goToListProduction() { this.router.navigate(['/production-list']); }
 
 }

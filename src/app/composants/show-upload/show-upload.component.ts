@@ -79,6 +79,6 @@ export class ShowUploadComponent implements OnInit
 
   addPresentationFile() { this.saveMedia(); }
 
-  goToListPresentation() { this.router.navigate(['/show-list', this.menu.getRandomInteger(1, 100000)]); }
+  goToListPresentation() { this.router.navigate(['/show-list']); }
 
 }

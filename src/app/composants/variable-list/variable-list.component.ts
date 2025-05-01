@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MenuComponent } from '../menu/menu.component';
 import { Variable, VariableType } from '../../interfaces/variable';
 import { VariableService } from '../../services/variable.service';
@@ -9,7 +9,6 @@ import { FormsModule, NgForm } from '@angular/forms';
 
 export class VariableListComponent implements OnInit
 {
-  refresh: number = 0;
 
   types: VariableType[] = [];
   typeFiltre: string = "";
@@ -21,17 +20,9 @@ export class VariableListComponent implements OnInit
     private route: ActivatedRoute,
     private router: Router,
     private menu: MenuComponent
-  )
-  {
-    this.router.routeReuseStrategy.shouldReuseRoute = function() { return false; }
-    this.router.events.subscribe((evt) => { if (evt instanceof NavigationEnd) { this.router.navigated = false; window.scrollTo(0, 0); } });
-  }
+  ) { }
 
-  ngOnInit()
-  {
-    this.refresh = this.route.snapshot.params['refresh'];
-    this.goToRefreshListVariable();
-  }
+  ngOnInit() { this.goToRefreshListVariable(); }
 
   private retreiveDatas() { this.variableService.getListVariable(this.typeFiltre).subscribe(data => { this.variables = data; }); }
   private retreiveTypes() { this.variableService.getOptionListVariableType().subscribe(data => { this.types = data; }); }

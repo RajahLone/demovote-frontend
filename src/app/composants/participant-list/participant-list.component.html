@@ -27,7 +27,7 @@
 				<div class="input-group input-group-sn">
 					<button type="button" class="btn bg-gradient btn-secondary btn-sm field-separate" disabled><span i18n>Réglement</span></button>
 				  <select class="form-select form-select-sm field-separate" id="select_statut" [(ngModel)]="statutFiltre" (change)="filtrageParStatut($event)">
-						<option value="0"></option>
+						<option value="0">Indifférent</option>
 						<option value="1"><span i18n>En attente</span></option>
 				  </select>
 			  </div>
@@ -36,7 +36,7 @@
 				<div class="input-group input-group-sn">
 					<button type="button" class="btn bg-gradient btn-secondary btn-sm field-separate" disabled><span i18n>Arrivé(s)</span></button>
 				  <select class="form-select form-select-sm field-separate" id="select_arrive" [(ngModel)]="arriveFiltre" (change)="filtrageParArrive($event)">
-					  <option value="0"></option>
+					  <option value="0">Indifférent</option>
 						<option value="1"><span i18n>Non</span></option>
 						<option value="2"><span i18n>Oui</span></option>
 				  </select>

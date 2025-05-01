@@ -20,11 +20,6 @@ export class MenuComponent implements OnInit
   private timedOut: boolean = false;
   @ViewChild('signouticon', {static: false}) signOutIcon!: ElementRef;
 
-  @ViewChild('usersicon', {static: false}) usersIcon!: ElementRef;
-  @ViewChild('compoicon', {static: false}) compoIcon!: ElementRef;
-  @ViewChild('prodsicon', {static: false}) prodsIcon!: ElementRef;
-  @ViewChild('variaicon', {static: false}) variaIcon!: ElementRef;
-
   constructor(private idle: Idle, private router: Router, private accountService: AccountService, private el: ElementRef, private renderer: Renderer2)
   {
     this.idle.setIdle(900);
@@ -55,10 +50,5 @@ export class MenuComponent implements OnInit
 
   showPendingLogout() { if (this.logged) { if (this.signOutIcon) { this.renderer.addClass(this.signOutIcon.nativeElement, 'fa-beat-fade'); this.renderer.addClass(this.signOutIcon.nativeElement, 'text-danger'); } } }
   hidePendingLogout() { if (this.logged) { if (this.signOutIcon) { this.renderer.removeClass(this.signOutIcon.nativeElement, 'fa-beat-fade'); this.renderer.removeClass(this.signOutIcon.nativeElement, 'text-danger'); } } }
-
-  activeUsersIcon() { if (this.usersIcon) { this.renderer.addClass(this.usersIcon.nativeElement, 'active'); } }
-  activeCompoIcon() { if (this.compoIcon) { this.renderer.addClass(this.compoIcon.nativeElement, 'active'); } }
-  activeProdsIcon() { if (this.prodsIcon) { this.renderer.addClass(this.prodsIcon.nativeElement, 'active'); } }
-  activeVariaIcon() { if (this.variaIcon) { this.renderer.addClass(this.variaIcon.nativeElement, 'active'); } }
 
 }

@@ -51,6 +51,6 @@ export class ParticipantUpdateComponent implements OnInit
 
   deleteConfirmed() { this.participantService.deleteParticipant(this.numeroParticipant).subscribe(() => { this.goToListParticipant(); }); }
 
-  goToListParticipant() { this.router.navigate(['/participant-list', this.menu.getRandomInteger(1, 100000)]); }
+  goToListParticipant() { this.router.navigate(['/participant-list']); }
 
 }

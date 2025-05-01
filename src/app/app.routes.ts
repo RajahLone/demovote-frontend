@@ -35,6 +35,8 @@ import { ProductionUploadComponent } from './composants/production-upload/produc
 import { ShowListComponent } from './composants/show-list/show-list.component';
 import { ShowLinksComponent } from './composants/show-links/show-links.component';
 import { ShowUploadComponent } from './composants/show-upload/show-upload.component';
+import { PollListComponent } from './composants/poll-list/poll-list.component';
+import { ResultListComponent } from './composants/result-list/result-list.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -46,26 +48,28 @@ export const routes: Routes = [
   {path: 'account-details', component: AccountDetailsComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
   {path: 'account-update', component: AccountUpdateComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
   {path: 'account-password', component: AccountPasswordComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
-  {path: 'variable-list/:refresh', component: VariableListComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always'},
+  {path: 'variable-list', component: VariableListComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always'},
   {path: 'variable-create', component: VariableCreateComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always'},
   {path: 'variable-details/:numeroVariable', component: VariableDetailsComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always'},
   {path: 'variable-update/:numeroVariable', component: VariableUpdateComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always'},
-  {path: 'categorie-list/:refresh', component: CategorieListComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always' },
+  {path: 'categorie-list', component: CategorieListComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always' },
   {path: 'categorie-create', component: CategorieCreateComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always' },
   {path: 'categorie-details/:numeroCategorie', component: CategorieDetailsComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always' },
   {path: 'categorie-update/:numeroCategorie', component: CategorieUpdateComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always' },
-  {path: 'participant-list/:refresh', component: ParticipantListComponent, canActivate: [OrgaGuard], runGuardsAndResolvers: 'always' },
+  {path: 'participant-list', component: ParticipantListComponent, canActivate: [OrgaGuard], runGuardsAndResolvers: 'always' },
   {path: 'participant-create', component: ParticipantCreateComponent, canActivate: [OrgaGuard], runGuardsAndResolvers: 'always' },
   {path: 'participant-details/:numeroParticipant', component: ParticipantDetailsComponent, canActivate: [OrgaGuard], runGuardsAndResolvers: 'always' },
   {path: 'participant-update/:numeroParticipant', component: ParticipantUpdateComponent, canActivate: [OrgaGuard], runGuardsAndResolvers: 'always' },
-  {path: 'production-list/:refresh', component: ProductionListComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
+  {path: 'production-list', component: ProductionListComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
   {path: 'production-create', component: ProductionCreateComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
   {path: 'production-details/:numeroProduction', component: ProductionDetailsComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
   {path: 'production-update/:numeroProduction', component: ProductionUpdateComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
   {path: 'production-upload/:numeroProduction', component: ProductionUploadComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
-  {path: 'show-list/:refresh', component: ShowListComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always' },
+  {path: 'show-list', component: ShowListComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always' },
   {path: 'show-links/:numeroCategorie', component: ShowLinksComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always' },
   {path: 'show-upload/:numeroProduction', component: ShowUploadComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always' },
+  {path: 'poll-list', component: PollListComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
+  {path: 'result-list', component: ResultListComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
 ];
 
 @NgModule({

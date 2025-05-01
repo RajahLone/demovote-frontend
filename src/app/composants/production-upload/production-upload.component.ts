@@ -114,6 +114,6 @@ export class ProductionUploadComponent implements OnInit
 
   addProductionFile() { this.saveProduction(); }
 
-  goToListProduction() { this.router.navigate(['/production-list', this.menu.getRandomInteger(1, 100000)]); }
+  goToListProduction() { this.router.navigate(['/production-list']); }
 
 }

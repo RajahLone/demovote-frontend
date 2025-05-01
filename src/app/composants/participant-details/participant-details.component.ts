@@ -48,6 +48,6 @@ export class ParticipantDetailsComponent implements OnInit
 
   updateParticipant(id: number) { this.router.navigate(['/participant-update', id]); }
 
-  goToListParticipant() { this.router.navigate(['/participant-list', this.menu.getRandomInteger(1, 100000)]); }
+  goToListParticipant() { this.router.navigate(['/participant-list']); }
 
 }

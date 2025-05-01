@@ -26,6 +26,6 @@ export class CategorieDetailsComponent implements OnInit
 
   updateCategorie(id: number) { this.router.navigate(['/categorie-update', id]); }
 
-  goToListCategorie() { this.router.navigate(['/categorie-list', this.menu.getRandomInteger(1, 100000)]); }
+  goToListCategorie() { this.router.navigate(['/categorie-list']); }
 
 }

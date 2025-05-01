@@ -1,0 +1,33 @@
+<app-menu></app-menu>
+<div id="main">
+  <div class="card shadow">
+    <div class="card-header"><span i18n>Votes</span></div>
+  	<div class="card-header shadow-sm">
+  		<div class="row">
+  			<div class="form-group col-sm-4 label-nobr">
+  				<button type="button" (click)="goToRefreshListCategorie()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;<span i18n>Actualiser</span></button>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="card-body">
+  		<table class="table table-sm">
+  			<thead class="thead-dark">
+  				<tr>
+            <th class="fs-6 label-nobr"><small><span i18n>Catégorie</span></small></th>
+  					<th class="fs-6 label-nobr"><small><span i18n>Vote ouvert</span></small></th>
+  					<th class="fs-6 label-nobr"><small><span i18n>Vote terminé</span></small></th>
+  				</tr>
+  			</thead>
+  			<tbody>
+  				@for (categorie of categories; track categorie.numeroCategorie) {
+  				<tr>
+            <td class="label-nobr"><a (click)="voteCategorie(categorie.numeroCategorie)" class="link-primary pointeur-souris text-decoration-none">{{ categorie.libelle }}</a>&nbsp;&nbsp;</td>
+  					<td>@if (categorie.pollable) { <i class="fa-solid fa-circle-check text-success"></i> } @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;</td>
+  					<td>@if (categorie.computed) { <i class="fa-solid fa-circle-check text-success"></i> } @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;</td>
+  				</tr>
+  				}
+  			</tbody>
+  		</table>
+  	</div>
+  </div>
+</div>

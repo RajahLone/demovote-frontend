@@ -57,7 +57,7 @@ export class ShowLinksComponent implements OnInit
   resetLettre() { this.indexLettre = 0; }
   nextLettre(): string { if ((this.indexLettre >= 0) && (this.indexLettre < 26)) { this.indexLettre++; return "#" + this.lettresOrdre[this.indexLettre - 1];  } return ""; }
 
-  goToListPresentations() { this.router.navigate(['/show-list', this.menu.getRandomInteger(1, 100000)]); }
+  goToListPresentations() { this.router.navigate(['/show-list']); }
 
   changeEtatBoutonsUnlinked(event: any)
   {

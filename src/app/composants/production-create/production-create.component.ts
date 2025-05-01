@@ -146,6 +146,6 @@ export class ProductionCreateComponent implements OnInit
 
   addProduction() { if (this.productionForm.valid) { this.saveProduction(); } }
 
-  goToListProduction() { this.router.navigate(['/production-list', this.menu.getRandomInteger(1, 100000)]); }
+  goToListProduction() { this.router.navigate(['/production-list']); }
 
 }

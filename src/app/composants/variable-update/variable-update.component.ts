@@ -28,6 +28,6 @@ export class VariableUpdateComponent implements OnInit
 
   deleteConfirmed() { this.variableService.deleteVariable(this.numeroVariable).subscribe(() => { this.goToListVariable(); });  }
 
-  goToListVariable() { this.router.navigate(['/variable-list', this.menu.getRandomInteger(1, 100000)]); }
+  goToListVariable() { this.router.navigate(['/variable-list']); }
 
 }
