@@ -24,6 +24,6 @@ export class PollListComponent implements OnInit
 
   goToRefreshListCategorie() { this.retreiveDatas(); }
 
-  voteCategorie(id: number) { this.router.navigate(['/poll-details', id]); }
+  voteCategorie(id: number) { this.router.navigate(['/poll-booth', id]); }
 
 }

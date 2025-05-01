@@ -36,6 +36,7 @@ import { ShowListComponent } from './composants/show-list/show-list.component';
 import { ShowLinksComponent } from './composants/show-links/show-links.component';
 import { ShowUploadComponent } from './composants/show-upload/show-upload.component';
 import { PollListComponent } from './composants/poll-list/poll-list.component';
+import { PollBoothComponent } from './composants/poll-booth/poll-booth.component';
 import { ResultListComponent } from './composants/result-list/result-list.component';
 
 export const routes: Routes = [
@@ -69,6 +70,7 @@ export const routes: Routes = [
   {path: 'show-links/:numeroCategorie', component: ShowLinksComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always' },
   {path: 'show-upload/:numeroProduction', component: ShowUploadComponent, canActivate: [AdminGuard], runGuardsAndResolvers: 'always' },
   {path: 'poll-list', component: PollListComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
+  {path: 'poll-booth/:numeroCategorie', component: PollBoothComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
   {path: 'result-list', component: ResultListComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
 ];
 

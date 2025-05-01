@@ -14,18 +14,14 @@
   			<thead class="thead-dark">
   				<tr>
             <th class="fs-6 label-nobr"><small><span i18n>Catégorie</span></small></th>
-  					<th class="fs-6 label-nobr"><small><span i18n>Vote ouvert</span></small></th>
-  					<th class="fs-6 label-nobr"><small><span i18n>Vote terminé</span></small></th>
   				</tr>
   			</thead>
   			<tbody>
-  				@for (categorie of categories; track categorie.numeroCategorie) {
+  				@for (categorie of categories; track categorie.numeroCategorie) { @if (categorie.pollable) {
   				<tr>
             <td class="label-nobr"><a (click)="voteCategorie(categorie.numeroCategorie)" class="link-primary pointeur-souris text-decoration-none">{{ categorie.libelle }}</a>&nbsp;&nbsp;</td>
-  					<td>@if (categorie.pollable) { <i class="fa-solid fa-circle-check text-success"></i> } @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;</td>
-  					<td>@if (categorie.computed) { <i class="fa-solid fa-circle-check text-success"></i> } @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;</td>
   				</tr>
-  				}
+          } }
   			</tbody>
   		</table>
   	</div>

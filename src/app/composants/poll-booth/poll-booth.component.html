@@ -1,0 +1,69 @@
+<app-menu></app-menu>
+<div id="main">
+<div class="card shadow center">
+
+  <div class="card-header">
+    <span i18n>@if (nombreChoixRestant == -1) { Vos votes validés } @else { Voter pour les productions } dans la catégorie {{ categorie.libelle }}</span>
+  </div>
+  <div class="card-header shadow-sm">
+		<button type="button" (click)="goToListVotes()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-xmark"></i>&nbsp;<span i18n>Retour</span></button>
+    @if (nombreChoixRestant != -1) { <button type="button" [disabled]="chosenProductions.length == 0" class="btn bg-gradient btn-danger btn-sm" style="margin-right: 5px;" data-bs-toggle="modal" data-bs-target="#modalValider"><i class="fa-solid fa-check"></i>&nbsp;<span i18n>Valider</span></button> }
+	</div>
+  <div class="card-body hstack">
+    <div><small><span i18n>Productions préférées</span></small></div>
+    <div class="ms-auto"><small><span i18n>@if ((nombreChoixRestant > 0) && (nombreChoixRestant <= linkedProductions.length)) { Encore {{ nombreChoixRestant }} choix @if (nombreChoixRestant > 1) { possibles } @else { possible } } @else { Productions présentées }</span></small></div>
+  </div>
+  <div class="card-body"><div class="hstack align-items-start">
+
+    <div class="col">
+      <select class="form-select-sm" size="16" id="selectionChosen" #selecteurChoisis (change)="changeEtatBoutonsChosen($event)">
+      {{ resetChiffre() }} @for (prod of chosenProductions; track prod.numeroProduction) {
+        <option [value]="prod.numeroProduction" [disabled]="nombreChoixRestant == -1">{{ nextChiffre() }} - {{ prod.titre }} - {{ prod.auteurs }} / {{ prod.groupes }}</option>
+      }
+      </select>
+    </div>
+
+    <div class="col mx-auto" style="padding:7px;">
+      <br/><br/>
+      <button (click)="choisirProduction()" #boutonChoisir class="btn bg-gradient btn-primary btn-sm boutons disabled"><i class="fa-solid fa-arrow-left"></i>&nbsp;<span i18n>Choisir</span></button>
+      <hr/>
+      <button (click)="ecarterProduction()" #boutonEcarter class="btn bg-gradient btn-primary btn-sm boutons disabled"><i class="fa-solid fa-arrow-right"></i>&nbsp;<span i18n>Ecarter</span></button>
+      <br/><br/>
+      <button (click)="avancerProduction()" #boutonAvancer class="btn bg-gradient btn-primary btn-sm boutons disabled"><i class="fa-solid fa-arrow-up"></i>&nbsp;<span i18n>Avancer</span></button>
+      <br/><br/>
+      <button (click)="reculerProduction()" #boutonReculer class="btn bg-gradient btn-primary btn-sm boutons disabled"><i class="fa-solid fa-arrow-down"></i>&nbsp;<span i18n>Reculer</span></button>
+    </div>
+
+    <div class="col">
+      <select class="form-select-sm" size="16" id="selectionDiscarded" #selecteurProposes (change)="changeEtatBoutonsDiscarded($event)">
+      {{ resetLettre() }} @for (prod of linkedProductions; track prod.numeroProduction) {
+        <option [value]="prod.numeroProduction" [disabled]="dejaChoisi(prod.numeroProduction)" [selected]="(numeroProductionPropose === prod.numeroProduction) && (!dejaChoisi(prod.numeroProduction))">{{ nextLettre() }} - {{ prod.titre }} - {{ prod.auteurs }} / {{ prod.groupes }}</option>
+      }
+      </select>
+    </div>
+  </div></div>
+</div>
+
+<div class="modal fade" id="modalValider" tabindex="-1" aria-labelledby="modalValiderTitre" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+        <h5 class="modal-title text-danger" id="modalEffacerTitre"><span i18n>Valider</span></h5>
+			</div>
+      <div class="modal-body">
+        <span i18n>
+          La validation permet de geler vos choix pour cette catégorie et empêche toute modification par la suite.
+          <span class="text-secondary">Ceci est une sécurité au cas où un tiers malveillant viendrait utiliser de votre session encore ouverte en votre absence.</span>
+          <br/>
+          Cette action n'est pas obligatoire, une validation automatique sera effectuée au moment de la clôture des urnes.
+          @if ((nombreChoixRestant > 0) && (nombreChoixRestant <= linkedProductions.length)) { <br/><br/><span class="text-success">Vous pouvez encore choisir {{ nombreChoixRestant }} production@if(nombreChoixRestant > 1){s}.</span> }
+        </span>
+      </div>
+			<div class="modal-footer">
+				<button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal"><span i18n>Annuler</span></button>
+        <button type="button" class="btn bg-gradient btn-danger btn-sm" (click)="validerVote()" data-bs-dismiss="modal"><span i18n>Confirmer</span></button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

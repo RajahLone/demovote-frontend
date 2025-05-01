@@ -18,6 +18,9 @@ export class ShowLinksComponent implements OnInit
   @ViewChild('boutonAvancer', {static: false}) boutonAvancer!: ElementRef;
   @ViewChild('boutonReculer', {static: false}) boutonReculer!: ElementRef;
 
+  @ViewChild('selecteurLinked', {static: false}) selecteurLinked!: ElementRef;
+  @ViewChild('selecteurUnlinked', {static: false}) selecteurUnlinked!: ElementRef;
+
   numeroCategorie: number = 0;
   categorie: Categorie = new Categorie();
 
@@ -63,9 +66,9 @@ export class ShowLinksComponent implements OnInit
   {
     this.numeroProduction = event.target.value;
 
-    var b: boolean = (this.numeroProduction != 0);
+    var b: boolean = (this.numeroProduction == 0);
 
-    if (this.boutonLier) { if (b) { this.renderer.removeClass(this.boutonLier.nativeElement, 'disabled'); } else { this.renderer.addClass(this.boutonLier.nativeElement, 'disabled'); } }
+    if (this.boutonLier) { if (b) { this.renderer.addClass(this.boutonLier.nativeElement, 'disabled'); } else { this.renderer.removeClass(this.boutonLier.nativeElement, 'disabled'); } }
   }
   resetEtatBoutonsUnlinked()
   {
@@ -76,11 +79,11 @@ export class ShowLinksComponent implements OnInit
   {
     this.numeroProduction = -event.target.value;
 
-    var b: boolean = (this.numeroProduction != 0);
+    var b: boolean = (this.numeroProduction == 0);
 
-    if (this.boutonRetirer) { if (b) { this.renderer.removeClass(this.boutonRetirer.nativeElement, 'disabled'); } else { this.renderer.addClass(this.boutonRetirer.nativeElement, 'disabled'); } }
-    if (this.boutonAvancer) { if (b) { this.renderer.removeClass(this.boutonAvancer.nativeElement, 'disabled'); } else { this.renderer.addClass(this.boutonAvancer.nativeElement, 'disabled'); } }
-    if (this.boutonReculer) { if (b) { this.renderer.removeClass(this.boutonReculer.nativeElement, 'disabled'); } else { this.renderer.addClass(this.boutonReculer.nativeElement, 'disabled'); } }
+    if (this.boutonRetirer) { if (b) { this.renderer.addClass(this.boutonRetirer.nativeElement, 'disabled'); } else { this.renderer.removeClass(this.boutonRetirer.nativeElement, 'disabled'); } }
+    if (this.boutonAvancer) { if (b) { this.renderer.addClass(this.boutonAvancer.nativeElement, 'disabled'); } else { this.renderer.removeClass(this.boutonAvancer.nativeElement, 'disabled'); } }
+    if (this.boutonReculer) { if (b) { this.renderer.addClass(this.boutonReculer.nativeElement, 'disabled'); } else { this.renderer.removeClass(this.boutonReculer.nativeElement, 'disabled'); } }
   }
   resetEtatBoutonsLinked()
   {

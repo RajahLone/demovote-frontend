@@ -12,17 +12,17 @@
     <div><small><span i18n>Dans {{ categorie.libelle }}</span></small></div>
     <div class="ms-auto"><small><span i18n>Sans catégorie</span></small></div>
   </div>
-	<div class="card-body"><div class="row align-items-start">
+  <div class="card-body"><div class="hstack align-items-start">
 
     <div class="col">
-      <select class="form-select-sm" size="16" id="selectionLinked" (change)="changeEtatBoutonsLinked($event)">
-      {{ resetLettre() }} @for (prod of linkedProductions; track prod.numeroProduction) { 
+      <select class="form-select-sm" size="16" id="selectionLinked" #selecteurLinked (change)="changeEtatBoutonsLinked($event)">
+      {{ resetLettre() }} @for (prod of linkedProductions; track prod.numeroProduction) {
         <option [value]="prod.numeroProduction">{{ nextLettre() }} - {{ prod.titre }} - {{ prod.auteurs }} / {{ prod.groupes }}</option>
       }
       </select>
     </div>
 
-    <div class="col mx-auto">
+    <div class="col mx-auto" style="padding:7px;">
       <br/><br/>
       <button (click)="lierProduction()" #boutonLier class="btn bg-gradient btn-primary btn-sm boutons disabled"><i class="fa-solid fa-arrow-left"></i>&nbsp;<span i18n>Lier</span></button>
       <hr/>
@@ -34,7 +34,7 @@
     </div>
 
     <div class="col">
-      <select class="form-select-sm" size="16" id="selectionUnlinked" (change)="changeEtatBoutonsUnlinked($event)">
+      <select class="form-select-sm" size="16" id="selectionUnlinked" #selecteurUnlinked (change)="changeEtatBoutonsUnlinked($event)">
       @for (prod of unlinkedProductions; track prod.numeroProduction) {
         <option [value]="prod.numeroProduction"> {{ prod.titre }} - {{ prod.auteurs }} / {{ prod.groupes }}</option>
       }
