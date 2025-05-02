@@ -16,9 +16,27 @@
   <div class="card-body"><div class="hstack align-items-start">
 
     <div class="col">
-      <select class="form-select-sm" size="16" id="selectionChosen" #selecteurChoisis (change)="changeEtatBoutonsChosen($event)">
+      <select class="form-select-sm" size="5" id="selectionChosen" #selecteurChoisis (change)="changeEtatBoutonsChosen($event)">
       {{ resetChiffre() }} @for (prod of chosenProductions; track prod.numeroProduction) {
-        <option [value]="prod.numeroProduction" [disabled]="nombreChoixRestant == -1">{{ nextChiffre() }} - {{ prod.titre }} - {{ prod.auteurs }} / {{ prod.groupes }}</option>
+        <option [value]="prod.numeroProduction" [disabled]="nombreChoixRestant == -1">
+          <div class="card text-truncate" style="margin:3px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                @if (prod.vignette) { <img [src]="prod.vignette" class="img-fluid card-img-top pointeur-souris"> }
+        				@else if (prod.type === types[0].key) { <img src="default/executable.png" class="img-fluid card-img-top pointeur-souris"> }
+        				@else if (prod.type === types[1].key) { <img src="default/graphe.png" class="img-fluid card-img-top pointeur-souris"> }
+        				@else if (prod.type === types[2].key) { <img src="default/musique.png" class="img-fluid card-img-top pointeur-souris"> }
+        				@else if (prod.type === types[3].key) { <img src="default/video.png" class="img-fluid card-img-top pointeur-souris"> }
+        				@else if (prod.type === types[4].key) { <img src="default/topic.png" class="img-fluid card-img-top pointeur-souris"> }
+        				@else if (prod.type === types[5].key) { <img src="default/autre.png" class="img-fluid card-img-top pointeur-souris"> }
+              </div>
+              <div class="col-md-8">
+                <div class="card-header">{{ nextChiffre() }} - {{ prod.titre }}</div>
+                <div class="card-body">{{ prod.auteurs }} / {{ prod.groupes }}</div>
+              </div>
+            </div>
+          </div>
+        </option>
       }
       </select>
     </div>
@@ -35,9 +53,27 @@
     </div>
 
     <div class="col">
-      <select class="form-select-sm" size="16" id="selectionDiscarded" #selecteurProposes (change)="changeEtatBoutonsDiscarded($event)">
+      <select class="form-select-sm" size="5" id="selectionDiscarded" #selecteurProposes (change)="changeEtatBoutonsDiscarded($event)">
       {{ resetLettre() }} @for (prod of linkedProductions; track prod.numeroProduction) {
-        <option [value]="prod.numeroProduction" [disabled]="dejaChoisi(prod.numeroProduction)" [selected]="(numeroProductionPropose === prod.numeroProduction) && (!dejaChoisi(prod.numeroProduction))">{{ nextLettre() }} - {{ prod.titre }} - {{ prod.auteurs }} / {{ prod.groupes }}</option>
+        <option [value]="prod.numeroProduction" [disabled]="dejaChoisi(prod.numeroProduction)" [selected]="(numeroProductionPropose === prod.numeroProduction) && (!dejaChoisi(prod.numeroProduction))">
+          <div class="card text-truncate" [class.opacity-25]="dejaChoisi(prod.numeroProduction)" style="margin:3px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                @if (prod.vignette) { <img [src]="prod.vignette" class="img-fluid card-img-top pointeur-souris"> }
+        				@else if (prod.type === types[0].key) { <img src="default/executable.png" class="img-fluid card-img-top pointeur-souris"> }
+        				@else if (prod.type === types[1].key) { <img src="default/graphe.png" class="img-fluid card-img-top pointeur-souris"> }
+        				@else if (prod.type === types[2].key) { <img src="default/musique.png" class="img-fluid card-img-top pointeur-souris"> }
+        				@else if (prod.type === types[3].key) { <img src="default/video.png" class="img-fluid card-img-top pointeur-souris"> }
+        				@else if (prod.type === types[4].key) { <img src="default/topic.png" class="img-fluid card-img-top pointeur-souris"> }
+        				@else if (prod.type === types[5].key) { <img src="default/autre.png" class="img-fluid card-img-top pointeur-souris"> }
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">{{ nextLettre() }} - {{ prod.titre }}</div>
+                <div class="card-body">{{ prod.auteurs }} / {{ prod.groupes }}</div>
+              </div>
+            </div>
+          </div>
+        </option>
       }
       </select>
     </div>

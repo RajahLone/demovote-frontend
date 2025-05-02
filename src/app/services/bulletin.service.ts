@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs';
 
 import { Environnement } from '../env';
-import { ProductionItem } from '../interfaces/production';
+import { ProductionChoice } from '../interfaces/production';
 import { Message } from '../interfaces/divers';
 
 @Injectable({ providedIn: 'root' })
@@ -19,7 +19,8 @@ export class BulletinService
 
   validateChoices(id: number): Observable<Message> { return this.httpClient.get<Message>(`${this.baseURL}/validate/${id}`); }
 
-  getChosenProductions(id: number): Observable<ProductionItem[]> { return this.httpClient.get<ProductionItem[]>(`${this.baseURL}/list/${id}`); }
+  getChosenProductions(id: number): Observable<ProductionChoice[]> { return this.httpClient.get<ProductionChoice[]>(`${this.baseURL}/list-chosen/${id}`); }
+  getLinkedProductions(id: number): Observable<ProductionChoice[]> { return this.httpClient.get<ProductionChoice[]>(`${this.baseURL}/list-linked/${id}`); }
 
   choisirProduction(id_cat: number, id_prod: number): Observable<Object>
   {

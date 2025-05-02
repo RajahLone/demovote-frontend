@@ -71,6 +71,18 @@ export class ProductionItem
   numeroOrdre: number = 0;
 }
 
+export class ProductionChoice
+{
+  numeroProduction: number = 0;
+  type: string = "AUTRE";
+  titre: string = "";
+  auteurs: string = "";
+  groupes: string = "";
+  plateforme: string = "";
+  numeroOrdre: number = 0;
+  vignette!: string | any;
+}
+
 export class PresentationFile
 {
   numeroProduction: number = 0;

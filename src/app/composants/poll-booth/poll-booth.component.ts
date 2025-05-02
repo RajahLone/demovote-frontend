@@ -5,8 +5,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { MenuComponent } from '../menu/menu.component';
 import { Categorie } from '../../interfaces/categorie';
 import { CategorieService } from '../../services/categorie.service';
-import { ProductionItem, ProductionEnum } from '../../interfaces/production';
-import { PresentationService } from '../../services/presentation.service';
+import { ProductionChoice, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { BulletinService } from '../../services/bulletin.service';
 
 @Component({ selector: 'app-poll-booth', imports: [FormsModule, MenuComponent], templateUrl: './poll-booth.component.html', styleUrl: './poll-booth.component.css' })
@@ -25,17 +24,18 @@ export class PollBoothComponent  implements OnInit
   numeroCategorie: number = 0;
   categorie: Categorie = new Categorie();
 
+  types: ProductionEnum[] = ProductionTypeList;
+
   numeroProductionChoisie: number = 0;
-  chosenProductions: ProductionItem[] = [];
+  chosenProductions: ProductionChoice[] = [];
 
   numeroProductionPropose: number = 0;
-  linkedProductions: ProductionItem[] = [];
+  linkedProductions: ProductionChoice[] = [];
 
   nombreChoixRestant: number = 0;
 
   constructor(
     private categorieService: CategorieService,
-    private presentationService: PresentationService,
     private bulletinService: BulletinService,
     private route: ActivatedRoute,
     private router: Router,
@@ -56,7 +56,7 @@ export class PollBoothComponent  implements OnInit
 
   private retreiveDatas() { this.bulletinService.getRemainingChoices(this.numeroCategorie).subscribe(ret => { this.nombreChoixRestant = Number('' + ret); this.retreiveDatas1(); }); }
   private retreiveDatas1() { this.bulletinService.getChosenProductions(this.numeroCategorie).subscribe(data => { this.chosenProductions = data; this.retreiveDatas2(); }); }
-  private retreiveDatas2() { this.presentationService.getLinkedProductions(this.numeroCategorie).subscribe(data => { this.linkedProductions = data; this.resetSelections(); }); }
+  private retreiveDatas2() { this.bulletinService.getLinkedProductions(this.numeroCategorie).subscribe(data => { this.linkedProductions = data; this.resetSelections(); }); }
   private resetSelections() { if (this.selecteurProposes) { this.selecteurProposes.nativeElement.selectedIndex = -1; } }
 
   indexChiffre: number = 0;
