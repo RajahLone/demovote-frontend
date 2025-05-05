@@ -34,4 +34,6 @@ export class CategorieService
 
   cloreScrutins(): Observable<Object>{ return this.httpClient.get(`${this.baseURL}/close-polls`); }
 
+  publierVotes(): Observable<Object>{ return this.httpClient.get(`${this.baseURL}/show-results`); }
+
 }

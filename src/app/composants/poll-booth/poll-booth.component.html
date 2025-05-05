@@ -8,6 +8,7 @@
   <div class="card-header shadow-sm">
 		<button type="button" (click)="goToListVotes()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-xmark"></i>&nbsp;<span i18n>Retour</span></button>
     @if (nombreChoixRestant != -1) { <button type="button" [disabled]="chosenProductions.length == 0" class="btn bg-gradient btn-danger btn-sm" style="margin-right: 5px;" data-bs-toggle="modal" data-bs-target="#modalValider"><i class="fa-solid fa-check"></i>&nbsp;<span i18n>Valider</span></button> }
+    @if (nombreChoixRestant == -1) { <button type="button" disabled class="btn bg-gradient btn-success btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-check"></i>&nbsp;<span i18n>Validé</span></button> }
 	</div>
   <div class="card-body hstack">
     <div><small><span i18n>Productions préférées</span></small></div>

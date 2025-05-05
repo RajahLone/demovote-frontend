@@ -1,30 +1,42 @@
 <app-menu></app-menu>
 <div id="main">
   <div class="card shadow">
-    <div class="card-header"><span i18n>Votes</span></div>
+    <div class="card-header"><span i18n>Voter</span></div>
   	<div class="card-header shadow-sm">
   		<div class="row">
   			<div class="form-group col-sm-4 label-nobr">
   				<button type="button" (click)="goToRefreshListCategorie()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;<span i18n>Actualiser</span></button>
-          @if (this.logged && (this.role === "ADMIN")) { <button type="button" #boutonCloturer class="btn bg-gradient btn-danger btn-sm disabled" style="margin-right: 5px;" data-bs-toggle="modal" data-bs-target="#modalFermerVotes"><i class="fa-solid fa-lock"></i>&nbsp;<span i18n>Clôturer les votes</span></button> }
+          @if (this.logged && (this.role === "ADMIN")) {
+          <button type="button" #boutonCloturer class="btn bg-gradient btn-danger btn-sm disabled" style="margin-right: 5px;" i18n-tootip tooltip="Fermeture des urnes et validation automatique des choix" placement="right" container="body" data-bs-toggle="modal" data-bs-target="#modalFermerVotes"><i class="fa-solid fa-lock"></i>&nbsp;<span i18n>Clôturer les votes</span></button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" #imprimerResultats (click)="getResultatsPDF()" class="btn bg-gradient btn-primary btn-sm disabled" style="margin-right: 5px;" i18n-tootip tooltip="Télécharger le PDF contenant les résultats pour impression" placement="right" container="body"><i class="fa-solid fa-file-pdf"></i>&nbsp;<span i18n>Imprimer les résultats</span></button>
+          <button type="button" #boutonResultats class="btn bg-gradient btn-danger btn-sm disabled" style="margin-right: 5px;" i18n-tootip tooltip="Publier l'ensemble des résultats aux participants" placement="right" container="body" data-bs-toggle="modal" data-bs-target="#modalAfficherResultats"><i class="fa-solid fa-trophy"></i>&nbsp;<span i18n>Afficher les résultats</span></button>
+          }
   			</div>
   		</div>
   	</div>
-  	<div class="card-body">
-  		<table class="table table-sm">
-  			<thead class="thead-dark">
-  				<tr>
-            <th class="fs-6 label-nobr"><small><span i18n>Catégorie</span></small></th>
-  				</tr>
-  			</thead>
+    <div class="card-body"><br/>
+      @if (this.affiches > 0) {
+      <table>
   			<tbody>
-  				@for (categorie of categories; track categorie.numeroCategorie) { @if (categorie.pollable) {
+          @for (categorie of categories; track categorie.numeroCategorie) { @if (categorie.pollable || (this.logged && (this.role === "ADMIN") && (categorie.computed))) {
   				<tr>
-            <td class="label-nobr"><a (click)="voteCategorie(categorie.numeroCategorie)" class="link-primary pointeur-souris text-decoration-none">{{ categorie.libelle }}</a>&nbsp;&nbsp;</td>
+            <td class="label-nobr fs-3" style="height:30px;vertical-align:center;">
+              <i class="fa-solid fa-list-ol text-body-tertiary"></i>&nbsp;<a (click)="voteCategorie(categorie.numeroCategorie)" class="link-primary pointeur-souris text-decoration-none">{{ categorie.libelle }}</a>
+            </td>
+            <td class="label-nobr" style="height:30px;vertical-align:center;">
+              @if (this.logged && (this.role === "ADMIN") && (categorie.computed)) {
+              <button type="button" (click)="getDiaporama(categorie.numeroCategorie, categorie.libelle)" class="btn bg-gradient btn-primary btn-sm" style="margin-left: 48px;" i18n-tootip tooltip="Télécharger le diaporama HTML contenant les résultats de cette catégorie" placement="right" container="body"><i class="fa-solid fa-file-code"></i>&nbsp;<span i18n>Diaporama</span></button>
+              }
+            </td>
   				</tr>
           } }
   			</tbody>
   		</table>
+      }
+      @else {
+      <span i18n><br/>Aucune catégorie soumise au vote pour le moment.<br/><br/></span>
+      }<br/>
   	</div>
   </div>
 
@@ -42,6 +54,24 @@
         <div class="modal-footer">
           <button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal"><span i18n>Annuler</span></button>
           <button type="button" class="btn bg-gradient btn-danger btn-sm" (click)="fermerVotes()" data-bs-dismiss="modal"><span i18n>Confirmer</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modalAfficherResultats" tabindex="-1" aria-labelledby="modalAfficherResultatsTitre" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-danger" id="modalAfficherResultatsTitre"><span i18n>Publier les résultats</span></h5>
+        </div>
+        <div class="modal-body">
+          <span i18n>
+            Pour l'ensemble des catégories.
+          </span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal"><span i18n>Annuler</span></button>
+          <button type="button" class="btn bg-gradient btn-danger btn-sm" (click)="publierVotes()" data-bs-dismiss="modal"><span i18n>Confirmer</span></button>
         </div>
       </div>
     </div>

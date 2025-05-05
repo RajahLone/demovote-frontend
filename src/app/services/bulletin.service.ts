@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http'
+import { HttpClient, HttpParams, HttpHeaders, HttpResponse } from '@angular/common/http'
 import { Observable } from 'rxjs';
 
 import { Environnement } from '../env';
@@ -60,6 +60,24 @@ export class BulletinService
     params = params.append('id_prod', id_prod);
 
     return this.httpClient.get(`${this.baseURL}/down`, { params: params });
+  }
+
+  getResultatsPDF(): Observable<HttpResponse<Blob>>
+  {
+    let headers = new HttpHeaders();
+
+    headers = headers.append('Accept', 'application/pdf');
+
+    return this.httpClient.get(`${this.baseURL}/file`, { headers: headers, observe: 'response', responseType: 'blob' });
+  }
+
+  getResultatsHTML(id: number): Observable<HttpResponse<Blob>>
+  {
+    let headers = new HttpHeaders();
+
+    headers = headers.append('Accept', 'text/html');
+
+    return this.httpClient.get(`${this.baseURL}/diapos/${id}`, { headers: headers, observe: 'response', responseType: 'blob' });
   }
 
 }
