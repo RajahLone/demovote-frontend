@@ -6,6 +6,7 @@
   		<div class="row">
   			<div class="form-group col-sm-4 label-nobr">
   				<button type="button" (click)="goToRefreshListCategorie()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;<span i18n>Actualiser</span></button>
+          @if (this.logged && (this.role === "ADMIN")) { <button type="button" #boutonCloturer class="btn bg-gradient btn-danger btn-sm disabled" style="margin-right: 5px;" data-bs-toggle="modal" data-bs-target="#modalFermerVotes"><i class="fa-solid fa-lock"></i>&nbsp;<span i18n>Clôturer les votes</span></button> }
   			</div>
   		</div>
   	</div>
@@ -25,5 +26,24 @@
   			</tbody>
   		</table>
   	</div>
+  </div>
+
+  <div class="modal fade" id="modalFermerVotes" tabindex="-1" aria-labelledby="modalFermerVotesTitre" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-danger" id="modalFermerVotesTitre"><span i18n>Clôturer tous les scrutins</span></h5>
+        </div>
+        <div class="modal-body">
+          <span i18n>
+            Les participants ne pourront plus voter pour l'ensemble des catégories. Les choix en cours seront validés automatiquement. Les résultats seront calculés et en attente pour une prochaine publication.
+          </span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal"><span i18n>Annuler</span></button>
+          <button type="button" class="btn bg-gradient btn-danger btn-sm" (click)="fermerVotes()" data-bs-dismiss="modal"><span i18n>Confirmer</span></button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

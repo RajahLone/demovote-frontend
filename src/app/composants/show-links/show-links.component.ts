@@ -66,7 +66,7 @@ export class ShowLinksComponent implements OnInit
   {
     this.numeroProduction = event.target.value;
 
-    var b: boolean = (this.numeroProduction == 0);
+    var b: boolean = (this.numeroProduction == 0) || (this.categorie.pollable);
 
     if (this.boutonLier) { if (b) { this.renderer.addClass(this.boutonLier.nativeElement, 'disabled'); } else { this.renderer.removeClass(this.boutonLier.nativeElement, 'disabled'); } }
   }
@@ -79,7 +79,7 @@ export class ShowLinksComponent implements OnInit
   {
     this.numeroProduction = -event.target.value;
 
-    var b: boolean = (this.numeroProduction == 0);
+    var b: boolean = (this.numeroProduction == 0) || (this.categorie.pollable);
 
     if (this.boutonRetirer) { if (b) { this.renderer.addClass(this.boutonRetirer.nativeElement, 'disabled'); } else { this.renderer.removeClass(this.boutonRetirer.nativeElement, 'disabled'); } }
     if (this.boutonAvancer) { if (b) { this.renderer.addClass(this.boutonAvancer.nativeElement, 'disabled'); } else { this.renderer.removeClass(this.boutonAvancer.nativeElement, 'disabled'); } }

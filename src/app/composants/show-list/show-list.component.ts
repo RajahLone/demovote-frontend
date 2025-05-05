@@ -58,4 +58,6 @@ export class ShowListComponent implements OnInit
   getFile(id: number, nom: string) { this.productionService.getProductionFile(id).subscribe(response => { this.saveFile(response.body, nom); }); }
   saveFile(data: any, filename?: string) { const blob = new Blob([data], {type: 'application/zip'}); saveAs(blob, filename); }
 
+  ouvrirScrutin(id: number) { this.categorieService.ouvrirScrutin(id).subscribe(() => { this.goToRefreshListCategorie(); }); }
+
 }

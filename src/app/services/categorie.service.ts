@@ -30,4 +30,8 @@ export class CategorieService
 
   deleteCategorie(id: number): Observable<Object>{ return this.httpClient.delete(`${this.baseURL}/delete/${id}`); }
 
+  ouvrirScrutin(id: number): Observable<Object>{ return this.httpClient.get(`${this.baseURL}/open-poll/${id}`); }
+
+  cloreScrutins(): Observable<Object>{ return this.httpClient.get(`${this.baseURL}/close-polls`); }
+
 }

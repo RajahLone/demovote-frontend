@@ -15,15 +15,16 @@
 @for (categorie of categories; track categorie.numeroCategorie) { @if (categorie.available) {
 <div class="card shadow">
   <div class="card-header shadow-sm">
-    {{ categorie.libelle }}&nbsp;&nbsp;&nbsp;&nbsp;
-    @if (!categorie.pollable) {
+    {{ categorie.libelle }}
+    @if (!categorie.pollable) { &nbsp;&nbsp;&nbsp;&nbsp;
       <button type="button" (click)="lierProductions(categorie.numeroCategorie)" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Rattacher des productions à cette catégorie et les ordonner" placement="right" container="body"><i class="fa-solid fa-link"></i>&nbsp;<span i18n>Rattacher</span></button>
       <button type="button" (click)="getDiaporama(categorie.numeroCategorie, categorie.libelle)" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Télécharger le fichier de présentations de cette catégorie" placement="right" container="body"><i class="fa-solid fa-file-code"></i>&nbsp;<span i18n>Diaporama</span></button>
+      <button type="button" [disabled]="productions.length == 0" class="btn bg-gradient btn-danger btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Ouvrir le scrutin, après que le présentateur a utilisé le diaporama publiquement" placement="right" container="body" data-bs-toggle="modal" [attr.data-bs-target]="'#modalOuvrirVotes' + categorie.numeroCategorie"><i class="fa-solid fa-check-to-slot"></i>&nbsp;<span i18n>Ouvrir les votes</span></button>
     }
     @if (categorie.uploadable) { }
-    @if (categorie.pollable) { }
-    @if (categorie.computed) { }
-    @if (categorie.displayable) { }
+    @if (categorie.pollable) { <span i18n> : le scrutin est ouvert. </span> }
+    @if (categorie.computed) {  <span i18n> : le scrutin est fermé, les résultats sont calculés. </span> }
+    @if (categorie.displayable) { <span i18n> : les résultats sont publiés. </span> }
   </div>
   <div class="card-body hstack align-items-baseline show_row">
 {{ resetLettre() }} @for (production of productions; track production.numeroProduction) { @if (categorie.numeroCategorie == production.numeroCategorie) {
@@ -55,6 +56,24 @@
 } }
   </div>
 </div>
-} }
 
+<div class="modal fade" [attr.id]="'modalOuvrirVotes' + categorie.numeroCategorie" tabindex="-1" aria-labelledby="modalOuvrirVotesTitre" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+        <h5 class="modal-title text-danger" id="modalOuvrirVotesTitre"><span i18n>Ouvrir les votes pour {{ categorie.libelle }}</span></h5>
+			</div>
+      <div class="modal-body">
+        <span i18n>
+          A enclencher une fois que le diaporama ait été affiché publiquement, et les productions de cette catégorie présentées par la régie.
+        </span>
+      </div>
+			<div class="modal-footer">
+				<button type="button" class="btn bg-gradient btn-secondary btn-sm" data-bs-dismiss="modal"><span i18n>Annuler</span></button>
+        <button type="button" class="btn bg-gradient btn-danger btn-sm" (click)="ouvrirScrutin(categorie.numeroCategorie)" data-bs-dismiss="modal"><span i18n>Confirmer</span></button>
+			</div>
+		</div>
+	</div>
+</div>
+} }
 </div>

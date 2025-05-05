@@ -34,7 +34,7 @@
     </div>
 
     <div class="col">
-      <select class="form-select-sm" size="16" id="selectionUnlinked" #selecteurUnlinked (change)="changeEtatBoutonsUnlinked($event)">
+      <select class="form-select-sm" size="16" id="selectionUnlinked" #selecteurUnlinked (change)="changeEtatBoutonsUnlinked($event)" [class.disabled]="categorie.pollable">
       @for (prod of unlinkedProductions; track prod.numeroProduction) {
         <option [value]="prod.numeroProduction"> {{ prod.titre }} - {{ prod.auteurs }} / {{ prod.groupes }}</option>
       }
