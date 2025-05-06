@@ -1,4 +1,4 @@
-@if (!this.logged) {
+@if (!logged) {
 
 <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" id="sidenav">
   <ul class="nav nav-pills nav-flush flex-column text-center">
@@ -9,7 +9,7 @@
 	</ul>
 </div><div #signouticon class="d-none"></div>
 
-} @else if (this.logged && (this.role === "USER")) {
+} @else if (logged && (role === "USER")) {
 
 <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" id="sidenav">
   <ul class="nav nav-pills nav-flush flex-column text-center">
@@ -28,7 +28,7 @@
 	</ul>
 </div>
 
-} @else if (this.logged && (this.role === "ORGA")) {
+} @else if (logged && (role === "ORGA")) {
 
 <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" id="sidenav">
   <ul class="nav nav-pills nav-flush flex-column text-center">
@@ -48,7 +48,7 @@
 	</ul>
 </div>
 
-} @else if (this.logged && (this.role === "ADMIN")) {
+} @else if (logged && (role === "ADMIN")) {
 
 <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" id="sidenav">
   <ul class="nav nav-pills nav-flush flex-column text-center">
@@ -73,7 +73,7 @@
 </div>
 
 }
-@if (this.logged) {
+@if (logged) {
 
 <div class="modal fade" id="modalDeconnecter" tabindex="-1" aria-labelledby="modalDeconnecterTitre" aria-hidden="false">
 	<div class="modal-dialog modal-dialog-centered" role="document">

@@ -16,16 +16,16 @@
   		</div>
   	</div>
     <div class="card-body"><br/>
-      @if (this.affiches > 0) {
+      @if ((affiches > 0) || (logged && (this.role === "ADMIN") && (calcules > 0))) {
       <table>
   			<tbody>
-          @for (categorie of categories; track categorie.numeroCategorie) { @if (categorie.pollable || (this.logged && (this.role === "ADMIN") && (categorie.computed))) {
+          @for (categorie of categories; track categorie.numeroCategorie) { @if (categorie.pollable || (logged && (role === "ADMIN") && categorie.computed)) {
   				<tr>
             <td class="label-nobr fs-3" style="height:30px;vertical-align:center;">
-              <i class="fa-solid fa-list-ol text-body-tertiary"></i>&nbsp;<a (click)="voteCategorie(categorie.numeroCategorie)" class="link-primary pointeur-souris text-decoration-none">{{ categorie.libelle }}</a>
+              <i class="fa-solid fa-list-ol text-body-tertiary"></i>&nbsp; @if (categorie.pollable) { <a (click)="voteCategorie(categorie.numeroCategorie)" class="link-primary pointeur-souris text-decoration-none"> {{ categorie.libelle }} </a> } @else { {{ categorie.libelle }} }
             </td>
             <td class="label-nobr" style="height:30px;vertical-align:center;">
-              @if (this.logged && (this.role === "ADMIN") && (categorie.computed)) {
+              @if (logged && (role === "ADMIN") && categorie.computed) {
               <button type="button" (click)="getDiaporama(categorie.numeroCategorie, categorie.libelle)" class="btn bg-gradient btn-primary btn-sm" style="margin-left: 48px;" i18n-tootip tooltip="Télécharger le diaporama HTML contenant les résultats de cette catégorie" placement="right" container="body"><i class="fa-solid fa-file-code"></i>&nbsp;<span i18n>Diaporama</span></button>
               }
             </td>
