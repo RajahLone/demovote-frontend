@@ -78,10 +78,10 @@ export class PollListComponent implements OnInit
 
   fermerVotes() { if (this.logged && (this.role === "ADMIN")) { this.categorieService.cloreScrutins().subscribe(() => { this.goToRefreshListCategorie(); }); } }
 
-  getResultatsPDF() { this.bulletinService.getResultatsPDF().subscribe(response => { this.savePDF(response.body, 'resultats.pdf'); }); }
+  getResultatsPDF() { this.bulletinService.getResultatsPDF().subscribe(response => { this.savePDF(response.body, 'ranks.all.pdf'); }); }
   savePDF(data: any, filename?: string) { const blob = new Blob([data], {type: 'application/pdf'}); saveAs(blob, filename); }
 
-  getDiaporama(id: number, nom: string) { this.bulletinService.getResultatsHTML(id).subscribe(response => { this.saveHTML(response.body, nom + '.html'); }); }
+  getDiaporama(id: number, nom: string) { this.bulletinService.getResultatsHTML(id).subscribe(response => { this.saveHTML(response.body, 'ranks.' + nom + '.html'); }); }
   saveHTML(data: any, filename?: string) { const blob = new Blob([data], {type: 'text/html'}); saveAs(blob, filename); }
 
   publierVotes() { if (this.logged && (this.role === "ADMIN")) { this.categorieService.publierVotes().subscribe(() => { this.goToRefreshListCategorie(); }); } }

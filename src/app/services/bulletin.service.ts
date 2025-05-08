@@ -3,7 +3,7 @@ import { HttpClient, HttpParams, HttpHeaders, HttpResponse } from '@angular/comm
 import { Observable } from 'rxjs';
 
 import { Environnement } from '../env';
-import { ProductionChoice } from '../interfaces/production';
+import { ProductionChoice, ProductionVote } from '../interfaces/production';
 import { Message } from '../interfaces/divers';
 
 @Injectable({ providedIn: 'root' })
@@ -79,5 +79,8 @@ export class BulletinService
 
     return this.httpClient.get(`${this.baseURL}/diapos/${id}`, { headers: headers, observe: 'response', responseType: 'blob' });
   }
+
+  getResultats(id: number): Observable<ProductionVote[]> { return this.httpClient.get<ProductionVote[]>(`${this.baseURL}/results/${id}`); }
+  getNombreVotants(id: number): Observable<Object> { return this.httpClient.get<Object>(`${this.baseURL}/count-voters/${id}`); }
 
 }

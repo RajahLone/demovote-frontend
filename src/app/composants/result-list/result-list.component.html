@@ -11,20 +11,36 @@
   	</div>
   	<div class="card-body">
   		<table class="table table-sm">
-  			<thead class="thead-dark">
+        <thead class="thead-dark">
   				<tr>
-            <th class="fs-6 label-nobr"><small><span i18n>Catégorie</span></small></th>
-            <th class="fs-6 label-nobr"><small><span i18n>TODO : tout sur même page</span></small></th>
+            <th class="fs-6 label-nobr"><small><p i18n>Catégorie</p><p>&nbsp;</p></small></th>
+            <th class="fs-6 label-nobr text-sm-end"><small><p i18n>Rang</p><p>&nbsp;</p></small></th>
+            <th class="fs-6 label-nobr"><small><p i18n>Titre</p><p>&nbsp;</p></small></th>
+            <th class="fs-6 label-nobr"><small><p i18n>Auteur(s) / Groupe(s)</p><p>&nbsp;</p></small></th>
+            <th class="fs-6 label-nobr text-sm-end"><small><p i18n>Points</p><p>&nbsp;</p></small></th>
+            <th class="fs-6 label-nobr text-sm-end"><small><p i18n>Nb "First"</p><p>&nbsp;</p></small></th>
   				</tr>
   			</thead>
-  			<tbody>
-  				@for (categorie of categories; track categorie.numeroCategorie) {
+        @for (categorie of categories; track categorie.numeroCategorie; let c = $index) { @if (categories[c].displayable) {
+        <tbody>
+          {{ resetPositions() }} @for (production of productions[c]; track production.numeroProduction; let p = $index;) {  {{ setPositionReelle(c, p) }}
   				<tr>
-            <td class="label-nobr"><a class="link-primary pointeur-souris text-decoration-none">{{ categorie.libelle }}</a>&nbsp;&nbsp;</td>
-  					<td>@if (categorie.displayable) { <i class="fa-solid fa-circle-check text-success"></i> } @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;</td>
+            @if (p == 0) { <td class="fs-5 label-nobr" [attr.rowspan]="$count">{{ categorie.libelle }}&nbsp;&nbsp;&nbsp;</td> }
+            <td class="fs-6 label-nobr text-sm-end"><small>{{ positionReelle }}</small></td>
+            <td class="fs-6">
+              <a (click)="getFile(production.numeroProduction, production.groupes, production.titre)" class="link-primary pointeur-souris text-decoration-none">{{ production.titre }}</a>
+              @if (production.plateforme) { <span class="text-muted">&nbsp;<span i18n>sur</span> {{ production.plateforme }} </span> }</td>
+            <td class="fs-6"><small>{{ production.auteurs }} @if (production.groupes) {  /  {{ production.groupes }} }</small></td>
+            <td class="fs-6 label-nobr text-sm-end"><small>{{ production.nombrePoints }}</small></td>
+            <td class="fs-6 label-nobr text-sm-end"><small>{{ production.nombreFirst }}</small></td>
   				</tr>
-  				}
+          {{ incrementePosition() }} }
+          <tr>
+            <td class="fs-6 label-nobr" colspan="4">&nbsp;</td>
+            <td class="fs-6 label-nobr text-sm-end" colspan="2"><small><p i18n>{{ nombreVotants[c] }} votant(s)</p><p>&nbsp;</p></small></td>
+          </tr>
   			</tbody>
+        } }
   		</table>
   	</div>
   </div>

@@ -83,6 +83,20 @@ export class ProductionChoice
   vignette!: string | any;
 }
 
+export class ProductionVote
+{
+  numeroProduction: number = 0;
+  type: string = "AUTRE";
+  titre: string = "";
+  auteurs: string = "";
+  groupes: string = "";
+  plateforme: string = "";
+  informationsPrivees: string = "";
+  nomGestionnaire: string = "";
+  nombrePoints: number = 0;
+  nombreFirst: number = 0;
+}
+
 export class PresentationFile
 {
   numeroProduction: number = 0;
