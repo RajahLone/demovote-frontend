@@ -35,4 +35,6 @@ export class ParticipantService
 
   deleteParticipant(id: number): Observable<Object>{ return this.httpClient.delete(`${this.baseURL}/delete/${id}`); }
 
+  setParticipantsArrives(ids: Array<number>): Observable<Object>{ return this.httpClient.put(`${this.baseURL}/arrived`, ids); }
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -25,11 +25,16 @@ export class ParticipantListComponent implements OnInit
 
   participants: ParticipantList[] = [];
 
+  @ViewChild('boutonSetArrives', {static: false}) boutonSetArrives!: ElementRef;
+
+  selection: Array<number> = new Array<number>();
+
   constructor(
     private diversService: DiversService,
     private participantService: ParticipantService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private renderer: Renderer2
   ) { }
 
   ngOnInit()
@@ -64,5 +69,24 @@ export class ParticipantListComponent implements OnInit
   goToNewParticipant() { this.router.navigate(['/participant-create']); }
 
   formParticipant(id: number) { this.router.navigate(['/participant-details', id]); }
+
+  modifierSelection(event: any)
+  {
+    const id = event.target.id;
+    if (id)
+    {
+      if (id.startsWith("check_"))
+      {
+        let nu = Number('' + id.substring(6));
+        let nb = 0;
+
+        if (this.selection.includes(nu)) { this.selection = this.selection.filter(it => it !== nu); nb = this.selection.length; } else { nb = this.selection.push(nu); }
+
+        if (this.boutonSetArrives) { if (nb > 0) { this.renderer.removeClass(this.boutonSetArrives.nativeElement, 'disabled'); } else { this.renderer.addClass(this.boutonSetArrives.nativeElement, 'disabled'); } }
+      }
+    }
+  }
+
+  topperArrives() { if (this.selection.length > 0) { this.participantService.setParticipantsArrives(this.selection).subscribe(() => { this.retreiveDatas() }); } }
 
 }

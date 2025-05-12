@@ -16,15 +16,15 @@
 <div class="card shadow">
   <div class="card-header shadow-sm">
     {{ categorie.libelle }}
-    @if (!categorie.pollable) { &nbsp;&nbsp;&nbsp;&nbsp;
+    @if (!categorie.pollable && !categorie.computed && !categorie.displayable) { &nbsp;&nbsp;&nbsp;&nbsp;
       <button type="button" (click)="lierProductions(categorie.numeroCategorie)" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Rattacher des productions à cette catégorie et les ordonner" placement="right" container="body"><i class="fa-solid fa-link"></i>&nbsp;<span i18n>Rattacher</span></button>
       <button type="button" (click)="getDiaporama(categorie.numeroCategorie, categorie.libelle)" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Télécharger le fichier HTML de présentations de cette catégorie" placement="right" container="body"><i class="fa-solid fa-file-code"></i>&nbsp;<span i18n>Diaporama</span></button>
       <button type="button" [disabled]="productions.length == 0" class="btn bg-gradient btn-danger btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Ouvrir le scrutin, après que le présentateur a utilisé le diaporama publiquement" placement="right" container="body" data-bs-toggle="modal" [attr.data-bs-target]="'#modalOuvrirVotes' + categorie.numeroCategorie"><i class="fa-solid fa-check-to-slot"></i>&nbsp;<span i18n>Ouvrir les votes</span></button>
     }
     @if (categorie.uploadable) { }
     @if (categorie.pollable) { <span i18n> : le scrutin est ouvert. </span> }
-    @if (categorie.computed) {  <span i18n> : le scrutin est fermé, les résultats sont calculés. </span> }
-    @if (categorie.displayable) { <span i18n> : les résultats sont publiés. </span> }
+    @else if (categorie.computed) {  <span i18n> : le scrutin est fermé, les résultats sont calculés. </span> }
+    @else if (categorie.displayable) { <span i18n> : les résultats sont publiés. </span> }
   </div>
   <div class="card-body hstack align-items-baseline show_row">
 {{ resetLettre() }} @for (production of productions; track production.numeroProduction) { @if (categorie.numeroCategorie == production.numeroCategorie) {
