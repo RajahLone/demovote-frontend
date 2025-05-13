@@ -6,7 +6,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { MenuComponent } from '../menu/menu.component';
 import { ParticipantList, ParticipantEnum, ParticipantStatutList } from '../../interfaces/participant';
 import { ParticipantService } from '../../services/participant.service';
-import { Journees } from '../../interfaces/divers';
+import { Journees, Pagination } from '../../interfaces/divers';
 import { DiversService } from '../../services/divers.service'
 
 @Component({ selector: 'app-participant-list', imports: [TooltipModule, FormsModule, MenuComponent], templateUrl: './participant-list.component.html', styleUrl: './participant-list.component.css' })
@@ -23,9 +23,12 @@ export class ParticipantListComponent implements OnInit
 
   PS: ParticipantEnum[] = ParticipantStatutList;
 
+  pagination: Pagination = new Pagination();
+  pages: number[] = [1];
   participants: ParticipantList[] = [];
 
   @ViewChild('boutonSetArrives', {static: false}) boutonSetArrives!: ElementRef;
+  @ViewChild('listeParticipants', {static: false}) listeParticipants!: ElementRef;
 
   selection: Array<number> = new Array<number>();
 
@@ -45,7 +48,22 @@ export class ParticipantListComponent implements OnInit
     this.goToRefreshListParticipant();
   }
 
-  private retreiveDatas() { this.participantService.getListParticipant(this.nomFiltre, this.statutFiltre, this.arriveFiltre, this.listeTri).subscribe(data => { this.participants = data; }); }
+  private retreiveDatas(pageVoulue: number)
+  {
+    this.participantService.getPagination(this.nomFiltre, this.statutFiltre, this.arriveFiltre, pageVoulue).subscribe(page =>
+    {
+      this.pagination = page;
+
+      this.pages = [1];
+      if (this.pagination.nombrePages > 1) { for (let i = 2; i <= this.pagination.nombrePages; i++) { this.pages.push(i); } }
+
+      this.participantService.getListParticipant(this.nomFiltre, this.statutFiltre, this.arriveFiltre, this.listeTri, this.pagination.pageCourante, this.pagination.taillePage).subscribe(data =>
+      {
+         this.participants = data;
+         if (this.listeParticipants) { this.listeParticipants.nativeElement.scrollTop = 0; }
+      });
+    });
+  }
 
   getNombreJours(j1: boolean, j2: boolean, j3: boolean)
   {
@@ -56,15 +74,18 @@ export class ParticipantListComponent implements OnInit
   	return nbjours;
   }
 
-  goToRefreshListParticipant() { this.retreiveDatas(); }
+  goToRefreshListParticipant() { this.retreiveDatas(this.pagination.pageCourante); }
+  goToNextPage() { this.retreiveDatas(this.pagination.pageCourante + 1); }
+  goToPrevPage() { this.retreiveDatas(this.pagination.pageCourante - 1); }
+  goToPage(pageVoulue: number) { this.retreiveDatas(pageVoulue); }
 
-  goToFiltrage() { this.retreiveDatas(); }
+  goToFiltrage() { this.retreiveDatas(this.pagination.pageCourante); }
 
-  trier(event: any) { this.listeTri = event.target.value; this.retreiveDatas(); }
-  filtrageParNom() { this.retreiveDatas(); }
-  filtrageParStatut(event: any) { this.statutFiltre = event.target.value; this.retreiveDatas(); }
-  filtrageParArrive(event: any) { this.arriveFiltre = event.target.value; this.retreiveDatas(); }
-  filtrageReset() { this.nomFiltre = ""; this.statutFiltre = 0; this.arriveFiltre = 0; this.retreiveDatas(); }
+  trier(event: any) { this.listeTri = event.target.value; this.retreiveDatas(this.pagination.pageCourante); }
+  filtrageParNom() { this.retreiveDatas(this.pagination.pageCourante); }
+  filtrageParStatut(event: any) { this.statutFiltre = event.target.value; this.retreiveDatas(this.pagination.pageCourante); }
+  filtrageParArrive(event: any) { this.arriveFiltre = event.target.value; this.retreiveDatas(this.pagination.pageCourante); }
+  filtrageReset() { this.nomFiltre = ""; this.statutFiltre = 0; this.arriveFiltre = 0; this.retreiveDatas(this.pagination.pageCourante); }
 
   goToNewParticipant() { this.router.navigate(['/participant-create']); }
 
@@ -87,6 +108,6 @@ export class ParticipantListComponent implements OnInit
     }
   }
 
-  topperArrives() { if (this.selection.length > 0) { this.participantService.setParticipantsArrives(this.selection).subscribe(() => { this.retreiveDatas() }); } }
+  topperArrives() { if (this.selection.length > 0) { this.participantService.setParticipantsArrives(this.selection).subscribe(() => { this.retreiveDatas(this.pagination.pageCourante) }); } }
 
 }

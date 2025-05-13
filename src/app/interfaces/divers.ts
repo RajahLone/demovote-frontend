@@ -18,3 +18,11 @@ export class Journees
   amigabus: boolean = false;
   dodosurplace: boolean = false;
 }
+
+export class Pagination
+{
+  nombreElements:number = 0;
+  taillePage:number = 100;
+  nombrePages:number = 1;
+  pageCourante:number = 0;
+}

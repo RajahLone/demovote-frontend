@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Environnement } from '../env';
 import { Participant, ParticipantList, ParticipantShort } from '../interfaces/participant';
+import { Pagination } from '../interfaces/divers';
 
 @Injectable({ providedIn: 'root' })
 
@@ -13,7 +14,18 @@ export class ParticipantService
 
   constructor(private httpClient: HttpClient) { }
 
-  getListParticipant(filtreNom: string, filtreStatut: number, filtreArrive: number, tri: number): Observable<ParticipantList[]>
+  getPagination(filtreNom: string, filtreStatut: number, filtreArrive: number, page: number): Observable<Pagination>
+  {
+    let params = new HttpParams();
+
+    params = params.append('nom', filtreNom);
+    params = params.append('statut', filtreStatut);
+    params = params.append('arrive', filtreArrive);
+    params = params.append('page', page);
+
+    return this.httpClient.get<Pagination>(`${this.baseURL}/pagination`, { params: params });
+  }
+  getListParticipant(filtreNom: string, filtreStatut: number, filtreArrive: number, tri: number, page: number, size: number): Observable<ParticipantList[]>
   {
     let params = new HttpParams();
 
@@ -21,6 +33,8 @@ export class ParticipantService
     params = params.append('statut', filtreStatut);
     params = params.append('arrive', filtreArrive);
     params = params.append('tri', tri);
+    params = params.append('page', page);
+    params = params.append('size', size);
 
     return this.httpClient.get<Participant[]>(`${this.baseURL}/list`, { params: params });
   }

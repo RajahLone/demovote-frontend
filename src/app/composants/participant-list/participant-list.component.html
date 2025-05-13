@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 <div id="main">
-<div class="card shadow">
-	<div class="card-header"><span i18n>Liste des participants</span></div>
+<div class="card shadow" style="max-height:97vh;">
+	<div class="card-header"><span i18n>Liste des participants : {{pagination.nombreElements}}</span></div>
 	<div class="card-header shadow-sm">
 		<div class="row justify-content-between">
 			<div class="form-group col-sm-2 label-nobr">
@@ -48,7 +48,7 @@
 			</div>
    	</div>
 	</div>
-	<div class="card-body">
+	<div class="card-body table-scrollable" #listeParticipants>
 		<table class="table table-sm">
 			<thead class="thead-dark">
 				<tr>
@@ -87,5 +87,16 @@
 			</tbody>
 		</table>
 	</div>
+	@if (pagination.nombrePages > 1) {
+	<div class="card-footer" style="max-height:54px;">
+		<nav>
+		  <ul class="pagination">
+				<li class="page-item" [class.disabled]="pagination.pageCourante == 0"><a class="page-link" (click)="goToPrevPage()"><i class="fa-solid fa-arrow-left"></i></a></li>
+				@for (p of pages; track p) { <li class="page-item" [class.active]="pagination.pageCourante == (p - 1)"><a class="page-link" (click)="goToPage(p - 1)">{{p}}</a></li> }
+				<li class="page-item" [class.disabled]="pagination.pageCourante == (pagination.nombrePages - 1)"><a class="page-link" (click)="goToNextPage()"><i class="fa-solid fa-arrow-right"></i></a></li>
+		  </ul>
+		</nav>
+	</div>
+	}
 </div>
 </div>
