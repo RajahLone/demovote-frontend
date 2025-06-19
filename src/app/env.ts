@@ -1,5 +1,5 @@
 
 export const Environnement =
 {
-	apiUrl: 'https://localhost:8443/demovote-api/v1/'
+	apiUrl: 'https://www.triplea.fr/demovote-api/v1/'
 };

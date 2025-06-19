@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/co
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http'
-import * as SparkMD5 from 'spark-md5';
+import * as SparkMD5 from 'spark-md5-es';
 
 import { Environnement } from '../../env';
 import { MenuComponent } from '../menu/menu.component';
