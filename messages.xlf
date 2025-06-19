@@ -1,0 +1,2921 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="3996542468246131656" datatype="html">
+        <source>Fiche d&apos;un participant</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8168765646794661881" datatype="html">
+        <source>Retour</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-create/categorie-create.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-details/categorie-details.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-booth/poll-booth.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-upload/production-upload.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-links/show-links.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-create/variable-create.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-details/variable-details.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5976453380036450181" datatype="html">
+        <source>Créé le</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-details/categorie-details.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-details/variable-details.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8690005162837882910" datatype="html">
+        <source>Modifié le</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-details/categorie-details.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-details/variable-details.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5363940464046088994" datatype="html">
+        <source>Profil</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5363451304863092478" datatype="html">
+        <source>Nom</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8203024106711668685" datatype="html">
+        <source>Prénom</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1710348196830286554" datatype="html">
+        <source>Pseudonyme</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/login/login.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5712320245580483957" datatype="html">
+        <source>Groupe</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5249891717669571568" datatype="html">
+        <source>Mot de passe</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/login/login.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1785052497460968940" datatype="html">
+        <source>Modifier</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">197</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">255</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8166761559287030447" datatype="html">
+        <source>Délai avant déconnexion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1815195286714301387" datatype="html">
+        <source>Adresse</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4716513778549226272" datatype="html">
+        <source>Code postal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5407759070423985131" datatype="html">
+        <source>Ville</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7135345516243177577" datatype="html">
+        <source>Pays</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">117</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7542094483332182245" datatype="html">
+        <source>Numéro de téléphone</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">124</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6451366853552763375" datatype="html">
+        <source>Adresse email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8751414212402399949" datatype="html">
+        <source>Inscrit le</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">133</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">149</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1102046622055756860" datatype="html">
+        <source>Avec machine</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">143</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">159</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6375643576873540296" datatype="html">
+        <source>Dort sur place</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">175</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">162</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">180</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">186</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">202</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2721562128840569063" datatype="html">
+        <source>Vient en Amigabus</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">186</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">173</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">191</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">197</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">213</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4952719776065687721" datatype="html">
+        <source>Commentaire</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">193</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">180</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">198</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">204</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">220</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1158164796106814364" datatype="html">
+        <source>Arrivé</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">203</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">190</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">227</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">232</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">248</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1526012245521314857" datatype="html">
+        <source>Editer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-details/account-details.component.html</context>
+          <context context-type="linenumber">210</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-details/categorie-details.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">239</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-details/variable-details.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8749790196107601149" datatype="html">
+        <source>Changement de votre mot de passe</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="457343475543603940" datatype="html">
+        <source>Ancien mot de passe</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2113614545656432333" datatype="html">
+        <source>Par sécurité, l&apos;ancien mot de passe est nécessaire.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1595243664489137760" datatype="html">
+        <source>Nouveau mot de passe</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="29638527039210688" datatype="html">
+        <source>Le nouveau mot de passe est requis.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7213310727164004707" datatype="html">
+        <source>Le mot de passe doit remplir ces conditions :</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6526033870384745001" datatype="html">
+        <source>Au moins une majuscule.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1700366289437103801" datatype="html">
+        <source>Au moins une minuscule.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3706934086313821421" datatype="html">
+        <source>Au moins un caractère spécial parmi #$@!%&amp;*?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1239666150677615743" datatype="html">
+        <source>Au moins un numérique.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1535374903681675967" datatype="html">
+        <source>Entre 8 et 16 caractères.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1234709746630139322" datatype="html">
+        <source>Confirmation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4278582839829908140" datatype="html">
+        <source>La confirmation du nouveau mot de passe (double saisie) est requise.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7769642227093070871" datatype="html">
+        <source>La confirmation n&apos;est pas identique au nouveau mot de passe.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2643638498969436015" datatype="html">
+        <source>Changement du mot de passe ?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1711750570766225138" datatype="html">
+        <source>Annuler</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">210</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">269</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">284</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-booth/poll-booth.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-list/poll-list.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-list/poll-list.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">128</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-upload/production-upload.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-list/show-list.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">136</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4247263368529700262" datatype="html">
+        <source>Confirmer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-password/account-password.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">211</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">270</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">285</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-booth/poll-booth.component.html</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-list/poll-list.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-list/poll-list.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">129</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-upload/production-upload.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-list/show-list.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5110775922928231258" datatype="html">
+        <source>Modification</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">206</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="950357080467930295" datatype="html">
+        <source>Actualiser cet enregistrement ?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/account-update/account-update.component.html</context>
+          <context context-type="linenumber">208</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">267</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1056975647247811549" datatype="html">
+        <source>Fiche d&apos;une catégorie</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-create/categorie-create.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-details/categorie-details.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1167969454663460101" datatype="html">
+        <source>Libellé</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-create/categorie-create.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-details/categorie-details.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-list/categorie-list.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7126705387324369355" datatype="html">
+        <source>Numéro d&apos;ordre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-create/categorie-create.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-details/categorie-details.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9067456695925284781" datatype="html">
+        <source>Disponible</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-create/categorie-create.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-details/categorie-details.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-list/categorie-list.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7709172455474905808" datatype="html">
+        <source>Téléversable</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-create/categorie-create.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-details/categorie-details.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-list/categorie-list.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8451694533752444073" datatype="html">
+        <source>Vote ouvert</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-create/categorie-create.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-details/categorie-details.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-list/categorie-list.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6152762083501726958" datatype="html">
+        <source>Vote calculé</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-create/categorie-create.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-details/categorie-details.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8410333980120061505" datatype="html">
+        <source>Vote publié</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-create/categorie-create.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-details/categorie-details.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-list/categorie-list.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9222330152375559662" datatype="html">
+        <source>Créer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-create/categorie-create.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-list/categorie-list.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">234</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.html</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.ts</context>
+          <context context-type="linenumber">145</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-list/production-list.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-create/variable-create.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-list/variable-list.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2504378199361638969" datatype="html">
+        <source>Table des catégories</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-list/categorie-list.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5925860946277274949" datatype="html">
+        <source>Actualiser</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-list/categorie-list.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-list/poll-list.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-list/production-list.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/result-list/result-list.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-list/show-list.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-list/variable-list.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2730628440070513438" datatype="html">
+        <source>Vote terminé</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-list/categorie-list.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3052621220241641308" datatype="html">
+        <source>Effacer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">256</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5590943340189881231" datatype="html">
+        <source>Modification d&apos;une catégorie</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2421039405005930878" datatype="html">
+        <source>Suppression d&apos;une catégorie</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">116</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4183980712617713140" datatype="html">
+        <source>Effacer cet enregistrement ?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/categorie-update/categorie-update.component.html</context>
+          <context context-type="linenumber">118</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">282</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">126</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6057304257996895574" datatype="html">
+        <source>Boudoir conversationnel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/chat/chat.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7243381769177289361" datatype="html">
+        <source>Envoyer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/chat/chat.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1702244540532449733" datatype="html">
+        <source>Destinataire(s)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/chat/chat.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4704452274154866936" datatype="html">
+        <source>en privé, pour</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/chat/chat.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="685129412007780953" datatype="html">
+        <source>Planning des conférences et événements</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1120143653751351666" datatype="html">
+        <source>Soumis à modifications, merci de consulter cette page régulièrement.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2609657349142956801" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>08h00 : Ouverture officielle<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">21,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2977558102738391623" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>11h00 - 11h45 : Haiku, enfin majeur ?<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8433111789176810569" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>12h00 : Déjeuner<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">106,107</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">185,186</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6178863647790369161" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>14h00 : Annonce Fast Compo<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6327658467196008207" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>14h30 - 15h15 : Présentation du jeu Wind Edge sur ColecoVision<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">40,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3637709757937701278" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>15h45 - 16h30 : La voix avec Common Voice<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">45,46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="184699030321634158" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>17h00 - 17h45 : Conversion d&apos;images en couleurs étendues sur Amstrad Plus<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">50,51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6032920339548111610" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>18h00 - 18h45 : Nom de Zeus ! Le Web a 30 ans !<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">55,56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5964644189073210441" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>19h30 : Souper<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">60,61</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">144,145</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4994180503611740675" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>22h00 : Rétro Quizz Game<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">65,66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="681194814364870369" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>03h00 - 09h00 : Pause régie<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">81,82</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">166,167</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5331679494147934416" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>06h30 - 10h30 : Petit-déjeuner<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">86,87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">171,172</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4754691335172090952" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>09h30 - 10h15 : Projet d&apos;épreuve Hacking CTF<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">91,92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1026093338037805918" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>10h45 - 11h30 : MorphOS 3.12<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">96,97</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="258524090984228945" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>11h00 - 12h00 : Assemblée Générale de l&apos;association <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;http://www.afle.org/&quot; target=&quot;_blank&quot;&gt;"/>AFLE<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">101,102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="660502689456389848" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>14h00 - 17h00 : Ouverture au public<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">111,114</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5775622795933466544" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>14h30 - 15h15 : Gamedev d&apos;un jeu sur Amstrad+/GX4000<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">115,116</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="927756938030457720" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>15h30 - 16h30 : Assemblée Générale de l&apos;association <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;http://www.warmup-asso.fr/&quot; target=&quot;_blank&quot;&gt;"/>WArMUp<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">120,123</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2553896010522928966" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>15h45 - 16h30 : La Vampire<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">124,125</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5972713569228866586" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>17h00 - 17h45 : AmigaOS 4.1<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">129,130</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">134,135</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3745144755291474189" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>18h00 : Deadline générale<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">139,140</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7231831083836164922" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>23h00 : Demo Show<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">149,150</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6857116758355833312" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>10h00 : Fin des votes<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">176,177</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7878729748667591787" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>11h00 : Remise des lots, puis remerciements<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">181,184</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4311090185661364908" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>16h00 : Fermeture officielle<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/event-list/event-list.component.html</context>
+          <context context-type="linenumber">190,193</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1729406214519639874" datatype="html">
+        <source>Bienvenue</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/home/home.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5845195747053018413" datatype="html">
+        <source>Merci de vous <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;/login&quot;&gt;"/>connecter<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> pour accéder à plus de fonctionnalités.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/home/home.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8655142270609867079" datatype="html">
+        <source>S&apos;identifier</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/login/login.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3217091174956027243" datatype="html">
+        <source>La différence minuscules-majuscules est prise en compte.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/login/login.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6801292697750251274" datatype="html">
+        <source>Indiquez celui fourni lors de l&apos;inscription.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>S&apos;il est commun à d&apos;autres participants, merci de contacter l&apos;administrateur.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/login/login.component.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8116179437952488503" datatype="html">
+        <source>Merci de contacter l&apos;administrateur si vous l&apos;avez oublié ou ne le connaissez pas.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/login/login.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2454050363478003966" datatype="html">
+        <source>Login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/login/login.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3476583629594890489" datatype="html">
+        <source>Accueil</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6668584344316209309" datatype="html">
+        <source>Planning</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3419967175702537737" datatype="html">
+        <source>Caméras</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2332866508838027590" datatype="html">
+        <source>Compte</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3797778920049399855" datatype="html">
+        <source>Logout</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4883750697490748201" datatype="html">
+        <source>Messagerie</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5697499845932268849" datatype="html">
+        <source>Productions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="835836004237796752" datatype="html">
+        <source>Voter</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-list/poll-list.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4873897997619847055" datatype="html">
+        <source>Résultats</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/result-list/result-list.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3481736869685494304" datatype="html">
+        <source>Participants</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7860595597926666929" datatype="html">
+        <source>Catégories</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4739496835866797007" datatype="html">
+        <source>Présentations</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1443789630753458022" datatype="html">
+        <source>Paramétrages</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2056113439223170910" datatype="html">
+        <source>Voulez-vous vous déconnecter ?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/menu/menu.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7549066573921150406" datatype="html">
+        <source>Groupe(s)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5611592591303869712" datatype="html">
+        <source>Status</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">138</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4598762061603761080" datatype="html">
+        <source>Mode de paiement</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">205</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">211</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">227</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5192310602568960435" datatype="html">
+        <source>Somme reçue</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-create/participant-create.component.html</context>
+          <context context-type="linenumber">216</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-details/participant-details.component.html</context>
+          <context context-type="linenumber">222</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">238</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3163161391248442115" datatype="html">
+        <source>Liste des participants : <x id="INTERPOLATION" equiv-text="{{pagination.nombreElements}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1282994318817342167" datatype="html">
+        <source>Déclarer les participants sélectionnés comme arrivés</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1567622469042528376" datatype="html">
+        <source>Sont arrivés</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6312279753327141624" datatype="html">
+        <source>Tri</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1005198589167566031" datatype="html">
+        <source>par nom, prénom, pseudo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4952631785212667246" datatype="html">
+        <source>par ordre d&apos;inscription</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="673430564078029527" datatype="html">
+        <source>Filtrer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6462245428999877270" datatype="html">
+        <source>Filtrer par nom, prenom, pseudonyme ou adresse email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8564352977822135075" datatype="html">
+        <source>Réglement</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5896013225697893921" datatype="html">
+        <source>En attente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/participant.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1886321238220228512" datatype="html">
+        <source>Arrivé(s)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4709450557795328287" datatype="html">
+        <source>Non</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7180575964287205441" datatype="html">
+        <source>Oui</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8363252164224214061" datatype="html">
+        <source>Retirer les filtres</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4769578347258290752" datatype="html">
+        <source>Journées</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-list/participant-list.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2356267105155219969" datatype="html">
+        <source>Laisser ce champ vide si vous ne voulez pas changer le mot de passe actuel.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5848504930706993893" datatype="html">
+        <source>Modification d&apos;un participant</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">265</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6425286939262815261" datatype="html">
+        <source>Suppression d&apos;un participant</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/participant-update/participant-update.component.html</context>
+          <context context-type="linenumber">280</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="642244956587953857" datatype="html">
+        <source><x id="START_BLOCK_IF" equiv-text="@if (nombreChoixRestant == -1) {"/> Vos votes validés <x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> Voter pour les productions <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/> dans la catégorie <x id="INTERPOLATION" equiv-text="{{ categorie.libelle }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-booth/poll-booth.component.html</context>
+          <context context-type="linenumber">6,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4003387801369922138" datatype="html">
+        <source>Valider</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-booth/poll-booth.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-booth/poll-booth.component.html</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3524659139054632330" datatype="html">
+        <source>Validé</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-booth/poll-booth.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3495047848384642717" datatype="html">
+        <source>Productions préférées</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-booth/poll-booth.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8936214464806880812" datatype="html">
+        <source><x id="START_BLOCK_IF_1" equiv-text="@if ((nombreChoixRestant &gt; 0) &amp;&amp; (nombreChoixRestant &lt;= linkedProductions.length)) {"/> Encore <x id="INTERPOLATION" equiv-text="{{ nombreChoixRestant }}"/> choix <x id="START_BLOCK_IF" equiv-text="@if (nombreChoixRestant &gt; 1) {"/> possibles <x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> possible <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/><x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> Productions présentées <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-booth/poll-booth.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7497968673632410178" datatype="html">
+        <source>Choisir</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-booth/poll-booth.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5188738874623413812" datatype="html">
+        <source>Ecarter</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-booth/poll-booth.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5534023015259100990" datatype="html">
+        <source>Avancer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-booth/poll-booth.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-links/show-links.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3506899697521985825" datatype="html">
+        <source>Reculer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-booth/poll-booth.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-links/show-links.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1069361129118407992" datatype="html">
+        <source> La validation permet de geler vos choix pour cette catégorie et empêche toute modification par la suite. <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;text-secondary&quot;&gt;"/>Ceci est une sécurité au cas où un tiers malveillant viendrait utiliser de votre session encore ouverte en votre absence.<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> Cette action n&apos;est pas obligatoire, une validation automatique sera effectuée au moment de la clôture des urnes. <x id="START_BLOCK_IF_1" equiv-text="@if ((nombreChoixRestant &gt; 0) &amp;&amp; (nombreChoixRestant &lt;= linkedProductions.length)) {"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span class=&quot;text-success&quot;&gt;"/>Vous pouvez encore choisir <x id="INTERPOLATION" equiv-text="{{ nombreChoixRestant }}"/> production<x id="START_BLOCK_IF" equiv-text="@if(nombreChoixRestant &gt; 1){"/>s<x id="CLOSE_BLOCK_IF" equiv-text="}"/>.<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="CLOSE_BLOCK_IF" equiv-text="}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-booth/poll-booth.component.html</context>
+          <context context-type="linenumber">92,98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1258548041551249671" datatype="html">
+        <source>Clôturer les votes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-list/poll-list.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="593172063956608501" datatype="html">
+        <source>Imprimer les résultats</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-list/poll-list.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3138092782087770212" datatype="html">
+        <source>Afficher les résultats</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-list/poll-list.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5793153387918670261" datatype="html">
+        <source>Diaporama</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-list/poll-list.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-list/show-list.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4900629687110947692" datatype="html">
+        <source><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>Aucune catégorie soumise au vote pour le moment.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-list/poll-list.component.html</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4726644638415523015" datatype="html">
+        <source>Clôturer tous les scrutins</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-list/poll-list.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="158256928643599255" datatype="html">
+        <source> Les participants ne pourront plus voter pour l&apos;ensemble des catégories. Les choix en cours seront validés automatiquement. Les résultats seront calculés et en attente pour une prochaine publication. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-list/poll-list.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6621290557660875203" datatype="html">
+        <source>Publier les résultats</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-list/poll-list.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7768691636239490553" datatype="html">
+        <source> Pour l&apos;ensemble des catégories. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/poll-list/poll-list.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4330330782384546942" datatype="html">
+        <source>Fiche d&apos;une production</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8650499415827640724" datatype="html">
+        <source>Type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-create/variable-create.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-details/variable-details.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-list/variable-list.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6518032478600962138" datatype="html">
+        <source>Titre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-upload/production-upload.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/result-list/result-list.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4184547672124399805" datatype="html">
+        <source>Auteur(s)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1961861928422837439" datatype="html">
+        <source>Plateforme</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7417800453260868359" datatype="html">
+        <source>Commentaire affiché</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1084303486709778995" datatype="html">
+        <source>Informations privées</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1161984780845954496" datatype="html">
+        <source>Gestionnaire</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1055686627716339120" datatype="html">
+        <source>Archive</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-upload/production-upload.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3496513744218670832" datatype="html">
+        <source>La taille de l&apos;archive est limitée à 1 Go.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-upload/production-upload.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2724936237785756734" datatype="html">
+        <source>Vignette</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="67442303968183935" datatype="html">
+        <source>Les participants ne peuvent voir ce visuel qu&apos;à partir des votes. Sa présence facilite les répérages pour les administrateurs avant les présentations, et à tous pour répérer ses choix au moment des votes.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="384686868274558625" datatype="html">
+        <source>Téléversement en cours</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-create/production-create.component.ts</context>
+          <context context-type="linenumber">144</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-upload/production-upload.component.ts</context>
+          <context context-type="linenumber">112</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8195208457775959680" datatype="html">
+        <source>Téléverser</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-upload/production-upload.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-upload/production-upload.component.ts</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="58329231923784121" datatype="html">
+        <source>déjà enregistré :</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-details/production-details.component.html</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8045815724051021670" datatype="html">
+        <source>Liste des productions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-list/production-list.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8863580991943078303" datatype="html">
+        <source>Afficher</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-list/production-list.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8444614605019049321" datatype="html">
+        <source>Filtrer par type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-list/production-list.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-list/variable-list.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4187322933889458370" datatype="html">
+        <source>Modification d&apos;une production</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6720734055763034290" datatype="html">
+        <source>Suppression d&apos;une production</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-update/production-update.component.html</context>
+          <context context-type="linenumber">124</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4171207248166423862" datatype="html">
+        <source>Changement de l&apos;archive d&apos;une production</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-upload/production-upload.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5583591100579408721" datatype="html">
+        <source>Actualisation de l&apos;archive</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-upload/production-upload.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2007955665461333321" datatype="html">
+        <source>Téléverser ce fichier ?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/production-upload/production-upload.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5831985829809767394" datatype="html">
+        <source>Catégorie</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/result-list/result-list.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="836616707846327731" datatype="html">
+        <source>Rang</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/result-list/result-list.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8667114718330644262" datatype="html">
+        <source>Auteur(s) / Groupe(s)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/result-list/result-list.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5254622645701859101" datatype="html">
+        <source>Points</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/result-list/result-list.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7032382728714104408" datatype="html">
+        <source>Nb &quot;First&quot;</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/result-list/result-list.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2298378022144000821" datatype="html">
+        <source>sur</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/result-list/result-list.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7213211909429812563" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ nombreVotants[c] }}"/> votant(s)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/result-list/result-list.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8841599868754788118" datatype="html">
+        <source>Rattacher des productions dans une catégorie</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-links/show-links.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4701384009890688809" datatype="html">
+        <source>Dans <x id="INTERPOLATION" equiv-text="{{ categorie.libelle }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-links/show-links.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1668563803986565381" datatype="html">
+        <source>Sans catégorie</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-links/show-links.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5476608312205252572" datatype="html">
+        <source>Lier</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-links/show-links.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9087963924191376133" datatype="html">
+        <source>Retirer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-links/show-links.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5394541425498293558" datatype="html">
+        <source>Liste des présentations</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-list/show-list.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6012996929243992863" datatype="html">
+        <source>Imprimer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-list/show-list.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8871327039299256208" datatype="html">
+        <source>Rattacher</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-list/show-list.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8970701620963597461" datatype="html">
+        <source>Ouvrir les votes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-list/show-list.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5642767692715388910" datatype="html">
+        <source> : le scrutin est ouvert. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-list/show-list.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3961791302292666196" datatype="html">
+        <source> : le scrutin est fermé, les résultats sont calculés. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-list/show-list.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5265323288140468674" datatype="html">
+        <source> : les résultats sont publiés. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-list/show-list.component.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5649565227897304060" datatype="html">
+        <source>Ouvrir les votes pour <x id="INTERPOLATION" equiv-text="{{ categorie.libelle }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-list/show-list.component.html</context>
+          <context context-type="linenumber">64,65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="445735920593377476" datatype="html">
+        <source> A enclencher une fois que le diaporama ait été affiché publiquement, et les productions de cette catégorie présentées par la régie. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-list/show-list.component.html</context>
+          <context context-type="linenumber">68,69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5949758736908420138" datatype="html">
+        <source>Choix du média pour la présentation d&apos;une production</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7505871509143856809" datatype="html">
+        <source>Aucun média à présenter</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="994903104757942496" datatype="html">
+        <source>Le média est externe (exécutable à lancer sur machine spécifique, fichier trop gros, etc)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="183136565265010031" datatype="html">
+        <source>Le média est interne à la présentation, à téléverser</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5965475152502529686" datatype="html">
+        <source>Média</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="530945162753124293" datatype="html">
+        <source>La taille du média est limitée à 15 Mo.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8830646627464873490" datatype="html">
+        <source>Média actuellement chargé</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3193998344848517944" datatype="html">
+        <source>Choix du média</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5498847329581935186" datatype="html">
+        <source>Le choix est-il correct ?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/show-upload/show-upload.component.html</context>
+          <context context-type="linenumber">134</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4707714000062092858" datatype="html">
+        <source>Fiche d&apos;une variable</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-create/variable-create.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-details/variable-details.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8186013988289067040" datatype="html">
+        <source>Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-create/variable-create.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-details/variable-details.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-list/variable-list.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3717603792840045364" datatype="html">
+        <source>Valeur</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-create/variable-create.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-details/variable-details.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-list/variable-list.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8104421162933956065" datatype="html">
+        <source>Notes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-create/variable-create.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-details/variable-details.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="323112119150982238" datatype="html">
+        <source>Table des variables</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-list/variable-list.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8635670126415586847" datatype="html">
+        <source>Modification d&apos;une variable</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1288398567325236374" datatype="html">
+        <source>Suppression d&apos;une variable</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/variable-update/variable-update.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5387760797188860841" datatype="html">
+        <source>Précedent</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/webcam-list/webcam-list.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3779003498131248588" datatype="html">
+        <source>Suivant</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/composants/webcam-list/webcam-list.component.html</context>
+          <context context-type="linenumber">18,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7982522184978073249" datatype="html">
+        <source>Administrateur</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/participant.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5411765625204303239" datatype="html">
+        <source>Organisateur</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/participant.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1122787259445706401" datatype="html">
+        <source>Participant</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/participant.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2068446867150639780" datatype="html">
+        <source>Payé chèque</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/participant.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8790345408792320258" datatype="html">
+        <source>Payé espèces</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/participant.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7316661139827937280" datatype="html">
+        <source>Virement bancaire</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/participant.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5991780187978770703" datatype="html">
+        <source>Virement Paypal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/participant.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5561979832240808969" datatype="html">
+        <source>Orga</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/participant.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="268369328039605234" datatype="html">
+        <source>Guest</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/participant.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="549266631374246949" datatype="html">
+        <source>Chèque</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/participant.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6615189560277928691" datatype="html">
+        <source>Virement</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/participant.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3515693069597622304" datatype="html">
+        <source>Paypal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/participant.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="251571291349102694" datatype="html">
+        <source>Espèces</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/participant.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6751441754948847748" datatype="html">
+        <source>Autre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/participant.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/production.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7790959368122127003" datatype="html">
+        <source>Exécutable</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/production.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="557807731285509805" datatype="html">
+        <source>Graphe</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/production.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2870385527157560263" datatype="html">
+        <source>Musique</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/production.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="790986261814390491" datatype="html">
+        <source>Vidéo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/production.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5885452247889934944" datatype="html">
+        <source>Topic</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/interfaces/production.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
