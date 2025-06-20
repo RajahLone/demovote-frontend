@@ -30,7 +30,7 @@ export class AccountService
     this.user = this.userSubject.asObservable();
   }
 
-  public isLogged():boolean { if (this.userSubject.value) { return true; } return false; }
+  public isLogged():boolean { if (this.userSubject.value) { if (this.userSubject.value.role === "") { return false; } return true; } return false; }
   public getNumeroParticipant():number { if (this.userSubject.value) { return this.userSubject.value.numeroParticipant; } return 0; }
   public getUsername():string { if (this.userSubject.value) { return this.userSubject.value.username; } return ""; }
   public getRole():string { if (this.userSubject.value) { return this.userSubject.value.role; } return ""; }
