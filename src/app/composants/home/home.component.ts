@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { MenuComponent } from '../menu/menu.component';
 import { Message } from '../../interfaces/divers';
 import { AccountService } from '../../services/account.service'
 import { DiversService } from '../../services/divers.service'
 
-@Component({ selector: 'app-home', imports: [MenuComponent], templateUrl: './home.component.html', styleUrl: './home.component.css' })
+@Component({ selector: 'app-home', imports: [MenuComponent, RouterLink], templateUrl: './home.component.html', styleUrl: './home.component.css' })
 
 export class HomeComponent implements OnInit
 {
@@ -14,7 +15,10 @@ export class HomeComponent implements OnInit
   pseudonyme: string = "";
   message: Message = new Message();
 
-  constructor(private diversService: DiversService, private accountService: AccountService) { }
+  constructor(
+    private diversService: DiversService,
+    private accountService: AccountService
+  ) { }
 
   ngOnInit()
   {
