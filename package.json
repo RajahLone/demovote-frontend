@@ -20,7 +20,7 @@
     "@angular/router": "^20.0.4",
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@ng-idle/core": "^16.0.0",
-    "@ng-select/ng-select": "^14.9.0",
+    "@ng-select/ng-select": "^15.1.2",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "file-saver-es": "^2.0.5",
