@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http'
 import * as SparkMD5 from 'spark-md5-es';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faXmark, faUpload } from '@fortawesome/free-solid-svg-icons';
 
 import { Environnement } from '../../env';
 import { MenuComponent } from '../menu/menu.component';
@@ -10,10 +12,11 @@ import { ProductionFile } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 import { Message } from '../../interfaces/divers';
 
-@Component({ selector: 'app-production-upload', imports: [FormsModule, MenuComponent], templateUrl: './production-upload.component.html', styleUrl: './production-upload.component.css' })
+@Component({ selector: 'app-production-upload', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './production-upload.component.html', styleUrl: './production-upload.component.css' })
 
 export class ProductionUploadComponent implements OnInit
 {
+  faXmark = faXmark; faUpload = faUpload;
 
   @ViewChild('formRef') productionForm!: NgForm;
   @ViewChild('boutonUploader', {static: false}) boutonUploader!: ElementRef;
@@ -109,8 +112,8 @@ export class ProductionUploadComponent implements OnInit
     }
   }
   private setMessage(m: string, e: boolean) { if (this.labelMessage) { this.renderer.setProperty(this.labelMessage.nativeElement, 'innerHTML', m); if (e) { this.renderer.addClass(this.labelMessage.nativeElement, 'text-danger'); } else { this.renderer.removeClass(this.labelMessage.nativeElement, 'text-danger'); } } }
-  private setBoutonUploadStart() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-upload fa-fade"></i>&nbsp;' + $localize`Téléversement en cours`); } }
-  private setBoutonUploadEnd() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-upload"></i>&nbsp;' + $localize`Téléverser`); }  }
+  private setBoutonUploadStart() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<fa-icon [icon]="faUpload" animation="fade"></fa-icon>&nbsp;' + $localize`Téléversement en cours`); } }
+  private setBoutonUploadEnd() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<fa-icon [icon]="faUpload"></fa-icon>&nbsp;' + $localize`Téléverser`); }  }
 
   addProductionFile() { this.saveProduction(); }
 

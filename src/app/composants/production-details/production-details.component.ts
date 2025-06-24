@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faXmark, faPen, faUpload } from '@fortawesome/free-solid-svg-icons';
 
 import { MenuComponent } from '../menu/menu.component';
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 
-@Component({ selector: 'app-production-details', imports: [FormsModule, MenuComponent], templateUrl: './production-details.component.html', styleUrl: './production-details.component.css' })
+@Component({ selector: 'app-production-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './production-details.component.html', styleUrl: './production-details.component.css' })
 
 export class ProductionDetailsComponent implements OnInit
 {
+  faXmark = faXmark; faPen = faPen; faUpload = faUpload;
 
   numeroProduction: number = 0;
 

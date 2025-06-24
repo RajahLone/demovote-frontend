@@ -3,15 +3,19 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { saveAs } from 'file-saver-es';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faPlus, faRotate, faComment, faQuestion, faVideo, faMusic, faImage, faSquareBinary, faDownload, faUserTie } from '@fortawesome/free-solid-svg-icons';
 
 import { MenuComponent } from '../menu/menu.component';
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 
-@Component({ selector: 'app-production-list', imports: [FormsModule, TooltipModule, MenuComponent], templateUrl: './production-list.component.html', styleUrl: './production-list.component.css' })
+@Component({ selector: 'app-production-list', imports: [FontAwesomeModule, FormsModule, TooltipModule, MenuComponent], templateUrl: './production-list.component.html', styleUrl: './production-list.component.css' })
 
 export class ProductionListComponent implements OnInit
 {
+  faPlus = faPlus; faRotate = faRotate; faComment = faComment; faQuestion = faQuestion; faVideo = faVideo; faMusic = faMusic; faImage = faImage; faSquareBinary = faSquareBinary;
+  faDownload = faDownload; faUserTie = faUserTie;
 
   productions: ProductionShort[] = [];
 

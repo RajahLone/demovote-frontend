@@ -5,8 +5,8 @@
 	<div class="card-header shadow-sm">
 		<div class="row">
 			<div class="form-group col-sm-4 label-nobr">
-				<button type="button" (click)="goToRefreshListCategorie()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;<span i18n>Actualiser</span></button>
-				<button type="button" (click)="goToNewCategorie()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;<span i18n>Créer</span></button>
+				<button type="button" (click)="goToRefreshListCategorie()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><fa-icon [icon]="faRotate"></fa-icon>&nbsp;<span i18n>Actualiser</span></button>
+				<button type="button" (click)="goToNewCategorie()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><fa-icon [icon]="faPlus"></fa-icon>&nbsp;<span i18n>Créer</span></button>
 			</div>
 		</div>
 	</div>
@@ -26,11 +26,11 @@
 				@for (categorie of categories; track categorie.numeroCategorie) {
 				<tr>
 					<td class="label-nobr"><a (click)="formCategorie(categorie.numeroCategorie)" class="link-primary pointeur-souris text-decoration-none">{{ categorie.libelle }}</a>&nbsp;&nbsp;</td>
-					<td>@if (categorie.available) { <i class="fa-solid fa-circle-check text-success"></i> } @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;</td>
-					<td>@if (categorie.uploadable) { <i class="fa-solid fa-circle-check text-success"></i> } @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;</td>
-					<td>@if (categorie.pollable) { <i class="fa-solid fa-circle-check text-success"></i> } @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;</td>
-					<td>@if (categorie.computed) { <i class="fa-solid fa-circle-check text-success"></i> } @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;</td>
-					<td>@if (categorie.displayable) { <i class="fa-solid fa-circle-check text-success"></i> } @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;</td>
+					<td>@if (categorie.available) { <fa-icon [icon]="faCircleCheck" class="text-success"></fa-icon> } @else { <fa-icon [icon]="faCircleXmark" class="text-danger"></fa-icon> }&nbsp;&nbsp;</td>
+					<td>@if (categorie.uploadable) { <fa-icon [icon]="faCircleCheck" class="text-success"></fa-icon> } @else { <fa-icon [icon]="faCircleXmark" class="text-danger"></fa-icon> }&nbsp;&nbsp;</td>
+					<td>@if (categorie.pollable) { <fa-icon [icon]="faCircleCheck" class="text-success"></fa-icon> } @else { <fa-icon [icon]="faCircleXmark" class="text-danger"></fa-icon> }&nbsp;&nbsp;</td>
+					<td>@if (categorie.computed) { <fa-icon [icon]="faCircleCheck" class="text-success"></fa-icon> } @else { <fa-icon [icon]="faCircleXmark" class="text-danger"></fa-icon> }&nbsp;&nbsp;</td>
+					<td>@if (categorie.displayable) { <fa-icon [icon]="faCircleCheck" class="text-success"></fa-icon> } @else { <fa-icon [icon]="faCircleXmark" class="text-danger"></fa-icon> }&nbsp;&nbsp;</td>
 				</tr>
 				}
 			</tbody>

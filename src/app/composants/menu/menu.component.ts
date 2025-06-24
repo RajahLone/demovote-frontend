@@ -2,15 +2,19 @@ import { Injectable, Component, OnInit, ViewChild, ElementRef, Renderer2 } from 
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { DEFAULT_INTERRUPTSOURCES, Idle } from '@ng-idle/core';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faHome, faRightToBracket, faClock, faEye, faUser, faRightFromBracket, faComments, faSave, faVoteYea, faTrophy, faUsers, faLayerGroup, faDisplay, faSlidersH } from '@fortawesome/free-solid-svg-icons';
 
 import { AccountService } from '../../services/account.service';
 
-@Component({ selector: 'app-menu', imports: [TooltipModule, RouterLink, RouterLinkActive], templateUrl: './menu.component.html', styleUrl: './menu.component.css' })
+@Component({ selector: 'app-menu', imports: [FontAwesomeModule, TooltipModule, RouterLink, RouterLinkActive], templateUrl: './menu.component.html', styleUrl: './menu.component.css' })
 
 @Injectable({ providedIn: 'root' })
 
 export class MenuComponent implements OnInit
 {
+  faHome = faHome; faRightToBracket = faRightToBracket; faClock = faClock; faEye = faEye; faUser = faUser; faRightFromBracket = faRightFromBracket; faComments = faComments;
+  faSave = faSave; faTrophy = faTrophy; faVoteYea = faVoteYea; faUsers = faUsers; faLayerGroup = faLayerGroup; faDisplay = faDisplay; faSlidersH = faSlidersH;
 
   logged: boolean = false;
   role: string = "";

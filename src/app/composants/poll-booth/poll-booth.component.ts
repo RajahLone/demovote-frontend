@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faXmark, faCheck, faArrowLeft, faArrowRight, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 import { MenuComponent } from '../menu/menu.component';
 import { Categorie } from '../../interfaces/categorie';
@@ -8,10 +10,11 @@ import { CategorieService } from '../../services/categorie.service';
 import { ProductionChoice, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { BulletinService } from '../../services/bulletin.service';
 
-@Component({ selector: 'app-poll-booth', imports: [FormsModule, MenuComponent], templateUrl: './poll-booth.component.html', styleUrl: './poll-booth.component.css' })
+@Component({ selector: 'app-poll-booth', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './poll-booth.component.html', styleUrl: './poll-booth.component.css' })
 
 export class PollBoothComponent  implements OnInit
 {
+  faXmark = faXmark; faCheck = faCheck; faArrowLeft = faArrowLeft; faArrowRight = faArrowRight; faArrowUp = faArrowUp; faArrowDown = faArrowDown;
 
   @ViewChild('boutonChoisir', {static: false}) boutonChoisir!: ElementRef;
   @ViewChild('boutonEcarter', {static: false}) boutonEcarter!: ElementRef;

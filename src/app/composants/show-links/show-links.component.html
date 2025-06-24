@@ -6,7 +6,7 @@
     <span i18n>Rattacher des productions dans une catégorie</span>
   </div>
   <div class="card-header shadow-sm">
-		<button (click)="goToListPresentations()" class="btn bg-gradient btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;<span i18n>Retour</span></button>
+		<button (click)="goToListPresentations()" class="btn bg-gradient btn-primary btn-sm"><fa-icon [icon]="faXmark"></fa-icon>&nbsp;<span i18n>Retour</span></button>
 	</div>
   <div class="card-body hstack">
     <div><small><span i18n>Dans {{ categorie.libelle }}</span></small></div>
@@ -24,13 +24,13 @@
 
     <div class="col mx-auto" style="padding:7px;">
       <br/><br/>
-      <button (click)="lierProduction()" #boutonLier class="btn bg-gradient btn-primary btn-sm boutons disabled"><i class="fa-solid fa-arrow-left"></i>&nbsp;<span i18n>Lier</span></button>
+      <button (click)="lierProduction()" #boutonLier class="btn bg-gradient btn-primary btn-sm boutons disabled"><fa-icon [icon]="faArrowLeft"></fa-icon>&nbsp;<span i18n>Lier</span></button>
       <hr/>
-      <button (click)="retirerProduction()" #boutonRetirer class="btn bg-gradient btn-primary btn-sm boutons disabled"><i class="fa-solid fa-arrow-right"></i>&nbsp;<span i18n>Retirer</span></button>
+      <button (click)="retirerProduction()" #boutonRetirer class="btn bg-gradient btn-primary btn-sm boutons disabled"><fa-icon [icon]="faArrowRight"></fa-icon>&nbsp;<span i18n>Retirer</span></button>
       <br/><br/>
-      <button (click)="avancerProduction()" #boutonAvancer class="btn bg-gradient btn-primary btn-sm boutons disabled"><i class="fa-solid fa-arrow-up"></i>&nbsp;<span i18n>Avancer</span></button>
+      <button (click)="avancerProduction()" #boutonAvancer class="btn bg-gradient btn-primary btn-sm boutons disabled"><fa-icon [icon]="faArrowUp"></fa-icon>&nbsp;<span i18n>Avancer</span></button>
       <br/><br/>
-      <button (click)="reculerProduction()" #boutonReculer class="btn bg-gradient btn-primary btn-sm boutons disabled"><i class="fa-solid fa-arrow-down"></i>&nbsp;<span i18n>Reculer</span></button>
+      <button (click)="reculerProduction()" #boutonReculer class="btn bg-gradient btn-primary btn-sm boutons disabled"><fa-icon [icon]="faArrowDown"></fa-icon>&nbsp;<span i18n>Reculer</span></button>
     </div>
 
     <div class="col">

@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/co
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faPlus, faFilter, faRotate, faFlagCheckered, faFilterCircleXmark, faCircleCheck, faBed, faCircleXmark, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import { MenuComponent } from '../menu/menu.component';
 import { ParticipantList, ParticipantEnum, ParticipantStatutList } from '../../interfaces/participant';
@@ -9,10 +11,12 @@ import { ParticipantService } from '../../services/participant.service';
 import { Journees, Pagination } from '../../interfaces/divers';
 import { DiversService } from '../../services/divers.service'
 
-@Component({ selector: 'app-participant-list', imports: [TooltipModule, FormsModule, MenuComponent], templateUrl: './participant-list.component.html', styleUrl: './participant-list.component.css' })
+@Component({ selector: 'app-participant-list', imports: [FontAwesomeModule, TooltipModule, FormsModule, MenuComponent], templateUrl: './participant-list.component.html', styleUrl: './participant-list.component.css' })
 
 export class ParticipantListComponent implements OnInit
 {
+  faPlus = faPlus; faFilter = faFilter; faRotate = faRotate; faFlagCheckered = faFlagCheckered; faFilterCircleXmark = faFilterCircleXmark; faCircleCheck = faCircleCheck; faBed = faBed;
+  faCircleXmark = faCircleXmark; faArrowLeft = faArrowLeft; faArrowRight = faArrowRight;
 
   journees: Journees = new Journees();
 

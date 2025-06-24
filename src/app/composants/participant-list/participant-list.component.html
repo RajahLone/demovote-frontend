@@ -17,7 +17,7 @@
 		  </div>
 		  <div class="form-group col-sm-2 label-nobr">
 			  <div class="input-group input-group-sn">
-				  <button type="button" (click)="filtrageParNom()" class="btn bg-gradient btn-primary btn-sm field-separate"><i class="fa-solid fa-filter"></i>&nbsp;<span i18n>Filtrer</span></button>
+				  <button type="button" (click)="filtrageParNom()" class="btn bg-gradient btn-primary btn-sm field-separate"><fa-icon [icon]="faFilter"></fa-icon>&nbsp;<span i18n>Filtrer</span></button>
 				  <input type="text" (keydown.enter)="filtrageParNom()" class="form-control form-control-sm field-separate" id="input_nom" [(ngModel)]="nomFiltre" i18n-tooltip tooltip="Filtrer par nom, prenom, pseudonyme ou adresse email" placement="bottom" containor="body">
 			  </div>
 		  </div>
@@ -41,16 +41,16 @@
 			  </div>
 		  </div>
 		  <div class="form-group col-sm-2 label-nobr">
-			  <button type="button" (click)="filtrageReset()" class="btn bg-gradient btn-secondary btn-sm field-separate" style="margin-right: 5px;"><i class="fa-solid fa-filter-circle-xmark"></i>&nbsp;<span i18n>Retirer les filtres</span></button>
+			  <button type="button" (click)="filtrageReset()" class="btn bg-gradient btn-secondary btn-sm field-separate" style="margin-right: 5px;"><fa-icon [icon]="faFilterCircleXmark"></fa-icon>&nbsp;<span i18n>Retirer les filtres</span></button>
 		  </div>
 		</div>
 	</div>
 	<div class="card-header shadow-sm">
 		<div class="row justify-content-start">
 			<div class="form-group col-sm-2 label-nobr">
-				<button type="button" (click)="goToRefreshListParticipant()" class="btn bg-gradient btn-primary btn-sm field-separate" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;<span i18n>Actualiser</span></button>
-				<button type="button" (click)="goToNewParticipant()" class="btn bg-gradient btn-primary btn-sm field-separate" style="margin-right: 5px;" style="margin-right: 5px;"><i class="fa-solid fa-plus"></i>&nbsp;<span i18n>Créer</span></button>
-				<button type="button" (click)="topperArrives()" class="btn bg-gradient btn-primary btn-sm field-separate disabled" style="margin-right: 5px;" #boutonSetArrives i18n-tooltip tooltip="Déclarer les participants sélectionnés comme arrivés" placement="bottom" containor="body"><i class="fa-solid fa-flag-checkered"></i>&nbsp;<span i18n>Sont arrivés</span></button>
+				<button type="button" (click)="goToRefreshListParticipant()" class="btn bg-gradient btn-primary btn-sm field-separate" style="margin-right: 5px;"><fa-icon [icon]="faRotate"></fa-icon>&nbsp;<span i18n>Actualiser</span></button>
+				<button type="button" (click)="goToNewParticipant()" class="btn bg-gradient btn-primary btn-sm field-separate" style="margin-right: 5px;" style="margin-right: 5px;"><fa-icon [icon]="faPlus"></fa-icon>&nbsp;<span i18n>Créer</span></button>
+				<button type="button" (click)="topperArrives()" class="btn bg-gradient btn-primary btn-sm field-separate disabled" style="margin-right: 5px;" #boutonSetArrives i18n-tooltip tooltip="Déclarer les participants sélectionnés comme arrivés" placement="bottom" containor="body"><fa-icon [icon]="faFlagCheckered"></fa-icon>&nbsp;<span i18n>Sont arrivés</span></button>
 			</div>
    	</div>
 	</div>
@@ -74,19 +74,19 @@
 					<td class="label-nobr text-truncate" style="max-width:200px;"><a (click)="formParticipant(participant.numeroParticipant)" class="link-primary pointeur-souris text-decoration-none">{{ participant.nom }}&nbsp;{{ participant.prenom }}</a>&nbsp;&nbsp;</td>
 					<td class="label-nobr text-truncate" style="max-width:200px;"><a (click)="formParticipant(participant.numeroParticipant)" class="link-primary pointeur-souris text-decoration-none">{{ participant.pseudonyme }}</a>@if (participant.groupe) { / {{ participant.groupe }} }&nbsp;&nbsp;</td>
 					<td>
-					  @if (participant.statut === PS[0].key) { <i class="fa-solid fa-circle-xmark text-danger" title="{{ PS[0].value }}"></i> }
-					  @else if (participant.statut === PS[1].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[1].value }}"></i> }
-					  @else if (participant.statut === PS[2].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[2].value }}"></i> }
-					  @else if (participant.statut === PS[3].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[3].value }}"></i> }
-					  @else if (participant.statut === PS[4].key) { <i class="fa-solid fa-circle-check text-success" title="{{ PS[4].value }}"></i> }
-					  @else if (participant.statut === PS[5].key) { <i class="fa-solid fa-circle-check text-primary" title="{{ PS[5].value }}"></i> }
-					  @else if (participant.statut === PS[6].key) { <i class="fa-solid fa-circle-check text-primary" title="{{ PS[6].value }}"></i> }
+						@if (participant.statut === PS[0].key) { <fa-icon [icon]="faCircleXmark" class="text-danger" title="{{ PS[0].value }}"></fa-icon> }
+						@else if (participant.statut === PS[1].key) { <fa-icon [icon]="faCircleCheck" class="text-success" title="{{ PS[1].value }}"></fa-icon> }
+						@else if (participant.statut === PS[2].key) { <fa-icon [icon]="faCircleCheck" class="text-success" title="{{ PS[2].value }}"></fa-icon> }
+						@else if (participant.statut === PS[3].key) { <fa-icon [icon]="faCircleCheck" class="text-success" title="{{ PS[3].value }}"></fa-icon> }
+						@else if (participant.statut === PS[4].key) { <fa-icon [icon]="faCircleCheck" class="text-success" title="{{ PS[4].value }}"></fa-icon> }
+						@else if (participant.statut === PS[5].key) { <fa-icon [icon]="faCircleCheck" class="text-primary" title="{{ PS[5].value }}"></fa-icon> }
+						@else if (participant.statut === PS[6].key) { <fa-icon [icon]="faCircleCheck" class="text-primary" title="{{ PS[6].value }}"></fa-icon> }
 					</td>
 					<td>
-					  @if (participant.arrived) { <i class="fa-solid fa-circle-check text-success"></i> }
-					  @else { <i class="fa-solid fa-circle-xmark text-danger"></i> }&nbsp;&nbsp;
+					  @if (participant.arrived) { <fa-icon [icon]="faCircleCheck" class="text-success"></fa-icon> }
+					  @else { <fa-icon [icon]="faCircleXmark" class="text-danger"></fa-icon> }&nbsp;&nbsp;
 					</td>
-					<td>{{ getNombreJours(participant.hereDay1, participant.hereDay2, participant.hereDay3) }} @if(participant.sleepingOnSite) { + <i class="fa-solid fa-bed"></i> }</td>
+					<td>{{ getNombreJours(participant.hereDay1, participant.hereDay2, participant.hereDay3) }} @if(participant.sleepingOnSite) { + <fa-icon [icon]="faBed"></fa-icon> }</td>
 					<td class="label-nobr">{{ participant.email }}&nbsp;&nbsp;</td>
 				</tr>
 				}
@@ -97,9 +97,9 @@
 	<div class="card-footer" style="max-height:54px;">
 		<nav>
 		  <ul class="pagination">
-				<li class="page-item" [class.disabled]="pagination.pageCourante == 0"><a class="page-link" (click)="goToPrevPage()"><i class="fa-solid fa-arrow-left"></i></a></li>
+				<li class="page-item" [class.disabled]="pagination.pageCourante == 0"><a class="page-link" (click)="goToPrevPage()"><fa-icon [icon]="faArrowLeft"></fa-icon></a></li>
 				@for (p of pages; track p) { <li class="page-item" [class.active]="pagination.pageCourante == (p - 1)"><a class="page-link" (click)="goToPage(p - 1)">{{p}}</a></li> }
-				<li class="page-item" [class.disabled]="pagination.pageCourante == (pagination.nombrePages - 1)"><a class="page-link" (click)="goToNextPage()"><i class="fa-solid fa-arrow-right"></i></a></li>
+				<li class="page-item" [class.disabled]="pagination.pageCourante == (pagination.nombrePages - 1)"><a class="page-link" (click)="goToNextPage()"><fa-icon [icon]="faArrowRight"></fa-icon></a></li>
 		  </ul>
 		</nav>
 	</div>

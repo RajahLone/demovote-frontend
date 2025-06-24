@@ -1,16 +1,20 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormsModule, NgForm } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faXmark, faCheck, faTrash } from '@fortawesome/free-solid-svg-icons';
+
 import { MenuComponent } from '../menu/menu.component';
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 import { ParticipantShort } from '../../interfaces/participant';
 import { ParticipantService } from '../../services/participant.service';
-import { FormsModule, NgForm } from '@angular/forms';
 
-@Component({ selector: 'app-production-update', imports: [FormsModule, MenuComponent], templateUrl: './production-update.component.html', styleUrl: './production-update.component.css' })
+@Component({ selector: 'app-production-update', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './production-update.component.html', styleUrl: './production-update.component.css' })
 
 export class ProductionUpdateComponent implements OnInit
 {
+  faXmark = faXmark; faCheck = faCheck; faTrash = faTrash;
 
   participants: ParticipantShort[] = [];
 

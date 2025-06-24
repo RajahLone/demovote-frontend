@@ -5,12 +5,12 @@
   	<div class="card-header shadow-sm">
   		<div class="row">
   			<div class="form-group col-sm-4 label-nobr">
-  				<button type="button" (click)="goToRefreshListCategorie()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;<span i18n>Actualiser</span></button>
+  				<button type="button" (click)="goToRefreshListCategorie()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><fa-icon [icon]="faRotate"></fa-icon>&nbsp;<span i18n>Actualiser</span></button>
           @if (this.logged && (this.role === "ADMIN")) {
-          <button type="button" #boutonCloturer class="btn bg-gradient btn-danger btn-sm disabled" style="margin-right: 5px;" i18n-tootip tooltip="Fermeture des urnes et validation automatique des choix" placement="right" container="body" data-bs-toggle="modal" data-bs-target="#modalFermerVotes"><i class="fa-solid fa-lock"></i>&nbsp;<span i18n>Clôturer les votes</span></button>
+          <button type="button" #boutonCloturer class="btn bg-gradient btn-danger btn-sm disabled" style="margin-right: 5px;" i18n-tootip tooltip="Fermeture des urnes et validation automatique des choix" placement="right" container="body" data-bs-toggle="modal" data-bs-target="#modalFermerVotes"><fa-icon [icon]="faLock"></fa-icon>&nbsp;<span i18n>Clôturer les votes</span></button>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <button type="button" #imprimerResultats (click)="getResultatsPDF()" class="btn bg-gradient btn-primary btn-sm disabled" style="margin-right: 5px;" i18n-tootip tooltip="Télécharger le PDF contenant les résultats pour impression" placement="right" container="body"><i class="fa-solid fa-file-pdf"></i>&nbsp;<span i18n>Imprimer les résultats</span></button>
-          <button type="button" #boutonResultats class="btn bg-gradient btn-danger btn-sm disabled" style="margin-right: 5px;" i18n-tootip tooltip="Publier l'ensemble des résultats aux participants" placement="right" container="body" data-bs-toggle="modal" data-bs-target="#modalAfficherResultats"><i class="fa-solid fa-trophy"></i>&nbsp;<span i18n>Afficher les résultats</span></button>
+          <button type="button" #imprimerResultats (click)="getResultatsPDF()" class="btn bg-gradient btn-primary btn-sm disabled" style="margin-right: 5px;" i18n-tootip tooltip="Télécharger le PDF contenant les résultats pour impression" placement="right" container="body"><fa-icon [icon]="faFilePdf"></fa-icon>&nbsp;<span i18n>Imprimer les résultats</span></button>
+          <button type="button" #boutonResultats class="btn bg-gradient btn-danger btn-sm disabled" style="margin-right: 5px;" i18n-tootip tooltip="Publier l'ensemble des résultats aux participants" placement="right" container="body" data-bs-toggle="modal" data-bs-target="#modalAfficherResultats"><fa-icon [icon]="faTrophy"></fa-icon>&nbsp;<span i18n>Afficher les résultats</span></button>
           }
   			</div>
   		</div>
@@ -22,11 +22,11 @@
           @for (categorie of categories; track categorie.numeroCategorie) { @if (categorie.pollable || (logged && (role === "ADMIN") && categorie.computed)) {
   				<tr>
             <td class="label-nobr fs-3" style="height:30px;vertical-align:center;">
-              <i class="fa-solid fa-list-ol text-body-tertiary"></i>&nbsp; @if (categorie.pollable) { <a (click)="voteCategorie(categorie.numeroCategorie)" class="link-primary pointeur-souris text-decoration-none"> {{ categorie.libelle }} </a> } @else { {{ categorie.libelle }} }
+              <fa-icon [icon]="faListOl" class="text-body-tertiary"></fa-icon>&nbsp; @if (categorie.pollable) { <a (click)="voteCategorie(categorie.numeroCategorie)" class="link-primary pointeur-souris text-decoration-none"> {{ categorie.libelle }} </a> } @else { {{ categorie.libelle }} }
             </td>
             <td class="label-nobr" style="height:30px;vertical-align:center;">
               @if (logged && (role === "ADMIN") && categorie.computed) {
-              <button type="button" (click)="getDiaporama(categorie.numeroCategorie, categorie.libelle)" class="btn bg-gradient btn-primary btn-sm" style="margin-left: 48px;" i18n-tootip tooltip="Télécharger le diaporama HTML contenant les résultats de cette catégorie" placement="right" container="body"><i class="fa-solid fa-file-code"></i>&nbsp;<span i18n>Diaporama</span></button>
+              <button type="button" (click)="getDiaporama(categorie.numeroCategorie, categorie.libelle)" class="btn bg-gradient btn-primary btn-sm" style="margin-left: 48px;" i18n-tootip tooltip="Télécharger le diaporama HTML contenant les résultats de cette catégorie" placement="right" container="body"><fa-icon [icon]="faFileCode"></fa-icon>&nbsp;<span i18n>Diaporama</span></button>
               }
             </td>
   				</tr>

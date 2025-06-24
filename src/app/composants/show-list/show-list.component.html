@@ -5,8 +5,8 @@
 	<div class="card-header shadow-sm">
 		<div class="row">
 			<div class="form-group col-sm-4 label-nobr">
-				<button type="button" (click)="goToRefreshListCategorie()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><i class="fa-solid fa-rotate"></i>&nbsp;<span i18n>Actualiser</span></button>
-        <button type="button" (click)="getVersionPDF()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Télécharger la version PDF de cette page pour impression" placement="right" container="body"><i class="fa-solid fa-file-pdf"></i>&nbsp;<span i18n>Imprimer</span></button>
+				<button type="button" (click)="goToRefreshListCategorie()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;"><fa-icon [icon]="faRotate"></fa-icon>&nbsp;<span i18n>Actualiser</span></button>
+        <button type="button" (click)="getVersionPDF()" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Télécharger la version PDF de cette page pour impression" placement="right" container="body"><fa-icon [icon]="faFilePdf"></fa-icon>&nbsp;<span i18n>Imprimer</span></button>
 			</div>
 		</div>
 	</div>
@@ -17,9 +17,9 @@
   <div class="card-header shadow-sm">
     {{ categorie.libelle }}
     @if (!categorie.pollable && !categorie.computed && !categorie.displayable) { &nbsp;&nbsp;&nbsp;&nbsp;
-      <button type="button" (click)="lierProductions(categorie.numeroCategorie)" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Rattacher des productions à cette catégorie et les ordonner" placement="right" container="body"><i class="fa-solid fa-link"></i>&nbsp;<span i18n>Rattacher</span></button>
-      <button type="button" (click)="getDiaporama(categorie.numeroCategorie, categorie.libelle)" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Télécharger le fichier HTML de présentations de cette catégorie" placement="right" container="body"><i class="fa-solid fa-file-code"></i>&nbsp;<span i18n>Diaporama</span></button>
-      <button type="button" [disabled]="productions.length == 0" class="btn bg-gradient btn-danger btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Ouvrir le scrutin, après que le présentateur a utilisé le diaporama publiquement" placement="right" container="body" data-bs-toggle="modal" [attr.data-bs-target]="'#modalOuvrirVotes' + categorie.numeroCategorie"><i class="fa-solid fa-check-to-slot"></i>&nbsp;<span i18n>Ouvrir les votes</span></button>
+      <button type="button" (click)="lierProductions(categorie.numeroCategorie)" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Rattacher des productions à cette catégorie et les ordonner" placement="right" container="body"><fa-icon [icon]="faLink"></fa-icon>&nbsp;<span i18n>Rattacher</span></button>
+      <button type="button" (click)="getDiaporama(categorie.numeroCategorie, categorie.libelle)" class="btn bg-gradient btn-primary btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Télécharger le fichier HTML de présentations de cette catégorie" placement="right" container="body"><fa-icon [icon]="faFileCode"></fa-icon>&nbsp;<span i18n>Diaporama</span></button>
+      <button type="button" [disabled]="productions.length == 0" class="btn bg-gradient btn-danger btn-sm" style="margin-right: 5px;" i18n-tootip tooltip="Ouvrir le scrutin, après que le présentateur a utilisé le diaporama publiquement" placement="right" container="body" data-bs-toggle="modal" [attr.data-bs-target]="'#modalOuvrirVotes' + categorie.numeroCategorie"><fa-icon [icon]="faCheckToSlot"></fa-icon>&nbsp;<span i18n>Ouvrir les votes</span></button>
     }
     @if (categorie.uploadable) { }
     @if (categorie.pollable) { <span i18n> : le scrutin est ouvert. </span> }
@@ -46,11 +46,11 @@
         <small class="text-warning">{{ production.informationsPrivees }}</small>
       </div>
       <div class="card-footer mt-auto d-flex justify-content-between" [class.border-danger]="production.etatMedia === 0">
-        <i class="fa-solid fa-download text-primary pointeur-souris" (click)="getFile(production.numeroProduction, production.nomArchive)" tooltip="{{ production.nomArchive }} (v{{ production.numeroVersion }})" placement="top" container="body"></i>
-        <i class="fa-solid fa-user-tie text-muted" style="margin-left:7px;" i18n-tootip tooltip="géré par {{ production.nomGestionnaire }}" placement="top" container="body"></i>
-        @if (production.etatMedia === 0) { <i class="fa-solid fa-square-xmark text-danger ms-auto pointeur-souris" style="margin-left:7px;" (click)="formPresentation(production.numeroProduction)" i18n-tootip tooltip="nécessite le média pour présentation" placement="top" container="body"></i> }
-        @else if (production.etatMedia === 1) { <i class="fa-solid fa-square-check text-success ms-auto pointeur-souris" style="margin-left:7px;" (click)="formPresentation(production.numeroProduction)" i18n-tootip tooltip="média présent" placement="top" container="body"></i> }
-        @else if (production.etatMedia === 2) { <i class="fa-solid fa-square-arrow-up-right text-success ms-auto pointeur-souris" style="margin-left:7px;" (click)="formPresentation(production.numeroProduction)" i18n-tootip tooltip="média hors fichier de présentation" placement="top" container="body"></i> }
+        <fa-icon [icon]="faDownload" class="text-primary pointeur-souris" (click)="getFile(production.numeroProduction, production.nomArchive)" tooltip="{{ production.nomArchive }} (v{{ production.numeroVersion }})" placement="top" container="body"></fa-icon>
+        <fa-icon [icon]="faUserTie" class="text-muted" style="margin-left:7px;" i18n-tootip tooltip="géré par {{ production.nomGestionnaire }}" placement="top" container="body"></fa-icon>
+        @if (production.etatMedia === 0) { <fa-icon [icon]="faSquareXmark" class="text-danger ms-auto pointeur-souris" style="margin-left:7px;" (click)="formPresentation(production.numeroProduction)" i18n-tootip tooltip="nécessite le média pour présentation" placement="top" container="body"></fa-icon> }
+        @else if (production.etatMedia === 1) { <fa-icon [icon]="faSquareCheck" class="text-success ms-auto pointeur-souris" style="margin-left:7px;" (click)="formPresentation(production.numeroProduction)" i18n-tootip tooltip="média présent" placement="top" container="body"></fa-icon> }
+        @else if (production.etatMedia === 2) { <fa-icon [icon]="faSquareArrowUpRight" class="text-success ms-auto pointeur-souris" style="margin-left:7px;" (click)="formPresentation(production.numeroProduction)" i18n-tootip tooltip="média hors fichier de présentation" placement="top" container="body"></fa-icon> }
       </div>
     </div>
 } }

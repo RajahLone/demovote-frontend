@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/co
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faXmark, faPlus, faCheck, faUpload } from '@fortawesome/free-solid-svg-icons';
 
 import { MenuComponent } from '../menu/menu.component';
 import { PresentationFile } from '../../interfaces/production';
@@ -10,10 +12,11 @@ import { PresentationService } from '../../services/presentation.service';
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 
-@Component({ selector: 'app-show-upload', imports: [FormsModule, MenuComponent], templateUrl: './show-upload.component.html', styleUrl: './show-upload.component.css' })
+@Component({ selector: 'app-show-upload', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './show-upload.component.html', styleUrl: './show-upload.component.css' })
 
 export class ShowUploadComponent implements OnInit
 {
+  faXmark = faXmark; faPlus = faPlus; faCheck = faCheck; faUpload = faUpload;
 
   @ViewChild('formRef') productionForm!: NgForm;
   @ViewChild('boutonUploader', {static: false}) boutonUploader!: ElementRef;
@@ -74,8 +77,8 @@ export class ShowUploadComponent implements OnInit
     });
   }
   private setMessage(m: string) { if (this.labelMessage) { this.renderer.setProperty(this.labelMessage.nativeElement, 'innerHTML', m); } }
-  private setBoutonUploadStart() { if (this.boutonUploader && this.uploaderFichier) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-upload fa-fade"></i>&nbsp;' + $localize`Téléversement en cours`); } }
-  private setBoutonUploadEnd() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<i class="fa-solid fa-check"></i>&nbsp;' + $localize`Valider`); }  }
+  private setBoutonUploadStart() { if (this.boutonUploader && this.uploaderFichier) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<fa-icon [icon]="faUpload" animation="fade"></fa-icon>&nbsp;' + $localize`Téléversement en cours`); } }
+  private setBoutonUploadEnd() { if (this.boutonUploader) { this.renderer.setProperty(this.boutonUploader.nativeElement, 'innerHTML', '<fa-icon [icon]="faCheck"></fa-icon>&nbsp;' + $localize`Valider`); }  }
 
   addPresentationFile() { this.saveMedia(); }
 

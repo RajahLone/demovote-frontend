@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { timer } from 'rxjs';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faComment } from '@fortawesome/free-solid-svg-icons';
 
 import { MenuComponent } from '../menu/menu.component';
 import { MessageShort } from '../../interfaces/chat';
@@ -9,11 +11,12 @@ import { PseudonymeList } from '../../interfaces/participant';
 import { ChatService } from '../../services/chat.service';
 import { AccountService } from '../../services/account.service'
 
-@Component({ selector: 'app-chat', imports: [FormsModule, MenuComponent], templateUrl: './chat.component.html', styleUrl: './chat.component.css' })
+@Component({ selector: 'app-chat', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './chat.component.html', styleUrl: './chat.component.css' })
 
 export class ChatComponent implements OnInit
 {
-
+  faComment = faComment;
+  
   logged: boolean = false;
   disabled: boolean = false;
 

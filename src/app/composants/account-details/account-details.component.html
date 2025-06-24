@@ -3,7 +3,7 @@
 <div class="card shadow center">
 	<div class="card-header"><span i18n>Fiche d'un participant</span></div>
 	<div class="card-header shadow-sm">
-		<button (click)="goToHome()" class="btn bg-gradient btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;<span i18n>Retour</span></button>
+		<button (click)="goToHome()" class="btn bg-gradient btn-primary btn-sm"><fa-icon [icon]="faXmark"></fa-icon>&nbsp;<span i18n>Retour</span></button>
 	</div>
 	<div class="card-body form-scrollable">
 
@@ -65,7 +65,7 @@
 		<div class="form-group row">
 			<label class="col-sm-4 col-form-label col-form-label-sm label-nobr"><span i18n>Mot de passe</span></label>
 			<div class="col-sm-8">
-				<button type="button" (click)="updateMotDePasse()" class="btn bg-gradient btn-primary btn-sm field-separate"><i class="fa-solid fa-key"></i>&nbsp;<span i18n>Modifier</span></button>
+				<button type="button" (click)="updateMotDePasse()" class="btn bg-gradient btn-primary btn-sm field-separate"><fa-icon [icon]="faKey"></fa-icon>&nbsp;<span i18n>Modifier</span></button>
 			</div>
 		</div>
 
@@ -207,7 +207,7 @@
 
 	</div>
 	<div class="card-footer">
-		<button type="button" (click)="updateProfil()" class="btn bg-gradient btn-primary btn-sm"><i class="fa-solid fa-pen"></i>&nbsp;<span i18n>Editer</span></button>
+		<button type="button" (click)="updateProfil()" class="btn bg-gradient btn-primary btn-sm"><fa-icon [icon]="faPen"></fa-icon>&nbsp;<span i18n>Editer</span></button>
 	</div>
 </div>
 </div>

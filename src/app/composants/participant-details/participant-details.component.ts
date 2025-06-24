@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faXmark, faPen } from '@fortawesome/free-solid-svg-icons';
 
 import { MenuComponent } from '../menu/menu.component';
 import { Participant, ParticipantEnum, ProfilList, ParticipantStatutList, ParticipantModePaiementList } from '../../interfaces/participant';
@@ -9,10 +11,11 @@ import { Journees } from '../../interfaces/divers';
 import { DiversService } from '../../services/divers.service'
 import { AccountService } from '../../services/account.service';
 
-@Component({ selector: 'app-participant-details', imports: [FormsModule, MenuComponent], templateUrl: './participant-details.component.html', styleUrl: './participant-details.component.css' })
+@Component({ selector: 'app-participant-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './participant-details.component.html', styleUrl: './participant-details.component.css' })
 
 export class ParticipantDetailsComponent implements OnInit
 {
+  faXmark = faXmark; faPen = faPen;
 
   profil: string = "";
   profils: ParticipantEnum[] = ProfilList;

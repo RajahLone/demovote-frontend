@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faXmark, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 import { MenuComponent } from '../menu/menu.component';
 import { Participant, ParticipantEnum, ProfilList } from '../../interfaces/participant';
@@ -8,10 +10,11 @@ import { AccountService } from '../../services/account.service'
 import { Journees } from '../../interfaces/divers';
 import { DiversService } from '../../services/divers.service'
 
-@Component({ selector: 'app-account-update', imports: [FormsModule, MenuComponent], templateUrl: './account-update.component.html', styleUrl: './account-update.component.css' })
+@Component({ selector: 'app-account-update', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './account-update.component.html', styleUrl: './account-update.component.css' })
 
 export class AccountUpdateComponent implements OnInit
 {
+  faXmark = faXmark; faCheck = faCheck;
 
   profil: string = "";
   profils: ParticipantEnum[] = ProfilList;

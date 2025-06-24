@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/co
 import { Router, ActivatedRoute } from '@angular/router';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { saveAs } from 'file-saver-es';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faRotate, faFileCode, faLock, faFilePdf, faTrophy, faListOl } from '@fortawesome/free-solid-svg-icons';
 
 import { MenuComponent } from '../menu/menu.component';
 import { Categorie } from '../../interfaces/categorie';
@@ -9,10 +11,11 @@ import { CategorieService } from '../../services/categorie.service';
 import { AccountService } from '../../services/account.service';
 import { BulletinService } from '../../services/bulletin.service';
 
-@Component({ selector: 'app-poll-list', imports: [TooltipModule, MenuComponent], templateUrl: './poll-list.component.html', styleUrl: './poll-list.component.css' })
+@Component({ selector: 'app-poll-list', imports: [FontAwesomeModule, TooltipModule, MenuComponent], templateUrl: './poll-list.component.html', styleUrl: './poll-list.component.css' })
 
 export class PollListComponent implements OnInit
 {
+  faRotate = faRotate; faFileCode = faFileCode; faLock = faLock; faFilePdf = faFilePdf; faTrophy = faTrophy; faListOl = faListOl;
 
   @ViewChild('boutonCloturer', {static: false}) boutonCloturer!: ElementRef;
   @ViewChild('imprimerResultats', {static: false}) imprimerResultats!: ElementRef;

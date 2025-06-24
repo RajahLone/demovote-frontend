@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faXmark, faPen } from '@fortawesome/free-solid-svg-icons';
+
 import { MenuComponent } from '../menu/menu.component';
 import { Variable } from '../../interfaces/variable';
 import { VariableService } from '../../services/variable.service';
-import { FormsModule } from '@angular/forms';
 
-@Component({ selector: 'app-variable-details', imports: [FormsModule, MenuComponent], templateUrl: './variable-details.component.html', styleUrl: './variable-details.component.css' })
+@Component({ selector: 'app-variable-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './variable-details.component.html', styleUrl: './variable-details.component.css' })
 
 export class VariableDetailsComponent implements OnInit
 {
+  faXmark = faXmark; faPen = faPen;
 
   numeroVariable: number = 0;
 

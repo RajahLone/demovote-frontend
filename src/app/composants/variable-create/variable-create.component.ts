@@ -1,14 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
+
+import { MenuComponent } from '../menu/menu.component';
 import { Variable } from '../../interfaces/variable';
 import { VariableService } from '../../services/variable.service';
-import { MenuComponent } from '../menu/menu.component';
-import { FormsModule, NgForm, NgModel } from '@angular/forms';
 
-@Component({ selector: 'app-variable-create', imports: [FormsModule, MenuComponent], templateUrl: './variable-create.component.html', styleUrl: './variable-create.component.css' })
+@Component({ selector: 'app-variable-create', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './variable-create.component.html', styleUrl: './variable-create.component.css' })
 
 export class VariableCreateComponent implements OnInit
 {
+  faXmark = faXmark; faPlus = faPlus;
 
   @ViewChild('formRef') variableForm!: NgForm;
   @ViewChild('typeRef') typeField!: NgModel;

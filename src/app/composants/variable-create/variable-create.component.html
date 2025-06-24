@@ -4,7 +4,7 @@
 	<div class="card shadow center">
 		<div class="card-header"><span i18n>Fiche d'une variable</span></div>
 		<div class="card-header shadow-sm">
-			<button (click)="goToListVariable()" class="btn bg-gradient btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;<span i18n>Retour</span></button>
+			<button (click)="goToListVariable()" class="btn bg-gradient btn-primary btn-sm"><fa-icon [icon]="faXmark"></fa-icon>&nbsp;<span i18n>Retour</span></button>
 		</div>
 		<div class="card-body">
 
@@ -38,7 +38,7 @@
 
 		</div>
 		<div class="card-footer">
-			<button type="button" class="btn bg-gradient btn-success btn-sm text-left" type="submit" [disabled]="formRef.invalid"><i class="fa-solid fa-plus"></i>&nbsp;<span i18n>Créer</span></button>
+			<button type="button" class="btn bg-gradient btn-success btn-sm text-left" type="submit" [disabled]="formRef.invalid"><fa-icon [icon]="faPlus"></fa-icon>&nbsp;<span i18n>Créer</span></button>
 		</div>
 	</div>
 </form>

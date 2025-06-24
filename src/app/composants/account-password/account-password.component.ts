@@ -2,15 +2,18 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { FormsModule, FormBuilder, FormControl, FormGroupDirective, FormGroup, NgForm, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faXmark, faPen } from '@fortawesome/free-solid-svg-icons';
 
 import { MenuComponent } from '../menu/menu.component';
 import { NewPassword } from '../../interfaces/user';
 import { AccountService } from '../../services/account.service'
 
-@Component({ selector: 'app-account-password', imports: [CommonModule, FormsModule, ReactiveFormsModule, MenuComponent], templateUrl: './account-password.component.html', styleUrl: './account-password.component.css' })
+@Component({ selector: 'app-account-password', imports: [FontAwesomeModule, CommonModule, FormsModule, ReactiveFormsModule, MenuComponent], templateUrl: './account-password.component.html', styleUrl: './account-password.component.css' })
 
 export class AccountPasswordComponent
 {
+  faXmark = faXmark; faPen = faPen;
 
   newpassword: NewPassword = new NewPassword();
 

@@ -2,10 +2,10 @@
 
 <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" id="sidenav">
   <ul class="nav nav-pills nav-flush flex-column text-center">
-	 	<li><a routerLink="/home" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Accueil" placement="right" container="body"><i class="fa-solid fa-home"></i></a></li>
-		<li><a routerLink="/login" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Login" placement="right" container="body"><i class="fa-solid fa-right-to-bracket"></i></a></li>
-		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Planning" placement="right" container="body"><i class="fa-solid fa-clock"></i></a></li>
-		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Caméras" placement="right" container="body"><i class="fa-solid fa-eye"></i></a></li>
+    <li><a routerLink="/home" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Accueil" placement="right" container="body"><fa-icon [icon]="faHome"></fa-icon></a></li>
+		<li><a routerLink="/login" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Login" placement="right" container="body"><fa-icon [icon]="faRightToBracket"></fa-icon></a></li>
+		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Planning" placement="right" container="body"><fa-icon [icon]="faClock"></fa-icon></a></li>
+		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Caméras" placement="right" container="body"><fa-icon [icon]="faEye"></fa-icon></a></li>
 	</ul>
 </div><div #signouticon class="d-none"></div>
 
@@ -13,17 +13,17 @@
 
 <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" id="sidenav">
   <ul class="nav nav-pills nav-flush flex-column text-center">
-	 	<li><a routerLink="/home" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Accueil" placement="right" container="body"><i class="fa-solid fa-home"></i></a></li>
-		<li><a routerLink="/account-details" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Compte" placement="right" container="body"><i class="fa-solid fa-user"></i></a></li>
-    <li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Logout" placement="right" container="body"><i #signouticon class="fa-solid fa-right-from-bracket"></i></a></li>
-		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Planning" placement="right" container="body"><i class="fa-solid fa-clock"></i></a></li>
-		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Caméras" placement="right" container="body"><i class="fa-solid fa-eye"></i></a></li>
+	 	<li><a routerLink="/home" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Accueil" placement="right" container="body"><fa-icon [icon]="faHome"></fa-icon></a></li>
+		<li><a routerLink="/account-details" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Compte" placement="right" container="body"><fa-icon [icon]="faUser"></fa-icon></a></li>
+    <li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Logout" placement="right" container="body"><fa-icon #signouticon [icon]="faRightFromBracket"></fa-icon></a></li>
+		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Planning" placement="right" container="body"><fa-icon [icon]="faClock"></fa-icon></a></li>
+		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Caméras" placement="right" container="body"><fa-icon [icon]="faEye"></fa-icon></a></li>
 
-		<li><a routerLink="/chat" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Messagerie" placement="right" container="body"><i class="fa-solid fa-comments"></i></a></li>
+		<li><a routerLink="/chat" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Messagerie" placement="right" container="body"><fa-icon [icon]="faComments"></fa-icon></a></li>
 
-    <li><a routerLink="/production-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Productions" placement="right" container="body"><i class="fa-solid fa-save"></i></a></li>
-		<li><a routerLink="/vote-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Voter" placement="right" container="body"><i class="fa-solid fa-vote-yea"></i></a></li>
-		<li><a routerLink="/result-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Résultats" placement="right" container="body"><i class="fa-solid fa-trophy"></i></a></li>
+    <li><a routerLink="/production-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Productions" placement="right" container="body"><fa-icon [icon]="faSave"></fa-icon></a></li>
+		<li><a routerLink="/vote-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Voter" placement="right" container="body"><fa-icon [icon]="faVoteYea"></fa-icon></a></li>
+		<li><a routerLink="/result-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Résultats" placement="right" container="body"><fa-icon [icon]="faTrophy"></fa-icon></a></li>
 
 	</ul>
 </div>
@@ -32,19 +32,19 @@
 
 <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" id="sidenav">
   <ul class="nav nav-pills nav-flush flex-column text-center">
-	 	<li><a routerLink="/home" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Accueil" placement="right" container="body"><i class="fa-solid fa-home"></i></a></li>
-		<li><a routerLink="/account-details" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Compte" placement="right" container="body"><i class="fa-solid fa-user"></i></a></li>
-		<li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Logout" placement="right" container="body"><i #signouticon class="fa-solid fa-right-from-bracket"></i></a></li>
-		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Planning" placement="right" container="body"><i class="fa-solid fa-clock"></i></a></li>
-		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Caméras" placement="right" container="body"><i class="fa-solid fa-eye"></i></a></li>
+	 	<li><a routerLink="/home" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Accueil" placement="right" container="body"><fa-icon [icon]="faHome"></fa-icon></a></li>
+		<li><a routerLink="/account-details" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Compte" placement="right" container="body"><fa-icon [icon]="faUser"></fa-icon></a></li>
+		<li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Logout" placement="right" container="body"><fa-icon #signouticon [icon]="faRightFromBracket"></fa-icon></a></li>
+		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Planning" placement="right" container="body"><fa-icon [icon]="faClock"></fa-icon></a></li>
+		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Caméras" placement="right" container="body"><fa-icon [icon]="faEye"></fa-icon></a></li>
 
-		<li><a routerLink="/chat" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Messagerie" placement="right" container="body"><i class="fa-solid fa-comments"></i></a></li>
+		<li><a routerLink="/chat" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Messagerie" placement="right" container="body"><fa-icon [icon]="faComments"></fa-icon></a></li>
 
-    <li><a routerLink="/participant-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Participants" placement="right" container="body"><i class="fa-solid fa-users"></i></a></li>
+    <li><a routerLink="/participant-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Participants" placement="right" container="body"><fa-icon [icon]="faUsers"></fa-icon></a></li>
 
-    <li><a routerLink="/production-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Productions" placement="right" container="body"><i class="fa-solid fa-save"></i></a></li>
-		<li><a routerLink="/vote-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Voter" placement="right" container="body"><i class="fa-solid fa-vote-yea"></i></a></li>
-		<li><a routerLink="/result-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Résultats" placement="right" container="body"><i class="fa-solid fa-trophy"></i></a></li>
+    <li><a routerLink="/production-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Productions" placement="right" container="body"><fa-icon [icon]="faSave"></fa-icon></a></li>
+		<li><a routerLink="/vote-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Voter" placement="right" container="body"><fa-icon [icon]="faVoteYea"></fa-icon></a></li>
+		<li><a routerLink="/result-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Résultats" placement="right" container="body"><fa-icon [icon]="faTrophy"></fa-icon></a></li>
 	</ul>
 </div>
 
@@ -52,23 +52,23 @@
 
 <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" id="sidenav">
   <ul class="nav nav-pills nav-flush flex-column text-center">
-	 	<li><a routerLink="/home" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Accueil" placement="right" container="body"><i class="fa-solid fa-home"></i></a></li>
-		<li><a routerLink="/account-details" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Compte" placement="right" container="body"><i class="fa-solid fa-user"></i></a></li>
-		<li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Logout" placement="right" container="body"><i #signouticon class="fa-solid fa-right-from-bracket"></i></a></li>
-		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Planning" placement="right" container="body"><i class="fa-solid fa-clock"></i></a></li>
-		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Caméras" placement="right" container="body"><i class="fa-solid fa-eye"></i></a></li>
+	 	<li><a routerLink="/home" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Accueil" placement="right" container="body"><fa-icon [icon]="faHome"></fa-icon></a></li>
+		<li><a routerLink="/account-details" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Compte" placement="right" container="body"><fa-icon [icon]="faUser"></fa-icon></a></li>
+		<li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Logout" placement="right" container="body"><fa-icon #signouticon [icon]="faRightFromBracket"></fa-icon></a></li>
+		<li><a routerLink="/event-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Planning" placement="right" container="body"><fa-icon [icon]="faClock"></fa-icon></a></li>
+		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Caméras" placement="right" container="body"><fa-icon [icon]="faEye"></fa-icon></a></li>
 
-		<li><a routerLink="/chat" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Messagerie" placement="right" container="body"><i class="fa-solid fa-comments"></i></a></li>
+		<li><a routerLink="/chat" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Messagerie" placement="right" container="body"><fa-icon [icon]="faComments"></fa-icon></a></li>
 
-    <li><a routerLink="/participant-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Participants" placement="right" container="body"><i class="fa-solid fa-users"></i></a></li>
+    <li><a routerLink="/participant-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Participants" placement="right" container="body"><fa-icon [icon]="faUsers"></fa-icon></a></li>
 
-    <li><a routerLink="/categorie-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Catégories" placement="right" container="body"><i class="fa-solid fa-layer-group"></i></a></li>
-    <li><a routerLink="/production-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Productions" placement="right" container="body"><i class="fa-solid fa-save"></i></a></li>
-		<li><a routerLink="/show-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Présentations" placement="right" container="body"><i class="fa-solid fa-display"></i></a></li>
-		<li><a routerLink="/poll-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Voter" placement="right" container="body"><i class="fa-solid fa-vote-yea"></i></a></li>
-		<li><a routerLink="/result-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Résultats" placement="right" container="body"><i class="fa-solid fa-trophy"></i></a></li>
+    <li><a routerLink="/categorie-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Catégories" placement="right" container="body"><fa-icon [icon]="faLayerGroup"></fa-icon></a></li>
+    <li><a routerLink="/production-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Productions" placement="right" container="body"><fa-icon [icon]="faSave"></fa-icon></a></li>
+		<li><a routerLink="/show-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Présentations" placement="right" container="body"><fa-icon [icon]="faDisplay"></fa-icon></a></li>
+		<li><a routerLink="/poll-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Voter" placement="right" container="body"><fa-icon [icon]="faVoteYea"></fa-icon></a></li>
+		<li><a routerLink="/result-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Résultats" placement="right" container="body"><fa-icon [icon]="faTrophy"></fa-icon></a></li>
 
-    <li><a routerLink="/variable-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Paramétrages" placement="right" container="body"><i class="fa-solid fa-sliders-h"></i></a></li>
+    <li><a routerLink="/variable-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Paramétrages" placement="right" container="body"><fa-icon [icon]="faSlidersH"></fa-icon></a></li>
 	</ul>
 </div>
 

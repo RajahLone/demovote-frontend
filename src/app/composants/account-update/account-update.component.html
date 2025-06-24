@@ -4,7 +4,7 @@
 <div class="card shadow center">
 	<div class="card-header"><span i18n>Fiche d'un participant</span></div>
 	<div class="card-header shadow-sm">
-		<button (click)="goToHome()" class="btn bg-gradient btn-primary btn-sm"><i class="fa-solid fa-xmark"></i>&nbsp;<span i18n>Retour</span></button>
+		<button (click)="goToHome()" class="btn bg-gradient btn-primary btn-sm"><fa-icon [icon]="faXmark"></fa-icon>&nbsp;<span i18n>Retour</span></button>
 	</div>
 	<div class="card-body form-scrollable">
 
@@ -194,7 +194,7 @@
 
 		</div>
 		<div class="card-footer">
-			<button type="button" class="btn bg-gradient btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalModifier" [disabled]="formRef.invalid"><i class="fa-solid fa-check"></i>&nbsp;<span i18n>Modifier</span></button>
+			<button type="button" class="btn bg-gradient btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalModifier" [disabled]="formRef.invalid"><fa-icon [icon]="faCheck"></fa-icon>&nbsp;<span i18n>Modifier</span></button>
 		</div>
 	</div>
 </form>

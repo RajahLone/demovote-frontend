@@ -19,5 +19,3 @@
   #sidenav ul { display: inline-block; }
   #sidenav ul li { float: left; border-bottom: none; }
 }
-
-.fa { text-rendering: optimizeLegibility; }

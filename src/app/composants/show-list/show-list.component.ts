@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { saveAs } from 'file-saver-es';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faRotate, faFileCode, faFilePdf, faCheckToSlot, faLink, faDownload, faUserTie, faSquareXmark, faSquareCheck, faSquareArrowUpRight } from '@fortawesome/free-solid-svg-icons';
 
 import { MenuComponent } from '../menu/menu.component';
 import { Categorie } from '../../interfaces/categorie';
@@ -12,10 +14,12 @@ import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../inter
 import { PresentationService } from '../../services/presentation.service';
 import { ProductionService } from '../../services/production.service';
 
-@Component({ selector: 'app-show-list', imports: [FormsModule, TooltipModule, MenuComponent], templateUrl: './show-list.component.html', styleUrl: './show-list.component.css' })
+@Component({ selector: 'app-show-list', imports: [FontAwesomeModule, FormsModule, TooltipModule, MenuComponent], templateUrl: './show-list.component.html', styleUrl: './show-list.component.css' })
 
 export class ShowListComponent implements OnInit
 {
+  faRotate = faRotate; faFileCode = faFileCode; faFilePdf = faFilePdf; faCheckToSlot = faCheckToSlot; faLink = faLink; faDownload = faDownload; faUserTie = faUserTie;
+  faSquareXmark = faSquareXmark; faSquareCheck = faSquareCheck; faSquareArrowUpRight = faSquareArrowUpRight;
 
   categories: Categorie[] = [];
 
