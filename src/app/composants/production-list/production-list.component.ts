@@ -19,6 +19,8 @@ export class ProductionListComponent implements OnInit
 
   productions: ProductionShort[] = [];
 
+  listeTri: number = 0;
+
   types: ProductionEnum[] = ProductionTypeList;
   typeFiltre: string = "";
   soloFiltre: number = 0;
@@ -31,8 +33,9 @@ export class ProductionListComponent implements OnInit
 
   ngOnInit() { this.goToRefreshListProduction(); }
 
-  private retreiveDatas() { this.productionService.getListProduction(this.typeFiltre, this.soloFiltre).subscribe(data => { this.productions = data; }); }
+  private retreiveDatas() { this.productionService.getListProduction(this.listeTri, this.typeFiltre, this.soloFiltre).subscribe(data => { this.productions = data; }); }
 
+  trier(event: any) { this.listeTri = event.target.value; this.retreiveDatas(); }
   filtrageParType(event: any) { this.typeFiltre = event.target.value; this.goToRefreshListProduction(); }
   filtrageParSolo(event: any) { this.soloFiltre = event.target.value; this.goToRefreshListProduction(); }
 

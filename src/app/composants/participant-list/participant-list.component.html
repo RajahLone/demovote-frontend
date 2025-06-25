@@ -6,7 +6,7 @@
 	</div>
 	<div class="card-header">
 		<div class="row justify-content-end">
-			<div class="form-group col-sm-3 label-nobr">
+			<div class="form-group col-sm-2 label-nobr">
 			  <div class="input-group input-group-sn">
 				  <button type="button" class="btn bg-gradient btn-secondary btn-sm field-separate" disabled><span i18n>Tri</span></button>
 				  <select class="form-select form-select-sm field-separate" id="select_tri" [(ngModel)]="listeTri" (change)="trier($event)" placement="bottom">
@@ -40,7 +40,7 @@
 				  </select>
 			  </div>
 		  </div>
-		  <div class="form-group col-sm-2 label-nobr">
+			<div class="form-group col-sm-2 label-nobr">
 			  <button type="button" (click)="filtrageReset()" class="btn bg-gradient btn-secondary btn-sm field-separate" style="margin-right: 5px;"><fa-icon [icon]="faFilterCircleXmark"></fa-icon>&nbsp;<span i18n>Retirer les filtres</span></button>
 		  </div>
 		</div>
