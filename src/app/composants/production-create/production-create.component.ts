@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/co
 import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http'
-import * as SparkMD5 from 'spark-md5-es';
+import SparkMD5 from 'spark-md5-es';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faXmark, faPlus, faUpload } from '@fortawesome/free-solid-svg-icons';
 
