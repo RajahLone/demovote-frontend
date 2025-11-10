@@ -6,7 +6,7 @@
   		<div class="row justify-content-between">
         <div class="form-group col-sm-9 label-nobr">
   				<div class="input-group input-group-sn">
-            <input type="text" (keydown.enter)="envoiNouvelleLigne()" class="form-control form-control-sm field-separate" id="input_message" [(ngModel)]="ajoute.ligne" autofocus>
+            <input type="text" (keydown.enter)="envoiNouvelleLigne()" class="form-control form-control-sm field-separate" id="input_message" [(ngModel)]="ajoute.ligne" autofocus i18n-placeholder placeholder="Écrire ici votre message">
             <button type="button" (click)="envoiNouvelleLigne()" class="btn bg-gradient btn-primary btn-sm field-separate"><fa-icon [icon]="faComment"></fa-icon>&nbsp;<span i18n>Envoyer</span></button>
   			  </div>
   			</div>
