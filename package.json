@@ -27,7 +27,7 @@
     "bootstrap": "^5.3.3",
     "express": "^5.2.1",
     "file-saver-es": "^2.0.5",
-    "glob": "^13.0.0",
+    "glob": "^13.0.1",
     "http-proxy-middleware": "^3.0.5",
     "jquery": "^3.7.1",
     "ngx-bootstrap": "^20.0.2",
