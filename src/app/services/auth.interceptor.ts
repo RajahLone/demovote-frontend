@@ -62,7 +62,7 @@ export class AuthInterceptor implements HttpInterceptor
 
     if (postput && (csrfToken != null))
     {
-      headers = headers.append('X-XSRF-TOKEN', csrfToken);
+      headers = headers.set('X-XSRF-TOKEN', csrfToken);
     }
 
     return headers;
