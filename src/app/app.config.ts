@@ -11,9 +11,9 @@ import { AuthInterceptor } from './services/auth.interceptor';
 export const appConfig: ApplicationConfig =
 {
   providers: [
+    provideClientHydration(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideClientHydration(),
     provideAnimationsAsync(),
     provideHttpClient(withInterceptorsFromDi(), withXsrfConfiguration({ cookieName: "XSRF-TOKEN", headerName: "X-XSRF-TOKEN" })),
     {
