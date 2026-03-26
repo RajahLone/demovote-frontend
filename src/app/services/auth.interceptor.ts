@@ -56,7 +56,7 @@ export class AuthInterceptor implements HttpInterceptor
   {
     const authToken = this.accountService.getAccessToken();
 
-    headers = headers.append('Authorization', "Bearer " + authToken);
+    headers = headers.set('Authorization', "Bearer " + authToken);
 
     const csrfToken = this.csrfTokenExtrator.getToken() as string;
 
