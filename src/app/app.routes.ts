@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './composants/home/home.component';
 import { LoginComponent } from './composants/login/login.component';
-import { EventListComponent } from './composants/event-list/event-list.component';
+import { EvenementListComponent } from './composants/evenement-list/evenement-list.component';
 import { WebcamListComponent } from './composants/webcam-list/webcam-list.component';
 import { ChatComponent } from './composants/chat/chat.component';
 import { AccountDetailsComponent } from './composants/account-details/account-details.component';
@@ -43,7 +43,7 @@ export const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent, runGuardsAndResolvers: 'always' },
   {path: 'login', component: LoginComponent, runGuardsAndResolvers: 'always' },
-  {path: 'event-list', component: EventListComponent, runGuardsAndResolvers: 'always' },
+  {path: 'evenement-list', component: EvenementListComponent, runGuardsAndResolvers: 'always' },
   {path: 'webcam-list', component: WebcamListComponent, runGuardsAndResolvers: 'always' },
   {path: 'chat', component: ChatComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
   {path: 'account-details', component: AccountDetailsComponent, canActivate: [UserGuard], runGuardsAndResolvers: 'always' },
