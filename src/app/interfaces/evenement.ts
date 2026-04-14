@@ -13,7 +13,7 @@ export class Evenement
 {
   numeroEvenement: number = 0;
   jourDebut: string = "";      // YYYY-MM-DD
-  heureDebut: string = "";     // HH24hMI
+  heureDebut: string = "";     // HH24hMI (liste) ou HH24:MI (édition)
   heureFin: string = "";       // HH24hMI
   duree: number = 0;           // en minutes
   type: string = "GENERAL";

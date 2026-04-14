@@ -22,6 +22,8 @@ export class EvenementService
     return this.httpClient.get<Evenement[]>(`${this.baseURL}/list`, { params: params });
   }
 
+  getByIdEvenement(id: number): Observable<Evenement>{ return this.httpClient.get<Evenement>(`${this.baseURL}/form/${id}`); }
+
   createEvenement(evenement: Evenement): Observable<Object>{ return this.httpClient.post(`${this.baseURL}/create`, evenement); }
 
   updateEvenement(id: number, Evenement: Evenement): Observable<Object>{ return this.httpClient.put(`${this.baseURL}/update/${id}`, Evenement); }

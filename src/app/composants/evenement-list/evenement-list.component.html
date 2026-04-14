@@ -4,7 +4,7 @@
 
   <p class="fs-3 text-center" style="margin-top:12px;"><span i18n>Planning des conférences et événements</span></p>
 
-  <div style="margin:auto;"><small><span i18n>Soumis à modifications, merci de consulter cette page régulièrement.</span></small></div>
+  <div style="margin:auto;"><small>&nbsp;<span i18n>Soumis à modifications, merci de consulter cette page régulièrement.</span>&nbsp;</small></div>
 </div>
 
 <div class="d-flex flex-wrap justify-content-around">
@@ -12,14 +12,14 @@
 @if (this.journees.jour1Court) {
 
    <div class="card shadow" style="width:33rem;">
-    <div class="card-header text-center">
-      <span class="fs-5 card-title"><strong>{{ this.journees.jour1Long }}</strong></span>
+    <div class="card-header align-center" style="max-height:10rem;overflow:auto;">
+      <p><strong>@if (logged && ((role === "ORGA") || (role === "ADMIN"))) { <fa-icon [icon]="faPlus" (click)="goToNewEvenement(this.journees.jour1Event)" class="text-success pointeur-souris" style="margin-right:5px;margin-left:5px;"></fa-icon> }<span class="fs-5">{{ this.journees.jour1Long }}</span></strong></p>
     </div>
     <div class="card-body">
 
     @for (evenement of evenements1; track evenement.numeroEvenement) {
-      <div [class]="{'alert': true, 'alert-dark': evenement.type === types[0].key, 'alert-secondary': evenement.type === types[1].key, 'alert-info': evenement.type === types[2].key, 'alert-warning': evenement.type === types[3].key, 'alert-success': evenement.type === types[4].key}" role="alert">
-        <p><strong>{{ evenement.heureDebut }}&nbsp;@if (evenement.heureFin){ -&nbsp;{{ evenement.heureFin }}&nbsp; }: {{ evenement.intitule }}</strong></p>
+      <div [class]="{'alert': true, 'alert-secondary': evenement.type === types[0].key, 'alert-danger': evenement.type === types[1].key, 'alert-info': evenement.type === types[2].key, 'alert-warning': evenement.type === types[3].key, 'alert-success': evenement.type === types[4].key}" role="alert">
+        <p><strong>{{ evenement.heureDebut }}&nbsp;@if (evenement.heureFin){-&nbsp;{{ evenement.heureFin }}&nbsp;}: @if (logged && ((role === "ORGA") || (role === "ADMIN"))) {<fa-icon [icon]="faPenToSquare" (click)="goToEditEvenement(evenement.numeroEvenement)" class="text-warning pointeur-souris" style="margin-right:5px;margin-left:5px;"></fa-icon>}{{ evenement.intitule }}</strong></p>
         <p>{{ evenement.descriptif }}</p>
         <p><small>{{ evenement.lien }}</small></p>
       </div>
@@ -31,14 +31,14 @@
 @if (this.journees.jour2Court) {
 
    <div class="card shadow" style="width:33rem;">
-    <div class="card-header text-center">
-      <span class="fs-5 card-title"><strong>{{ this.journees.jour2Long }}</strong></span>
+    <div class="card-header align-center" style="max-height:10rem;overflow:auto;">
+      <p><strong>@if (logged && ((role === "ORGA") || (role === "ADMIN"))) { <fa-icon [icon]="faPlus" (click)="goToNewEvenement(this.journees.jour2Event)" class="text-success pointeur-souris" style="margin-right:5px;margin-left:5px;"></fa-icon> }<span class="fs-5">{{ this.journees.jour2Long }}</span></strong></p>
     </div>
     <div class="card-body">
 
       @for (evenement of evenements2; track evenement.numeroEvenement) {
-        <div [class]="{'alert': true, 'alert-dark': evenement.type === types[0].key, 'alert-secondary': evenement.type === types[1].key, 'alert-info': evenement.type === types[2].key, 'alert-warning': evenement.type === types[3].key, 'alert-success': evenement.type === types[4].key}" role="alert">
-          <p><strong>{{ evenement.heureDebut }}&nbsp;@if (evenement.heureFin){ -&nbsp;{{ evenement.heureFin }}&nbsp; }: {{ evenement.intitule }}</strong></p>
+        <div [class]="{'alert': true, 'alert-secondary': evenement.type === types[0].key, 'alert-danger': evenement.type === types[1].key, 'alert-info': evenement.type === types[2].key, 'alert-warning': evenement.type === types[3].key, 'alert-success': evenement.type === types[4].key}" role="alert">
+          <p><strong>{{ evenement.heureDebut }}&nbsp;@if (evenement.heureFin){-&nbsp;{{ evenement.heureFin }}&nbsp;}: @if (logged && ((role === "ORGA") || (role === "ADMIN"))) {<fa-icon [icon]="faPenToSquare" (click)="goToEditEvenement(evenement.numeroEvenement)" class="text-warning pointeur-souris" style="margin-right:5px;margin-left:5px;"></fa-icon>}{{ evenement.intitule }}</strong></p>
           <p>{{ evenement.descriptif }}</p>
           <p><small>{{ evenement.lien }}</small></p>
         </div>
@@ -50,14 +50,14 @@
 @if (this.journees.jour3Court) {
 
    <div class="card shadow" style="width:33rem;">
-    <div class="card-header text-center">
-      <span class="fs-5 card-title"><strong>{{ this.journees.jour3Long }}</strong></span>
+    <div class="card-header align-center" style="max-height:10rem;overflow:auto;">
+      <p><strong>@if (logged && ((role === "ORGA") || (role === "ADMIN"))) { <fa-icon [icon]="faPlus" (click)="goToNewEvenement(this.journees.jour3Event)" class="text-success pointeur-souris" style="margin-right:5px;margin-left:5px;"></fa-icon> }<span class="fs-5">{{ this.journees.jour3Long }}</span></strong></p>
     </div>
     <div class="card-body">
 
       @for (evenement of evenements3; track evenement.numeroEvenement) {
-        <div [class]="{'alert': true, 'alert-dark': evenement.type === types[0].key, 'alert-secondary': evenement.type === types[1].key, 'alert-info': evenement.type === types[2].key, 'alert-warning': evenement.type === types[3].key, 'alert-success': evenement.type === types[4].key}" role="alert">
-          <p><strong>{{ evenement.heureDebut }}&nbsp;@if (evenement.heureFin){ -&nbsp;{{ evenement.heureFin }}&nbsp; }: {{ evenement.intitule }}</strong></p>
+        <div [class]="{'alert': true, 'alert-secondary': evenement.type === types[0].key, 'alert-danger': evenement.type === types[1].key, 'alert-info': evenement.type === types[2].key, 'alert-warning': evenement.type === types[3].key, 'alert-success': evenement.type === types[4].key}" role="alert">
+          <p><strong>{{ evenement.heureDebut }}&nbsp;@if (evenement.heureFin){-&nbsp;{{ evenement.heureFin }}&nbsp;}: @if (logged && ((role === "ORGA") || (role === "ADMIN"))) {<fa-icon [icon]="faPenToSquare" (click)="goToEditEvenement(evenement.numeroEvenement)" class="text-warning pointeur-souris" style="margin-right:5px;margin-left:5px;"></fa-icon>}{{ evenement.intitule }}</strong></p>
           <p>{{ evenement.descriptif }}</p>
           <p><small>{{ evenement.lien }}</small></p>
         </div>

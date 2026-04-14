@@ -1,16 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faPlus, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+
 import { MenuComponent } from '../menu/menu.component';
 import { Journees } from '../../interfaces/divers';
 import { DiversService } from '../../services/divers.service'
 import { Evenement, EvenementEnum, EvenementTypeList } from '../../interfaces/evenement';
 import { EvenementService } from '../../services/evenement.service';
 
-@Component({ selector: 'app-evenement-list', imports: [MenuComponent], templateUrl: './evenement-list.component.html', styleUrl: './evenement-list.component.css' })
+import { AccountService } from '../../services/account.service';
+
+@Component({ selector: 'app-evenement-list', imports: [FontAwesomeModule, MenuComponent], templateUrl: './evenement-list.component.html', styleUrl: './evenement-list.component.css' })
 
 export class EvenementListComponent implements OnInit
 {
+  faPlus = faPlus; faPenToSquare = faPenToSquare;
 
   journees: Journees = new Journees();
 
@@ -20,7 +26,11 @@ export class EvenementListComponent implements OnInit
 
   types: EvenementEnum[] = EvenementTypeList;
 
+  logged: boolean = false;
+  role: string = "";
+
   constructor(
+    private accountService: AccountService,
     private diversService: DiversService,
     private evenementService: EvenementService,
     private router: Router,
@@ -29,6 +39,9 @@ export class EvenementListComponent implements OnInit
 
   ngOnInit()
   {
+    this.logged = this.accountService.isLogged();
+    this.role = this.accountService.getRole();
+
     this.journees = new Journees();
     this.diversService.getJournees().subscribe(data =>
     {
@@ -39,5 +52,9 @@ export class EvenementListComponent implements OnInit
       if (this.journees.jour3Court) { this.evenementService.getListEvenement(this.journees.jour3Event).subscribe(data3 => { this.evenements3 = data3; }); }
     });
   }
+
+  goToNewEvenement(jour: string) { this.router.navigate(['/evenement-create', jour]); }
+
+  goToEditEvenement(id: number) { this.router.navigate(['/evenement-update', id]); }
 
 }
