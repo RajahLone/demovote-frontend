@@ -19,9 +19,8 @@
 
     @for (evenement of evenements1; track evenement.numeroEvenement) {
       <div [class]="{'alert': true, 'alert-secondary': evenement.type === types[0].key, 'alert-danger': evenement.type === types[1].key, 'alert-info': evenement.type === types[2].key, 'alert-warning': evenement.type === types[3].key, 'alert-success': evenement.type === types[4].key}" role="alert">
-        <p><strong>{{ evenement.heureDebut }}&nbsp;@if (evenement.heureFin){-&nbsp;{{ evenement.heureFin }}&nbsp;}: @if (logged && ((role === "ORGA") || (role === "ADMIN"))) {<fa-icon [icon]="faPenToSquare" (click)="goToEditEvenement(evenement.numeroEvenement)" class="text-warning pointeur-souris" style="margin-right:5px;margin-left:5px;"></fa-icon>}{{ evenement.intitule }}</strong></p>
+        <p><strong>{{ evenement.heureDebut }}&nbsp;@if (evenement.heureFin){-&nbsp;{{ evenement.heureFin }}&nbsp;}: @if (logged && ((role === "ORGA") || (role === "ADMIN"))) {<fa-icon [icon]="faPenToSquare" (click)="goToEditEvenement(evenement.numeroEvenement)" class="text-warning pointeur-souris" style="margin-right:5px;margin-left:5px;"></fa-icon>}{{ evenement.intitule }}@if (evenement.lien){ <fa-icon [icon]="faLink" (click)="openLien(evenement.lien)" class="text-primary pointeur-souris" style="margin-right:5px;margin-left:5px;"></fa-icon> }</strong></p>
         <p>{{ evenement.descriptif }}</p>
-        <p><small>{{ evenement.lien }}</small></p>
       </div>
     }
 
@@ -38,9 +37,8 @@
 
       @for (evenement of evenements2; track evenement.numeroEvenement) {
         <div [class]="{'alert': true, 'alert-secondary': evenement.type === types[0].key, 'alert-danger': evenement.type === types[1].key, 'alert-info': evenement.type === types[2].key, 'alert-warning': evenement.type === types[3].key, 'alert-success': evenement.type === types[4].key}" role="alert">
-          <p><strong>{{ evenement.heureDebut }}&nbsp;@if (evenement.heureFin){-&nbsp;{{ evenement.heureFin }}&nbsp;}: @if (logged && ((role === "ORGA") || (role === "ADMIN"))) {<fa-icon [icon]="faPenToSquare" (click)="goToEditEvenement(evenement.numeroEvenement)" class="text-warning pointeur-souris" style="margin-right:5px;margin-left:5px;"></fa-icon>}{{ evenement.intitule }}</strong></p>
+          <p><strong>{{ evenement.heureDebut }}&nbsp;@if (evenement.heureFin){-&nbsp;{{ evenement.heureFin }}&nbsp;}: @if (logged && ((role === "ORGA") || (role === "ADMIN"))) {<fa-icon [icon]="faPenToSquare" (click)="goToEditEvenement(evenement.numeroEvenement)" class="text-warning pointeur-souris" style="margin-right:5px;margin-left:5px;"></fa-icon>}{{ evenement.intitule }}@if (evenement.lien){ <fa-icon [icon]="faLink" (click)="openLien(evenement.lien)" class="text-primary pointeur-souris" style="margin-right:5px;margin-left:5px;"></fa-icon> }</strong></p>
           <p>{{ evenement.descriptif }}</p>
-          <p><small>{{ evenement.lien }}</small></p>
         </div>
       }
 
@@ -57,9 +55,8 @@
 
       @for (evenement of evenements3; track evenement.numeroEvenement) {
         <div [class]="{'alert': true, 'alert-secondary': evenement.type === types[0].key, 'alert-danger': evenement.type === types[1].key, 'alert-info': evenement.type === types[2].key, 'alert-warning': evenement.type === types[3].key, 'alert-success': evenement.type === types[4].key}" role="alert">
-          <p><strong>{{ evenement.heureDebut }}&nbsp;@if (evenement.heureFin){-&nbsp;{{ evenement.heureFin }}&nbsp;}: @if (logged && ((role === "ORGA") || (role === "ADMIN"))) {<fa-icon [icon]="faPenToSquare" (click)="goToEditEvenement(evenement.numeroEvenement)" class="text-warning pointeur-souris" style="margin-right:5px;margin-left:5px;"></fa-icon>}{{ evenement.intitule }}</strong></p>
+          <p><strong>{{ evenement.heureDebut }}&nbsp;@if (evenement.heureFin){-&nbsp;{{ evenement.heureFin }}&nbsp;}: @if (logged && ((role === "ORGA") || (role === "ADMIN"))) {<fa-icon [icon]="faPenToSquare" (click)="goToEditEvenement(evenement.numeroEvenement)" class="text-warning pointeur-souris" style="margin-right:5px;margin-left:5px;"></fa-icon>}{{ evenement.intitule }}@if (evenement.lien){ <fa-icon [icon]="faLink" (click)="openLien(evenement.lien)" class="text-primary pointeur-souris" style="margin-right:5px;margin-left:5px;"></fa-icon> }</strong></p>
           <p>{{ evenement.descriptif }}</p>
-          <p><small>{{ evenement.lien }}</small></p>
         </div>
       }
 

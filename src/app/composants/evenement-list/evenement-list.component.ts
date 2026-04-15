@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faPlus, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faPenToSquare, faLink } from '@fortawesome/free-solid-svg-icons';
 
 import { MenuComponent } from '../menu/menu.component';
 import { Journees } from '../../interfaces/divers';
@@ -16,7 +16,7 @@ import { AccountService } from '../../services/account.service';
 
 export class EvenementListComponent implements OnInit
 {
-  faPlus = faPlus; faPenToSquare = faPenToSquare;
+  faPlus = faPlus; faPenToSquare = faPenToSquare; faLink = faLink;
 
   journees: Journees = new Journees();
 
@@ -56,5 +56,7 @@ export class EvenementListComponent implements OnInit
   goToNewEvenement(jour: string) { this.router.navigate(['/evenement-create', jour]); }
 
   goToEditEvenement(id: number) { this.router.navigate(['/evenement-update', id]); }
+
+  openLien(link: string) { window.open('https://' + link, '_blank'); }
 
 }
