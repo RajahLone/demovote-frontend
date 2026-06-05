@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -8,7 +8,8 @@ import { MenuComponent } from '../menu/menu.component';
 import { Variable } from '../../interfaces/variable';
 import { VariableService } from '../../services/variable.service';
 
-@Component({ selector: 'app-variable-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './variable-details.component.html', styleUrl: './variable-details.component.css' })
+@Component({ selector: 'app-variable-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './variable-details.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './variable-details.component.css' })
 
 export class VariableDetailsComponent implements OnInit
 {

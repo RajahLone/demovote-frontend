@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -9,7 +9,8 @@ import { AccountService } from '../../services/account.service'
 import { User } from '../../interfaces/user';
 import { Journees } from '../../interfaces/divers';
 
-@Component({ selector: 'app-login', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './login.component.html', styleUrl: './login.component.css' })
+@Component({ selector: 'app-login', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './login.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './login.component.css' })
 
 export class LoginComponent implements OnInit
 {

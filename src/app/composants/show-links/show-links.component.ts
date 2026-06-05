@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, ChangeDetectionStrategy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -10,7 +10,8 @@ import { CategorieService } from '../../services/categorie.service';
 import { ProductionItem, ProductionEnum } from '../../interfaces/production';
 import { PresentationService } from '../../services/presentation.service';
 
-@Component({ selector: 'app-show-links', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './show-links.component.html', styleUrl: './show-links.component.css' })
+@Component({ selector: 'app-show-links', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './show-links.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './show-links.component.css' })
 
 export class ShowLinksComponent implements OnInit
 {

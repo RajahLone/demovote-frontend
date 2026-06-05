@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -10,7 +10,8 @@ import { AccountService } from '../../services/account.service'
 import { Journees } from '../../interfaces/divers';
 import { DiversService } from '../../services/divers.service'
 
-@Component({ selector: 'app-account-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './account-details.component.html', styleUrl: './account-details.component.css' })
+@Component({ selector: 'app-account-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './account-details.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './account-details.component.css' })
 
 export class AccountDetailsComponent implements OnInit
 {

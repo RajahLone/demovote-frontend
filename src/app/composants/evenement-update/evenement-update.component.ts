@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -10,7 +10,8 @@ import { DiversService } from '../../services/divers.service'
 import { Evenement, EvenementEnum, EvenementTypeList } from '../../interfaces/evenement';
 import { EvenementService } from '../../services/evenement.service';
 
-@Component({ selector: 'app-evenement-update', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './evenement-update.component.html', styleUrl: './evenement-update.component.css' })
+@Component({ selector: 'app-evenement-update', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './evenement-update.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './evenement-update.component.css' })
 
 export class EvenementUpdateComponent implements OnInit
 {

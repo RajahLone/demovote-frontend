@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -8,7 +8,8 @@ import { MenuComponent } from '../menu/menu.component';
 import { Categorie } from '../../interfaces/categorie';
 import { CategorieService } from '../../services/categorie.service';
 
-@Component({ selector: 'app-categorie-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './categorie-details.component.html', styleUrl: './categorie-details.component.css' })
+@Component({ selector: 'app-categorie-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './categorie-details.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './categorie-details.component.css' })
 
 export class CategorieDetailsComponent implements OnInit
 {

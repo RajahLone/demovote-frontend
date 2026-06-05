@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -8,7 +8,8 @@ import { MenuComponent } from '../menu/menu.component';
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 
-@Component({ selector: 'app-production-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './production-details.component.html', styleUrl: './production-details.component.css' })
+@Component({ selector: 'app-production-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './production-details.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './production-details.component.css' })
 
 export class ProductionDetailsComponent implements OnInit
 {

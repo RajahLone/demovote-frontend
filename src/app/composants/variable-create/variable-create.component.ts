@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -8,7 +8,8 @@ import { MenuComponent } from '../menu/menu.component';
 import { Variable } from '../../interfaces/variable';
 import { VariableService } from '../../services/variable.service';
 
-@Component({ selector: 'app-variable-create', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './variable-create.component.html', styleUrl: './variable-create.component.css' })
+@Component({ selector: 'app-variable-create', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './variable-create.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './variable-create.component.css' })
 
 export class VariableCreateComponent implements OnInit
 {

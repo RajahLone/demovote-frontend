@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -11,7 +11,8 @@ import { Journees } from '../../interfaces/divers';
 import { DiversService } from '../../services/divers.service'
 import { AccountService } from '../../services/account.service';
 
-@Component({ selector: 'app-participant-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './participant-details.component.html', styleUrl: './participant-details.component.css' })
+@Component({ selector: 'app-participant-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './participant-details.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './participant-details.component.css' })
 
 export class ParticipantDetailsComponent implements OnInit
 {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { MenuComponent } from '../menu/menu.component';
@@ -6,7 +6,8 @@ import { Message } from '../../interfaces/divers';
 import { AccountService } from '../../services/account.service'
 import { DiversService } from '../../services/divers.service'
 
-@Component({ selector: 'app-home', imports: [MenuComponent, RouterLink], templateUrl: './home.component.html', styleUrl: './home.component.css' })
+@Component({ selector: 'app-home', imports: [MenuComponent, RouterLink], templateUrl: './home.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './home.component.css' })
 
 export class HomeComponent implements OnInit
 {

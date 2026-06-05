@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -14,7 +14,8 @@ import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../inter
 import { PresentationService } from '../../services/presentation.service';
 import { ProductionService } from '../../services/production.service';
 
-@Component({ selector: 'app-show-list', imports: [FontAwesomeModule, FormsModule, TooltipModule, MenuComponent], templateUrl: './show-list.component.html', styleUrl: './show-list.component.css' })
+@Component({ selector: 'app-show-list', imports: [FontAwesomeModule, FormsModule, TooltipModule, MenuComponent], templateUrl: './show-list.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './show-list.component.css' })
 
 export class ShowListComponent implements OnInit
 {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -12,7 +12,8 @@ import { EvenementService } from '../../services/evenement.service';
 
 import { AccountService } from '../../services/account.service';
 
-@Component({ selector: 'app-evenement-list', imports: [FontAwesomeModule, MenuComponent], templateUrl: './evenement-list.component.html', styleUrl: './evenement-list.component.css' })
+@Component({ selector: 'app-evenement-list', imports: [FontAwesomeModule, MenuComponent], templateUrl: './evenement-list.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './evenement-list.component.css' })
 
 export class EvenementListComponent implements OnInit
 {

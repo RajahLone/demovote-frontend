@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { timer } from 'rxjs';
 
@@ -6,7 +6,8 @@ import { MenuComponent } from '../menu/menu.component';
 import { Webcam } from '../../interfaces/webcam';
 import { WebcamService } from '../../services/webcam.service';
 
-@Component({ selector: 'app-webcam-list', imports: [MenuComponent], templateUrl: './webcam-list.component.html', styleUrl: './webcam-list.component.css' })
+@Component({ selector: 'app-webcam-list', imports: [MenuComponent], templateUrl: './webcam-list.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './webcam-list.component.css' })
 
 export class WebcamListComponent implements OnInit
 {

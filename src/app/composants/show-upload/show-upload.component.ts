@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http'
@@ -12,7 +12,8 @@ import { PresentationService } from '../../services/presentation.service';
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 
-@Component({ selector: 'app-show-upload', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './show-upload.component.html', styleUrl: './show-upload.component.css' })
+@Component({ selector: 'app-show-upload', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './show-upload.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './show-upload.component.css' })
 
 export class ShowUploadComponent implements OnInit
 {

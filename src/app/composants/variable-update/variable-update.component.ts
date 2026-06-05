@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -8,7 +8,8 @@ import { MenuComponent } from '../menu/menu.component';
 import { Variable } from '../../interfaces/variable';
 import { VariableService } from '../../services/variable.service';
 
-@Component({ selector: 'app-variable-update', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './variable-update.component.html', styleUrl: './variable-update.component.css' })
+@Component({ selector: 'app-variable-update', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './variable-update.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './variable-update.component.css' })
 
 export class VariableUpdateComponent implements OnInit
 {

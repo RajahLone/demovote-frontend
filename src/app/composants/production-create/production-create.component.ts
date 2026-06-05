@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http'
@@ -13,7 +13,8 @@ import { ParticipantShort } from '../../interfaces/participant';
 import { ParticipantService } from '../../services/participant.service';
 import { AccountService } from '../../services/account.service'
 
-@Component({ selector: 'app-production-create', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './production-create.component.html', styleUrl: './production-create.component.css' })
+@Component({ selector: 'app-production-create', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './production-create.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './production-create.component.css' })
 
 export class ProductionCreateComponent implements OnInit
 {

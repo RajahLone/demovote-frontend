@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuComponent } from '../menu/menu.component';
 import { Categorie } from '../../interfaces/categorie';
@@ -7,7 +7,8 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
 
-@Component({ selector: 'app-categorie-create', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './categorie-create.component.html', styleUrl: './categorie-create.component.css'})
+@Component({ selector: 'app-categorie-create', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './categorie-create.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './categorie-create.component.css'})
 
 export class CategorieCreateComponent implements OnInit
 {

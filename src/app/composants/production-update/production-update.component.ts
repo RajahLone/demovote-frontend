@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -10,7 +10,8 @@ import { ProductionService } from '../../services/production.service';
 import { ParticipantShort } from '../../interfaces/participant';
 import { ParticipantService } from '../../services/participant.service';
 
-@Component({ selector: 'app-production-update', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './production-update.component.html', styleUrl: './production-update.component.css' })
+@Component({ selector: 'app-production-update', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './production-update.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './production-update.component.css' })
 
 export class ProductionUpdateComponent implements OnInit
 {

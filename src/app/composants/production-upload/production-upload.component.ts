@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http'
@@ -12,7 +12,8 @@ import { ProductionFile } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 import { Message } from '../../interfaces/divers';
 
-@Component({ selector: 'app-production-upload', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './production-upload.component.html', styleUrl: './production-upload.component.css' })
+@Component({ selector: 'app-production-upload', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './production-upload.component.html', changeDetection: ChangeDetectionStrategy.Eager,
+ styleUrl: './production-upload.component.css' })
 
 export class ProductionUploadComponent implements OnInit
 {
