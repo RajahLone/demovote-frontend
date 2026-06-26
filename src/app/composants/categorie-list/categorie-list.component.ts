@@ -7,8 +7,7 @@ import { MenuComponent } from '../menu/menu.component';
 import { Categorie } from '../../interfaces/categorie';
 import { CategorieService } from '../../services/categorie.service';
 
-@Component({ selector: 'app-categorie-list', imports: [FontAwesomeModule, MenuComponent], templateUrl: './categorie-list.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './categorie-list.component.css'})
+@Component({ selector: 'app-categorie-list', imports: [FontAwesomeModule, MenuComponent], templateUrl: './categorie-list.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './categorie-list.component.css'})
 
 export class CategorieListComponent implements OnInit
 {

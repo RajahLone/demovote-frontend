@@ -11,8 +11,7 @@ import { ParticipantService } from '../../services/participant.service';
 import { DiversService } from '../../services/divers.service'
 import { AccountService } from '../../services/account.service';
 
-@Component({ selector: 'app-participant-create', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './participant-create.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './participant-create.component.css' })
+@Component({ selector: 'app-participant-create', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './participant-create.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './participant-create.component.css' })
 
 export class ParticipantCreateComponent implements OnInit
 {

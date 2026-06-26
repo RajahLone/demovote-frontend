@@ -11,8 +11,7 @@ import { CategorieService } from '../../services/categorie.service';
 import { AccountService } from '../../services/account.service';
 import { BulletinService } from '../../services/bulletin.service';
 
-@Component({ selector: 'app-poll-list', imports: [FontAwesomeModule, TooltipModule, MenuComponent], templateUrl: './poll-list.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './poll-list.component.css' })
+@Component({ selector: 'app-poll-list', imports: [FontAwesomeModule, TooltipModule, MenuComponent], templateUrl: './poll-list.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './poll-list.component.css' })
 
 export class PollListComponent implements OnInit
 {

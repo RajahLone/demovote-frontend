@@ -8,8 +8,7 @@ import { MenuComponent } from '../menu/menu.component';
 import { Variable } from '../../interfaces/variable';
 import { VariableService } from '../../services/variable.service';
 
-@Component({ selector: 'app-variable-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './variable-details.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './variable-details.component.css' })
+@Component({ selector: 'app-variable-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './variable-details.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './variable-details.component.css' })
 
 export class VariableDetailsComponent implements OnInit
 {

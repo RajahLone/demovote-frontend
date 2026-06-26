@@ -11,8 +11,7 @@ import { ParticipantService } from '../../services/participant.service';
 import { Journees, Pagination } from '../../interfaces/divers';
 import { DiversService } from '../../services/divers.service'
 
-@Component({ selector: 'app-participant-list', imports: [FontAwesomeModule, TooltipModule, FormsModule, MenuComponent], templateUrl: './participant-list.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './participant-list.component.css' })
+@Component({ selector: 'app-participant-list', imports: [FontAwesomeModule, TooltipModule, FormsModule, MenuComponent], templateUrl: './participant-list.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './participant-list.component.css' })
 
 export class ParticipantListComponent implements OnInit
 {

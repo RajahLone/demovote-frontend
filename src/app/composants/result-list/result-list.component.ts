@@ -11,13 +11,12 @@ import { CategorieService } from '../../services/categorie.service';
 import { BulletinService } from '../../services/bulletin.service';
 import { ProductionService } from '../../services/production.service';
 
-@Component({ selector: 'app-result-list', imports: [FontAwesomeModule, MenuComponent], templateUrl: './result-list.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './result-list.component.css' })
+@Component({ selector: 'app-result-list', imports: [FontAwesomeModule, MenuComponent], templateUrl: './result-list.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './result-list.component.css' })
 
 export class ResultListComponent implements OnInit
 {
   faRotate = faRotate;
-  
+
   categories: Categorie[] = [];
   nombreVotants: number[] = [];
   productions: ProductionVote[][] = [[]];

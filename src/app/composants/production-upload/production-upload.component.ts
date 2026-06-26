@@ -12,8 +12,7 @@ import { ProductionFile } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 import { Message } from '../../interfaces/divers';
 
-@Component({ selector: 'app-production-upload', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './production-upload.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './production-upload.component.css' })
+@Component({ selector: 'app-production-upload', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './production-upload.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './production-upload.component.css' })
 
 export class ProductionUploadComponent implements OnInit
 {

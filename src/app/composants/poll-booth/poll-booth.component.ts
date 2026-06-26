@@ -10,8 +10,7 @@ import { CategorieService } from '../../services/categorie.service';
 import { ProductionChoice, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { BulletinService } from '../../services/bulletin.service';
 
-@Component({ selector: 'app-poll-booth', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './poll-booth.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './poll-booth.component.css' })
+@Component({ selector: 'app-poll-booth', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './poll-booth.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './poll-booth.component.css' })
 
 export class PollBoothComponent  implements OnInit
 {

@@ -10,8 +10,7 @@ import { DiversService } from '../../services/divers.service'
 import { Evenement, EvenementEnum, EvenementTypeList } from '../../interfaces/evenement';
 import { EvenementService } from '../../services/evenement.service';
 
-@Component({ selector: 'app-evenement-update', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './evenement-update.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './evenement-update.component.css' })
+@Component({ selector: 'app-evenement-update', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './evenement-update.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './evenement-update.component.css' })
 
 export class EvenementUpdateComponent implements OnInit
 {

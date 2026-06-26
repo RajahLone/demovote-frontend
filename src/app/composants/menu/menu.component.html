@@ -1,4 +1,5 @@
-@if (!logged) {
+
+@if (!this.logged) {
 
 <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" id="sidenav">
   <ul class="nav nav-pills nav-flush flex-column text-center">
@@ -9,7 +10,7 @@
 	</ul>
 </div><div #signouticon class="d-none"></div>
 
-} @else if (logged && (role === "USER")) {
+} @else if (this.logged && (this.role === "USER")) {
 
 <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" id="sidenav">
   <ul class="nav nav-pills nav-flush flex-column text-center">
@@ -28,7 +29,7 @@
 	</ul>
 </div>
 
-} @else if (logged && (role === "ORGA")) {
+} @else if (this.logged && (this.role === "ORGA")) {
 
 <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" id="sidenav">
   <ul class="nav nav-pills nav-flush flex-column text-center">
@@ -48,32 +49,33 @@
 	</ul>
 </div>
 
-} @else if (logged && (role === "ADMIN")) {
+} @else if (this.logged && (this.role == "ADMIN")) {
 
 <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" id="sidenav">
   <ul class="nav nav-pills nav-flush flex-column text-center">
-	 	<li><a routerLink="/home" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Accueil" placement="right" container="body"><fa-icon [icon]="faHome"></fa-icon></a></li>
-		<li><a routerLink="/account-details" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Compte" placement="right" container="body"><fa-icon [icon]="faUser"></fa-icon></a></li>
-		<li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Logout" placement="right" container="body"><fa-icon #signouticon [icon]="faRightFromBracket"></fa-icon></a></li>
-		<li><a routerLink="/evenement-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Planning" placement="right" container="body"><fa-icon [icon]="faClock"></fa-icon></a></li>
-		<li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Caméras" placement="right" container="body"><fa-icon [icon]="faEye"></fa-icon></a></li>
+    <li><a routerLink="/home" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Accueil" placement="right" container="body"><fa-icon [icon]="faHome"></fa-icon></a></li>
+    <li><a routerLink="/account-details" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Compte" placement="right" container="body"><fa-icon [icon]="faUser"></fa-icon></a></li>
+    <li><a routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#modalDeconnecter" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Logout" placement="right" container="body"><fa-icon #signouticon [icon]="faRightFromBracket"></fa-icon></a></li>
+    <li><a routerLink="/evenement-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Planning" placement="right" container="body"><fa-icon [icon]="faClock"></fa-icon></a></li>
+    <li><a routerLink="/webcam-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Caméras" placement="right" container="body"><fa-icon [icon]="faEye"></fa-icon></a></li>
 
-		<li><a routerLink="/chat" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Messagerie" placement="right" container="body"><fa-icon [icon]="faComments"></fa-icon></a></li>
+    <li><a routerLink="/chat" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Messagerie" placement="right" container="body"><fa-icon [icon]="faComments"></fa-icon></a></li>
 
     <li><a routerLink="/participant-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Participants" placement="right" container="body"><fa-icon [icon]="faUsers"></fa-icon></a></li>
 
     <li><a routerLink="/categorie-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Catégories" placement="right" container="body"><fa-icon [icon]="faLayerGroup"></fa-icon></a></li>
     <li><a routerLink="/production-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Productions" placement="right" container="body"><fa-icon [icon]="faSave"></fa-icon></a></li>
-		<li><a routerLink="/show-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Présentations" placement="right" container="body"><fa-icon [icon]="faDisplay"></fa-icon></a></li>
-		<li><a routerLink="/poll-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Voter" placement="right" container="body"><fa-icon [icon]="faVoteYea"></fa-icon></a></li>
-		<li><a routerLink="/result-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Résultats" placement="right" container="body"><fa-icon [icon]="faTrophy"></fa-icon></a></li>
+    <li><a routerLink="/show-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Présentations" placement="right" container="body"><fa-icon [icon]="faDisplay"></fa-icon></a></li>
+    <li><a routerLink="/poll-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Voter" placement="right" container="body"><fa-icon [icon]="faVoteYea"></fa-icon></a></li>
+    <li><a routerLink="/result-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Résultats" placement="right" container="body"><fa-icon [icon]="faTrophy"></fa-icon></a></li>
 
     <li><a routerLink="/variable-list" routerLinkActive="active" class="nav-link rounded-0 bg-gradient" i18n-tooltip tooltip="Paramétrages" placement="right" container="body"><fa-icon [icon]="faSlidersH"></fa-icon></a></li>
 	</ul>
 </div>
 
 }
-@if (logged) {
+
+@if (this.logged) {
 
 <div class="modal fade" id="modalDeconnecter" tabindex="-1" aria-labelledby="modalDeconnecterTitre" aria-hidden="false">
 	<div class="modal-dialog modal-dialog-centered" role="document">

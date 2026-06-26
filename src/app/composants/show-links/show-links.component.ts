@@ -10,8 +10,7 @@ import { CategorieService } from '../../services/categorie.service';
 import { ProductionItem, ProductionEnum } from '../../interfaces/production';
 import { PresentationService } from '../../services/presentation.service';
 
-@Component({ selector: 'app-show-links', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './show-links.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './show-links.component.css' })
+@Component({ selector: 'app-show-links', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './show-links.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './show-links.component.css' })
 
 export class ShowLinksComponent implements OnInit
 {

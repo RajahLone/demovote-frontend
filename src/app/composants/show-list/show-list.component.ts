@@ -14,8 +14,7 @@ import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../inter
 import { PresentationService } from '../../services/presentation.service';
 import { ProductionService } from '../../services/production.service';
 
-@Component({ selector: 'app-show-list', imports: [FontAwesomeModule, FormsModule, TooltipModule, MenuComponent], templateUrl: './show-list.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './show-list.component.css' })
+@Component({ selector: 'app-show-list', imports: [FontAwesomeModule, FormsModule, TooltipModule, MenuComponent], templateUrl: './show-list.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './show-list.component.css' })
 
 export class ShowListComponent implements OnInit
 {

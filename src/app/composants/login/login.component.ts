@@ -9,13 +9,12 @@ import { AccountService } from '../../services/account.service'
 import { User } from '../../interfaces/user';
 import { Journees } from '../../interfaces/divers';
 
-@Component({ selector: 'app-login', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './login.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './login.component.css' })
+@Component({ selector: 'app-login', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './login.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './login.component.css' })
 
 export class LoginComponent implements OnInit
 {
   faRightToBracket = faRightToBracket;
-  
+
   hello: Journees = new Journees();
 
   @ViewChild('formRef') loginForm!: NgForm;

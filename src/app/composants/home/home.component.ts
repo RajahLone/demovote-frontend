@@ -6,8 +6,7 @@ import { Message } from '../../interfaces/divers';
 import { AccountService } from '../../services/account.service'
 import { DiversService } from '../../services/divers.service'
 
-@Component({ selector: 'app-home', imports: [MenuComponent, RouterLink], templateUrl: './home.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './home.component.css' })
+@Component({ selector: 'app-home', imports: [MenuComponent, RouterLink], templateUrl: './home.component.html',  changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './home.component.css' })
 
 export class HomeComponent implements OnInit
 {

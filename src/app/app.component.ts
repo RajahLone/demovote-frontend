@@ -1,22 +1,20 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AccountService } from './services/account.service';  
+import { AccountService } from './services/account.service';
 
-@Component({ selector: 'app-root', imports: [RouterOutlet], templateUrl: './app.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './app.component.css' })
+@Component({ selector: 'app-root', imports: [RouterOutlet], templateUrl: './app.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './app.component.css' })
 
-export class AppComponent implements OnInit 
+export class AppComponent implements OnInit
 {
   title = 'demovote';
 
   logged: boolean = false;
 
-  constructor(private accountService: AccountService) { }  
-  
-  ngOnInit() 
-  { 
-    this.logged = this.accountService.isLogged(); 
-  }
-  
-}
+  constructor(private accountService: AccountService) { }
 
+  ngOnInit()
+  {
+    this.logged = this.accountService.isLogged();
+  }
+
+}

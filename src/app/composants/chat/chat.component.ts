@@ -11,13 +11,12 @@ import { PseudonymeList } from '../../interfaces/participant';
 import { ChatService } from '../../services/chat.service';
 import { AccountService } from '../../services/account.service'
 
-@Component({ selector: 'app-chat', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './chat.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './chat.component.css' })
+@Component({ selector: 'app-chat', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './chat.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './chat.component.css' })
 
 export class ChatComponent implements OnInit
 {
   faComment = faComment;
-  
+
   logged: boolean = false;
   disabled: boolean = false;
 

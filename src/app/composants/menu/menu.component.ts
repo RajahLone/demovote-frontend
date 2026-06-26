@@ -7,8 +7,7 @@ import { faHome, faRightToBracket, faClock, faEye, faUser, faRightFromBracket, f
 
 import { AccountService } from '../../services/account.service';
 
-@Component({ selector: 'app-menu', imports: [FontAwesomeModule, TooltipModule, RouterLink, RouterLinkActive], templateUrl: './menu.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './menu.component.css' })
+@Component({ selector: 'app-menu', imports: [FontAwesomeModule, TooltipModule, RouterLink, RouterLinkActive], templateUrl: './menu.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './menu.component.css' })
 
 @Injectable({ providedIn: 'root' })
 

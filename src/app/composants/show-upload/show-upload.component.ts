@@ -12,8 +12,7 @@ import { PresentationService } from '../../services/presentation.service';
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 
-@Component({ selector: 'app-show-upload', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './show-upload.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './show-upload.component.css' })
+@Component({ selector: 'app-show-upload', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './show-upload.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './show-upload.component.css' })
 
 export class ShowUploadComponent implements OnInit
 {

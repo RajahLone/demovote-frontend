@@ -10,8 +10,7 @@ import { AccountService } from '../../services/account.service'
 import { Journees } from '../../interfaces/divers';
 import { DiversService } from '../../services/divers.service'
 
-@Component({ selector: 'app-account-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './account-details.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './account-details.component.css' })
+@Component({ selector: 'app-account-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './account-details.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './account-details.component.css' })
 
 export class AccountDetailsComponent implements OnInit
 {

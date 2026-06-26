@@ -9,8 +9,7 @@ import { MenuComponent } from '../menu/menu.component';
 import { NewPassword } from '../../interfaces/user';
 import { AccountService } from '../../services/account.service'
 
-@Component({ selector: 'app-account-password', imports: [FontAwesomeModule, CommonModule, FormsModule, ReactiveFormsModule, MenuComponent], templateUrl: './account-password.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './account-password.component.css' })
+@Component({ selector: 'app-account-password', imports: [FontAwesomeModule, CommonModule, FormsModule, ReactiveFormsModule, MenuComponent], templateUrl: './account-password.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './account-password.component.css' })
 
 export class AccountPasswordComponent
 {

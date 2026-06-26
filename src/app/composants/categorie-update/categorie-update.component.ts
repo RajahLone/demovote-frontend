@@ -8,8 +8,7 @@ import { MenuComponent } from '../menu/menu.component';
 import { Categorie } from '../../interfaces/categorie';
 import { CategorieService } from '../../services/categorie.service';
 
-@Component({ selector: 'app-categorie-update', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './categorie-update.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './categorie-update.component.css' })
+@Component({ selector: 'app-categorie-update', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './categorie-update.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './categorie-update.component.css' })
 
 export class CategorieUpdateComponent implements OnInit
 {

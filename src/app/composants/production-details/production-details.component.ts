@@ -8,8 +8,7 @@ import { MenuComponent } from '../menu/menu.component';
 import { ProductionShort, ProductionEnum, ProductionTypeList } from '../../interfaces/production';
 import { ProductionService } from '../../services/production.service';
 
-@Component({ selector: 'app-production-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './production-details.component.html', changeDetection: ChangeDetectionStrategy.Eager,
- styleUrl: './production-details.component.css' })
+@Component({ selector: 'app-production-details', imports: [FontAwesomeModule, FormsModule, MenuComponent], templateUrl: './production-details.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './production-details.component.css' })
 
 export class ProductionDetailsComponent implements OnInit
 {
