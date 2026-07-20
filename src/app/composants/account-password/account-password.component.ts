@@ -19,7 +19,7 @@ export class AccountPasswordComponent
 
   public form!: FormGroup;
 
-  public passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,16}$/
+  public passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?.:,;(){}[\]])[A-Za-z\d#$@!%&*?.:,;(){}[\]]{8,16}$/
 
   constructor(
     private accountService : AccountService,
@@ -57,7 +57,7 @@ export class AccountPasswordComponent
   public checkValidations(index: string, type: string) {
     switch (type)
     {
-      case 'special-character': return /[#$@!%&*?]/.test(this.form.controls[index].value);;
+      case 'special-character': return /[#$@!%&*?.:,;(){}[\]]/.test(this.form.controls[index].value);;
       case 'number': return /\d/.test(this.form.controls[index].value);
       case 'lowercase': return /[a-z]/.test(this.form.controls[index].value);
       case 'uppercase': return /[A-Z]/.test(this.form.controls[index].value);
