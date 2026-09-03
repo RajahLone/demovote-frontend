@@ -56,7 +56,18 @@ export class ChatComponent implements OnInit
 
     if ((this.logged) && (this.disabled == false))
     {
-      this.chatService.getNew(this.dernierNumero).subscribe(data => { if (data) { this.lignes = [...data, ...this.lignes]; } this.setDernierNumero(); });
+      this.chatService.getNew(this.dernierNumero).subscribe(data =>
+      {
+        if (data != null)
+        {
+          if (data.length > 0)
+          {
+            for (let j = 0; j < data.length; j++) { if (!this.hasNumero(data[j].numeroMessage)) { this.lignes.unshift(data[j]); } }
+          }
+        }
+
+        this.setDernierNumero();
+      });
     }
   }
 
@@ -72,19 +83,38 @@ export class ChatComponent implements OnInit
       }
     }
   }
+  private hasNumero(id: number): boolean
+  {
+    if (this.lignes != null)
+    {
+      if (this.lignes.length > 0)
+      {
+        for (let i = 0; i < this.lignes.length; i++) { if (this.lignes[i].numeroMessage == id) { return true; } }
+      }
+    }
+    return false;
+  }
 
   envoiNouvelleLigne()
   {
     if (this.logged)
     {
       this.disabled = true;
-      this.chatService.addNew(this.dernierNumero, this.ajoute).subscribe(data => {
-        this.lignes = [...data, ...this.lignes];
+      this.chatService.addNew(this.dernierNumero, this.ajoute).subscribe(data =>
+      {
+        if (data != null)
+        {
+          if (data.length > 0)
+          {
+            for (let j = 0; j < data.length; j++) { if (!this.hasNumero(data[j].numeroMessage)) { this.lignes.unshift(data[j]); } }
+          }
+        }
+
         this.ajoute = new MessageShort();
         this.ajoute.pseudonyme = this.accountService.getUsername();
         this.setDernierNumero();
         this.disabled = false;
-        });
+      });
     }
   }
 
