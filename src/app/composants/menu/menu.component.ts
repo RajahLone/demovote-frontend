@@ -46,7 +46,7 @@ export class MenuComponent implements OnInit
     this.idle.watch();
   }
 
-  deconnexion() { this.accountService.signOut(); this.logged = false; if ((this.router.url === '/') || (this.router.url === '/home')) { window.location.reload(); } else { this.router.navigate(['/']); }  }
+  deconnexion() { this.accountService.signOut().subscribe(data => { this.logged = false; if ((this.router.url === '/') || (this.router.url === '/home')) { window.location.reload(); } else { this.router.navigate(['/']); } }); }
 
   getRandomInteger(min: number, max: number) { min = Math.ceil(min); max = Math.floor(max); return Math.floor(Math.random() * (max - min)) + min; }
 
