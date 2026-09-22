@@ -3,8 +3,10 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { DEFAULT_INTERRUPTSOURCES, Idle } from '@ng-idle/core';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faHome, faRightToBracket, faClock, faEye, faUser, faRightFromBracket, faComments, faSave, faVoteYea, faTrophy, faUsers, faLayerGroup, faDisplay, faSlidersH } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faRightToBracket, faClock, faEye, faUser, faRightFromBracket, faComments, faSave, faVoteYea, faTrophy, faUsers, faLayerGroup, faDisplay, faSlidersH, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
+import { ApplicationInfo } from '../../interfaces/divers';
+import { DiversService } from '../../services/divers.service';
 import { AccountService } from '../../services/account.service';
 
 @Component({ selector: 'app-menu', imports: [FontAwesomeModule, TooltipModule, RouterLink, RouterLinkActive], templateUrl: './menu.component.html', changeDetection: ChangeDetectionStrategy.Eager, styleUrl: './menu.component.css' })
@@ -14,7 +16,7 @@ import { AccountService } from '../../services/account.service';
 export class MenuComponent implements OnInit
 {
   faHome = faHome; faRightToBracket = faRightToBracket; faClock = faClock; faEye = faEye; faUser = faUser; faRightFromBracket = faRightFromBracket; faComments = faComments;
-  faSave = faSave; faTrophy = faTrophy; faVoteYea = faVoteYea; faUsers = faUsers; faLayerGroup = faLayerGroup; faDisplay = faDisplay; faSlidersH = faSlidersH;
+  faSave = faSave; faTrophy = faTrophy; faVoteYea = faVoteYea; faUsers = faUsers; faLayerGroup = faLayerGroup; faDisplay = faDisplay; faSlidersH = faSlidersH; faCircleInfo = faCircleInfo;
 
   logged: boolean = false;
   role: string = "";
@@ -24,7 +26,16 @@ export class MenuComponent implements OnInit
   private timedOut: boolean = false;
   @ViewChild('signouticon', {static: false}) signOutIcon!: ElementRef;
 
-  constructor(private idle: Idle, private router: Router, private accountService: AccountService, private el: ElementRef, private renderer: Renderer2)
+  frontEndInfo: ApplicationInfo = new ApplicationInfo();
+  backEndInfo: ApplicationInfo | null = null;
+
+  constructor(
+    private idle: Idle,
+    private router: Router,
+    private accountService: AccountService,
+    private diversService: DiversService,
+    private el: ElementRef,
+    private renderer: Renderer2)
   {
     this.idle.setIdle(900);
     this.idle.setTimeout(15);
@@ -44,6 +55,8 @@ export class MenuComponent implements OnInit
     this.idle.setIdle(Math.max(15, this.accountService.getDelaiAvantDeconnexion()) * 60);
     this.resetIdle();
     this.idle.watch();
+
+    this.diversService.getBackEndInfo().subscribe(data => { this.backEndInfo = data; });
   }
 
   deconnexion() { this.accountService.signOut().subscribe(data => { this.logged = false; if ((this.router.url === '/') || (this.router.url === '/home')) { window.location.reload(); } else { this.router.navigate(['/']); } }); }
