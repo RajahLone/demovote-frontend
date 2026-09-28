@@ -4,6 +4,7 @@ export class ApplicationInfo
   framework: string = "Angular 22+ - Bootstrap 5";
   date: string = "20260922";
   authors: string[] = ["Rajah Lone"];
+  license: string = "MIT";
 }
 
 export class Message
